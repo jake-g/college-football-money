@@ -1,0 +1,889 @@
+season,game_id,date,week,team_id,school,conference,opponent_id,opponent,home_away,neutral_site,conference_game,completed,status,points_for,points_against,won,attendance,venue
+2025,401760359,2025-08-30 19:30:00+00:00,1,2005,Air Force,Mountain West,2083,Bucknell,home,False,False,True,STATUS_FINAL,49.0,13.0,True,30207,Falcon Stadium
+2025,401760368,2025-09-14 01:45:00+00:00,3,2005,Air Force,Mountain West,328,Utah State,away,False,False,True,STATUS_FINAL,30.0,49.0,False,17124,Maverik Stadium
+2025,401760372,2025-09-20 23:00:00+00:00,4,2005,Air Force,Mountain West,68,Boise State,home,False,False,True,STATUS_FINAL,37.0,49.0,False,24046,Falcon Stadium
+2025,401760378,2025-09-27 20:00:00+00:00,5,2005,Air Force,Mountain West,62,Hawai'i,home,False,False,True,STATUS_FINAL,35.0,44.0,False,22677,Falcon Stadium
+2025,401760381,2025-10-04 16:00:00+00:00,6,2005,Air Force,Mountain West,2426,Navy,away,False,False,True,STATUS_FINAL,31.0,34.0,False,37517,Navy-Marine Corps Memorial Stadium
+2025,401760386,2025-10-11 19:30:00+00:00,7,2005,Air Force,Mountain West,2439,UNLV,away,False,False,True,STATUS_FINAL,48.0,51.0,False,32932,Allegiant Stadium
+2025,401760392,2025-10-18 19:30:00+00:00,8,2005,Air Force,Mountain West,2751,Wyoming,home,False,False,True,STATUS_FINAL,24.0,21.0,True,23401,Falcon Stadium
+2025,401760401,2025-11-01 16:00:00+00:00,10,2005,Air Force,Mountain West,349,Army,home,False,False,True,STATUS_FINAL,17.0,20.0,False,39441,Falcon Stadium
+2025,401760406,2025-11-08 23:00:00+00:00,11,2005,Air Force,Mountain West,23,San José State,away,False,False,True,STATUS_FINAL,26.0,16.0,True,13637,CEFCU Stadium
+2025,401757174,2025-11-15 17:00:00+00:00,12,2005,Air Force,Mountain West,41,UConn,away,False,False,True,STATUS_FINAL,16.0,26.0,False,31457,Pratt & Whitney Stadium
+2025,401760415,2025-11-23 00:00:00+00:00,13,2005,Air Force,Mountain West,167,New Mexico,home,False,False,True,STATUS_FINAL,3.0,20.0,False,20218,Falcon Stadium
+2025,401760421,2025-11-28 20:00:00+00:00,14,2005,Air Force,Mountain West,36,Colorado State,away,False,False,True,STATUS_FINAL,42.0,21.0,True,25873,Canvas Stadium
+2025,401762789,2025-08-28 23:00:00+00:00,1,2006,Akron,MAC,2751,Wyoming,home,False,False,True,STATUS_FINAL,0.0,10.0,False,9138,InfoCision Stadium
+2025,401752810,2025-09-06 23:30:00+00:00,2,2006,Akron,MAC,158,Nebraska,away,False,False,True,STATUS_FINAL,0.0,68.0,False,86439,"Memorial Stadium (Lincoln, NE)"
+2025,401762463,2025-09-14 00:30:00+00:00,3,2006,Akron,MAC,5,UAB,away,False,False,True,STATUS_FINAL,28.0,31.0,False,17823,Protective Stadium
+2025,401762821,2025-09-20 22:00:00+00:00,4,2006,Akron,MAC,2184,Duquesne,home,False,False,True,STATUS_FINAL,51.0,7.0,True,8117,InfoCision Stadium
+2025,401762824,2025-09-27 19:30:00+00:00,5,2006,Akron,MAC,2649,Toledo,away,False,False,True,STATUS_FINAL,3.0,45.0,False,24535,Glass Bowl
+2025,401762829,2025-10-04 19:30:00+00:00,6,2006,Akron,MAC,2117,Central Michigan,home,False,False,True,STATUS_FINAL,28.0,22.0,True,8995,InfoCision Stadium
+2025,401762833,2025-10-11 16:00:00+00:00,7,2006,Akron,MAC,193,Miami (OH),home,False,False,True,STATUS_FINAL,7.0,20.0,False,6575,InfoCision Stadium
+2025,401762838,2025-10-18 19:30:00+00:00,8,2006,Akron,MAC,2050,Ball State,away,False,False,True,STATUS_FINAL,28.0,42.0,False,12248,Scheumann Stadium
+2025,401762844,2025-10-25 17:00:00+00:00,9,2006,Akron,MAC,2084,Buffalo,away,False,False,True,STATUS_FINAL,24.0,16.0,True,12491,Broadview Stadium
+2025,401762851,2025-11-05 00:00:00+00:00,11,2006,Akron,MAC,113,Massachusetts,home,False,False,True,STATUS_FINAL,44.0,10.0,True,5046,InfoCision Stadium
+2025,401762856,2025-11-12 00:30:00+00:00,12,2006,Akron,MAC,2309,Kent State,home,False,False,True,STATUS_FINAL,35.0,42.0,False,8501,InfoCision Stadium
+2025,401762862,2025-11-19 00:00:00+00:00,13,2006,Akron,MAC,189,Bowling Green,away,False,False,True,STATUS_FINAL,19.0,16.0,True,9867,Doyt L. Perry Stadium
+2025,401752665,2025-08-30 19:30:00+00:00,1,333,Alabama,SEC,52,Florida State,away,False,False,True,STATUS_FINAL,17.0,31.0,False,67277,Doak Campbell Stadium
+2025,401752681,2025-09-06 23:45:00+00:00,2,333,Alabama,SEC,2433,UL Monroe,home,False,False,True,STATUS_FINAL,73.0,0.0,True,100077,Bryant-Denny Stadium
+2025,401752696,2025-09-13 16:00:00+00:00,3,333,Alabama,SEC,275,Wisconsin,home,False,False,True,STATUS_FINAL,38.0,14.0,True,100077,Bryant-Denny Stadium
+2025,401752718,2025-09-27 23:30:00+00:00,5,333,Alabama,SEC,61,Georgia,away,False,False,True,STATUS_FINAL,24.0,21.0,True,93033,Sanford Stadium
+2025,401752726,2025-10-04 19:30:00+00:00,6,333,Alabama,SEC,238,Vanderbilt,home,False,False,True,STATUS_FINAL,30.0,14.0,True,100077,Bryant-Denny Stadium
+2025,401752734,2025-10-11 16:00:00+00:00,7,333,Alabama,SEC,142,Missouri,away,False,False,True,STATUS_FINAL,27.0,24.0,True,57321,Memorial Stadium
+2025,401752738,2025-10-18 23:30:00+00:00,8,333,Alabama,SEC,2633,Tennessee,home,False,False,True,STATUS_FINAL,37.0,20.0,True,100077,Bryant-Denny Stadium
+2025,401752751,2025-10-25 19:30:00+00:00,9,333,Alabama,SEC,2579,South Carolina,away,False,False,True,STATUS_FINAL,29.0,22.0,True,79537,Williams-Brice Stadium
+2025,401752759,2025-11-09 00:30:00+00:00,11,333,Alabama,SEC,99,LSU,home,False,False,True,STATUS_FINAL,20.0,9.0,True,100077,Bryant-Denny Stadium
+2025,401752765,2025-11-15 20:30:00+00:00,12,333,Alabama,SEC,201,Oklahoma,home,False,False,True,STATUS_FINAL,21.0,23.0,False,100077,Bryant-Denny Stadium
+2025,401752773,2025-11-22 19:00:00+00:00,13,333,Alabama,SEC,2197,Eastern Illinois,home,False,False,True,STATUS_FINAL,56.0,0.0,True,100077,Bryant-Denny Stadium
+2025,401752784,2025-11-30 00:30:00+00:00,14,333,Alabama,SEC,2,Auburn,away,False,False,True,STATUS_FINAL,27.0,20.0,True,88043,Jordan-Hare Stadium
+2025,401777351,2025-12-06 21:00:00+00:00,15,333,Alabama,SEC,61,Georgia,home,True,False,True,STATUS_FINAL,7.0,28.0,False,77247,Mercedes-Benz Stadium
+2025,401761589,2025-08-29 23:00:00+00:00,1,2026,App State,Sun Belt,2429,Charlotte,away,True,False,True,STATUS_FINAL,34.0,11.0,True,35718,Bank of America Stadium
+2025,401761596,2025-09-06 19:30:00+00:00,2,2026,App State,Sun Belt,2815,Lindenwood,home,False,False,True,STATUS_FINAL,20.0,13.0,True,34921,Kidd Brewer Stadium
+2025,401761607,2025-09-13 23:00:00+00:00,3,2026,App State,Sun Belt,2572,Southern Miss,away,False,False,True,STATUS_FINAL,22.0,38.0,False,24534,M. M. Roberts Stadium
+2025,401760379,2025-09-27 23:30:00+00:00,5,2026,App State,Sun Belt,68,Boise State,away,False,False,True,STATUS_FINAL,14.0,47.0,False,32904,Albertsons Stadium
+2025,401752940,2025-10-04 19:30:00+00:00,6,2026,App State,Sun Belt,204,Oregon State,home,False,False,True,STATUS_FINAL,27.0,23.0,True,35021,Kidd Brewer Stadium
+2025,401761624,2025-10-11 19:30:00+00:00,7,2026,App State,Sun Belt,2247,Georgia State,away,False,False,True,STATUS_FINAL,41.0,20.0,True,19587,Center Parc Stadium
+2025,401761629,2025-10-18 19:30:00+00:00,8,2026,App State,Sun Belt,324,Coastal Carolina,home,False,False,True,STATUS_FINAL,37.0,45.0,False,33862,Kidd Brewer Stadium
+2025,401761635,2025-10-25 16:00:00+00:00,9,2026,App State,Sun Belt,295,Old Dominion,away,False,False,True,STATUS_FINAL,21.0,24.0,False,18097,S.B. Ballard Stadium
+2025,401761644,2025-11-07 00:30:00+00:00,11,2026,App State,Sun Belt,290,Georgia Southern,home,False,False,True,STATUS_FINAL,23.0,25.0,False,31876,Kidd Brewer Stadium
+2025,401761652,2025-11-15 20:30:00+00:00,12,2026,App State,Sun Belt,256,James Madison,away,False,False,True,STATUS_FINAL,10.0,58.0,False,25298,Bridgeforth Stadium
+2025,401761656,2025-11-22 19:30:00+00:00,13,2026,App State,Sun Belt,276,Marshall,home,False,False,True,STATUS_FINAL,26.0,24.0,True,31322,Kidd Brewer Stadium
+2025,401761661,2025-11-29 19:30:00+00:00,14,2026,App State,Sun Belt,2032,Arkansas State,home,False,False,True,STATUS_FINAL,29.0,30.0,False,23876,Kidd Brewer Stadium
+2025,401756849,2025-08-31 02:30:00+00:00,1,12,Arizona,Big 12,62,Hawai'i,home,False,False,True,STATUS_FINAL,40.0,6.0,True,42423,Casino Del Sol Stadium
+2025,401756879,2025-09-07 02:00:00+00:00,2,12,Arizona,Big 12,2692,Weber State,home,False,False,True,STATUS_FINAL,48.0,3.0,True,40038,Casino Del Sol Stadium
+2025,401756888,2025-09-13 01:00:00+00:00,3,12,Arizona,Big 12,2306,Kansas State,home,False,False,True,STATUS_FINAL,23.0,17.0,True,40051,Casino Del Sol Stadium
+2025,401756904,2025-09-27 23:00:00+00:00,5,12,Arizona,Big 12,66,Iowa State,away,False,False,True,STATUS_FINAL,14.0,39.0,False,61500,Jack Trice Stadium
+2025,401756910,2025-10-04 19:00:00+00:00,6,12,Arizona,Big 12,197,Oklahoma State,home,False,False,True,STATUS_FINAL,41.0,13.0,True,40685,Casino Del Sol Stadium
+2025,401756916,2025-10-12 00:00:00+00:00,7,12,Arizona,Big 12,252,BYU,home,False,False,True,STATUS_FINAL,27.0,33.0,False,47960,Casino Del Sol Stadium
+2025,401756925,2025-10-18 16:00:00+00:00,8,12,Arizona,Big 12,248,Houston,away,False,False,True,STATUS_FINAL,28.0,31.0,False,28535,TDECU Stadium
+2025,401756937,2025-11-01 23:00:00+00:00,10,12,Arizona,Big 12,38,Colorado,away,False,False,True,STATUS_FINAL,52.0,17.0,True,48322,Folsom Field
+2025,401756943,2025-11-08 20:30:00+00:00,11,12,Arizona,Big 12,2305,Kansas,home,False,False,True,STATUS_FINAL,24.0,20.0,True,41115,Casino Del Sol Stadium
+2025,401756951,2025-11-15 17:00:00+00:00,12,12,Arizona,Big 12,2132,Cincinnati,away,False,False,True,STATUS_FINAL,30.0,24.0,True,37099,Nippert Stadium
+2025,401756954,2025-11-22 18:00:00+00:00,13,12,Arizona,Big 12,239,Baylor,home,False,False,True,STATUS_FINAL,41.0,17.0,True,40199,Casino Del Sol Stadium
+2025,401756961,2025-11-29 02:00:00+00:00,14,12,Arizona,Big 12,9,Arizona State,away,False,False,True,STATUS_FINAL,23.0,7.0,True,54037,Mountain America Stadium
+2025,401756850,2025-08-31 02:00:00+00:00,1,9,Arizona State,Big 12,2464,Northern Arizona,home,False,False,True,STATUS_FINAL,38.0,19.0,True,56759,Mountain America Stadium
+2025,401752688,2025-09-06 23:30:00+00:00,2,9,Arizona State,Big 12,344,Mississippi State,away,False,False,True,STATUS_FINAL,20.0,24.0,False,50808,Davis Wade Stadium
+2025,401756889,2025-09-14 02:30:00+00:00,3,9,Arizona State,Big 12,326,Texas State,home,False,False,True,STATUS_FINAL,34.0,15.0,True,54005,Mountain America Stadium
+2025,401756896,2025-09-20 23:30:00+00:00,4,9,Arizona State,Big 12,239,Baylor,away,False,False,True,STATUS_FINAL,27.0,24.0,True,40964,McLane Stadium
+2025,401756902,2025-09-27 01:00:00+00:00,5,9,Arizona State,Big 12,2628,TCU,home,False,False,True,STATUS_FINAL,27.0,24.0,True,53774,Mountain America Stadium
+2025,401756922,2025-10-12 02:25:00+00:00,7,9,Arizona State,Big 12,254,Utah,away,False,False,True,STATUS_FINAL,10.0,42.0,False,51444,Rice-Eccles Stadium
+2025,401756923,2025-10-18 20:00:00+00:00,8,9,Arizona State,Big 12,2641,Texas Tech,home,False,False,True,STATUS_FINAL,26.0,22.0,True,54177,Mountain America Stadium
+2025,401756929,2025-10-26 00:00:00+00:00,9,9,Arizona State,Big 12,248,Houston,home,False,False,True,STATUS_FINAL,16.0,24.0,False,54256,Mountain America Stadium
+2025,401756939,2025-11-01 17:00:00+00:00,10,9,Arizona State,Big 12,66,Iowa State,away,False,False,True,STATUS_FINAL,24.0,19.0,True,60899,Jack Trice Stadium
+2025,401756948,2025-11-15 18:00:00+00:00,12,9,Arizona State,Big 12,277,West Virginia,home,False,False,True,STATUS_FINAL,25.0,23.0,True,54101,Mountain America Stadium
+2025,401756956,2025-11-23 01:00:00+00:00,13,9,Arizona State,Big 12,38,Colorado,away,False,False,True,STATUS_FINAL,42.0,17.0,True,43348,Folsom Field
+2025,401752666,2025-08-30 20:15:00+00:00,1,8,Arkansas,SEC,2010,Alabama A&M,home,False,False,True,STATUS_FINAL,52.0,7.0,True,70827,Donald W. Reynolds Razorback Stadium
+2025,401752682,2025-09-06 21:00:00+00:00,2,8,Arkansas,SEC,2032,Arkansas State,home,False,False,True,STATUS_FINAL,56.0,14.0,True,54224,War Memorial Stadium (AR)
+2025,401752700,2025-09-13 23:00:00+00:00,3,8,Arkansas,SEC,145,Ole Miss,away,False,False,True,STATUS_FINAL,35.0,41.0,False,65068,Vaught-Hemingway Stadium
+2025,401752708,2025-09-20 16:00:00+00:00,4,8,Arkansas,SEC,235,Memphis,away,False,False,True,STATUS_FINAL,31.0,32.0,False,39861,Simmons Bank Liberty Stadium
+2025,401752717,2025-09-27 16:00:00+00:00,5,8,Arkansas,SEC,87,Notre Dame,home,False,False,True,STATUS_FINAL,13.0,56.0,False,75111,Donald W. Reynolds Razorback Stadium
+2025,401752735,2025-10-11 20:15:00+00:00,7,8,Arkansas,SEC,2633,Tennessee,away,False,False,True,STATUS_FINAL,31.0,34.0,False,101915,Neyland Stadium
+2025,401752739,2025-10-18 21:30:00+00:00,8,8,Arkansas,SEC,245,Texas A&M,home,False,False,True,STATUS_FINAL,42.0,45.0,False,73845,Donald W. Reynolds Razorback Stadium
+2025,401752746,2025-10-25 16:45:00+00:00,9,8,Arkansas,SEC,2,Auburn,home,False,False,True,STATUS_FINAL,24.0,33.0,False,68922,Donald W. Reynolds Razorback Stadium
+2025,401752753,2025-11-01 20:00:00+00:00,10,8,Arkansas,SEC,344,Mississippi State,home,False,False,True,STATUS_FINAL,35.0,38.0,False,68358,Donald W. Reynolds Razorback Stadium
+2025,401752768,2025-11-15 17:45:00+00:00,12,8,Arkansas,SEC,99,LSU,away,False,False,True,STATUS_FINAL,22.0,23.0,False,100212,Tiger Stadium (LA)
+2025,401752780,2025-11-22 20:30:00+00:00,13,8,Arkansas,SEC,251,Texas,away,False,False,True,STATUS_FINAL,37.0,52.0,False,102361,DKR-Texas Memorial Stadium
+2025,401752783,2025-11-29 20:30:00+00:00,14,8,Arkansas,SEC,142,Missouri,home,False,False,True,STATUS_FINAL,17.0,31.0,False,61508,Donald W. Reynolds Razorback Stadium
+2025,401761591,2025-08-30 23:00:00+00:00,1,2032,Arkansas State,Sun Belt,2546,Southeast Missouri State,home,False,False,True,STATUS_FINAL,42.0,24.0,True,18241,Centennial Bank Stadium
+2025,401756890,2025-09-13 20:00:00+00:00,3,2032,Arkansas State,Sun Belt,66,Iowa State,home,False,False,True,STATUS_FINAL,16.0,24.0,False,22348,Centennial Bank Stadium
+2025,401757261,2025-09-20 22:00:00+00:00,4,2032,Arkansas State,Sun Belt,338,Kennesaw State,away,False,False,True,STATUS_FINAL,21.0,28.0,False,10713,Walens Family Field at Fifth Third Stadium
+2025,401761616,2025-09-27 19:00:00+00:00,5,2032,Arkansas State,Sun Belt,2433,UL Monroe,away,False,False,True,STATUS_FINAL,16.0,28.0,False,21147,Malone Stadium
+2025,401761620,2025-10-04 20:00:00+00:00,6,2032,Arkansas State,Sun Belt,326,Texas State,home,False,False,True,STATUS_FINAL,31.0,30.0,True,15841,Centennial Bank Stadium
+2025,401761628,2025-10-14 23:30:00+00:00,8,2032,Arkansas State,Sun Belt,6,South Alabama,away,False,False,True,STATUS_FINAL,15.0,14.0,True,19634,Hancock Whitney Stadium
+2025,401761636,2025-10-25 23:00:00+00:00,9,2032,Arkansas State,Sun Belt,290,Georgia Southern,home,False,False,True,STATUS_FINAL,34.0,24.0,True,16341,Centennial Bank Stadium
+2025,401761643,2025-11-02 00:00:00+00:00,10,2032,Arkansas State,Sun Belt,2653,Troy,away,False,False,True,STATUS_FINAL,23.0,10.0,True,23391,Veterans Memorial Stadium (AL)
+2025,401761647,2025-11-08 17:00:00+00:00,11,2032,Arkansas State,Sun Belt,2572,Southern Miss,home,False,False,True,STATUS_FINAL,21.0,27.0,False,15441,Centennial Bank Stadium
+2025,401761655,2025-11-21 00:30:00+00:00,13,2032,Arkansas State,Sun Belt,309,Louisiana,home,False,False,True,STATUS_FINAL,30.0,34.0,False,13571,Centennial Bank Stadium
+2025,401762432,2025-08-29 22:00:00+00:00,1,349,Army,American,2627,Tarleton State,home,False,False,True,STATUS_FINAL,27.0,30.0,False,23032,Michie Stadium
+2025,401756882,2025-09-06 23:00:00+00:00,2,349,Army,American,2306,Kansas State,away,False,False,True,STATUS_FINAL,24.0,21.0,True,52723,Bill Snyder Family Stadium
+2025,401762469,2025-09-20 16:00:00+00:00,4,349,Army,American,249,North Texas,home,False,False,True,STATUS_FINAL,38.0,45.0,False,28446,Michie Stadium
+2025,401762471,2025-09-25 23:30:00+00:00,5,349,Army,American,151,East Carolina,away,False,False,True,STATUS_FINAL,6.0,28.0,False,32497,Dowdy-Ficklen Stadium
+2025,401762476,2025-10-04 16:00:00+00:00,6,349,Army,American,5,UAB,away,False,False,True,STATUS_FINAL,31.0,13.0,True,22489,Protective Stadium
+2025,401762483,2025-10-11 16:00:00+00:00,7,349,Army,American,2429,Charlotte,home,False,False,True,STATUS_FINAL,24.0,7.0,True,31172,Michie Stadium
+2025,401762488,2025-10-18 16:00:00+00:00,8,349,Army,American,2655,Tulane,away,False,False,True,STATUS_FINAL,17.0,24.0,False,20027,Yulman Stadium
+2025,401762503,2025-11-08 17:00:00+00:00,11,349,Army,American,218,Temple,home,False,False,True,STATUS_FINAL,14.0,13.0,True,30594,Michie Stadium
+2025,401762512,2025-11-22 17:00:00+00:00,13,349,Army,American,202,Tulsa,home,False,False,True,STATUS_FINAL,25.0,26.0,False,28705,Michie Stadium
+2025,401762441,2025-11-29 20:30:00+00:00,14,349,Army,American,2636,UTSA,away,False,False,True,STATUS_FINAL,27.0,24.0,True,22620,Alamodome
+2025,401762521,2025-12-13 20:00:00+00:00,16,349,Army,American,2426,Navy,away,True,False,True,STATUS_FINAL,16.0,17.0,False,70936,M&T Bank Stadium
+2025,401752667,2025-08-30 00:00:00+00:00,1,2,Auburn,SEC,239,Baylor,away,False,False,True,STATUS_FINAL,38.0,24.0,True,45233,McLane Stadium
+2025,401752683,2025-09-06 23:30:00+00:00,2,2,Auburn,SEC,2050,Ball State,home,False,False,True,STATUS_FINAL,42.0,3.0,True,88043,Jordan-Hare Stadium
+2025,401752697,2025-09-13 16:45:00+00:00,3,2,Auburn,SEC,6,South Alabama,home,False,False,True,STATUS_FINAL,31.0,15.0,True,88043,Jordan-Hare Stadium
+2025,401752714,2025-09-20 19:30:00+00:00,4,2,Auburn,SEC,201,Oklahoma,away,False,False,True,STATUS_FINAL,17.0,24.0,False,83639,"Memorial Stadium (Norman, OK)"
+2025,401752724,2025-09-27 19:30:00+00:00,5,2,Auburn,SEC,245,Texas A&M,away,False,False,True,STATUS_FINAL,10.0,16.0,False,108449,Kyle Field
+2025,401752731,2025-10-11 23:30:00+00:00,7,2,Auburn,SEC,61,Georgia,home,False,False,True,STATUS_FINAL,10.0,20.0,False,88043,Jordan-Hare Stadium
+2025,401752740,2025-10-18 23:45:00+00:00,8,2,Auburn,SEC,142,Missouri,home,False,False,True,STATUS_FINAL,17.0,23.0,False,88043,Jordan-Hare Stadium
+2025,401752754,2025-11-01 23:30:00+00:00,10,2,Auburn,SEC,96,Kentucky,home,False,False,True,STATUS_FINAL,3.0,10.0,False,88043,Jordan-Hare Stadium
+2025,401752764,2025-11-08 21:00:00+00:00,11,2,Auburn,SEC,238,Vanderbilt,away,False,False,True,STATUS_FINAL,38.0,45.0,False,35000,FirstBank Stadium
+2025,401752774,2025-11-22 19:00:00+00:00,13,2,Auburn,SEC,2382,Mercer,home,False,False,True,STATUS_FINAL,62.0,17.0,True,88043,Jordan-Hare Stadium
+2025,401756851,2025-08-31 00:00:00+00:00,1,252,BYU,Big 12,2502,Portland State,home,False,False,True,STATUS_FINAL,69.0,0.0,True,64494,LaVell Edwards Stadium
+2025,401754526,2025-09-07 02:15:00+00:00,2,252,BYU,Big 12,24,Stanford,home,False,False,True,STATUS_FINAL,27.0,3.0,True,64692,LaVell Edwards Stadium
+2025,401756898,2025-09-20 23:30:00+00:00,4,252,BYU,Big 12,151,East Carolina,away,False,False,True,STATUS_FINAL,34.0,13.0,True,47213,Dowdy-Ficklen Stadium
+2025,401756903,2025-09-28 02:15:00+00:00,5,252,BYU,Big 12,38,Colorado,away,False,False,True,STATUS_FINAL,24.0,21.0,True,52265,Folsom Field
+2025,401756909,2025-10-04 02:30:00+00:00,6,252,BYU,Big 12,277,West Virginia,home,False,False,True,STATUS_FINAL,38.0,24.0,True,63917,LaVell Edwards Stadium
+2025,401756924,2025-10-19 00:00:00+00:00,8,252,BYU,Big 12,254,Utah,home,False,False,True,STATUS_FINAL,24.0,21.0,True,64794,LaVell Edwards Stadium
+2025,401756931,2025-10-25 19:30:00+00:00,9,252,BYU,Big 12,66,Iowa State,away,False,False,True,STATUS_FINAL,41.0,27.0,True,61500,Jack Trice Stadium
+2025,401756945,2025-11-08 17:00:00+00:00,11,252,BYU,Big 12,2641,Texas Tech,away,False,False,True,STATUS_FINAL,7.0,29.0,False,60229,Galaxy Stadium
+2025,401756950,2025-11-16 03:15:00+00:00,12,252,BYU,Big 12,2628,TCU,home,False,False,True,STATUS_FINAL,44.0,13.0,True,64447,LaVell Edwards Stadium
+2025,401756955,2025-11-23 01:00:00+00:00,13,252,BYU,Big 12,2132,Cincinnati,away,False,False,True,STATUS_FINAL,26.0,14.0,True,38034,Nippert Stadium
+2025,401756963,2025-11-29 18:00:00+00:00,14,252,BYU,Big 12,2116,UCF,home,False,False,True,STATUS_FINAL,41.0,21.0,True,60389,LaVell Edwards Stadium
+2025,401777327,2025-12-06 17:00:00+00:00,15,252,BYU,Big 12,2641,Texas Tech,away,True,False,True,STATUS_FINAL,7.0,34.0,False,85519,AT&T Stadium
+2025,401752801,2025-08-30 16:00:00+00:00,1,2050,Ball State,MAC,2509,Purdue,away,False,False,True,STATUS_FINAL,0.0,31.0,False,53994,Ross-Ade Stadium
+2025,401762818,2025-09-13 18:00:00+00:00,3,2050,Ball State,MAC,160,New Hampshire,home,False,False,True,STATUS_FINAL,34.0,29.0,True,10512,Scheumann Stadium
+2025,401757169,2025-09-20 19:30:00+00:00,4,2050,Ball State,MAC,41,UConn,away,False,False,True,STATUS_FINAL,25.0,31.0,False,25025,Pratt & Whitney Stadium
+2025,401762830,2025-10-04 16:00:00+00:00,6,2050,Ball State,MAC,195,Ohio,home,False,False,True,STATUS_FINAL,20.0,14.0,True,8427,Scheumann Stadium
+2025,401762834,2025-10-11 19:30:00+00:00,7,2050,Ball State,MAC,2711,Western Michigan,away,False,False,True,STATUS_FINAL,0.0,42.0,False,20032,Waldo Stadium
+2025,401762845,2025-10-25 19:30:00+00:00,9,2050,Ball State,MAC,2459,Northern Illinois,away,False,False,True,STATUS_FINAL,7.0,21.0,False,10124,Huskie Stadium
+2025,401762853,2025-11-06 00:00:00+00:00,11,2050,Ball State,MAC,2309,Kent State,home,False,False,True,STATUS_FINAL,17.0,13.0,True,5225,Scheumann Stadium
+2025,401762861,2025-11-15 17:00:00+00:00,12,2050,Ball State,MAC,2199,Eastern Michigan,home,False,False,True,STATUS_FINAL,9.0,24.0,False,8430,Scheumann Stadium
+2025,401762867,2025-11-22 19:00:00+00:00,13,2050,Ball State,MAC,2649,Toledo,away,False,False,True,STATUS_FINAL,9.0,38.0,False,15127,Glass Bowl
+2025,401762875,2025-11-29 17:00:00+00:00,14,2050,Ball State,MAC,193,Miami (OH),away,False,False,True,STATUS_FINAL,24.0,45.0,False,11137,Yager Stadium
+2025,401754525,2025-09-06 16:00:00+00:00,2,239,Baylor,Big 12,2567,SMU,away,False,False,True,STATUS_FINAL,48.0,45.0,True,34852,Gerald J. Ford Stadium
+2025,401756891,2025-09-13 16:00:00+00:00,3,239,Baylor,Big 12,2535,Samford,home,False,False,True,STATUS_FINAL,42.0,7.0,True,41215,McLane Stadium
+2025,401756907,2025-09-27 19:30:00+00:00,5,239,Baylor,Big 12,197,Oklahoma State,away,False,False,True,STATUS_FINAL,45.0,27.0,True,45689,Boone Pickens Stadium
+2025,401756911,2025-10-04 16:00:00+00:00,6,239,Baylor,Big 12,2306,Kansas State,home,False,False,True,STATUS_FINAL,35.0,34.0,True,35596,McLane Stadium
+2025,401756927,2025-10-18 16:00:00+00:00,8,239,Baylor,Big 12,2628,TCU,away,False,False,True,STATUS_FINAL,36.0,42.0,False,43868,Amon G. Carter Stadium
+2025,401756930,2025-10-25 20:00:00+00:00,9,239,Baylor,Big 12,2132,Cincinnati,away,False,False,True,STATUS_FINAL,20.0,41.0,False,38007,Nippert Stadium
+2025,401756936,2025-11-01 16:00:00+00:00,10,239,Baylor,Big 12,2116,UCF,home,False,False,True,STATUS_FINAL,30.0,3.0,True,40212,McLane Stadium
+2025,401756949,2025-11-16 00:00:00+00:00,12,239,Baylor,Big 12,254,Utah,home,False,False,True,STATUS_FINAL,28.0,55.0,False,38186,McLane Stadium
+2025,401756962,2025-11-29 17:00:00+00:00,14,239,Baylor,Big 12,248,Houston,home,False,False,True,STATUS_FINAL,24.0,31.0,False,34720,McLane Stadium
+2025,401762522,2025-08-28 21:30:00+00:00,1,68,Boise State,Mountain West,58,South Florida,away,False,False,True,STATUS_FINAL,7.0,34.0,False,34707,Raymond James Stadium
+2025,401760363,2025-09-06 01:00:00+00:00,2,68,Boise State,Mountain West,331,Eastern Washington,home,False,False,True,STATUS_FINAL,51.0,14.0,True,32887,Albertsons Stadium
+2025,401757165,2025-10-04 19:30:00+00:00,6,68,Boise State,Mountain West,87,Notre Dame,away,False,False,True,STATUS_FINAL,7.0,28.0,False,77622,Notre Dame Stadium
+2025,401760387,2025-10-12 01:45:00+00:00,7,68,Boise State,Mountain West,167,New Mexico,home,False,False,True,STATUS_FINAL,41.0,25.0,True,32982,Albertsons Stadium
+2025,401760393,2025-10-18 19:30:00+00:00,8,68,Boise State,Mountain West,2439,UNLV,home,False,False,True,STATUS_FINAL,56.0,31.0,True,32927,Albertsons Stadium
+2025,401760397,2025-10-25 02:00:00+00:00,9,68,Boise State,Mountain West,2440,Nevada,away,False,False,True,STATUS_FINAL,24.0,3.0,True,18029,Mackay Stadium
+2025,401760402,2025-11-01 19:30:00+00:00,10,68,Boise State,Mountain West,278,Fresno State,home,False,False,True,STATUS_FINAL,7.0,30.0,False,32826,Albertsons Stadium
+2025,401760410,2025-11-16 03:30:00+00:00,12,68,Boise State,Mountain West,21,San Diego State,away,False,False,True,STATUS_FINAL,7.0,17.0,False,29201,Snapdragon Stadium
+2025,401760416,2025-11-23 00:00:00+00:00,13,68,Boise State,Mountain West,36,Colorado State,home,False,False,True,STATUS_FINAL,49.0,21.0,True,32819,Albertsons Stadium
+2025,401760422,2025-11-28 21:00:00+00:00,14,68,Boise State,Mountain West,328,Utah State,away,False,False,True,STATUS_FINAL,25.0,24.0,True,21115,Maverik Stadium
+2025,401777326,2025-12-06 01:00:00+00:00,15,68,Boise State,Mountain West,2439,UNLV,home,False,False,True,STATUS_FINAL,38.0,21.0,True,27152,Albertsons Stadium
+2025,401754518,2025-08-30 18:00:00+00:00,1,103,Boston College,ACC,2230,Fordham,home,False,False,True,STATUS_FINAL,66.0,10.0,True,41221,"Alumni Stadium (Chestnut Hill, MA)"
+2025,401752816,2025-09-06 23:30:00+00:00,2,103,Boston College,ACC,127,Michigan State,away,False,False,True,STATUS_FINAL,40.0,42.0,False,70510,Spartan Stadium
+2025,401754533,2025-09-14 02:30:00+00:00,3,103,Boston College,ACC,24,Stanford,away,False,False,True,STATUS_FINAL,20.0,30.0,False,22162,Stanford Stadium
+2025,401754544,2025-09-27 19:30:00+00:00,5,103,Boston College,ACC,25,California,home,False,False,True,STATUS_FINAL,24.0,28.0,False,44500,"Alumni Stadium (Chestnut Hill, MA)"
+2025,401754550,2025-10-04 16:00:00+00:00,6,103,Boston College,ACC,221,Pittsburgh,away,False,False,True,STATUS_FINAL,7.0,48.0,False,51101,Acrisure Stadium
+2025,401754558,2025-10-11 23:30:00+00:00,7,103,Boston College,ACC,228,Clemson,home,False,False,True,STATUS_FINAL,10.0,41.0,False,42265,"Alumni Stadium (Chestnut Hill, MA)"
+2025,401754569,2025-10-18 16:00:00+00:00,8,103,Boston College,ACC,41,UConn,home,False,False,True,STATUS_FINAL,23.0,38.0,False,38917,"Alumni Stadium (Chestnut Hill, MA)"
+2025,401754570,2025-10-25 23:30:00+00:00,9,103,Boston College,ACC,97,Louisville,away,False,False,True,STATUS_FINAL,24.0,38.0,False,50320,L&N Federal Credit Union Stadium
+2025,401754583,2025-11-01 19:30:00+00:00,10,103,Boston College,ACC,87,Notre Dame,home,False,False,True,STATUS_FINAL,10.0,25.0,False,44500,"Alumni Stadium (Chestnut Hill, MA)"
+2025,401754584,2025-11-08 17:00:00+00:00,11,103,Boston College,ACC,2567,SMU,home,False,False,True,STATUS_FINAL,13.0,45.0,False,38345,"Alumni Stadium (Chestnut Hill, MA)"
+2025,401754592,2025-11-15 20:30:00+00:00,12,103,Boston College,ACC,59,Georgia Tech,home,False,False,True,STATUS_FINAL,34.0,36.0,False,37879,"Alumni Stadium (Chestnut Hill, MA)"
+2025,401754608,2025-11-29 20:00:00+00:00,14,103,Boston College,ACC,183,Syracuse,away,False,False,True,STATUS_FINAL,34.0,12.0,True,32457,JMA Wireless Dome
+2025,401762790,2025-08-28 22:00:00+00:00,1,189,Bowling Green,MAC,322,Lafayette,home,False,False,True,STATUS_FINAL,26.0,7.0,True,19328,Doyt L. Perry Stadium
+2025,401756880,2025-09-06 19:30:00+00:00,2,189,Bowling Green,MAC,2132,Cincinnati,away,False,False,True,STATUS_FINAL,20.0,34.0,False,35421,Nippert Stadium
+2025,401757256,2025-09-13 21:00:00+00:00,3,189,Bowling Green,MAC,2335,Liberty,home,False,False,True,STATUS_FINAL,23.0,13.0,True,23159,Doyt L. Perry Stadium
+2025,401754642,2025-09-20 16:00:00+00:00,4,189,Bowling Green,MAC,97,Louisville,away,False,False,True,STATUS_FINAL,17.0,40.0,False,49482,L&N Federal Credit Union Stadium
+2025,401762825,2025-09-27 16:00:00+00:00,5,189,Bowling Green,MAC,195,Ohio,away,False,False,True,STATUS_FINAL,20.0,35.0,False,20027,Peden Stadium
+2025,401762835,2025-10-11 16:00:00+00:00,7,189,Bowling Green,MAC,2649,Toledo,home,False,False,True,STATUS_FINAL,28.0,23.0,True,24000,Doyt L. Perry Stadium
+2025,401762839,2025-10-18 16:00:00+00:00,8,189,Bowling Green,MAC,2117,Central Michigan,home,False,False,True,STATUS_FINAL,6.0,27.0,False,23105,Doyt L. Perry Stadium
+2025,401762846,2025-10-25 16:00:00+00:00,9,189,Bowling Green,MAC,2309,Kent State,away,False,False,True,STATUS_FINAL,21.0,24.0,False,9260,Zoeller Field at Dix Stadium
+2025,401762849,2025-11-01 16:00:00+00:00,10,189,Bowling Green,MAC,2084,Buffalo,home,False,False,True,STATUS_FINAL,3.0,28.0,False,11876,Doyt L. Perry Stadium
+2025,401762855,2025-11-08 18:00:00+00:00,11,189,Bowling Green,MAC,2199,Eastern Michigan,away,False,False,True,STATUS_FINAL,21.0,27.0,False,11889,Rynearson Stadium
+2025,401762868,2025-11-25 21:30:00+00:00,14,189,Bowling Green,MAC,113,Massachusetts,away,False,False,True,STATUS_FINAL,45.0,14.0,True,6043,Warren McGuirk Alumni Stadium
+2025,401752793,2025-08-29 00:00:00+00:00,1,2084,Buffalo,MAC,135,Minnesota,away,False,False,True,STATUS_FINAL,10.0,23.0,False,47774,Huntington Bank Stadium
+2025,401762794,2025-09-06 19:30:00+00:00,2,2084,Buffalo,MAC,2598,Saint Francis,home,False,False,True,STATUS_FINAL,45.0,6.0,True,15740,Broadview Stadium
+2025,401762817,2025-09-13 16:00:00+00:00,3,2084,Buffalo,MAC,2309,Kent State,away,False,False,True,STATUS_FINAL,31.0,28.0,True,11833,Zoeller Field at Dix Stadium
+2025,401761613,2025-09-20 19:30:00+00:00,4,2084,Buffalo,MAC,2653,Troy,home,False,False,True,STATUS_FINAL,17.0,21.0,False,12068,Broadview Stadium
+2025,401757170,2025-09-27 19:30:00+00:00,5,2084,Buffalo,MAC,41,UConn,home,False,False,True,STATUS_FINAL,17.0,20.0,False,12717,Broadview Stadium
+2025,401762831,2025-10-04 19:30:00+00:00,6,2084,Buffalo,MAC,2199,Eastern Michigan,home,False,False,True,STATUS_FINAL,31.0,30.0,True,17300,Broadview Stadium
+2025,401762840,2025-10-18 18:30:00+00:00,8,2084,Buffalo,MAC,113,Massachusetts,away,False,False,True,STATUS_FINAL,28.0,21.0,True,15239,Warren McGuirk Alumni Stadium
+2025,401762858,2025-11-13 00:00:00+00:00,12,2084,Buffalo,MAC,2117,Central Michigan,away,False,False,True,STATUS_FINAL,19.0,38.0,False,6833,Kelly/Shorts Stadium
+2025,401762865,2025-11-20 00:00:00+00:00,13,2084,Buffalo,MAC,193,Miami (OH),home,False,False,True,STATUS_FINAL,20.0,37.0,False,15246,Broadview Stadium
+2025,401762870,2025-11-28 17:00:00+00:00,14,2084,Buffalo,MAC,195,Ohio,home,False,False,True,STATUS_FINAL,26.0,31.0,False,11096,Broadview Stadium
+2025,401752936,2025-08-31 02:30:00+00:00,1,25,California,ACC,204,Oregon State,away,False,False,True,STATUS_FINAL,34.0,15.0,True,31630,Reser Stadium
+2025,401754530,2025-09-06 22:00:00+00:00,2,25,California,ACC,2640,Texas Southern,home,False,False,True,STATUS_FINAL,35.0,3.0,True,35898,California Memorial Stadium
+2025,401752840,2025-09-14 02:30:00+00:00,3,25,California,ACC,135,Minnesota,home,False,False,True,STATUS_FINAL,27.0,14.0,True,38556,California Memorial Stadium
+2025,401754540,2025-09-21 02:30:00+00:00,4,25,California,ACC,21,San Diego State,away,False,False,True,STATUS_FINAL,0.0,34.0,False,31369,Snapdragon Stadium
+2025,401754551,2025-10-05 02:30:00+00:00,6,25,California,ACC,150,Duke,home,False,False,True,STATUS_FINAL,21.0,45.0,False,42240,California Memorial Stadium
+2025,401754371,2025-10-18 02:30:00+00:00,8,25,California,ACC,153,North Carolina,home,False,False,True,STATUS_FINAL,21.0,18.0,True,33401,California Memorial Stadium
+2025,401754372,2025-10-24 23:30:00+00:00,9,25,California,ACC,259,Virginia Tech,away,False,False,True,STATUS_FINAL,34.0,42.0,False,53837,Lane Stadium
+2025,401754576,2025-11-01 19:45:00+00:00,10,25,California,ACC,258,Virginia,home,False,False,True,STATUS_FINAL,21.0,31.0,False,30893,California Memorial Stadium
+2025,401754585,2025-11-09 00:00:00+00:00,11,25,California,ACC,97,Louisville,away,False,False,True,STATUS_FINAL,29.0,26.0,True,51381,L&N Federal Credit Union Stadium
+2025,401754599,2025-11-23 00:30:00+00:00,13,25,California,ACC,24,Stanford,away,False,False,True,STATUS_FINAL,10.0,31.0,False,50039,Stanford Stadium
+2025,401754609,2025-11-30 01:00:00+00:00,14,25,California,ACC,2567,SMU,home,False,False,True,STATUS_FINAL,38.0,35.0,True,28956,California Memorial Stadium
+2025,401760358,2025-08-30 02:30:00+00:00,1,2117,Central Michigan,MAC,23,San José State,away,False,False,True,STATUS_FINAL,16.0,14.0,True,14877,CEFCU Stadium
+2025,401754529,2025-09-06 16:00:00+00:00,2,2117,Central Michigan,MAC,221,Pittsburgh,away,False,False,True,STATUS_FINAL,17.0,45.0,False,48424,Acrisure Stadium
+2025,401752839,2025-09-13 16:00:00+00:00,3,2117,Central Michigan,MAC,130,Michigan,away,False,False,True,STATUS_FINAL,3.0,63.0,False,110740,Michigan Stadium
+2025,401762822,2025-09-20 17:00:00+00:00,4,2117,Central Michigan,MAC,2681,Wagner,home,False,False,True,STATUS_FINAL,49.0,10.0,True,18787,Kelly/Shorts Stadium
+2025,401762826,2025-09-27 17:00:00+00:00,5,2117,Central Michigan,MAC,2199,Eastern Michigan,home,False,False,True,STATUS_FINAL,24.0,13.0,True,28605,Kelly/Shorts Stadium
+2025,401762847,2025-10-25 19:30:00+00:00,9,2117,Central Michigan,MAC,113,Massachusetts,home,False,False,True,STATUS_FINAL,38.0,13.0,True,20489,Kelly/Shorts Stadium
+2025,401762850,2025-11-01 20:00:00+00:00,10,2117,Central Michigan,MAC,2711,Western Michigan,away,False,False,True,STATUS_FINAL,21.0,24.0,False,29299,Waldo Stadium
+2025,401762866,2025-11-20 00:00:00+00:00,13,2117,Central Michigan,MAC,2309,Kent State,away,False,False,True,STATUS_FINAL,28.0,16.0,True,8112,Zoeller Field at Dix Stadium
+2025,401762872,2025-11-29 17:00:00+00:00,14,2117,Central Michigan,MAC,2649,Toledo,home,False,False,True,STATUS_FINAL,3.0,21.0,False,6673,Kelly/Shorts Stadium
+2025,401754527,2025-09-06 23:00:00+00:00,2,2429,Charlotte,American,153,North Carolina,home,False,False,True,STATUS_FINAL,3.0,20.0,False,19233,Jerry Richardson Stadium
+2025,401762464,2025-09-13 22:00:00+00:00,3,2429,Charlotte,American,2405,Monmouth,home,False,False,True,STATUS_FINAL,42.0,35.0,True,15681,Jerry Richardson Stadium
+2025,401762468,2025-09-18 23:30:00+00:00,4,2429,Charlotte,American,242,Rice,home,False,False,True,STATUS_FINAL,17.0,28.0,False,13397,Jerry Richardson Stadium
+2025,401762475,2025-10-03 23:00:00+00:00,6,2429,Charlotte,American,58,South Florida,away,False,False,True,STATUS_FINAL,26.0,54.0,False,34577,Raymond James Stadium
+2025,401762489,2025-10-18 19:30:00+00:00,8,2429,Charlotte,American,218,Temple,home,False,False,True,STATUS_FINAL,14.0,49.0,False,13618,Jerry Richardson Stadium
+2025,401762492,2025-10-24 23:00:00+00:00,9,2429,Charlotte,American,249,North Texas,home,False,False,True,STATUS_FINAL,20.0,54.0,False,9626,Jerry Richardson Stadium
+2025,401762504,2025-11-08 20:00:00+00:00,11,2429,Charlotte,American,151,East Carolina,away,False,False,True,STATUS_FINAL,22.0,48.0,False,39096,Dowdy-Ficklen Stadium
+2025,401762507,2025-11-15 17:00:00+00:00,12,2429,Charlotte,American,2636,UTSA,home,False,False,True,STATUS_FINAL,7.0,28.0,False,9831,Jerry Richardson Stadium
+2025,401752776,2025-11-22 17:45:00+00:00,13,2429,Charlotte,American,61,Georgia,away,False,False,True,STATUS_FINAL,3.0,35.0,False,93033,Sanford Stadium
+2025,401762518,2025-11-30 00:30:00+00:00,14,2429,Charlotte,American,2655,Tulane,away,False,False,True,STATUS_FINAL,0.0,27.0,False,22245,Yulman Stadium
+2025,401752796,2025-08-29 01:00:00+00:00,1,2132,Cincinnati,Big 12,158,Nebraska,home,True,False,True,STATUS_FINAL,17.0,20.0,False,72884,Arrowhead Stadium
+2025,401756892,2025-09-13 19:30:00+00:00,3,2132,Cincinnati,Big 12,2466,Northwestern State,home,False,False,True,STATUS_FINAL,70.0,0.0,True,30014,Nippert Stadium
+2025,401756905,2025-09-27 16:00:00+00:00,5,2132,Cincinnati,Big 12,2305,Kansas,away,False,False,True,STATUS_FINAL,37.0,34.0,True,41525,David Booth Kansas Memorial Stadium
+2025,401756912,2025-10-04 16:00:00+00:00,6,2132,Cincinnati,Big 12,66,Iowa State,home,False,False,True,STATUS_FINAL,38.0,30.0,True,38007,Nippert Stadium
+2025,401756917,2025-10-11 16:00:00+00:00,7,2132,Cincinnati,Big 12,2116,UCF,home,False,False,True,STATUS_FINAL,20.0,11.0,True,35782,Nippert Stadium
+2025,401756926,2025-10-19 00:00:00+00:00,8,2132,Cincinnati,Big 12,197,Oklahoma State,away,False,False,True,STATUS_FINAL,49.0,17.0,True,46901,Boone Pickens Stadium
+2025,401756942,2025-11-02 02:15:00+00:00,10,2132,Cincinnati,Big 12,254,Utah,away,False,False,True,STATUS_FINAL,14.0,45.0,False,51672,Rice-Eccles Stadium
+2025,401756967,2025-11-29 20:30:00+00:00,14,2132,Cincinnati,Big 12,2628,TCU,away,False,False,True,STATUS_FINAL,23.0,45.0,False,37259,Amon G. Carter Stadium
+2025,401752671,2025-08-30 23:30:00+00:00,1,228,Clemson,ACC,99,LSU,home,False,False,True,STATUS_FINAL,10.0,17.0,False,81500,"Memorial Stadium (Clemson, SC)"
+2025,401754637,2025-09-06 19:30:00+00:00,2,228,Clemson,ACC,2653,Troy,home,False,False,True,STATUS_FINAL,27.0,16.0,True,77890,"Memorial Stadium (Clemson, SC)"
+2025,401754623,2025-09-13 16:00:00+00:00,3,228,Clemson,ACC,59,Georgia Tech,away,False,False,True,STATUS_FINAL,21.0,24.0,False,48059,Bobby Dodd Stadium
+2025,401754537,2025-09-20 16:00:00+00:00,4,228,Clemson,ACC,183,Syracuse,home,False,False,True,STATUS_FINAL,21.0,34.0,False,80225,"Memorial Stadium (Clemson, SC)"
+2025,401754552,2025-10-04 16:00:00+00:00,6,228,Clemson,ACC,153,North Carolina,away,False,False,True,STATUS_FINAL,38.0,10.0,True,50500,Kenan Stadium
+2025,401754565,2025-10-18 19:30:00+00:00,8,228,Clemson,ACC,2567,SMU,home,False,False,True,STATUS_FINAL,24.0,35.0,False,78669,"Memorial Stadium (Clemson, SC)"
+2025,401754577,2025-11-01 16:00:00+00:00,10,228,Clemson,ACC,150,Duke,home,False,False,True,STATUS_FINAL,45.0,46.0,False,75809,"Memorial Stadium (Clemson, SC)"
+2025,401754586,2025-11-09 00:00:00+00:00,11,228,Clemson,ACC,52,Florida State,home,False,False,True,STATUS_FINAL,24.0,10.0,True,81500,"Memorial Stadium (Clemson, SC)"
+2025,401754591,2025-11-15 00:30:00+00:00,12,228,Clemson,ACC,97,Louisville,away,False,False,True,STATUS_FINAL,20.0,19.0,True,51234,L&N Federal Credit Union Stadium
+2025,401754605,2025-11-22 21:30:00+00:00,13,228,Clemson,ACC,231,Furman,home,False,False,True,STATUS_FINAL,45.0,10.0,True,78403,"Memorial Stadium (Clemson, SC)"
+2025,401752790,2025-11-29 17:00:00+00:00,14,228,Clemson,ACC,2579,South Carolina,away,False,False,True,STATUS_FINAL,28.0,14.0,True,79827,Williams-Brice Stadium
+2025,401754616,2025-08-30 22:00:00+00:00,1,324,Coastal Carolina,Sun Belt,258,Virginia,away,False,False,True,STATUS_FINAL,7.0,48.0,False,46143,Scott Stadium
+2025,401761597,2025-09-06 23:30:00+00:00,2,324,Coastal Carolina,Sun Belt,2127,Charleston Southern,home,False,False,True,STATUS_FINAL,13.0,0.0,True,22217,Brooks Stadium (SC)
+2025,401761604,2025-09-13 23:30:00+00:00,3,324,Coastal Carolina,Sun Belt,151,East Carolina,home,False,False,True,STATUS_FINAL,0.0,38.0,False,21634,Brooks Stadium (SC)
+2025,401761611,2025-09-20 23:00:00+00:00,4,324,Coastal Carolina,Sun Belt,6,South Alabama,away,False,False,True,STATUS_FINAL,38.0,20.0,True,17050,Hancock Whitney Stadium
+2025,401761619,2025-10-04 22:00:00+00:00,6,324,Coastal Carolina,Sun Belt,295,Old Dominion,away,False,False,True,STATUS_FINAL,7.0,47.0,False,20895,S.B. Ballard Stadium
+2025,401761623,2025-10-11 23:00:00+00:00,7,324,Coastal Carolina,Sun Belt,2433,UL Monroe,home,False,False,True,STATUS_FINAL,23.0,8.0,True,15211,Brooks Stadium (SC)
+2025,401761640,2025-10-30 23:30:00+00:00,10,324,Coastal Carolina,Sun Belt,276,Marshall,home,False,False,True,STATUS_FINAL,44.0,27.0,True,17034,Brooks Stadium (SC)
+2025,401761645,2025-11-08 21:00:00+00:00,11,324,Coastal Carolina,Sun Belt,2247,Georgia State,home,False,False,True,STATUS_FINAL,40.0,27.0,True,18878,Brooks Stadium (SC)
+2025,401761650,2025-11-15 23:00:00+00:00,12,324,Coastal Carolina,Sun Belt,290,Georgia Southern,away,False,False,True,STATUS_FINAL,40.0,45.0,False,22738,Allen E. Paulson Stadium
+2025,401752779,2025-11-22 21:15:00+00:00,13,324,Coastal Carolina,Sun Belt,2579,South Carolina,away,False,False,True,STATUS_FINAL,7.0,51.0,False,78452,Williams-Brice Stadium
+2025,401761662,2025-11-29 20:45:00+00:00,14,324,Coastal Carolina,Sun Belt,256,James Madison,home,False,False,True,STATUS_FINAL,10.0,59.0,False,15137,Brooks Stadium (SC)
+2025,401754375,2025-08-30 00:00:00+00:00,1,38,Colorado,Big 12,59,Georgia Tech,home,False,False,True,STATUS_FINAL,20.0,27.0,False,52868,Folsom Field
+2025,401756881,2025-09-06 19:30:00+00:00,2,38,Colorado,Big 12,48,Delaware,home,False,False,True,STATUS_FINAL,31.0,7.0,True,50341,Folsom Field
+2025,401756893,2025-09-12 23:30:00+00:00,3,38,Colorado,Big 12,248,Houston,away,False,False,True,STATUS_FINAL,20.0,36.0,False,37899,TDECU Stadium
+2025,401756897,2025-09-21 02:25:00+00:00,4,38,Colorado,Big 12,2751,Wyoming,home,False,False,True,STATUS_FINAL,37.0,20.0,True,53442,Folsom Field
+2025,401756914,2025-10-04 23:30:00+00:00,6,38,Colorado,Big 12,2628,TCU,away,False,False,True,STATUS_FINAL,21.0,35.0,False,43160,Amon G. Carter Stadium
+2025,401756918,2025-10-11 19:30:00+00:00,7,38,Colorado,Big 12,66,Iowa State,home,False,False,True,STATUS_FINAL,24.0,17.0,True,52698,Folsom Field
+2025,401756934,2025-10-26 02:25:00+00:00,9,38,Colorado,Big 12,254,Utah,away,False,False,True,STATUS_FINAL,7.0,53.0,False,51949,Rice-Eccles Stadium
+2025,401756947,2025-11-08 17:00:00+00:00,11,38,Colorado,Big 12,277,West Virginia,away,False,False,True,STATUS_FINAL,22.0,29.0,False,55510,Milan Puskar Stadium
+2025,401756965,2025-11-29 17:00:00+00:00,14,38,Colorado,Big 12,2306,Kansas State,away,False,False,True,STATUS_FINAL,14.0,24.0,False,49549,Bill Snyder Family Stadium
+2025,401752805,2025-08-31 03:00:00+00:00,1,36,Colorado State,Mountain West,264,Washington,away,False,False,True,STATUS_FINAL,21.0,38.0,False,67778,Husky Stadium
+2025,401760364,2025-09-06 23:00:00+00:00,2,36,Colorado State,Mountain West,2458,Northern Colorado,home,False,False,True,STATUS_FINAL,21.0,17.0,True,37023,Canvas Stadium
+2025,401760373,2025-09-21 01:30:00+00:00,4,36,Colorado State,Mountain West,2636,UTSA,home,False,False,True,STATUS_FINAL,16.0,17.0,False,32061,Canvas Stadium
+2025,401752950,2025-09-27 23:30:00+00:00,5,36,Colorado State,Mountain West,265,Washington State,home,False,False,True,STATUS_FINAL,3.0,20.0,False,32087,Canvas Stadium
+2025,401760382,2025-10-04 02:30:00+00:00,6,36,Colorado State,Mountain West,21,San Diego State,away,False,False,True,STATUS_FINAL,24.0,45.0,False,29019,Snapdragon Stadium
+2025,401760388,2025-10-11 01:00:00+00:00,7,36,Colorado State,Mountain West,278,Fresno State,home,False,False,True,STATUS_FINAL,49.0,21.0,True,27874,Canvas Stadium
+2025,401760394,2025-10-18 23:00:00+00:00,8,36,Colorado State,Mountain West,62,Hawai'i,home,False,False,True,STATUS_FINAL,19.0,31.0,False,40416,Canvas Stadium
+2025,401760398,2025-10-25 23:30:00+00:00,9,36,Colorado State,Mountain West,2751,Wyoming,away,False,False,True,STATUS_FINAL,0.0,28.0,False,25609,War Memorial Stadium
+2025,401760407,2025-11-09 02:30:00+00:00,11,36,Colorado State,Mountain West,2439,UNLV,home,False,False,True,STATUS_FINAL,10.0,42.0,False,27970,Canvas Stadium
+2025,401760411,2025-11-15 20:00:00+00:00,12,36,Colorado State,Mountain West,167,New Mexico,away,False,False,True,STATUS_FINAL,17.0,20.0,False,27526,University Stadium (NM)
+2025,401757219,2025-08-28 23:00:00+00:00,1,48,Delaware,Conference USA,2169,Delaware State,home,False,False,True,STATUS_FINAL,35.0,17.0,True,17895,Delaware Stadium
+2025,401757168,2025-09-13 19:00:00+00:00,3,48,Delaware,Conference USA,41,UConn,home,False,False,True,STATUS_FINAL,44.0,41.0,True,17862,Delaware Stadium
+2025,401757259,2025-09-20 22:00:00+00:00,4,48,Delaware,Conference USA,2229,Florida International,away,False,False,True,STATUS_FINAL,38.0,16.0,True,11705,Pitbull Stadium
+2025,401757276,2025-10-03 23:00:00+00:00,6,48,Delaware,Conference USA,98,Western Kentucky,home,False,False,True,STATUS_FINAL,24.0,27.0,False,19176,Delaware Stadium
+2025,401757283,2025-10-15 23:00:00+00:00,8,48,Delaware,Conference USA,55,Jacksonville State,away,False,False,True,STATUS_FINAL,25.0,38.0,False,16884,AmFirst Stadium
+2025,401757287,2025-10-22 23:30:00+00:00,9,48,Delaware,Conference USA,2393,Middle Tennessee,home,False,False,True,STATUS_FINAL,31.0,28.0,True,14102,Delaware Stadium
+2025,401757293,2025-11-01 19:30:00+00:00,10,48,Delaware,Conference USA,2335,Liberty,away,False,False,True,STATUS_FINAL,30.0,59.0,False,18455,Williams Stadium (VA)
+2025,401757295,2025-11-08 20:00:00+00:00,11,48,Delaware,Conference USA,2348,Louisiana Tech,home,False,False,True,STATUS_FINAL,25.0,24.0,True,17912,Delaware Stadium
+2025,401757300,2025-11-16 00:00:00+00:00,12,48,Delaware,Conference USA,2534,Sam Houston,away,False,False,True,STATUS_FINAL,23.0,26.0,False,3713,Shell Energy Stadium
+2025,401754606,2025-11-22 17:00:00+00:00,13,48,Delaware,Conference USA,154,Wake Forest,away,False,False,True,STATUS_FINAL,14.0,52.0,False,26950,Allegacy Federal Credit Union Stadium
+2025,401757310,2025-11-29 18:00:00+00:00,14,48,Delaware,Conference USA,2638,UTEP,home,False,False,True,STATUS_FINAL,61.0,31.0,True,13560,Delaware Stadium
+2025,401754517,2025-08-28 23:30:00+00:00,1,150,Duke,ACC,2210,Elon,home,False,False,True,STATUS_FINAL,45.0,17.0,True,15677,Wallace Wade Stadium
+2025,401752825,2025-09-06 16:00:00+00:00,2,150,Duke,ACC,356,Illinois,home,False,False,True,STATUS_FINAL,19.0,45.0,False,23893,Wallace Wade Stadium
+2025,401754534,2025-09-14 00:00:00+00:00,3,150,Duke,ACC,2655,Tulane,away,False,False,True,STATUS_FINAL,27.0,34.0,False,30000,Yulman Stadium
+2025,401754538,2025-09-20 20:00:00+00:00,4,150,Duke,ACC,152,NC State,home,False,False,True,STATUS_FINAL,45.0,33.0,True,30022,Wallace Wade Stadium
+2025,401754545,2025-09-27 16:00:00+00:00,5,150,Duke,ACC,183,Syracuse,away,False,False,True,STATUS_FINAL,38.0,3.0,True,44451,JMA Wireless Dome
+2025,401754566,2025-10-18 16:00:00+00:00,8,150,Duke,ACC,59,Georgia Tech,home,False,False,True,STATUS_FINAL,18.0,27.0,False,27846,Wallace Wade Stadium
+2025,401754590,2025-11-08 20:30:00+00:00,11,150,Duke,ACC,41,UConn,away,False,False,True,STATUS_FINAL,34.0,37.0,False,38106,Pratt & Whitney Stadium
+2025,401754593,2025-11-15 20:35:00+00:00,12,150,Duke,ACC,258,Virginia,home,False,False,True,STATUS_FINAL,17.0,34.0,False,27215,Wallace Wade Stadium
+2025,401754600,2025-11-22 20:30:00+00:00,13,150,Duke,ACC,153,North Carolina,away,False,False,True,STATUS_FINAL,32.0,25.0,True,50500,Kenan Stadium
+2025,401754610,2025-11-29 20:30:00+00:00,14,150,Duke,ACC,154,Wake Forest,home,False,False,True,STATUS_FINAL,49.0,32.0,True,21045,Wallace Wade Stadium
+2025,401777328,2025-12-07 01:00:00+00:00,15,150,Duke,ACC,258,Virginia,away,True,False,True,STATUS_FINAL,27.0,20.0,True,41672,Bank of America Stadium
+2025,401754373,2025-08-28 23:00:00+00:00,1,151,East Carolina,American,152,NC State,away,False,False,True,STATUS_FINAL,17.0,24.0,False,56919,Carter-Finley Stadium
+2025,401762459,2025-09-06 22:00:00+00:00,2,151,East Carolina,American,2097,Campbell,home,False,False,True,STATUS_FINAL,56.0,3.0,True,35120,Dowdy-Ficklen Stadium
+2025,401762480,2025-10-09 23:30:00+00:00,7,151,East Carolina,American,2655,Tulane,away,False,False,True,STATUS_FINAL,19.0,26.0,False,20035,Yulman Stadium
+2025,401762486,2025-10-16 23:30:00+00:00,8,151,East Carolina,American,202,Tulsa,home,False,False,True,STATUS_FINAL,41.0,27.0,True,31307,Dowdy-Ficklen Stadium
+2025,401762498,2025-11-01 18:00:00+00:00,10,151,East Carolina,American,218,Temple,away,False,False,True,STATUS_FINAL,45.0,14.0,True,13168,Lincoln Financial Field
+2025,401762508,2025-11-15 21:00:00+00:00,12,151,East Carolina,American,235,Memphis,home,False,False,True,STATUS_FINAL,31.0,27.0,True,37348,Dowdy-Ficklen Stadium
+2025,401762513,2025-11-22 20:30:00+00:00,13,151,East Carolina,American,2636,UTSA,away,False,False,True,STATUS_FINAL,24.0,58.0,False,18573,Alamodome
+2025,401762519,2025-11-29 17:00:00+00:00,14,151,East Carolina,American,2226,Florida Atlantic,away,False,False,True,STATUS_FINAL,42.0,3.0,True,14712,Flagler Credit Union Stadium
+2025,401761594,2025-08-31 00:00:00+00:00,1,2199,Eastern Michigan,MAC,326,Texas State,away,False,False,True,STATUS_FINAL,27.0,52.0,False,21082,UFCU Stadium
+2025,401762795,2025-09-06 23:00:00+00:00,2,2199,Eastern Michigan,MAC,2341,Long Island University,home,False,False,True,STATUS_FINAL,23.0,28.0,False,15313,Rynearson Stadium
+2025,401752698,2025-09-13 23:30:00+00:00,3,2199,Eastern Michigan,MAC,96,Kentucky,away,False,False,True,STATUS_FINAL,23.0,48.0,False,58489,Kroger Field
+2025,401761610,2025-09-20 19:30:00+00:00,4,2199,Eastern Michigan,MAC,309,Louisiana,home,False,False,True,STATUS_FINAL,34.0,31.0,True,18371,Rynearson Stadium
+2025,401762836,2025-10-11 17:00:00+00:00,7,2199,Eastern Michigan,MAC,2459,Northern Illinois,home,False,False,True,STATUS_FINAL,16.0,10.0,True,15676,Rynearson Stadium
+2025,401762841,2025-10-18 16:00:00+00:00,8,2199,Eastern Michigan,MAC,193,Miami (OH),away,False,False,True,STATUS_FINAL,30.0,44.0,False,6832,Yager Stadium
+2025,401762848,2025-10-25 16:00:00+00:00,9,2199,Eastern Michigan,MAC,195,Ohio,home,False,False,True,STATUS_FINAL,21.0,28.0,False,15985,Rynearson Stadium
+2025,401762869,2025-11-26 00:30:00+00:00,14,2199,Eastern Michigan,MAC,2711,Western Michigan,home,False,False,True,STATUS_FINAL,21.0,31.0,False,11818,Rynearson Stadium
+2025,401752668,2025-08-30 23:00:00+00:00,1,57,Florida,SEC,2341,Long Island University,home,False,False,True,STATUS_FINAL,55.0,0.0,True,89451,Ben Hill Griffin Stadium
+2025,401752684,2025-09-06 20:15:00+00:00,2,57,Florida,SEC,58,South Florida,home,False,False,True,STATUS_FINAL,16.0,18.0,False,89909,Ben Hill Griffin Stadium
+2025,401752699,2025-09-13 23:30:00+00:00,3,57,Florida,SEC,99,LSU,away,False,False,True,STATUS_FINAL,10.0,20.0,False,102158,Tiger Stadium (LA)
+2025,401752709,2025-09-20 23:30:00+00:00,4,57,Florida,SEC,2390,Miami,away,False,False,True,STATUS_FINAL,7.0,26.0,False,66713,Hard Rock Stadium
+2025,401752727,2025-10-04 19:30:00+00:00,6,57,Florida,SEC,251,Texas,home,False,False,True,STATUS_FINAL,29.0,21.0,True,90714,Ben Hill Griffin Stadium
+2025,401752737,2025-10-11 23:00:00+00:00,7,57,Florida,SEC,245,Texas A&M,away,False,False,True,STATUS_FINAL,17.0,34.0,False,105086,Kyle Field
+2025,401752741,2025-10-18 20:15:00+00:00,8,57,Florida,SEC,344,Mississippi State,home,False,False,True,STATUS_FINAL,23.0,21.0,True,90203,Ben Hill Griffin Stadium
+2025,401752755,2025-11-01 19:30:00+00:00,10,57,Florida,SEC,61,Georgia,home,True,False,True,STATUS_FINAL,20.0,24.0,False,76131,EverBank Stadium
+2025,401752760,2025-11-09 00:30:00+00:00,11,57,Florida,SEC,96,Kentucky,away,False,False,True,STATUS_FINAL,7.0,38.0,False,56388,Kroger Field
+2025,401752769,2025-11-16 00:00:00+00:00,12,57,Florida,SEC,145,Ole Miss,away,False,False,True,STATUS_FINAL,24.0,34.0,False,68138,Vaught-Hemingway Stadium
+2025,401752775,2025-11-23 00:30:00+00:00,13,57,Florida,SEC,2633,Tennessee,home,False,False,True,STATUS_FINAL,11.0,31.0,False,90465,Ben Hill Griffin Stadium
+2025,401752785,2025-11-29 21:30:00+00:00,14,57,Florida,SEC,52,Florida State,home,False,False,True,STATUS_FINAL,40.0,21.0,True,90007,Ben Hill Griffin Stadium
+2025,401752797,2025-08-30 16:00:00+00:00,1,2226,Florida Atlantic,American,120,Maryland,away,False,False,True,STATUS_FINAL,7.0,39.0,False,35067,SECU Stadium
+2025,401762460,2025-09-06 22:00:00+00:00,2,2226,Florida Atlantic,American,50,Florida A&M,home,False,False,True,STATUS_FINAL,56.0,14.0,True,21029,Flagler Credit Union Stadium
+2025,401757233,2025-09-14 00:30:00+00:00,3,2226,Florida Atlantic,American,2229,Florida International,away,False,False,True,STATUS_FINAL,28.0,38.0,False,17638,Pitbull Stadium
+2025,401762472,2025-09-27 23:00:00+00:00,5,2226,Florida Atlantic,American,235,Memphis,home,False,False,True,STATUS_FINAL,26.0,55.0,False,17733,Flagler Credit Union Stadium
+2025,401762477,2025-10-04 23:00:00+00:00,6,2226,Florida Atlantic,American,242,Rice,away,False,False,True,STATUS_FINAL,27.0,21.0,True,22999,Rice Stadium
+2025,401762482,2025-10-11 22:00:00+00:00,7,2226,Florida Atlantic,American,5,UAB,home,False,False,True,STATUS_FINAL,53.0,33.0,True,20052,Flagler Credit Union Stadium
+2025,401762490,2025-10-18 23:30:00+00:00,8,2226,Florida Atlantic,American,58,South Florida,away,False,False,True,STATUS_FINAL,13.0,48.0,False,45169,Raymond James Stadium
+2025,401762493,2025-10-25 19:30:00+00:00,9,2226,Florida Atlantic,American,2426,Navy,away,False,False,True,STATUS_FINAL,32.0,42.0,False,32175,Navy-Marine Corps Memorial Stadium
+2025,401762505,2025-11-08 20:00:00+00:00,11,2226,Florida Atlantic,American,202,Tulsa,home,False,False,True,STATUS_FINAL,40.0,21.0,True,16170,Flagler Credit Union Stadium
+2025,401762509,2025-11-15 21:00:00+00:00,12,2226,Florida Atlantic,American,2655,Tulane,away,False,False,True,STATUS_FINAL,24.0,35.0,False,30000,Yulman Stadium
+2025,401757175,2025-11-22 20:00:00+00:00,13,2226,Florida Atlantic,American,41,UConn,home,False,False,True,STATUS_FINAL,45.0,48.0,False,16306,Flagler Credit Union Stadium
+2025,401766898,2025-08-30 00:15:00+00:00,1,2229,Florida International,Conference USA,2065,Bethune-Cookman,home,False,False,True,STATUS_FINAL,42.0,9.0,True,18034,Pitbull Stadium
+2025,401752811,2025-09-06 16:00:00+00:00,2,2229,Florida International,Conference USA,213,Penn State,away,False,False,True,STATUS_FINAL,0.0,34.0,False,103818,Beaver Stadium
+2025,401757171,2025-10-04 19:30:00+00:00,6,2229,Florida International,Conference USA,41,UConn,away,False,False,True,STATUS_FINAL,10.0,51.0,False,27310,Pratt & Whitney Stadium
+2025,401757281,2025-10-15 00:00:00+00:00,8,2229,Florida International,Conference USA,98,Western Kentucky,away,False,False,True,STATUS_FINAL,25.0,6.0,True,12276,Houchens Industries-L.T. Smith Stadium
+2025,401757285,2025-10-21 23:00:00+00:00,9,2229,Florida International,Conference USA,338,Kennesaw State,home,False,False,True,STATUS_FINAL,26.0,45.0,False,12133,Pitbull Stadium
+2025,401757291,2025-10-30 00:00:00+00:00,10,2229,Florida International,Conference USA,2623,Missouri State,away,False,False,True,STATUS_FINAL,21.0,28.0,False,8754,Robert W. Plaster Stadium
+2025,401757296,2025-11-08 20:00:00+00:00,11,2229,Florida International,Conference USA,2393,Middle Tennessee,away,False,False,True,STATUS_FINAL,56.0,30.0,True,12227,"Johnny ""Red"" Floyd Stadium"
+2025,401757301,2025-11-15 22:00:00+00:00,12,2229,Florida International,Conference USA,2335,Liberty,home,False,False,True,STATUS_FINAL,34.0,27.0,True,14167,Pitbull Stadium
+2025,401757305,2025-11-22 20:30:00+00:00,13,2229,Florida International,Conference USA,55,Jacksonville State,home,False,False,True,STATUS_FINAL,27.0,21.0,True,9504,Pitbull Stadium
+2025,401757311,2025-11-29 18:00:00+00:00,14,2229,Florida International,Conference USA,2534,Sam Houston,away,False,False,True,STATUS_FINAL,56.0,16.0,True,4237,Shell Energy Stadium
+2025,401754621,2025-09-06 16:00:00+00:00,2,52,Florida State,ACC,2837,East Texas A&M,home,False,False,True,STATUS_FINAL,77.0,3.0,True,65430,Doak Campbell Stadium
+2025,401754541,2025-09-20 19:30:00+00:00,4,52,Florida State,ACC,2309,Kent State,home,False,False,True,STATUS_FINAL,66.0,10.0,True,67277,Doak Campbell Stadium
+2025,401754543,2025-09-26 23:00:00+00:00,5,52,Florida State,ACC,258,Virginia,away,False,False,True,STATUS_FINAL,38.0,46.0,False,50107,Scott Stadium
+2025,401754553,2025-10-04 23:30:00+00:00,6,52,Florida State,ACC,2390,Miami,home,False,False,True,STATUS_FINAL,22.0,28.0,False,67277,Doak Campbell Stadium
+2025,401754559,2025-10-11 16:00:00+00:00,7,52,Florida State,ACC,221,Pittsburgh,home,False,False,True,STATUS_FINAL,31.0,34.0,False,65256,Doak Campbell Stadium
+2025,401754567,2025-10-19 02:30:00+00:00,8,52,Florida State,ACC,24,Stanford,away,False,False,True,STATUS_FINAL,13.0,20.0,False,26470,Stanford Stadium
+2025,401754578,2025-11-01 23:30:00+00:00,10,52,Florida State,ACC,154,Wake Forest,home,False,False,True,STATUS_FINAL,42.0,7.0,True,63677,Doak Campbell Stadium
+2025,401754594,2025-11-16 00:30:00+00:00,12,52,Florida State,ACC,259,Virginia Tech,home,False,False,True,STATUS_FINAL,34.0,14.0,True,64937,Doak Campbell Stadium
+2025,401754598,2025-11-22 01:00:00+00:00,13,52,Florida State,ACC,152,NC State,away,False,False,True,STATUS_FINAL,11.0,21.0,False,56919,Carter-Finley Stadium
+2025,401756847,2025-08-23 22:30:00+00:00,1,278,Fresno State,Mountain West,2305,Kansas,away,False,False,True,STATUS_FINAL,7.0,31.0,False,41525,David Booth Kansas Memorial Stadium
+2025,401760361,2025-08-31 01:30:00+00:00,1,278,Fresno State,Mountain West,290,Georgia Southern,home,False,False,True,STATUS_FINAL,42.0,14.0,True,36801,Valley Children's Stadium
+2025,401752937,2025-09-06 19:30:00+00:00,2,278,Fresno State,Mountain West,204,Oregon State,away,False,False,True,STATUS_FINAL,36.0,27.0,True,28068,Reser Stadium
+2025,401760369,2025-09-14 02:00:00+00:00,3,278,Fresno State,Mountain West,2582,Southern,home,False,False,True,STATUS_FINAL,56.0,7.0,True,37210,Valley Children's Stadium
+2025,401760374,2025-09-21 03:59:00+00:00,4,278,Fresno State,Mountain West,62,Hawai'i,away,False,False,True,STATUS_FINAL,23.0,21.0,True,13789,Clarence T.C. Ching Athletics Complex
+2025,401760383,2025-10-05 02:30:00+00:00,6,278,Fresno State,Mountain West,2440,Nevada,home,False,False,True,STATUS_FINAL,20.0,17.0,True,40005,Valley Children's Stadium
+2025,401760399,2025-10-25 19:30:00+00:00,9,278,Fresno State,Mountain West,21,San Diego State,home,False,False,True,STATUS_FINAL,0.0,23.0,False,41535,Valley Children's Stadium
+2025,401760412,2025-11-16 03:30:00+00:00,12,278,Fresno State,Mountain West,2751,Wyoming,home,False,False,True,STATUS_FINAL,24.0,3.0,True,35076,Valley Children's Stadium
+2025,401760417,2025-11-23 03:30:00+00:00,13,278,Fresno State,Mountain West,328,Utah State,home,False,False,True,STATUS_FINAL,17.0,28.0,False,37551,Valley Children's Stadium
+2025,401760423,2025-11-30 03:30:00+00:00,14,278,Fresno State,Mountain West,23,San José State,away,False,False,True,STATUS_FINAL,41.0,14.0,True,14194,CEFCU Stadium
+2025,401752669,2025-08-30 19:30:00+00:00,1,61,Georgia,SEC,276,Marshall,home,False,False,True,STATUS_FINAL,45.0,7.0,True,93033,Sanford Stadium
+2025,401752685,2025-09-06 18:28:00+00:00,2,61,Georgia,SEC,2046,Austin Peay,home,False,False,True,STATUS_FINAL,28.0,6.0,True,93033,Sanford Stadium
+2025,401752705,2025-09-13 19:30:00+00:00,3,61,Georgia,SEC,2633,Tennessee,away,False,False,True,STATUS_FINAL,44.0,41.0,True,101915,Neyland Stadium
+2025,401752728,2025-10-04 16:00:00+00:00,6,61,Georgia,SEC,96,Kentucky,home,False,False,True,STATUS_FINAL,35.0,14.0,True,93033,Sanford Stadium
+2025,401752742,2025-10-18 19:30:00+00:00,8,61,Georgia,SEC,145,Ole Miss,home,False,False,True,STATUS_FINAL,43.0,35.0,True,93033,Sanford Stadium
+2025,401752762,2025-11-08 17:00:00+00:00,11,61,Georgia,SEC,344,Mississippi State,away,False,False,True,STATUS_FINAL,41.0,21.0,True,53017,Davis Wade Stadium
+2025,401752766,2025-11-16 00:30:00+00:00,12,61,Georgia,SEC,251,Texas,home,False,False,True,STATUS_FINAL,35.0,10.0,True,93033,Sanford Stadium
+2025,401752786,2025-11-28 20:30:00+00:00,14,61,Georgia,SEC,59,Georgia Tech,away,True,False,True,STATUS_FINAL,16.0,9.0,True,73728,Mercedes-Benz Stadium
+2025,401752814,2025-09-06 23:30:00+00:00,2,290,Georgia Southern,Sun Belt,30,USC,away,False,False,True,STATUS_FINAL,20.0,59.0,False,0,Los Angeles Memorial Coliseum
+2025,401757234,2025-09-13 23:00:00+00:00,3,290,Georgia Southern,Sun Belt,55,Jacksonville State,home,False,False,True,STATUS_FINAL,41.0,34.0,True,24585,Allen E. Paulson Stadium
+2025,401761609,2025-09-20 23:00:00+00:00,4,290,Georgia Southern,Sun Belt,311,Maine,home,False,False,True,STATUS_FINAL,45.0,17.0,True,23217,Allen E. Paulson Stadium
+2025,401761614,2025-09-27 17:30:00+00:00,5,290,Georgia Southern,Sun Belt,256,James Madison,away,False,False,True,STATUS_FINAL,10.0,35.0,False,25029,Bridgeforth Stadium
+2025,401761622,2025-10-10 00:00:00+00:00,7,290,Georgia Southern,Sun Belt,2572,Southern Miss,home,False,False,True,STATUS_FINAL,35.0,38.0,False,20032,Allen E. Paulson Stadium
+2025,401761630,2025-10-18 23:00:00+00:00,8,290,Georgia Southern,Sun Belt,2247,Georgia State,home,False,False,True,STATUS_FINAL,41.0,24.0,True,25428,Allen E. Paulson Stadium
+2025,401761657,2025-11-22 18:00:00+00:00,13,290,Georgia Southern,Sun Belt,295,Old Dominion,home,False,False,True,STATUS_FINAL,10.0,45.0,False,19247,Allen E. Paulson Stadium
+2025,401761663,2025-11-29 18:30:00+00:00,14,290,Georgia Southern,Sun Belt,276,Marshall,away,False,False,True,STATUS_FINAL,24.0,19.0,True,21524,Joan C. Edwards Stadium
+2025,401752672,2025-08-30 23:45:00+00:00,1,2247,Georgia State,Sun Belt,145,Ole Miss,away,False,False,True,STATUS_FINAL,7.0,63.0,False,66378,Vaught-Hemingway Stadium
+2025,401761598,2025-09-06 23:00:00+00:00,2,2247,Georgia State,Sun Belt,235,Memphis,home,False,False,True,STATUS_FINAL,16.0,38.0,False,13625,Center Parc Stadium
+2025,401761605,2025-09-13 23:00:00+00:00,3,2247,Georgia State,Sun Belt,93,Murray State,home,False,False,True,STATUS_FINAL,37.0,21.0,True,13988,Center Parc Stadium
+2025,401752716,2025-09-20 23:30:00+00:00,4,2247,Georgia State,Sun Belt,238,Vanderbilt,away,False,False,True,STATUS_FINAL,21.0,70.0,False,35000,FirstBank Stadium
+2025,401761618,2025-10-04 19:30:00+00:00,6,2247,Georgia State,Sun Belt,256,James Madison,home,False,False,True,STATUS_FINAL,7.0,14.0,False,19256,Center Parc Stadium
+2025,401761634,2025-10-23 23:30:00+00:00,9,2247,Georgia State,Sun Belt,6,South Alabama,home,False,False,True,STATUS_FINAL,31.0,38.0,False,13673,Center Parc Stadium
+2025,401761651,2025-11-15 19:00:00+00:00,12,2247,Georgia State,Sun Belt,276,Marshall,home,False,False,True,STATUS_FINAL,18.0,30.0,False,12871,Center Parc Stadium
+2025,401761660,2025-11-22 21:00:00+00:00,13,2247,Georgia State,Sun Belt,2653,Troy,away,False,False,True,STATUS_FINAL,19.0,31.0,False,20243,Veterans Memorial Stadium (AL)
+2025,401761664,2025-11-29 19:00:00+00:00,14,2247,Georgia State,Sun Belt,295,Old Dominion,away,False,False,True,STATUS_FINAL,10.0,27.0,False,17126,S.B. Ballard Stadium
+2025,401754622,2025-09-06 19:30:00+00:00,2,59,Georgia Tech,ACC,2241,Gardner-Webb,home,False,False,True,STATUS_FINAL,59.0,12.0,True,37775,Bobby Dodd Stadium
+2025,401754542,2025-09-20 21:05:00+00:00,4,59,Georgia Tech,ACC,218,Temple,home,False,False,True,STATUS_FINAL,45.0,24.0,True,45123,Bobby Dodd Stadium
+2025,401754546,2025-09-27 16:00:00+00:00,5,59,Georgia Tech,ACC,154,Wake Forest,away,False,False,True,STATUS_FINAL,30.0,29.0,True,30264,Allegacy Federal Credit Union Stadium
+2025,401754560,2025-10-11 19:30:00+00:00,7,59,Georgia Tech,ACC,259,Virginia Tech,home,False,False,True,STATUS_FINAL,35.0,20.0,True,50878,Bobby Dodd Stadium
+2025,401754571,2025-10-25 16:00:00+00:00,9,59,Georgia Tech,ACC,183,Syracuse,home,False,False,True,STATUS_FINAL,41.0,16.0,True,51913,Bobby Dodd Stadium
+2025,401754579,2025-11-01 23:30:00+00:00,10,59,Georgia Tech,ACC,152,NC State,away,False,False,True,STATUS_FINAL,36.0,48.0,False,56919,Carter-Finley Stadium
+2025,401754601,2025-11-23 00:00:00+00:00,13,59,Georgia Tech,ACC,221,Pittsburgh,home,False,False,True,STATUS_FINAL,28.0,42.0,False,52413,Bobby Dodd Stadium
+2025,401754516,2025-08-23 23:30:00+00:00,1,62,Hawai'i,Mountain West,24,Stanford,home,False,False,True,STATUS_FINAL,23.0,20.0,True,15194,Clarence T.C. Ching Athletics Complex
+2025,401757230,2025-09-07 03:59:00+00:00,2,62,Hawai'i,Mountain West,2534,Sam Houston,home,False,False,True,STATUS_FINAL,37.0,20.0,True,11625,Clarence T.C. Ching Athletics Complex
+2025,401760370,2025-09-14 03:59:00+00:00,3,62,Hawai'i,Mountain West,2502,Portland State,home,False,False,True,STATUS_FINAL,23.0,3.0,True,11936,Clarence T.C. Ching Athletics Complex
+2025,401760389,2025-10-12 03:59:00+00:00,7,62,Hawai'i,Mountain West,328,Utah State,home,False,False,True,STATUS_FINAL,44.0,26.0,True,13023,Clarence T.C. Ching Athletics Complex
+2025,401760403,2025-11-02 02:30:00+00:00,10,62,Hawai'i,Mountain West,23,San José State,away,False,False,True,STATUS_FINAL,38.0,45.0,False,16012,CEFCU Stadium
+2025,401760408,2025-11-09 04:00:00+00:00,11,62,Hawai'i,Mountain West,21,San Diego State,home,False,False,True,STATUS_FINAL,38.0,6.0,True,15194,Clarence T.C. Ching Athletics Complex
+2025,401760418,2025-11-22 03:30:00+00:00,13,62,Hawai'i,Mountain West,2439,UNLV,away,False,False,True,STATUS_FINAL,10.0,38.0,False,37106,Allegiant Stadium
+2025,401760424,2025-11-30 04:00:00+00:00,14,62,Hawai'i,Mountain West,2751,Wyoming,home,False,False,True,STATUS_FINAL,27.0,7.0,True,15194,Clarence T.C. Ching Athletics Complex
+2025,401756852,2025-08-29 00:00:00+00:00,1,248,Houston,Big 12,2617,Stephen F. Austin,home,False,False,True,STATUS_FINAL,27.0,0.0,True,28150,TDECU Stadium
+2025,401756884,2025-09-06 23:00:00+00:00,2,248,Houston,Big 12,242,Rice,away,False,False,True,STATUS_FINAL,35.0,9.0,True,30116,Rice Stadium
+2025,401752939,2025-09-27 02:35:00+00:00,5,248,Houston,Big 12,204,Oregon State,away,False,False,True,STATUS_FINAL,27.0,24.0,True,29338,Reser Stadium
+2025,401756913,2025-10-04 23:00:00+00:00,6,248,Houston,Big 12,2641,Texas Tech,home,False,False,True,STATUS_FINAL,11.0,35.0,False,42806,TDECU Stadium
+2025,401756920,2025-10-11 16:00:00+00:00,7,248,Houston,Big 12,197,Oklahoma State,away,False,False,True,STATUS_FINAL,39.0,17.0,True,44941,Boone Pickens Stadium
+2025,401756938,2025-11-01 16:00:00+00:00,10,248,Houston,Big 12,277,West Virginia,home,False,False,True,STATUS_FINAL,35.0,45.0,False,25049,TDECU Stadium
+2025,401756946,2025-11-08 01:15:00+00:00,11,248,Houston,Big 12,2116,UCF,away,False,False,True,STATUS_FINAL,30.0,27.0,True,44206,Acrisure Bounce House
+2025,401756957,2025-11-22 21:00:00+00:00,13,248,Houston,Big 12,2628,TCU,home,False,False,True,STATUS_FINAL,14.0,17.0,False,30852,TDECU Stadium
+2025,401752795,2025-08-29 23:30:00+00:00,1,356,Illinois,Big Ten,2710,Western Illinois,home,False,False,True,STATUS_FINAL,52.0,3.0,True,56040,Gies Memorial Stadium
+2025,401752829,2025-09-13 23:00:00+00:00,3,356,Illinois,Big Ten,2711,Western Michigan,home,False,False,True,STATUS_FINAL,38.0,0.0,True,60670,Gies Memorial Stadium
+2025,401752843,2025-09-20 23:30:00+00:00,4,356,Illinois,Big Ten,84,Indiana,away,False,False,True,STATUS_FINAL,10.0,63.0,False,56088,"Memorial Stadium (Bloomington, IN)"
+2025,401752850,2025-09-27 16:00:00+00:00,5,356,Illinois,Big Ten,30,USC,home,False,False,True,STATUS_FINAL,34.0,32.0,True,60670,Gies Memorial Stadium
+2025,401752861,2025-10-04 16:00:00+00:00,6,356,Illinois,Big Ten,2509,Purdue,away,False,False,True,STATUS_FINAL,43.0,27.0,True,56551,Ross-Ade Stadium
+2025,401752865,2025-10-11 16:00:00+00:00,7,356,Illinois,Big Ten,194,Ohio State,home,False,False,True,STATUS_FINAL,16.0,34.0,False,60670,Gies Memorial Stadium
+2025,401752880,2025-10-25 19:30:00+00:00,9,356,Illinois,Big Ten,264,Washington,away,False,False,True,STATUS_FINAL,25.0,42.0,False,68630,Husky Stadium
+2025,401752891,2025-11-01 16:00:00+00:00,10,356,Illinois,Big Ten,164,Rutgers,home,False,False,True,STATUS_FINAL,35.0,13.0,True,60670,Gies Memorial Stadium
+2025,401752906,2025-11-15 20:30:00+00:00,12,356,Illinois,Big Ten,120,Maryland,home,False,False,True,STATUS_FINAL,24.0,6.0,True,56416,Gies Memorial Stadium
+2025,401752915,2025-11-23 00:30:00+00:00,13,356,Illinois,Big Ten,275,Wisconsin,away,False,False,True,STATUS_FINAL,10.0,27.0,False,0,Camp Randall Stadium
+2025,401752922,2025-11-30 00:30:00+00:00,14,356,Illinois,Big Ten,77,Northwestern,home,False,False,True,STATUS_FINAL,20.0,13.0,True,0,Gies Memorial Stadium
+2025,401752806,2025-08-30 18:30:00+00:00,1,84,Indiana,Big Ten,295,Old Dominion,home,False,False,True,STATUS_FINAL,27.0,14.0,True,47109,"Memorial Stadium (Bloomington, IN)"
+2025,401752812,2025-09-06 16:00:00+00:00,2,84,Indiana,Big Ten,338,Kennesaw State,home,False,False,True,STATUS_FINAL,56.0,9.0,True,43801,"Memorial Stadium (Bloomington, IN)"
+2025,401752836,2025-09-12 22:30:00+00:00,3,84,Indiana,Big Ten,282,Indiana State,home,False,False,True,STATUS_FINAL,73.0,0.0,True,46219,"Memorial Stadium (Bloomington, IN)"
+2025,401752853,2025-09-27 19:30:00+00:00,5,84,Indiana,Big Ten,2294,Iowa,away,False,False,True,STATUS_FINAL,20.0,15.0,True,69250,Kinnick Stadium
+2025,401752870,2025-10-11 19:30:00+00:00,7,84,Indiana,Big Ten,2483,Oregon,away,False,False,True,STATUS_FINAL,30.0,20.0,True,59625,Autzen Stadium
+2025,401752878,2025-10-18 19:30:00+00:00,8,84,Indiana,Big Ten,127,Michigan State,home,False,False,True,STATUS_FINAL,38.0,13.0,True,55165,"Memorial Stadium (Bloomington, IN)"
+2025,401752885,2025-10-25 16:00:00+00:00,9,84,Indiana,Big Ten,26,UCLA,home,False,False,True,STATUS_FINAL,56.0,6.0,True,54867,"Memorial Stadium (Bloomington, IN)"
+2025,401752887,2025-11-01 19:30:00+00:00,10,84,Indiana,Big Ten,120,Maryland,away,False,False,True,STATUS_FINAL,55.0,10.0,True,46185,SECU Stadium
+2025,401752893,2025-11-08 17:00:00+00:00,11,84,Indiana,Big Ten,213,Penn State,away,False,False,True,STATUS_FINAL,27.0,24.0,True,105231,Beaver Stadium
+2025,401752901,2025-11-15 17:00:00+00:00,12,84,Indiana,Big Ten,275,Wisconsin,home,False,False,True,STATUS_FINAL,31.0,7.0,True,55042,"Memorial Stadium (Bloomington, IN)"
+2025,401752924,2025-11-29 00:30:00+00:00,14,84,Indiana,Big Ten,2509,Purdue,away,False,False,True,STATUS_FINAL,56.0,3.0,True,59807,Ross-Ade Stadium
+2025,401777353,2025-12-07 01:00:00+00:00,15,84,Indiana,Big Ten,194,Ohio State,away,True,False,True,STATUS_FINAL,13.0,10.0,True,68214,Lucas Oil Stadium
+2025,401752799,2025-08-30 22:00:00+00:00,1,2294,Iowa,Big Ten,399,UAlbany,home,False,False,True,STATUS_FINAL,34.0,7.0,True,69250,Kinnick Stadium
+2025,401752822,2025-09-06 16:00:00+00:00,2,2294,Iowa,Big Ten,66,Iowa State,away,False,False,True,STATUS_FINAL,13.0,16.0,False,61500,Jack Trice Stadium
+2025,401752830,2025-09-13 23:30:00+00:00,3,2294,Iowa,Big Ten,113,Massachusetts,home,False,False,True,STATUS_FINAL,47.0,7.0,True,69250,Kinnick Stadium
+2025,401752844,2025-09-20 00:00:00+00:00,4,2294,Iowa,Big Ten,164,Rutgers,away,False,False,True,STATUS_FINAL,38.0,28.0,True,55942,SHI Stadium
+2025,401752869,2025-10-11 23:00:00+00:00,7,2294,Iowa,Big Ten,275,Wisconsin,away,False,False,True,STATUS_FINAL,37.0,0.0,True,76064,Camp Randall Stadium
+2025,401752875,2025-10-18 23:00:00+00:00,8,2294,Iowa,Big Ten,213,Penn State,home,False,False,True,STATUS_FINAL,25.0,24.0,True,69250,Kinnick Stadium
+2025,401752882,2025-10-25 19:30:00+00:00,9,2294,Iowa,Big Ten,135,Minnesota,home,False,False,True,STATUS_FINAL,41.0,3.0,True,69250,Kinnick Stadium
+2025,401752898,2025-11-08 20:30:00+00:00,11,2294,Iowa,Big Ten,2483,Oregon,home,False,False,True,STATUS_FINAL,16.0,18.0,False,69250,Kinnick Stadium
+2025,401752907,2025-11-15 20:30:00+00:00,12,2294,Iowa,Big Ten,30,USC,away,False,False,True,STATUS_FINAL,21.0,26.0,False,65216,Los Angeles Memorial Coliseum
+2025,401752913,2025-11-22 20:30:00+00:00,13,2294,Iowa,Big Ten,127,Michigan State,home,False,False,True,STATUS_FINAL,20.0,17.0,True,69250,Kinnick Stadium
+2025,401752916,2025-11-28 17:00:00+00:00,14,2294,Iowa,Big Ten,158,Nebraska,away,False,False,True,STATUS_FINAL,40.0,16.0,True,86410,"Memorial Stadium (Lincoln, NE)"
+2025,401756846,2025-08-23 16:00:00+00:00,1,66,Iowa State,Big 12,2306,Kansas State,away,True,False,True,STATUS_FINAL,24.0,21.0,True,47221,Aviva Stadium
+2025,401756853,2025-08-30 19:30:00+00:00,1,66,Iowa State,Big 12,233,South Dakota,home,False,False,True,STATUS_FINAL,55.0,7.0,True,61500,Jack Trice Stadium
+2025,401756944,2025-11-08 20:30:00+00:00,11,66,Iowa State,Big 12,2628,TCU,away,False,False,True,STATUS_FINAL,20.0,17.0,True,44197,Amon G. Carter Stadium
+2025,401756958,2025-11-22 17:00:00+00:00,13,66,Iowa State,Big 12,2305,Kansas,home,False,False,True,STATUS_FINAL,38.0,14.0,True,58275,Jack Trice Stadium
+2025,401756966,2025-11-29 17:00:00+00:00,14,66,Iowa State,Big 12,197,Oklahoma State,away,False,False,True,STATUS_FINAL,20.0,13.0,True,35127,Boone Pickens Stadium
+2025,401756848,2025-08-28 23:00:00+00:00,1,55,Jacksonville State,Conference USA,2116,UCF,away,False,False,True,STATUS_FINAL,10.0,17.0,False,43043,Acrisure Bounce House
+2025,401757227,2025-09-06 16:00:00+00:00,2,55,Jacksonville State,Conference USA,2335,Liberty,home,False,False,True,STATUS_FINAL,34.0,24.0,True,20755,AmFirst Stadium
+2025,401757260,2025-09-20 23:00:00+00:00,4,55,Jacksonville State,Conference USA,93,Murray State,home,False,False,True,STATUS_FINAL,45.0,10.0,True,21426,AmFirst Stadium
+2025,401757269,2025-09-27 23:00:00+00:00,5,55,Jacksonville State,Conference USA,2572,Southern Miss,away,False,False,True,STATUS_FINAL,25.0,42.0,False,25034,M. M. Roberts Stadium
+2025,401757279,2025-10-10 00:00:00+00:00,7,55,Jacksonville State,Conference USA,2534,Sam Houston,away,False,False,True,STATUS_FINAL,29.0,27.0,True,5419,Shell Energy Stadium
+2025,401757292,2025-10-29 23:30:00+00:00,10,55,Jacksonville State,Conference USA,2393,Middle Tennessee,away,False,False,True,STATUS_FINAL,24.0,21.0,True,10200,"Johnny ""Red"" Floyd Stadium"
+2025,401757297,2025-11-08 20:00:00+00:00,11,55,Jacksonville State,Conference USA,2638,UTEP,away,False,False,True,STATUS_FINAL,30.0,27.0,True,9536,Sun Bowl
+2025,401757302,2025-11-16 01:00:00+00:00,12,55,Jacksonville State,Conference USA,338,Kennesaw State,home,False,False,True,STATUS_FINAL,35.0,26.0,True,24166,AmFirst Stadium
+2025,401757312,2025-11-29 19:00:00+00:00,14,55,Jacksonville State,Conference USA,98,Western Kentucky,home,False,False,True,STATUS_FINAL,37.0,34.0,True,16733,AmFirst Stadium
+2025,401777325,2025-12-06 00:00:00+00:00,15,55,Jacksonville State,Conference USA,338,Kennesaw State,home,False,False,True,STATUS_FINAL,15.0,19.0,False,18142,AmFirst Stadium
+2025,401761590,2025-08-30 22:00:00+00:00,1,256,James Madison,Sun Belt,2692,Weber State,home,False,False,True,STATUS_FINAL,45.0,10.0,True,24965,Bridgeforth Stadium
+2025,401754528,2025-09-05 23:00:00+00:00,2,256,James Madison,Sun Belt,97,Louisville,away,False,False,True,STATUS_FINAL,14.0,28.0,False,48717,L&N Federal Credit Union Stadium
+2025,401757262,2025-09-20 19:30:00+00:00,4,256,James Madison,Sun Belt,2335,Liberty,away,False,False,True,STATUS_FINAL,31.0,13.0,True,24022,Williams Stadium (VA)
+2025,401761625,2025-10-11 16:00:00+00:00,7,256,James Madison,Sun Belt,309,Louisiana,home,False,False,True,STATUS_FINAL,24.0,14.0,True,0,Bridgeforth Stadium
+2025,401761631,2025-10-18 19:30:00+00:00,8,256,James Madison,Sun Belt,295,Old Dominion,home,False,False,True,STATUS_FINAL,63.0,27.0,True,25232,Bridgeforth Stadium
+2025,401761639,2025-10-29 00:00:00+00:00,10,256,James Madison,Sun Belt,326,Texas State,away,False,False,True,STATUS_FINAL,52.0,20.0,True,17363,UFCU Stadium
+2025,401761646,2025-11-08 17:00:00+00:00,11,256,James Madison,Sun Belt,276,Marshall,away,False,False,True,STATUS_FINAL,35.0,23.0,True,26727,Joan C. Edwards Stadium
+2025,401752954,2025-11-22 18:00:00+00:00,13,256,James Madison,Sun Belt,265,Washington State,home,False,False,True,STATUS_FINAL,24.0,20.0,True,25156,Bridgeforth Stadium
+2025,401777352,2025-12-06 00:00:00+00:00,15,256,James Madison,Sun Belt,2653,Troy,home,False,False,True,STATUS_FINAL,31.0,14.0,True,19836,Bridgeforth Stadium
+2025,401756854,2025-08-29 23:30:00+00:00,1,2305,Kansas,Big 12,2681,Wagner,home,False,False,True,STATUS_FINAL,46.0,7.0,True,39129,David Booth Kansas Memorial Stadium
+2025,401752689,2025-09-06 19:30:00+00:00,2,2305,Kansas,Big 12,142,Missouri,away,False,False,True,STATUS_FINAL,31.0,42.0,False,57321,Memorial Stadium
+2025,401756899,2025-09-20 22:00:00+00:00,4,2305,Kansas,Big 12,277,West Virginia,home,False,False,True,STATUS_FINAL,41.0,10.0,True,40320,David Booth Kansas Memorial Stadium
+2025,401756915,2025-10-04 23:30:00+00:00,6,2305,Kansas,Big 12,2116,UCF,away,False,False,True,STATUS_FINAL,27.0,20.0,True,43229,Acrisure Bounce House
+2025,401756921,2025-10-11 23:30:00+00:00,7,2305,Kansas,Big 12,2641,Texas Tech,away,False,False,True,STATUS_FINAL,17.0,42.0,False,60229,Galaxy Stadium
+2025,401756932,2025-10-25 16:00:00+00:00,9,2305,Kansas,Big 12,2306,Kansas State,home,False,False,True,STATUS_FINAL,17.0,42.0,False,0,David Booth Kansas Memorial Stadium
+2025,401756940,2025-11-01 20:00:00+00:00,10,2305,Kansas,Big 12,197,Oklahoma State,home,False,False,True,STATUS_FINAL,38.0,21.0,True,39511,David Booth Kansas Memorial Stadium
+2025,401756964,2025-11-28 17:00:00+00:00,14,2305,Kansas,Big 12,254,Utah,home,False,False,True,STATUS_FINAL,21.0,31.0,False,32811,David Booth Kansas Memorial Stadium
+2025,401756855,2025-08-30 23:00:00+00:00,1,2306,Kansas State,Big 12,155,North Dakota,home,False,False,True,STATUS_FINAL,38.0,35.0,True,51927,Bill Snyder Family Stadium
+2025,401756906,2025-09-27 16:00:00+00:00,5,2306,Kansas State,Big 12,2116,UCF,home,False,False,True,STATUS_FINAL,34.0,20.0,True,53013,Bill Snyder Family Stadium
+2025,401756919,2025-10-11 19:30:00+00:00,7,2306,Kansas State,Big 12,2628,TCU,home,False,False,True,STATUS_FINAL,41.0,28.0,True,51316,Bill Snyder Family Stadium
+2025,401756941,2025-11-01 19:30:00+00:00,10,2306,Kansas State,Big 12,2641,Texas Tech,home,False,False,True,STATUS_FINAL,20.0,43.0,False,52111,Bill Snyder Family Stadium
+2025,401756952,2025-11-15 17:00:00+00:00,12,2306,Kansas State,Big 12,197,Oklahoma State,away,False,False,True,STATUS_FINAL,14.0,6.0,True,46340,Boone Pickens Stadium
+2025,401756960,2025-11-22 21:00:00+00:00,13,2306,Kansas State,Big 12,254,Utah,away,False,False,True,STATUS_FINAL,47.0,51.0,False,51444,Rice-Eccles Stadium
+2025,401754374,2025-08-29 23:00:00+00:00,1,338,Kennesaw State,Conference USA,154,Wake Forest,away,False,False,True,STATUS_FINAL,9.0,10.0,False,30789,Allegacy Federal Credit Union Stadium
+2025,401757235,2025-09-13 22:00:00+00:00,3,338,Kennesaw State,Conference USA,2771,Merrimack,home,False,False,True,STATUS_FINAL,27.0,13.0,True,11040,Walens Family Field at Fifth Third Stadium
+2025,401757270,2025-09-27 22:00:00+00:00,5,338,Kennesaw State,Conference USA,2393,Middle Tennessee,home,False,False,True,STATUS_FINAL,24.0,16.0,True,11040,Walens Family Field at Fifth Third Stadium
+2025,401757280,2025-10-09 23:00:00+00:00,7,338,Kennesaw State,Conference USA,2348,Louisiana Tech,home,False,False,True,STATUS_FINAL,35.0,7.0,True,9585,Walens Family Field at Fifth Third Stadium
+2025,401757289,2025-10-29 00:00:00+00:00,10,338,Kennesaw State,Conference USA,2638,UTEP,home,False,False,True,STATUS_FINAL,33.0,20.0,True,11040,Walens Family Field at Fifth Third Stadium
+2025,401757298,2025-11-08 21:00:00+00:00,11,338,Kennesaw State,Conference USA,166,New Mexico State,away,False,False,True,STATUS_FINAL,24.0,21.0,True,11473,Aggie Memorial Stadium
+2025,401757306,2025-11-22 19:00:00+00:00,13,338,Kennesaw State,Conference USA,2623,Missouri State,home,False,False,True,STATUS_FINAL,41.0,34.0,True,11040,Walens Family Field at Fifth Third Stadium
+2025,401757313,2025-11-29 20:30:00+00:00,14,338,Kennesaw State,Conference USA,2335,Liberty,away,False,False,True,STATUS_FINAL,48.0,42.0,True,12695,Williams Stadium (VA)
+2025,401762792,2025-08-30 16:00:00+00:00,1,2309,Kent State,MAC,2771,Merrimack,home,False,False,True,STATUS_FINAL,21.0,17.0,True,8647,Zoeller Field at Dix Stadium
+2025,401756885,2025-09-06 16:00:00+00:00,2,2309,Kent State,MAC,2641,Texas Tech,away,False,False,True,STATUS_FINAL,14.0,62.0,False,60229,Galaxy Stadium
+2025,401752729,2025-10-04 20:00:00+00:00,6,2309,Kent State,MAC,201,Oklahoma,away,False,False,True,STATUS_FINAL,0.0,44.0,False,83016,"Memorial Stadium (Norman, OK)"
+2025,401762837,2025-10-11 18:30:00+00:00,7,2309,Kent State,MAC,113,Massachusetts,home,False,False,True,STATUS_FINAL,42.0,6.0,True,11523,Zoeller Field at Dix Stadium
+2025,401762842,2025-10-18 18:00:00+00:00,8,2309,Kent State,MAC,2649,Toledo,away,False,False,True,STATUS_FINAL,10.0,45.0,False,18417,Glass Bowl
+2025,401762871,2025-11-28 17:00:00+00:00,14,2309,Kent State,MAC,2459,Northern Illinois,away,False,False,True,STATUS_FINAL,35.0,31.0,True,3090,Huskie Stadium
+2025,401752670,2025-08-30 16:45:00+00:00,1,96,Kentucky,SEC,2649,Toledo,home,False,False,True,STATUS_FINAL,24.0,16.0,True,56457,Kroger Field
+2025,401752686,2025-09-06 19:30:00+00:00,2,96,Kentucky,SEC,145,Ole Miss,home,False,False,True,STATUS_FINAL,23.0,30.0,False,58346,Kroger Field
+2025,401752722,2025-09-27 23:45:00+00:00,5,96,Kentucky,SEC,2579,South Carolina,away,False,False,True,STATUS_FINAL,13.0,35.0,False,79266,Williams-Brice Stadium
+2025,401752743,2025-10-18 23:00:00+00:00,8,96,Kentucky,SEC,251,Texas,home,False,False,True,STATUS_FINAL,13.0,16.0,False,60937,Kroger Field
+2025,401752747,2025-10-25 23:45:00+00:00,9,96,Kentucky,SEC,2633,Tennessee,home,False,False,True,STATUS_FINAL,34.0,56.0,False,60153,Kroger Field
+2025,401752767,2025-11-15 18:30:00+00:00,12,96,Kentucky,SEC,2635,Tennessee Tech,home,False,False,True,STATUS_FINAL,42.0,10.0,True,53686,Kroger Field
+2025,401752782,2025-11-22 20:30:00+00:00,13,96,Kentucky,SEC,238,Vanderbilt,away,False,False,True,STATUS_FINAL,17.0,45.0,False,35000,FirstBank Stadium
+2025,401752787,2025-11-29 17:00:00+00:00,14,96,Kentucky,SEC,97,Louisville,away,False,False,True,STATUS_FINAL,0.0,41.0,False,50634,L&N Federal Credit Union Stadium
+2025,401752687,2025-09-06 23:30:00+00:00,2,99,LSU,SEC,2348,Louisiana Tech,home,False,False,True,STATUS_FINAL,23.0,7.0,True,101667,Tiger Stadium (LA)
+2025,401752710,2025-09-20 23:45:00+00:00,4,99,LSU,SEC,2545,SE Louisiana,home,False,False,True,STATUS_FINAL,56.0,10.0,True,102219,Tiger Stadium (LA)
+2025,401752719,2025-09-27 19:30:00+00:00,5,99,LSU,SEC,145,Ole Miss,away,False,False,True,STATUS_FINAL,19.0,24.0,False,67737,Vaught-Hemingway Stadium
+2025,401752732,2025-10-11 23:45:00+00:00,7,99,LSU,SEC,2579,South Carolina,home,False,False,True,STATUS_FINAL,20.0,10.0,True,101921,Tiger Stadium (LA)
+2025,401752745,2025-10-18 16:00:00+00:00,8,99,LSU,SEC,238,Vanderbilt,away,False,False,True,STATUS_FINAL,24.0,31.0,False,35000,FirstBank Stadium
+2025,401752748,2025-10-25 23:30:00+00:00,9,99,LSU,SEC,245,Texas A&M,home,False,False,True,STATUS_FINAL,25.0,49.0,False,101924,Tiger Stadium (LA)
+2025,401752777,2025-11-23 00:45:00+00:00,13,99,LSU,SEC,98,Western Kentucky,home,False,False,True,STATUS_FINAL,13.0,10.0,True,100923,Tiger Stadium (LA)
+2025,401752789,2025-11-29 20:30:00+00:00,14,99,LSU,SEC,201,Oklahoma,away,False,False,True,STATUS_FINAL,13.0,17.0,False,83734,"Memorial Stadium (Norman, OK)"
+2025,401757220,2025-08-30 20:00:00+00:00,1,2335,Liberty,Conference USA,311,Maine,home,False,False,True,STATUS_FINAL,28.0,7.0,True,20337,Williams Stadium (VA)
+2025,401757271,2025-09-27 22:00:00+00:00,5,2335,Liberty,Conference USA,295,Old Dominion,away,False,False,True,STATUS_FINAL,7.0,21.0,False,18435,S.B. Ballard Stadium
+2025,401757277,2025-10-09 00:00:00+00:00,7,2335,Liberty,Conference USA,2638,UTEP,away,False,False,True,STATUS_FINAL,19.0,8.0,True,9286,Sun Bowl
+2025,401757282,2025-10-14 23:00:00+00:00,8,2335,Liberty,Conference USA,166,New Mexico State,home,False,False,True,STATUS_FINAL,30.0,27.0,True,16312,Williams Stadium (VA)
+2025,401757299,2025-11-08 18:00:00+00:00,11,2335,Liberty,Conference USA,2623,Missouri State,home,False,False,True,STATUS_FINAL,17.0,21.0,False,18407,Williams Stadium (VA)
+2025,401757307,2025-11-22 20:00:00+00:00,13,2335,Liberty,Conference USA,2348,Louisiana Tech,away,False,False,True,STATUS_FINAL,28.0,34.0,False,10107,Joe Aillet Stadium
+2025,401761592,2025-08-31 00:00:00+00:00,1,309,Louisiana,Sun Belt,242,Rice,home,False,False,True,STATUS_FINAL,12.0,14.0,False,22148,Our Lady of Lourdes Stadium
+2025,401761600,2025-09-07 00:00:00+00:00,2,309,Louisiana,Sun Belt,2377,McNeese,home,False,False,True,STATUS_FINAL,34.0,10.0,True,26071,Our Lady of Lourdes Stadium
+2025,401752702,2025-09-13 17:00:00+00:00,3,309,Louisiana,Sun Belt,142,Missouri,away,False,False,True,STATUS_FINAL,10.0,52.0,False,57321,Memorial Stadium
+2025,401761615,2025-09-28 00:00:00+00:00,5,309,Louisiana,Sun Belt,276,Marshall,home,False,False,True,STATUS_FINAL,54.0,51.0,True,20125,Our Lady of Lourdes Stadium
+2025,401761668,2025-10-18 21:00:00+00:00,8,309,Louisiana,Sun Belt,2572,Southern Miss,home,False,False,True,STATUS_FINAL,10.0,22.0,False,21047,Our Lady of Lourdes Stadium
+2025,401761638,2025-10-25 23:00:00+00:00,9,309,Louisiana,Sun Belt,2653,Troy,away,False,False,True,STATUS_FINAL,23.0,35.0,False,23719,Veterans Memorial Stadium (AL)
+2025,401761642,2025-11-01 19:30:00+00:00,10,309,Louisiana,Sun Belt,6,South Alabama,away,False,False,True,STATUS_FINAL,31.0,22.0,True,18462,Hancock Whitney Stadium
+2025,401761648,2025-11-08 22:00:00+00:00,11,309,Louisiana,Sun Belt,326,Texas State,home,False,False,True,STATUS_FINAL,42.0,39.0,True,14231,Our Lady of Lourdes Stadium
+2025,401761665,2025-11-29 20:00:00+00:00,14,309,Louisiana,Sun Belt,2433,UL Monroe,home,False,False,True,STATUS_FINAL,30.0,27.0,True,16270,Our Lady of Lourdes Stadium
+2025,401757221,2025-08-30 23:30:00+00:00,1,2348,Louisiana Tech,Conference USA,2545,SE Louisiana,home,False,False,True,STATUS_FINAL,24.0,0.0,True,12872,Joe Aillet Stadium
+2025,401757257,2025-09-13 23:30:00+00:00,3,2348,Louisiana Tech,Conference USA,166,New Mexico State,home,False,False,True,STATUS_FINAL,49.0,14.0,True,60229,Joe Aillet Stadium
+2025,401757263,2025-09-20 23:30:00+00:00,4,2348,Louisiana Tech,Conference USA,2572,Southern Miss,home,False,False,True,STATUS_FINAL,30.0,20.0,True,17108,Joe Aillet Stadium
+2025,401757272,2025-09-28 01:00:00+00:00,5,2348,Louisiana Tech,Conference USA,2638,UTEP,away,False,False,True,STATUS_FINAL,30.0,11.0,True,13013,Sun Bowl
+2025,401757286,2025-10-21 23:30:00+00:00,9,2348,Louisiana Tech,Conference USA,98,Western Kentucky,home,False,False,True,STATUS_FINAL,27.0,28.0,False,10928,Joe Aillet Stadium
+2025,401757290,2025-11-01 00:00:00+00:00,10,2348,Louisiana Tech,Conference USA,2534,Sam Houston,home,False,False,True,STATUS_FINAL,55.0,14.0,True,17841,Joe Aillet Stadium
+2025,401752953,2025-11-16 03:00:00+00:00,12,2348,Louisiana Tech,Conference USA,265,Washington State,away,False,False,True,STATUS_FINAL,3.0,28.0,False,21186,Martin Stadium
+2025,401757314,2025-11-29 19:00:00+00:00,14,2348,Louisiana Tech,Conference USA,2623,Missouri State,away,False,False,True,STATUS_FINAL,42.0,30.0,True,7656,Robert W. Plaster Stadium
+2025,401754519,2025-08-30 19:00:00+00:00,1,97,Louisville,ACC,2198,Eastern Kentucky,home,False,False,True,STATUS_FINAL,51.0,17.0,True,50536,L&N Federal Credit Union Stadium
+2025,401754547,2025-09-27 16:00:00+00:00,5,97,Louisville,ACC,221,Pittsburgh,away,False,False,True,STATUS_FINAL,34.0,27.0,True,45301,Acrisure Stadium
+2025,401754554,2025-10-04 19:30:00+00:00,6,97,Louisville,ACC,258,Virginia,home,False,False,True,STATUS_FINAL,27.0,30.0,False,50032,L&N Federal Credit Union Stadium
+2025,401754564,2025-10-17 23:00:00+00:00,8,97,Louisville,ACC,2390,Miami,away,False,False,True,STATUS_FINAL,24.0,21.0,True,66573,Hard Rock Stadium
+2025,401754580,2025-11-01 19:00:00+00:00,10,97,Louisville,ACC,259,Virginia Tech,away,False,False,True,STATUS_FINAL,28.0,16.0,True,54030,Lane Stadium
+2025,401754602,2025-11-22 17:00:00+00:00,13,97,Louisville,ACC,2567,SMU,away,False,False,True,STATUS_FINAL,6.0,38.0,False,32713,Gerald J. Ford Stadium
+2025,401757228,2025-09-06 22:00:00+00:00,2,276,Marshall,Sun Belt,2623,Missouri State,home,False,False,True,STATUS_FINAL,20.0,21.0,False,28564,Joan C. Edwards Stadium
+2025,401761606,2025-09-13 22:00:00+00:00,3,276,Marshall,Sun Belt,2198,Eastern Kentucky,home,False,False,True,STATUS_FINAL,38.0,7.0,True,23925,Joan C. Edwards Stadium
+2025,401757264,2025-09-20 23:00:00+00:00,4,276,Marshall,Sun Belt,2393,Middle Tennessee,away,False,False,True,STATUS_FINAL,42.0,28.0,True,15168,"Johnny ""Red"" Floyd Stadium"
+2025,401761626,2025-10-11 19:30:00+00:00,7,276,Marshall,Sun Belt,295,Old Dominion,home,False,False,True,STATUS_FINAL,48.0,24.0,True,23515,Joan C. Edwards Stadium
+2025,401761632,2025-10-18 19:30:00+00:00,8,276,Marshall,Sun Belt,326,Texas State,home,False,False,True,STATUS_FINAL,40.0,37.0,True,27533,Joan C. Edwards Stadium
+2025,401752826,2025-09-05 23:30:00+00:00,2,120,Maryland,Big Ten,2459,Northern Illinois,home,False,False,True,STATUS_FINAL,20.0,9.0,True,35331,SECU Stadium
+2025,401752838,2025-09-13 16:00:00+00:00,3,120,Maryland,Big Ten,119,Towson,home,False,False,True,STATUS_FINAL,44.0,17.0,True,36780,SECU Stadium
+2025,401752845,2025-09-20 16:00:00+00:00,4,120,Maryland,Big Ten,275,Wisconsin,away,False,False,True,STATUS_FINAL,27.0,10.0,True,68547,Camp Randall Stadium
+2025,401752857,2025-10-04 19:30:00+00:00,6,120,Maryland,Big Ten,264,Washington,home,False,False,True,STATUS_FINAL,20.0,24.0,False,46185,SECU Stadium
+2025,401752867,2025-10-11 19:30:00+00:00,7,120,Maryland,Big Ten,158,Nebraska,home,False,False,True,STATUS_FINAL,31.0,34.0,False,39623,SECU Stadium
+2025,401752879,2025-10-18 23:00:00+00:00,8,120,Maryland,Big Ten,26,UCLA,away,False,False,True,STATUS_FINAL,17.0,20.0,False,35561,Rose Bowl
+2025,401752894,2025-11-08 19:30:00+00:00,11,120,Maryland,Big Ten,164,Rutgers,away,False,False,True,STATUS_FINAL,20.0,35.0,False,41032,SHI Stadium
+2025,401752914,2025-11-22 21:00:00+00:00,13,120,Maryland,Big Ten,130,Michigan,home,False,False,True,STATUS_FINAL,20.0,45.0,False,46185,SECU Stadium
+2025,401752923,2025-11-30 00:00:00+00:00,14,120,Maryland,Big Ten,127,Michigan State,away,True,False,True,STATUS_FINAL,28.0,38.0,False,30317,Ford Field
+2025,401762456,2025-08-30 19:30:00+00:00,1,113,Massachusetts,MAC,218,Temple,home,False,False,True,STATUS_FINAL,10.0,42.0,False,11565,Warren McGuirk Alumni Stadium
+2025,401762816,2025-09-06 21:30:00+00:00,2,113,Massachusetts,MAC,2803,Bryant,home,False,False,True,STATUS_FINAL,26.0,27.0,False,3714,Warren McGuirk Alumni Stadium
+2025,401752721,2025-09-27 23:30:00+00:00,5,113,Massachusetts,MAC,142,Missouri,away,False,False,True,STATUS_FINAL,6.0,42.0,False,57321,Memorial Stadium
+2025,401762832,2025-10-04 18:30:00+00:00,6,113,Massachusetts,MAC,2711,Western Michigan,home,False,False,True,STATUS_FINAL,3.0,21.0,False,10014,Warren McGuirk Alumni Stadium
+2025,401762859,2025-11-13 00:00:00+00:00,12,113,Massachusetts,MAC,2459,Northern Illinois,home,False,False,True,STATUS_FINAL,3.0,45.0,False,6155,Warren McGuirk Alumni Stadium
+2025,401762863,2025-11-19 00:15:00+00:00,13,113,Massachusetts,MAC,195,Ohio,away,False,False,True,STATUS_FINAL,14.0,42.0,False,12438,Peden Stadium
+2025,401762433,2025-08-30 20:30:00+00:00,1,235,Memphis,American,236,Chattanooga,home,False,False,True,STATUS_FINAL,45.0,10.0,True,25011,Simmons Bank Liberty Stadium
+2025,401761608,2025-09-13 16:00:00+00:00,3,235,Memphis,American,2653,Troy,away,False,False,True,STATUS_FINAL,28.0,7.0,True,23384,Veterans Memorial Stadium (AL)
+2025,401762478,2025-10-05 00:00:00+00:00,6,235,Memphis,American,202,Tulsa,home,False,False,True,STATUS_FINAL,45.0,7.0,True,27303,Simmons Bank Liberty Stadium
+2025,401762487,2025-10-18 20:00:00+00:00,8,235,Memphis,American,5,UAB,away,False,False,True,STATUS_FINAL,24.0,31.0,False,19037,Protective Stadium
+2025,401762494,2025-10-25 16:00:00+00:00,9,235,Memphis,American,58,South Florida,home,False,False,True,STATUS_FINAL,34.0,31.0,True,30940,Simmons Bank Liberty Stadium
+2025,401762497,2025-10-31 23:00:00+00:00,10,235,Memphis,American,242,Rice,away,False,False,True,STATUS_FINAL,38.0,14.0,True,20197,Rice Stadium
+2025,401762501,2025-11-08 02:10:00+00:00,11,235,Memphis,American,2655,Tulane,home,False,False,True,STATUS_FINAL,32.0,38.0,False,30384,Simmons Bank Liberty Stadium
+2025,401762516,2025-11-28 00:30:00+00:00,14,235,Memphis,American,2426,Navy,home,False,False,True,STATUS_FINAL,17.0,28.0,False,27082,Simmons Bank Liberty Stadium
+2025,401754522,2025-08-31 23:30:00+00:00,1,2390,Miami,ACC,87,Notre Dame,home,False,False,True,STATUS_FINAL,27.0,24.0,True,66793,Hard Rock Stadium
+2025,401754641,2025-09-06 23:00:00+00:00,2,2390,Miami,ACC,2065,Bethune-Cookman,home,False,False,True,STATUS_FINAL,45.0,3.0,True,60617,Hard Rock Stadium
+2025,401754535,2025-09-13 20:30:00+00:00,3,2390,Miami,ACC,58,South Florida,home,False,False,True,STATUS_FINAL,49.0,12.0,True,66591,Hard Rock Stadium
+2025,401754572,2025-10-25 23:00:00+00:00,9,2390,Miami,ACC,24,Stanford,home,False,False,True,STATUS_FINAL,42.0,7.0,True,63892,Hard Rock Stadium
+2025,401754581,2025-11-01 16:00:00+00:00,10,2390,Miami,ACC,2567,SMU,away,False,False,True,STATUS_FINAL,20.0,26.0,False,35074,Gerald J. Ford Stadium
+2025,401754587,2025-11-08 20:30:00+00:00,11,2390,Miami,ACC,183,Syracuse,home,False,False,True,STATUS_FINAL,38.0,10.0,True,60337,Hard Rock Stadium
+2025,401754595,2025-11-15 20:40:00+00:00,12,2390,Miami,ACC,152,NC State,home,False,False,True,STATUS_FINAL,41.0,7.0,True,59157,Hard Rock Stadium
+2025,401754603,2025-11-22 17:00:00+00:00,13,2390,Miami,ACC,259,Virginia Tech,away,False,False,True,STATUS_FINAL,34.0,17.0,True,65632,Lane Stadium
+2025,401754611,2025-11-29 17:00:00+00:00,14,2390,Miami,ACC,221,Pittsburgh,away,False,False,True,STATUS_FINAL,38.0,7.0,True,49845,Acrisure Stadium
+2025,401762791,2025-08-29 01:00:00+00:00,1,193,Miami (OH),MAC,275,Wisconsin,away,False,False,True,STATUS_FINAL,0.0,17.0,False,65952,Camp Randall Stadium
+2025,401752818,2025-09-06 20:30:00+00:00,2,193,Miami (OH),MAC,164,Rutgers,away,False,False,True,STATUS_FINAL,17.0,45.0,False,45981,SHI Stadium
+2025,401760376,2025-09-20 16:00:00+00:00,4,193,Miami (OH),MAC,2439,UNLV,home,False,False,True,STATUS_FINAL,38.0,41.0,False,12625,Yager Stadium
+2025,401762827,2025-09-27 19:30:00+00:00,5,193,Miami (OH),MAC,2815,Lindenwood,home,False,False,True,STATUS_FINAL,38.0,0.0,True,10504,Yager Stadium
+2025,401762873,2025-10-04 19:30:00+00:00,6,193,Miami (OH),MAC,2459,Northern Illinois,away,False,False,True,STATUS_FINAL,25.0,14.0,True,13827,Huskie Stadium
+2025,401762874,2025-10-25 19:30:00+00:00,9,193,Miami (OH),MAC,2711,Western Michigan,home,False,False,True,STATUS_FINAL,26.0,17.0,True,18025,Yager Stadium
+2025,401762852,2025-11-05 00:00:00+00:00,11,193,Miami (OH),MAC,195,Ohio,away,False,False,True,STATUS_FINAL,20.0,24.0,False,22231,Peden Stadium
+2025,401762860,2025-11-13 00:00:00+00:00,12,193,Miami (OH),MAC,2649,Toledo,home,False,False,True,STATUS_FINAL,3.0,24.0,False,10825,Yager Stadium
+2025,401777329,2025-12-06 17:00:00+00:00,15,193,Miami (OH),MAC,2711,Western Michigan,away,True,False,True,STATUS_FINAL,13.0,23.0,False,19114,Ford Field
+2025,401752808,2025-08-30 23:30:00+00:00,1,130,Michigan,Big Ten,167,New Mexico,home,False,False,True,STATUS_FINAL,34.0,17.0,True,110648,Michigan Stadium
+2025,401752690,2025-09-06 23:30:00+00:00,2,130,Michigan,Big Ten,201,Oklahoma,away,False,False,True,STATUS_FINAL,13.0,24.0,False,84107,"Memorial Stadium (Norman, OK)"
+2025,401752846,2025-09-20 19:30:00+00:00,4,130,Michigan,Big Ten,158,Nebraska,away,False,False,True,STATUS_FINAL,30.0,27.0,True,87278,"Memorial Stadium (Lincoln, NE)"
+2025,401752856,2025-10-04 16:00:00+00:00,6,130,Michigan,Big Ten,275,Wisconsin,home,False,False,True,STATUS_FINAL,24.0,10.0,True,111070,Michigan Stadium
+2025,401752868,2025-10-11 23:30:00+00:00,7,130,Michigan,Big Ten,30,USC,away,False,False,True,STATUS_FINAL,13.0,31.0,False,75500,Los Angeles Memorial Coliseum
+2025,401752873,2025-10-18 16:00:00+00:00,8,130,Michigan,Big Ten,264,Washington,home,False,False,True,STATUS_FINAL,24.0,7.0,True,110701,Michigan Stadium
+2025,401752881,2025-10-25 23:30:00+00:00,9,130,Michigan,Big Ten,127,Michigan State,away,False,False,True,STATUS_FINAL,31.0,20.0,True,75085,Spartan Stadium
+2025,401752890,2025-11-01 23:00:00+00:00,10,130,Michigan,Big Ten,2509,Purdue,home,False,False,True,STATUS_FINAL,21.0,16.0,True,110517,Michigan Stadium
+2025,401752905,2025-11-15 17:00:00+00:00,12,130,Michigan,Big Ten,77,Northwestern,away,False,False,True,STATUS_FINAL,24.0,22.0,True,38223,Wrigley Field
+2025,401752921,2025-11-29 17:00:00+00:00,14,130,Michigan,Big Ten,194,Ohio State,home,False,False,True,STATUS_FINAL,9.0,27.0,False,111373,Michigan Stadium
+2025,401752802,2025-08-29 23:00:00+00:00,1,127,Michigan State,Big Ten,2711,Western Michigan,home,False,False,True,STATUS_FINAL,23.0,6.0,True,71657,Spartan Stadium
+2025,401752834,2025-09-13 19:30:00+00:00,3,127,Michigan State,Big Ten,2754,Youngstown State,home,False,False,True,STATUS_FINAL,41.0,24.0,True,71301,Spartan Stadium
+2025,401752847,2025-09-21 03:00:00+00:00,4,127,Michigan State,Big Ten,30,USC,away,False,False,True,STATUS_FINAL,31.0,45.0,False,67614,Los Angeles Memorial Coliseum
+2025,401752860,2025-10-04 20:00:00+00:00,6,127,Michigan State,Big Ten,158,Nebraska,away,False,False,True,STATUS_FINAL,27.0,38.0,False,86496,"Memorial Stadium (Lincoln, NE)"
+2025,401752863,2025-10-11 16:00:00+00:00,7,127,Michigan State,Big Ten,26,UCLA,home,False,False,True,STATUS_FINAL,13.0,38.0,False,72109,Spartan Stadium
+2025,401752888,2025-11-01 19:30:00+00:00,10,127,Michigan State,Big Ten,135,Minnesota,away,False,False,True,STATUS_FINAL,20.0,23.0,False,45339,Huntington Bank Stadium
+2025,401752903,2025-11-15 20:30:00+00:00,12,127,Michigan State,Big Ten,213,Penn State,home,False,False,True,STATUS_FINAL,10.0,28.0,False,61671,Spartan Stadium
+2025,401757222,2025-08-30 23:00:00+00:00,1,2393,Middle Tennessee,Conference USA,2046,Austin Peay,home,False,False,True,STATUS_FINAL,14.0,34.0,False,18505,"Johnny ""Red"" Floyd Stadium"
+2025,401752820,2025-09-06 20:00:00+00:00,2,2393,Middle Tennessee,Conference USA,275,Wisconsin,away,False,False,True,STATUS_FINAL,10.0,42.0,False,70368,Camp Randall Stadium
+2025,401757258,2025-09-13 21:00:00+00:00,3,2393,Middle Tennessee,Conference USA,2440,Nevada,away,False,False,True,STATUS_FINAL,14.0,13.0,True,16808,Mackay Stadium
+2025,401757278,2025-10-08 23:30:00+00:00,7,2393,Middle Tennessee,Conference USA,2623,Missouri State,home,False,False,True,STATUS_FINAL,20.0,22.0,False,9806,"Johnny ""Red"" Floyd Stadium"
+2025,401757303,2025-11-15 20:30:00+00:00,12,2393,Middle Tennessee,Conference USA,98,Western Kentucky,away,False,False,True,STATUS_FINAL,26.0,42.0,False,16547,Houchens Industries-L.T. Smith Stadium
+2025,401757308,2025-11-22 20:00:00+00:00,13,2393,Middle Tennessee,Conference USA,2534,Sam Houston,home,False,False,True,STATUS_FINAL,31.0,17.0,True,7605,"Johnny ""Red"" Floyd Stadium"
+2025,401757315,2025-11-29 20:00:00+00:00,14,2393,Middle Tennessee,Conference USA,166,New Mexico State,away,False,False,True,STATUS_FINAL,31.0,24.0,True,7381,Aggie Memorial Stadium
+2025,401752813,2025-09-06 16:00:00+00:00,2,135,Minnesota,Big Ten,2466,Northwestern State,home,False,False,True,STATUS_FINAL,66.0,0.0,True,42447,Huntington Bank Stadium
+2025,401752849,2025-09-27 16:00:00+00:00,5,135,Minnesota,Big Ten,164,Rutgers,home,False,False,True,STATUS_FINAL,31.0,28.0,True,46234,Huntington Bank Stadium
+2025,401752859,2025-10-04 23:30:00+00:00,6,135,Minnesota,Big Ten,194,Ohio State,away,False,False,True,STATUS_FINAL,3.0,42.0,False,105114,Ohio Stadium
+2025,401752864,2025-10-11 23:30:00+00:00,7,135,Minnesota,Big Ten,2509,Purdue,home,False,False,True,STATUS_FINAL,27.0,20.0,True,49254,Huntington Bank Stadium
+2025,401752872,2025-10-18 00:00:00+00:00,8,135,Minnesota,Big Ten,158,Nebraska,home,False,False,True,STATUS_FINAL,24.0,6.0,True,48549,Huntington Bank Stadium
+2025,401752904,2025-11-15 02:00:00+00:00,12,135,Minnesota,Big Ten,2483,Oregon,away,False,False,True,STATUS_FINAL,13.0,42.0,False,58830,Autzen Stadium
+2025,401752909,2025-11-22 17:00:00+00:00,13,135,Minnesota,Big Ten,77,Northwestern,away,False,False,True,STATUS_FINAL,35.0,38.0,False,15323,Wrigley Field
+2025,401752918,2025-11-29 20:30:00+00:00,14,135,Minnesota,Big Ten,275,Wisconsin,home,False,False,True,STATUS_FINAL,17.0,7.0,True,46038,Huntington Bank Stadium
+2025,401752673,2025-08-30 16:00:00+00:00,1,344,Mississippi State,SEC,2572,Southern Miss,away,False,False,True,STATUS_FINAL,34.0,17.0,True,33485,M. M. Roberts Stadium
+2025,401752701,2025-09-13 22:00:00+00:00,3,344,Mississippi State,SEC,2016,Alcorn State,home,False,False,True,STATUS_FINAL,63.0,0.0,True,49158,Davis Wade Stadium
+2025,401752712,2025-09-20 20:15:00+00:00,4,344,Mississippi State,SEC,2459,Northern Illinois,home,False,False,True,STATUS_FINAL,38.0,10.0,True,45803,Davis Wade Stadium
+2025,401752720,2025-09-27 20:15:00+00:00,5,344,Mississippi State,SEC,2633,Tennessee,home,False,False,True,STATUS_FINAL,34.0,41.0,False,60417,Davis Wade Stadium
+2025,401752730,2025-10-04 23:30:00+00:00,6,344,Mississippi State,SEC,245,Texas A&M,away,False,False,True,STATUS_FINAL,9.0,31.0,False,108572,Kyle Field
+2025,401752749,2025-10-25 20:15:00+00:00,9,344,Mississippi State,SEC,251,Texas,home,False,False,True,STATUS_FINAL,38.0,45.0,False,52680,Davis Wade Stadium
+2025,401752770,2025-11-16 00:45:00+00:00,12,344,Mississippi State,SEC,142,Missouri,away,False,False,True,STATUS_FINAL,27.0,49.0,False,57321,Memorial Stadium
+2025,401752788,2025-11-28 17:00:00+00:00,14,344,Mississippi State,SEC,145,Ole Miss,home,False,False,True,STATUS_FINAL,19.0,38.0,False,60417,Davis Wade Stadium
+2025,401752674,2025-08-28 23:30:00+00:00,1,142,Missouri,SEC,2110,Central Arkansas,home,False,False,True,STATUS_FINAL,61.0,6.0,True,57321,Memorial Stadium
+2025,401752713,2025-09-20 23:00:00+00:00,4,142,Missouri,SEC,2579,South Carolina,home,False,False,True,STATUS_FINAL,29.0,20.0,True,57321,Memorial Stadium
+2025,401752752,2025-10-25 19:30:00+00:00,9,142,Missouri,SEC,238,Vanderbilt,away,False,False,True,STATUS_FINAL,10.0,17.0,False,35000,FirstBank Stadium
+2025,401752763,2025-11-08 20:30:00+00:00,11,142,Missouri,SEC,245,Texas A&M,home,False,False,True,STATUS_FINAL,17.0,38.0,False,57321,Memorial Stadium
+2025,401752778,2025-11-22 17:00:00+00:00,13,142,Missouri,SEC,201,Oklahoma,away,False,False,True,STATUS_FINAL,6.0,17.0,False,83541,"Memorial Stadium (Norman, OK)"
+2025,401752798,2025-08-30 23:30:00+00:00,1,2623,Missouri State,Conference USA,30,USC,away,False,False,True,STATUS_FINAL,13.0,73.0,False,62841,Los Angeles Memorial Coliseum
+2025,401754615,2025-09-13 19:30:00+00:00,3,2623,Missouri State,Conference USA,2567,SMU,home,False,False,True,STATUS_FINAL,10.0,28.0,False,15027,Robert W. Plaster Stadium
+2025,401757265,2025-09-20 23:00:00+00:00,4,2623,Missouri State,Conference USA,2630,UT Martin,home,False,False,True,STATUS_FINAL,42.0,10.0,True,14476,Robert W. Plaster Stadium
+2025,401757273,2025-09-27 23:00:00+00:00,5,2623,Missouri State,Conference USA,98,Western Kentucky,home,False,False,True,STATUS_FINAL,22.0,27.0,False,10068,Robert W. Plaster Stadium
+2025,401757288,2025-10-23 01:00:00+00:00,9,2623,Missouri State,Conference USA,166,New Mexico State,away,False,False,True,STATUS_FINAL,24.0,17.0,True,8790,Aggie Memorial Stadium
+2025,401757304,2025-11-15 20:00:00+00:00,12,2623,Missouri State,Conference USA,2638,UTEP,home,False,False,True,STATUS_FINAL,38.0,24.0,True,13298,Robert W. Plaster Stadium
+2025,401754524,2025-09-06 16:00:00+00:00,2,152,NC State,ACC,258,Virginia,home,False,False,True,STATUS_FINAL,35.0,31.0,True,56919,Carter-Finley Stadium
+2025,401754531,2025-09-11 23:30:00+00:00,3,152,NC State,ACC,154,Wake Forest,away,False,False,True,STATUS_FINAL,34.0,24.0,True,29043,Allegacy Federal Credit Union Stadium
+2025,401754548,2025-09-27 23:00:00+00:00,5,152,NC State,ACC,259,Virginia Tech,home,False,False,True,STATUS_FINAL,21.0,23.0,False,56919,Carter-Finley Stadium
+2025,401754557,2025-10-04 18:00:00+00:00,6,152,NC State,ACC,2097,Campbell,home,False,False,True,STATUS_FINAL,56.0,10.0,True,56919,Carter-Finley Stadium
+2025,401754562,2025-10-11 19:30:00+00:00,7,152,NC State,ACC,87,Notre Dame,away,False,False,True,STATUS_FINAL,7.0,36.0,False,77622,Notre Dame Stadium
+2025,401754574,2025-10-25 19:30:00+00:00,9,152,NC State,ACC,221,Pittsburgh,away,False,False,True,STATUS_FINAL,34.0,53.0,False,46840,Acrisure Stadium
+2025,401754612,2025-11-30 00:30:00+00:00,14,152,NC State,ACC,153,North Carolina,home,False,False,True,STATUS_FINAL,42.0,19.0,True,56919,Carter-Finley Stadium
+2025,401762434,2025-08-30 16:00:00+00:00,1,2426,Navy,American,2678,VMI,home,False,False,True,STATUS_FINAL,52.0,7.0,True,30014,Navy-Marine Corps Memorial Stadium
+2025,401762458,2025-09-06 19:30:00+00:00,2,2426,Navy,American,5,UAB,home,False,False,True,STATUS_FINAL,38.0,24.0,True,28325,Navy-Marine Corps Memorial Stadium
+2025,401762465,2025-09-14 00:00:00+00:00,3,2426,Navy,American,202,Tulsa,away,False,False,True,STATUS_FINAL,42.0,23.0,True,20103,H. A. Chapman Stadium
+2025,401762473,2025-09-27 19:30:00+00:00,5,2426,Navy,American,242,Rice,home,False,False,True,STATUS_FINAL,21.0,13.0,True,28873,Navy-Marine Corps Memorial Stadium
+2025,401762484,2025-10-11 20:00:00+00:00,7,2426,Navy,American,218,Temple,away,False,False,True,STATUS_FINAL,32.0,31.0,True,26149,Lincoln Financial Field
+2025,401762499,2025-11-01 16:00:00+00:00,10,2426,Navy,American,249,North Texas,away,False,False,True,STATUS_FINAL,17.0,31.0,False,26516,DATCU Stadium
+2025,401757166,2025-11-09 00:30:00+00:00,11,2426,Navy,American,87,Notre Dame,away,False,False,True,STATUS_FINAL,10.0,49.0,False,77622,Notre Dame Stadium
+2025,401762510,2025-11-15 17:00:00+00:00,12,2426,Navy,American,58,South Florida,home,False,False,True,STATUS_FINAL,41.0,38.0,True,34856,Navy-Marine Corps Memorial Stadium
+2025,401752828,2025-09-13 16:00:00+00:00,3,158,Nebraska,Big Ten,2277,Houston Christian,home,False,False,True,STATUS_FINAL,59.0,7.0,True,86292,"Memorial Stadium (Lincoln, NE)"
+2025,401752883,2025-10-25 16:00:00+00:00,9,158,Nebraska,Big Ten,77,Northwestern,home,False,False,True,STATUS_FINAL,28.0,21.0,True,86401,"Memorial Stadium (Lincoln, NE)"
+2025,401752892,2025-11-01 23:30:00+00:00,10,158,Nebraska,Big Ten,30,USC,home,False,False,True,STATUS_FINAL,17.0,21.0,False,86529,"Memorial Stadium (Lincoln, NE)"
+2025,401752895,2025-11-09 02:00:00+00:00,11,158,Nebraska,Big Ten,26,UCLA,away,False,False,True,STATUS_FINAL,28.0,21.0,True,44481,Rose Bowl
+2025,401752908,2025-11-23 00:00:00+00:00,13,158,Nebraska,Big Ten,213,Penn State,away,False,False,True,STATUS_FINAL,10.0,37.0,False,105038,Beaver Stadium
+2025,401752807,2025-08-30 19:30:00+00:00,1,2440,Nevada,Mountain West,213,Penn State,away,False,False,True,STATUS_FINAL,11.0,46.0,False,106915,Beaver Stadium
+2025,401760365,2025-09-06 21:00:00+00:00,2,2440,Nevada,Mountain West,16,Sacramento State,home,False,False,True,STATUS_FINAL,20.0,17.0,True,20535,Mackay Stadium
+2025,401757268,2025-09-20 23:00:00+00:00,4,2440,Nevada,Mountain West,98,Western Kentucky,away,False,False,True,STATUS_FINAL,16.0,31.0,False,17247,Houchens Industries-L.T. Smith Stadium
+2025,401760390,2025-10-12 02:30:00+00:00,7,2440,Nevada,Mountain West,21,San Diego State,home,False,False,True,STATUS_FINAL,10.0,44.0,False,19473,Mackay Stadium
+2025,401760395,2025-10-19 01:45:00+00:00,8,2440,Nevada,Mountain West,167,New Mexico,away,False,False,True,STATUS_FINAL,22.0,24.0,False,18233,University Stadium (NM)
+2025,401760409,2025-11-09 00:30:00+00:00,11,2440,Nevada,Mountain West,328,Utah State,away,False,False,True,STATUS_FINAL,14.0,51.0,False,19418,Maverik Stadium
+2025,401760413,2025-11-15 20:30:00+00:00,12,2440,Nevada,Mountain West,23,San José State,home,False,False,True,STATUS_FINAL,55.0,10.0,True,14491,Mackay Stadium
+2025,401760419,2025-11-22 19:00:00+00:00,13,2440,Nevada,Mountain West,2751,Wyoming,away,False,False,True,STATUS_FINAL,13.0,7.0,True,25650,War Memorial Stadium
+2025,401760425,2025-11-30 02:00:00+00:00,14,2440,Nevada,Mountain West,2439,UNLV,home,False,False,True,STATUS_FINAL,17.0,42.0,False,0,Mackay Stadium
+2025,401760366,2025-09-06 19:00:00+00:00,2,167,New Mexico,Mountain West,304,Idaho State,home,False,False,True,STATUS_FINAL,32.0,22.0,True,17639,University Stadium (NM)
+2025,401752837,2025-09-13 02:00:00+00:00,3,167,New Mexico,Mountain West,26,UCLA,away,False,False,True,STATUS_FINAL,35.0,10.0,True,31163,Rose Bowl
+2025,401757274,2025-09-27 20:00:00+00:00,5,167,New Mexico,Mountain West,166,New Mexico State,home,False,False,True,STATUS_FINAL,38.0,20.0,True,37440,University Stadium (NM)
+2025,401760384,2025-10-04 02:00:00+00:00,6,167,New Mexico,Mountain West,23,San José State,away,False,False,True,STATUS_FINAL,28.0,35.0,False,12109,CEFCU Stadium
+2025,401760400,2025-10-25 19:00:00+00:00,9,167,New Mexico,Mountain West,328,Utah State,home,False,False,True,STATUS_FINAL,33.0,14.0,True,20097,University Stadium (NM)
+2025,401760404,2025-11-01 19:00:00+00:00,10,167,New Mexico,Mountain West,2439,UNLV,away,False,False,True,STATUS_FINAL,40.0,35.0,True,25972,Allegiant Stadium
+2025,401760426,2025-11-28 20:30:00+00:00,14,167,New Mexico,Mountain West,21,San Diego State,home,False,False,True,STATUS_FINAL,23.0,17.0,True,30575,University Stadium (NM)
+2025,401757223,2025-08-31 01:00:00+00:00,1,166,New Mexico State,Conference USA,2803,Bryant,home,False,False,True,STATUS_FINAL,19.0,3.0,True,10058,Aggie Memorial Stadium
+2025,401757229,2025-09-07 01:00:00+00:00,2,166,New Mexico State,Conference USA,202,Tulsa,home,False,False,True,STATUS_FINAL,21.0,14.0,True,10240,Aggie Memorial Stadium
+2025,401757275,2025-10-03 01:00:00+00:00,6,166,New Mexico State,Conference USA,2534,Sam Houston,home,False,False,True,STATUS_FINAL,37.0,10.0,True,9089,Aggie Memorial Stadium
+2025,401757294,2025-11-01 19:30:00+00:00,10,166,New Mexico State,Conference USA,98,Western Kentucky,away,False,False,True,STATUS_FINAL,16.0,35.0,False,15023,Houchens Industries-L.T. Smith Stadium
+2025,401752771,2025-11-15 21:15:00+00:00,12,166,New Mexico State,Conference USA,2633,Tennessee,away,False,False,True,STATUS_FINAL,9.0,42.0,False,101915,Neyland Stadium
+2025,401757309,2025-11-22 20:00:00+00:00,13,166,New Mexico State,Conference USA,2638,UTEP,away,False,False,True,STATUS_FINAL,34.0,31.0,True,16677,Sun Bowl
+2025,401754523,2025-09-02 00:00:00+00:00,1,153,North Carolina,ACC,2628,TCU,home,False,False,True,STATUS_FINAL,14.0,48.0,False,50500,Kenan Stadium
+2025,401754639,2025-09-13 19:30:00+00:00,3,153,North Carolina,ACC,257,Richmond,home,False,False,True,STATUS_FINAL,41.0,6.0,True,50500,Kenan Stadium
+2025,401754640,2025-09-20 19:30:00+00:00,4,153,North Carolina,ACC,2116,UCF,away,False,False,True,STATUS_FINAL,9.0,34.0,False,44206,Acrisure Bounce House
+2025,401754573,2025-10-25 16:00:00+00:00,9,153,North Carolina,ACC,258,Virginia,home,False,False,True,STATUS_FINAL,16.0,17.0,False,50500,Kenan Stadium
+2025,401754575,2025-10-31 23:30:00+00:00,10,153,North Carolina,ACC,183,Syracuse,away,False,False,True,STATUS_FINAL,27.0,10.0,True,37184,JMA Wireless Dome
+2025,401754588,2025-11-08 21:30:00+00:00,11,153,North Carolina,ACC,24,Stanford,home,False,False,True,STATUS_FINAL,20.0,15.0,True,50500,Kenan Stadium
+2025,401754596,2025-11-15 21:30:00+00:00,12,153,North Carolina,ACC,154,Wake Forest,away,False,False,True,STATUS_FINAL,12.0,28.0,False,32390,Allegacy Federal Credit Union Stadium
+2025,401762435,2025-08-31 00:00:00+00:00,1,249,North Texas,American,2320,Lamar,home,False,False,True,STATUS_FINAL,51.0,0.0,True,20594,DATCU Stadium
+2025,401762461,2025-09-06 19:30:00+00:00,2,249,North Texas,American,2711,Western Michigan,away,False,False,True,STATUS_FINAL,33.0,30.0,True,20051,Waldo Stadium
+2025,401752949,2025-09-13 19:30:00+00:00,3,249,North Texas,American,265,Washington State,home,False,False,True,STATUS_FINAL,59.0,10.0,True,26837,DATCU Stadium
+2025,401761617,2025-09-27 16:00:00+00:00,5,249,North Texas,American,6,South Alabama,home,False,False,True,STATUS_FINAL,36.0,22.0,True,16575,DATCU Stadium
+2025,401762481,2025-10-10 23:30:00+00:00,7,249,North Texas,American,58,South Florida,home,False,False,True,STATUS_FINAL,36.0,63.0,False,31386,DATCU Stadium
+2025,401762491,2025-10-18 20:05:00+00:00,8,249,North Texas,American,2636,UTSA,home,False,False,True,STATUS_FINAL,55.0,17.0,True,25053,DATCU Stadium
+2025,401762506,2025-11-15 19:00:00+00:00,12,249,North Texas,American,5,UAB,away,False,False,True,STATUS_FINAL,53.0,24.0,True,16190,Protective Stadium
+2025,401762514,2025-11-23 00:30:00+00:00,13,249,North Texas,American,242,Rice,away,False,False,True,STATUS_FINAL,56.0,24.0,True,24598,Rice Stadium
+2025,401762442,2025-11-28 20:30:00+00:00,14,249,North Texas,American,218,Temple,home,False,False,True,STATUS_FINAL,52.0,25.0,True,24492,DATCU Stadium
+2025,401777324,2025-12-06 01:00:00+00:00,15,249,North Texas,American,2655,Tulane,away,False,False,True,STATUS_FINAL,21.0,34.0,False,23986,Yulman Stadium
+2025,401762793,2025-08-30 19:30:00+00:00,1,2459,Northern Illinois,MAC,107,Holy Cross,home,False,False,True,STATUS_FINAL,19.0,17.0,True,10569,Huskie Stadium
+2025,401760380,2025-09-27 19:30:00+00:00,5,2459,Northern Illinois,MAC,21,San Diego State,home,False,False,True,STATUS_FINAL,3.0,6.0,False,13512,Huskie Stadium
+2025,401762843,2025-10-18 19:30:00+00:00,8,2459,Northern Illinois,MAC,195,Ohio,away,False,False,True,STATUS_FINAL,21.0,48.0,False,22293,Peden Stadium
+2025,401762854,2025-11-06 00:00:00+00:00,11,2459,Northern Illinois,MAC,2649,Toledo,away,False,False,True,STATUS_FINAL,3.0,42.0,False,22128,Glass Bowl
+2025,401762864,2025-11-19 00:00:00+00:00,13,2459,Northern Illinois,MAC,2711,Western Michigan,home,False,False,True,STATUS_FINAL,19.0,35.0,False,4734,Huskie Stadium
+2025,401752803,2025-08-30 16:00:00+00:00,1,77,Northwestern,Big Ten,2655,Tulane,away,False,False,True,STATUS_FINAL,3.0,23.0,False,22103,Yulman Stadium
+2025,401752817,2025-09-05 23:30:00+00:00,2,77,Northwestern,Big Ten,2710,Western Illinois,home,False,False,True,STATUS_FINAL,42.0,7.0,True,9647,Northwestern Medicine Field at Martin Stadium
+2025,401752831,2025-09-13 16:00:00+00:00,3,77,Northwestern,Big Ten,2483,Oregon,home,False,False,True,STATUS_FINAL,14.0,34.0,False,12023,Northwestern Medicine Field at Martin Stadium
+2025,401752851,2025-09-27 19:30:00+00:00,5,77,Northwestern,Big Ten,26,UCLA,home,False,False,True,STATUS_FINAL,17.0,14.0,True,12023,Northwestern Medicine Field at Martin Stadium
+2025,401752858,2025-10-04 19:30:00+00:00,6,77,Northwestern,Big Ten,2433,UL Monroe,home,False,False,True,STATUS_FINAL,42.0,7.0,True,12023,Northwestern Medicine Field at Martin Stadium
+2025,401752866,2025-10-11 19:30:00+00:00,7,77,Northwestern,Big Ten,213,Penn State,away,False,False,True,STATUS_FINAL,22.0,21.0,True,108121,Beaver Stadium
+2025,401752874,2025-10-18 19:00:00+00:00,8,77,Northwestern,Big Ten,2509,Purdue,home,False,False,True,STATUS_FINAL,19.0,0.0,True,12023,Northwestern Medicine Field at Martin Stadium
+2025,401752896,2025-11-08 02:00:00+00:00,11,77,Northwestern,Big Ten,30,USC,away,False,False,True,STATUS_FINAL,17.0,38.0,False,67179,Los Angeles Memorial Coliseum
+2025,401752707,2025-09-13 23:30:00+00:00,3,87,Notre Dame,FBS Independents,245,Texas A&M,home,False,False,True,STATUS_FINAL,40.0,41.0,False,77622,Notre Dame Stadium
+2025,401752848,2025-09-20 19:30:00+00:00,4,87,Notre Dame,FBS Independents,2509,Purdue,home,False,False,True,STATUS_FINAL,56.0,30.0,True,77622,Notre Dame Stadium
+2025,401752871,2025-10-18 23:30:00+00:00,8,87,Notre Dame,FBS Independents,30,USC,home,False,False,True,STATUS_FINAL,34.0,24.0,True,77622,Notre Dame Stadium
+2025,401754597,2025-11-15 17:00:00+00:00,12,87,Notre Dame,FBS Independents,221,Pittsburgh,away,False,False,True,STATUS_FINAL,37.0,15.0,True,68400,Acrisure Stadium
+2025,401754604,2025-11-22 20:30:00+00:00,13,87,Notre Dame,FBS Independents,183,Syracuse,home,False,False,True,STATUS_FINAL,70.0,7.0,True,77622,Notre Dame Stadium
+2025,401754614,2025-11-30 03:30:00+00:00,14,87,Notre Dame,FBS Independents,24,Stanford,away,False,False,True,STATUS_FINAL,49.0,20.0,True,27456,Stanford Stadium
+2025,401752794,2025-08-28 22:00:00+00:00,1,195,Ohio,MAC,164,Rutgers,away,False,False,True,STATUS_FINAL,31.0,34.0,False,46907,SHI Stadium
+2025,401756883,2025-09-06 20:00:00+00:00,2,195,Ohio,MAC,277,West Virginia,home,False,False,True,STATUS_FINAL,17.0,10.0,True,26740,Peden Stadium
+2025,401752827,2025-09-13 23:00:00+00:00,3,195,Ohio,MAC,194,Ohio State,away,False,False,True,STATUS_FINAL,9.0,37.0,False,105765,Ohio Stadium
+2025,401762823,2025-09-20 19:30:00+00:00,4,195,Ohio,MAC,2241,Gardner-Webb,home,False,False,True,STATUS_FINAL,52.0,35.0,True,22312,Peden Stadium
+2025,401762857,2025-11-12 01:00:00+00:00,12,195,Ohio,MAC,2711,Western Michigan,away,False,False,True,STATUS_FINAL,13.0,17.0,False,10849,Waldo Stadium
+2025,401752677,2025-08-30 16:00:00+00:00,1,194,Ohio State,Big Ten,251,Texas,home,False,False,True,STATUS_FINAL,14.0,7.0,True,107524,Ohio Stadium
+2025,401752815,2025-09-06 19:30:00+00:00,2,194,Ohio State,Big Ten,2755,Grambling,home,False,False,True,STATUS_FINAL,70.0,0.0,True,100624,Ohio Stadium
+2025,401752852,2025-09-27 19:30:00+00:00,5,194,Ohio State,Big Ten,264,Washington,away,False,False,True,STATUS_FINAL,24.0,6.0,True,72485,Husky Stadium
+2025,401752877,2025-10-18 19:30:00+00:00,8,194,Ohio State,Big Ten,275,Wisconsin,away,False,False,True,STATUS_FINAL,34.0,0.0,True,72795,Camp Randall Stadium
+2025,401752889,2025-11-01 16:00:00+00:00,10,194,Ohio State,Big Ten,213,Penn State,home,False,False,True,STATUS_FINAL,38.0,14.0,True,105517,Ohio Stadium
+2025,401752897,2025-11-08 18:00:00+00:00,11,194,Ohio State,Big Ten,2509,Purdue,away,False,False,True,STATUS_FINAL,34.0,10.0,True,57701,Ross-Ade Stadium
+2025,401752900,2025-11-16 00:30:00+00:00,12,194,Ohio State,Big Ten,26,UCLA,home,False,False,True,STATUS_FINAL,48.0,10.0,True,104168,Ohio Stadium
+2025,401752912,2025-11-22 17:00:00+00:00,13,194,Ohio State,Big Ten,164,Rutgers,home,False,False,True,STATUS_FINAL,42.0,9.0,True,0,Ohio Stadium
+2025,401752675,2025-08-30 22:00:00+00:00,1,201,Oklahoma,SEC,2287,Illinois State,home,False,False,True,STATUS_FINAL,35.0,3.0,True,83218,"Memorial Stadium (Norman, OK)"
+2025,401752703,2025-09-13 16:00:00+00:00,3,201,Oklahoma,SEC,218,Temple,away,False,False,True,STATUS_FINAL,42.0,3.0,True,24927,Lincoln Financial Field
+2025,401752736,2025-10-11 19:30:00+00:00,7,201,Oklahoma,SEC,251,Texas,away,True,False,True,STATUS_FINAL,6.0,23.0,False,92100,Cotton Bowl
+2025,401752744,2025-10-18 16:45:00+00:00,8,201,Oklahoma,SEC,2579,South Carolina,away,False,False,True,STATUS_FINAL,26.0,7.0,True,78680,Williams-Brice Stadium
+2025,401752750,2025-10-25 16:00:00+00:00,9,201,Oklahoma,SEC,145,Ole Miss,home,False,False,True,STATUS_FINAL,26.0,34.0,False,83468,"Memorial Stadium (Norman, OK)"
+2025,401752757,2025-11-01 23:30:00+00:00,10,201,Oklahoma,SEC,2633,Tennessee,away,False,False,True,STATUS_FINAL,33.0,27.0,True,101915,Neyland Stadium
+2025,401756876,2025-08-28 23:30:00+00:00,1,197,Oklahoma State,Big 12,2630,UT Martin,home,False,False,True,STATUS_FINAL,27.0,7.0,True,44809,Boone Pickens Stadium
+2025,401752824,2025-09-06 19:30:00+00:00,2,197,Oklahoma State,Big 12,2483,Oregon,away,False,False,True,STATUS_FINAL,3.0,69.0,False,57266,Autzen Stadium
+2025,401756900,2025-09-19 23:30:00+00:00,4,197,Oklahoma State,Big 12,202,Tulsa,home,False,False,True,STATUS_FINAL,12.0,19.0,False,48842,Boone Pickens Stadium
+2025,401756933,2025-10-25 20:00:00+00:00,9,197,Oklahoma State,Big 12,2641,Texas Tech,away,False,False,True,STATUS_FINAL,0.0,42.0,False,59625,Galaxy Stadium
+2025,401756959,2025-11-22 21:00:00+00:00,13,197,Oklahoma State,Big 12,2116,UCF,away,False,False,True,STATUS_FINAL,14.0,17.0,False,41723,Acrisure Bounce House
+2025,401761599,2025-09-06 22:00:00+00:00,2,295,Old Dominion,Sun Belt,2428,North Carolina Central,home,False,False,True,STATUS_FINAL,54.0,6.0,True,18111,S.B. Ballard Stadium
+2025,401754536,2025-09-13 23:00:00+00:00,3,295,Old Dominion,Sun Belt,259,Virginia Tech,away,False,False,True,STATUS_FINAL,45.0,26.0,True,57627,Lane Stadium
+2025,401761641,2025-11-01 19:30:00+00:00,10,295,Old Dominion,Sun Belt,2433,UL Monroe,away,False,False,True,STATUS_FINAL,31.0,6.0,True,17087,Malone Stadium
+2025,401761649,2025-11-14 00:30:00+00:00,12,295,Old Dominion,Sun Belt,2653,Troy,home,False,False,True,STATUS_FINAL,33.0,0.0,True,18831,S.B. Ballard Stadium
+2025,401752711,2025-09-20 19:30:00+00:00,4,145,Ole Miss,SEC,2655,Tulane,home,False,False,True,STATUS_FINAL,45.0,10.0,True,65644,Vaught-Hemingway Stadium
+2025,401752733,2025-10-11 16:45:00+00:00,7,145,Ole Miss,SEC,265,Washington State,home,False,False,True,STATUS_FINAL,24.0,21.0,True,66392,Vaught-Hemingway Stadium
+2025,401752756,2025-11-01 23:00:00+00:00,10,145,Ole Miss,SEC,2579,South Carolina,home,False,False,True,STATUS_FINAL,30.0,14.0,True,67491,Vaught-Hemingway Stadium
+2025,401752761,2025-11-08 18:00:00+00:00,11,145,Ole Miss,SEC,2643,The Citadel,home,False,False,True,STATUS_FINAL,49.0,0.0,True,67326,Vaught-Hemingway Stadium
+2025,401752804,2025-08-30 20:00:00+00:00,1,2483,Oregon,Big Ten,147,Montana State,home,False,False,True,STATUS_FINAL,59.0,13.0,True,57257,Autzen Stadium
+2025,401752841,2025-09-20 19:00:00+00:00,4,2483,Oregon,Big Ten,204,Oregon State,home,False,False,True,STATUS_FINAL,41.0,7.0,True,58571,Autzen Stadium
+2025,401752854,2025-09-27 23:30:00+00:00,5,2483,Oregon,Big Ten,213,Penn State,away,False,False,True,STATUS_FINAL,30.0,24.0,True,111015,Beaver Stadium
+2025,401752876,2025-10-18 22:30:00+00:00,8,2483,Oregon,Big Ten,164,Rutgers,away,False,False,True,STATUS_FINAL,56.0,10.0,True,53127,SHI Stadium
+2025,401752886,2025-10-25 23:00:00+00:00,9,2483,Oregon,Big Ten,275,Wisconsin,home,False,False,True,STATUS_FINAL,21.0,7.0,True,58940,Autzen Stadium
+2025,401752911,2025-11-22 20:30:00+00:00,13,2483,Oregon,Big Ten,30,USC,home,False,False,True,STATUS_FINAL,42.0,27.0,True,59588,Autzen Stadium
+2025,401752917,2025-11-29 20:30:00+00:00,14,2483,Oregon,Big Ten,264,Washington,away,False,False,True,STATUS_FINAL,26.0,14.0,True,72376,Husky Stadium
+2025,401752938,2025-09-13 19:30:00+00:00,3,204,Oregon State,Pac-12,2641,Texas Tech,away,False,False,True,STATUS_FINAL,14.0,45.0,False,60229,Galaxy Stadium
+2025,401754563,2025-10-11 19:30:00+00:00,7,204,Oregon State,Pac-12,154,Wake Forest,home,False,False,True,STATUS_FINAL,14.0,39.0,False,29710,Reser Stadium
+2025,401752941,2025-10-19 02:00:00+00:00,8,204,Oregon State,Pac-12,322,Lafayette,home,False,False,True,STATUS_FINAL,45.0,13.0,True,27735,Reser Stadium
+2025,401752943,2025-11-01 23:30:00+00:00,10,204,Oregon State,Pac-12,265,Washington State,home,False,False,True,STATUS_FINAL,10.0,7.0,True,32905,Reser Stadium
+2025,401752944,2025-11-09 03:00:00+00:00,11,204,Oregon State,Pac-12,2534,Sam Houston,home,False,False,True,STATUS_FINAL,17.0,21.0,False,31626,Reser Stadium
+2025,401752945,2025-11-15 18:00:00+00:00,12,204,Oregon State,Pac-12,202,Tulsa,away,False,False,True,STATUS_FINAL,14.0,31.0,False,15034,H. A. Chapman Stadium
+2025,401752946,2025-11-29 23:30:00+00:00,14,204,Oregon State,Pac-12,265,Washington State,away,False,False,True,STATUS_FINAL,8.0,32.0,False,24806,Martin Stadium
+2025,401752835,2025-09-13 19:30:00+00:00,3,213,Penn State,Big Ten,222,Villanova,home,False,False,True,STATUS_FINAL,52.0,6.0,True,109516,Beaver Stadium
+2025,401752855,2025-10-04 19:30:00+00:00,6,213,Penn State,Big Ten,26,UCLA,away,False,False,True,STATUS_FINAL,37.0,42.0,False,39256,Rose Bowl
+2025,401752920,2025-11-29 20:30:00+00:00,14,213,Penn State,Big Ten,164,Rutgers,away,False,False,True,STATUS_FINAL,40.0,36.0,True,55212,SHI Stadium
+2025,401754520,2025-08-30 16:00:00+00:00,1,221,Pittsburgh,ACC,2184,Duquesne,home,False,False,True,STATUS_FINAL,61.0,9.0,True,53006,Acrisure Stadium
+2025,401754638,2025-09-13 19:30:00+00:00,3,221,Pittsburgh,ACC,277,West Virginia,away,False,False,True,STATUS_FINAL,24.0,31.0,False,62108,Milan Puskar Stadium
+2025,401754568,2025-10-18 23:30:00+00:00,8,221,Pittsburgh,ACC,183,Syracuse,away,False,False,True,STATUS_FINAL,30.0,13.0,True,40772,JMA Wireless Dome
+2025,401754582,2025-11-01 19:30:00+00:00,10,221,Pittsburgh,ACC,24,Stanford,away,False,False,True,STATUS_FINAL,35.0,20.0,True,16540,Stanford Stadium
+2025,401752819,2025-09-06 23:30:00+00:00,2,2509,Purdue,Big Ten,79,Southern Illinois,home,False,False,True,STATUS_FINAL,34.0,17.0,True,54663,Ross-Ade Stadium
+2025,401752832,2025-09-13 22:45:00+00:00,3,2509,Purdue,Big Ten,30,USC,home,False,False,True,STATUS_FINAL,17.0,33.0,False,58065,Ross-Ade Stadium
+2025,401752884,2025-10-25 16:00:00+00:00,9,2509,Purdue,Big Ten,164,Rutgers,home,False,False,True,STATUS_FINAL,24.0,27.0,False,55289,Ross-Ade Stadium
+2025,401752902,2025-11-16 00:00:00+00:00,12,2509,Purdue,Big Ten,264,Washington,away,False,False,True,STATUS_FINAL,13.0,49.0,False,67229,Husky Stadium
+2025,401762466,2025-09-13 23:00:00+00:00,3,242,Rice,American,2504,Prairie View A&M,home,False,False,True,STATUS_FINAL,38.0,17.0,True,22260,Rice Stadium
+2025,401762485,2025-10-11 23:30:00+00:00,7,242,Rice,American,2636,UTSA,away,False,False,True,STATUS_FINAL,13.0,61.0,False,22058,Alamodome
+2025,401757172,2025-10-25 19:00:00+00:00,9,242,Rice,American,41,UConn,home,False,False,True,STATUS_FINAL,37.0,34.0,True,21122,Rice Stadium
+2025,401762502,2025-11-08 19:00:00+00:00,11,242,Rice,American,5,UAB,home,False,False,True,STATUS_FINAL,24.0,17.0,True,22671,Rice Stadium
+2025,401762520,2025-11-30 00:00:00+00:00,14,242,Rice,American,58,South Florida,away,False,False,True,STATUS_FINAL,3.0,52.0,False,28813,Raymond James Stadium
+2025,401752833,2025-09-13 19:30:00+00:00,3,164,Rutgers,Big Ten,2450,Norfolk State,home,False,False,True,STATUS_FINAL,60.0,10.0,True,41011,SHI Stadium
+2025,401752862,2025-10-11 01:00:00+00:00,7,164,Rutgers,Big Ten,264,Washington,away,False,False,True,STATUS_FINAL,19.0,38.0,False,63743,Husky Stadium
+2025,401754521,2025-08-31 01:15:00+00:00,1,2567,SMU,ACC,2837,East Texas A&M,home,False,False,True,STATUS_FINAL,42.0,13.0,True,33044,Gerald J. Ford Stadium
+2025,401754636,2025-09-20 16:00:00+00:00,4,2567,SMU,ACC,2628,TCU,away,False,False,True,STATUS_FINAL,24.0,35.0,False,43333,Amon G. Carter Stadium
+2025,401754555,2025-10-04 19:30:00+00:00,6,2567,SMU,ACC,183,Syracuse,home,False,False,True,STATUS_FINAL,31.0,18.0,True,34845,Gerald J. Ford Stadium
+2025,401754561,2025-10-11 16:00:00+00:00,7,2567,SMU,ACC,24,Stanford,home,False,False,True,STATUS_FINAL,34.0,10.0,True,30654,Gerald J. Ford Stadium
+2025,401752942,2025-10-25 16:00:00+00:00,9,2567,SMU,ACC,154,Wake Forest,away,False,False,True,STATUS_FINAL,12.0,13.0,False,28358,Allegacy Federal Credit Union Stadium
+2025,401757218,2025-08-23 23:00:00+00:00,1,2534,Sam Houston,Conference USA,98,Western Kentucky,away,False,False,True,STATUS_FINAL,24.0,41.0,False,15312,Houchens Industries-L.T. Smith Stadium
+2025,401757224,2025-08-30 01:30:00+00:00,1,2534,Sam Houston,Conference USA,2439,UNLV,home,False,False,True,STATUS_FINAL,21.0,38.0,False,5837,Shell Energy Stadium
+2025,401752723,2025-09-21 00:00:00+00:00,4,2534,Sam Houston,Conference USA,251,Texas,away,False,False,True,STATUS_FINAL,0.0,55.0,False,103003,DKR-Texas Memorial Stadium
+2025,401757284,2025-10-15 23:00:00+00:00,8,2534,Sam Houston,Conference USA,2638,UTEP,home,False,False,True,STATUS_FINAL,17.0,35.0,False,4657,Shell Energy Stadium
+2025,401760357,2025-08-29 02:00:00+00:00,1,21,San Diego State,Mountain West,2619,Stony Brook,home,False,False,True,STATUS_FINAL,42.0,0.0,True,20624,Snapdragon Stadium
+2025,401752948,2025-09-07 02:15:00+00:00,2,21,San Diego State,Mountain West,265,Washington State,away,False,False,True,STATUS_FINAL,13.0,36.0,False,24330,Martin Stadium
+2025,401760405,2025-11-01 23:00:00+00:00,10,21,San Diego State,Mountain West,2751,Wyoming,home,False,False,True,STATUS_FINAL,24.0,7.0,True,24325,Snapdragon Stadium
+2025,401760420,2025-11-23 03:30:00+00:00,13,21,San Diego State,Mountain West,23,San José State,home,False,False,True,STATUS_FINAL,25.0,3.0,True,22595,Snapdragon Stadium
+2025,401752693,2025-09-06 16:00:00+00:00,2,23,San José State,Mountain West,251,Texas,away,False,False,True,STATUS_FINAL,7.0,38.0,False,100841,DKR-Texas Memorial Stadium
+2025,401760375,2025-09-20 21:00:00+00:00,4,23,San José State,Mountain West,70,Idaho,home,False,False,True,STATUS_FINAL,31.0,28.0,True,13155,CEFCU Stadium
+2025,401754549,2025-09-27 23:30:00+00:00,5,23,San José State,Mountain West,24,Stanford,away,False,False,True,STATUS_FINAL,29.0,30.0,False,26357,Stanford Stadium
+2025,401760391,2025-10-11 23:00:00+00:00,7,23,San José State,Mountain West,2751,Wyoming,away,False,False,True,STATUS_FINAL,28.0,35.0,False,20970,War Memorial Stadium
+2025,401760396,2025-10-18 01:00:00+00:00,8,23,San José State,Mountain West,328,Utah State,away,False,False,True,STATUS_FINAL,25.0,30.0,False,22710,Maverik Stadium
+2025,401761593,2025-08-30 23:00:00+00:00,1,6,South Alabama,Sun Belt,2415,Morgan State,home,False,False,True,STATUS_FINAL,38.0,21.0,True,14017,Hancock Whitney Stadium
+2025,401761601,2025-09-06 23:00:00+00:00,2,6,South Alabama,Sun Belt,2655,Tulane,home,False,False,True,STATUS_FINAL,31.0,33.0,False,16871,Hancock Whitney Stadium
+2025,401761621,2025-10-04 23:00:00+00:00,6,6,South Alabama,Sun Belt,2653,Troy,away,False,False,True,STATUS_FINAL,24.0,31.0,False,28035,Veterans Memorial Stadium (AL)
+2025,401761653,2025-11-15 20:30:00+00:00,12,6,South Alabama,Sun Belt,2433,UL Monroe,away,False,False,True,STATUS_FINAL,26.0,14.0,True,19872,Malone Stadium
+2025,401761658,2025-11-22 20:30:00+00:00,13,6,South Alabama,Sun Belt,2572,Southern Miss,home,False,False,True,STATUS_FINAL,42.0,35.0,True,17601,Hancock Whitney Stadium
+2025,401761667,2025-11-29 20:00:00+00:00,14,6,South Alabama,Sun Belt,326,Texas State,away,False,False,True,STATUS_FINAL,26.0,49.0,False,16169,UFCU Stadium
+2025,401752680,2025-08-31 19:00:00+00:00,1,2579,South Carolina,SEC,259,Virginia Tech,home,True,False,True,STATUS_FINAL,24.0,11.0,True,55531,Mercedes-Benz Stadium
+2025,401752691,2025-09-06 23:00:00+00:00,2,2579,South Carolina,SEC,2569,South Carolina State,home,False,False,True,STATUS_FINAL,38.0,10.0,True,79705,Williams-Brice Stadium
+2025,401752704,2025-09-13 23:45:00+00:00,3,2579,South Carolina,SEC,238,Vanderbilt,home,False,False,True,STATUS_FINAL,7.0,31.0,False,79873,Williams-Brice Stadium
+2025,401752772,2025-11-15 17:00:00+00:00,12,2579,South Carolina,SEC,245,Texas A&M,away,False,False,True,STATUS_FINAL,30.0,31.0,False,108582,Kyle Field
+2025,401762470,2025-09-20 16:00:00+00:00,4,58,South Florida,American,2569,South Carolina State,home,False,False,True,STATUS_FINAL,63.0,14.0,True,28461,Raymond James Stadium
+2025,401762500,2025-11-07 00:30:00+00:00,11,58,South Florida,American,2636,UTSA,home,False,False,True,STATUS_FINAL,55.0,23.0,True,27437,Raymond James Stadium
+2025,401762511,2025-11-22 20:00:00+00:00,13,58,South Florida,American,5,UAB,away,False,False,True,STATUS_FINAL,48.0,18.0,True,16376,Protective Stadium
+2025,401761602,2025-09-06 21:00:00+00:00,2,2572,Southern Miss,Sun Belt,2296,Jackson State,home,False,False,True,STATUS_FINAL,38.0,20.0,True,32011,M. M. Roberts Stadium
+2025,401761637,2025-10-25 19:30:00+00:00,9,2572,Southern Miss,Sun Belt,2433,UL Monroe,home,False,False,True,STATUS_FINAL,49.0,21.0,True,27111,M. M. Roberts Stadium
+2025,401761654,2025-11-15 20:30:00+00:00,12,2572,Southern Miss,Sun Belt,326,Texas State,home,False,False,True,STATUS_FINAL,14.0,41.0,False,27223,M. M. Roberts Stadium
+2025,401761666,2025-11-29 20:30:00+00:00,14,2572,Southern Miss,Sun Belt,2653,Troy,home,False,False,True,STATUS_FINAL,18.0,28.0,False,25987,M. M. Roberts Stadium
+2025,401754539,2025-09-20 23:30:00+00:00,4,24,Stanford,ACC,258,Virginia,away,False,False,True,STATUS_FINAL,20.0,48.0,False,36223,Scott Stadium
+2025,401752676,2025-08-30 16:00:00+00:00,1,183,Syracuse,ACC,2633,Tennessee,away,True,False,True,STATUS_FINAL,26.0,45.0,False,45918,Mercedes-Benz Stadium
+2025,401754618,2025-09-06 16:00:00+00:00,2,183,Syracuse,ACC,41,UConn,home,False,False,True,STATUS_FINAL,27.0,20.0,True,39391,JMA Wireless Dome
+2025,401754532,2025-09-12 23:00:00+00:00,3,183,Syracuse,ACC,2142,Colgate,home,False,False,True,STATUS_FINAL,66.0,24.0,True,37372,JMA Wireless Dome
+2025,401756894,2025-09-14 00:00:00+00:00,3,2628,TCU,Big 12,2000,Abilene Christian,home,False,False,True,STATUS_FINAL,42.0,21.0,True,48094,Amon G. Carter Stadium
+2025,401756935,2025-10-25 22:00:00+00:00,9,2628,TCU,Big 12,277,West Virginia,away,False,False,True,STATUS_FINAL,23.0,17.0,True,54110,Milan Puskar Stadium
+2025,401762462,2025-09-06 18:00:00+00:00,2,218,Temple,American,47,Howard,home,False,False,True,STATUS_FINAL,55.0,7.0,True,15655,Lincoln Financial Field
+2025,401762479,2025-10-04 17:00:00+00:00,6,218,Temple,American,2636,UTSA,home,False,False,True,STATUS_FINAL,27.0,21.0,True,12132,Lincoln Financial Field
+2025,401762495,2025-10-25 19:30:00+00:00,9,218,Temple,American,202,Tulsa,away,False,False,True,STATUS_FINAL,38.0,37.0,True,16403,H. A. Chapman Stadium
+2025,401762515,2025-11-22 20:45:00+00:00,13,218,Temple,American,2655,Tulane,home,False,False,True,STATUS_FINAL,13.0,37.0,False,13366,Lincoln Financial Field
+2025,401752692,2025-09-06 19:30:00+00:00,2,2633,Tennessee,SEC,2193,East Tennessee State,home,False,False,True,STATUS_FINAL,72.0,17.0,True,101915,Neyland Stadium
+2025,401752715,2025-09-20 16:45:00+00:00,4,2633,Tennessee,SEC,5,UAB,home,False,False,True,STATUS_FINAL,56.0,24.0,True,101915,Neyland Stadium
+2025,401752791,2025-11-29 20:30:00+00:00,14,2633,Tennessee,SEC,238,Vanderbilt,home,False,False,True,STATUS_FINAL,24.0,45.0,False,101915,Neyland Stadium
+2025,401752706,2025-09-13 20:15:00+00:00,3,251,Texas,SEC,2638,UTEP,home,False,False,True,STATUS_FINAL,27.0,10.0,True,102025,DKR-Texas Memorial Stadium
+2025,401752758,2025-11-01 16:00:00+00:00,10,251,Texas,SEC,238,Vanderbilt,home,False,False,True,STATUS_FINAL,34.0,31.0,True,102338,DKR-Texas Memorial Stadium
+2025,401752792,2025-11-29 00:30:00+00:00,14,251,Texas,SEC,245,Texas A&M,home,False,False,True,STATUS_FINAL,27.0,17.0,True,103632,DKR-Texas Memorial Stadium
+2025,401752678,2025-08-30 23:00:00+00:00,1,245,Texas A&M,SEC,2636,UTSA,home,False,False,True,STATUS_FINAL,42.0,24.0,True,107521,Kyle Field
+2025,401752694,2025-09-06 16:45:00+00:00,2,245,Texas A&M,SEC,328,Utah State,home,False,False,True,STATUS_FINAL,44.0,22.0,True,100026,Kyle Field
+2025,401752781,2025-11-22 17:00:00+00:00,13,245,Texas A&M,SEC,2535,Samford,home,False,False,True,STATUS_FINAL,48.0,0.0,True,104877,Kyle Field
+2025,401761603,2025-09-06 19:30:00+00:00,2,326,Texas State,Sun Belt,2636,UTSA,away,False,False,True,STATUS_FINAL,43.0,36.0,True,45778,Alamodome
+2025,401761612,2025-09-21 00:00:00+00:00,4,326,Texas State,Sun Belt,2447,Nicholls,home,False,False,True,STATUS_FINAL,35.0,3.0,True,31500,UFCU Stadium
+2025,401761627,2025-10-12 00:00:00+00:00,7,326,Texas State,Sun Belt,2653,Troy,home,False,False,True,STATUS_FINAL,41.0,48.0,False,24369,UFCU Stadium
+2025,401761659,2025-11-22 22:00:00+00:00,13,326,Texas State,Sun Belt,2433,UL Monroe,home,False,False,True,STATUS_FINAL,31.0,14.0,True,17078,UFCU Stadium
+2025,401756877,2025-08-30 23:30:00+00:00,1,2641,Texas Tech,Big 12,2029,Arkansas-Pine Bluff,home,False,False,True,STATUS_FINAL,67.0,7.0,True,60229,Galaxy Stadium
+2025,401756901,2025-09-20 16:00:00+00:00,4,2641,Texas Tech,Big 12,254,Utah,away,False,False,True,STATUS_FINAL,34.0,10.0,True,52236,Rice-Eccles Stadium
+2025,401756953,2025-11-15 20:30:00+00:00,12,2641,Texas Tech,Big 12,2116,UCF,home,False,False,True,STATUS_FINAL,48.0,9.0,True,60229,Galaxy Stadium
+2025,401756968,2025-11-29 17:00:00+00:00,14,2641,Texas Tech,Big 12,277,West Virginia,away,False,False,True,STATUS_FINAL,49.0,0.0,True,44250,Milan Puskar Stadium
+2025,401757232,2025-09-06 23:00:00+00:00,2,2649,Toledo,MAC,98,Western Kentucky,home,False,False,True,STATUS_FINAL,45.0,21.0,True,24138,Glass Bowl
+2025,401762819,2025-09-13 19:30:00+00:00,3,2649,Toledo,MAC,2415,Morgan State,home,False,False,True,STATUS_FINAL,60.0,0.0,True,22846,Glass Bowl
+2025,401762820,2025-09-20 19:30:00+00:00,4,2649,Toledo,MAC,2711,Western Michigan,away,False,False,True,STATUS_FINAL,13.0,14.0,False,20744,Waldo Stadium
+2025,401752952,2025-10-25 19:30:00+00:00,9,2649,Toledo,MAC,265,Washington State,away,False,False,True,STATUS_FINAL,7.0,28.0,False,27646,Martin Stadium
+2025,401761595,2025-08-30 23:00:00+00:00,1,2653,Troy,Sun Belt,2447,Nicholls,home,False,False,True,STATUS_FINAL,38.0,20.0,True,25546,Veterans Memorial Stadium (AL)
+2025,401761633,2025-10-18 19:00:00+00:00,8,2653,Troy,Sun Belt,2433,UL Monroe,away,False,False,True,STATUS_FINAL,37.0,14.0,True,16863,Malone Stadium
+2025,401762474,2025-09-27 20:00:00+00:00,5,2655,Tulane,American,202,Tulsa,away,False,False,True,STATUS_FINAL,31.0,14.0,True,16311,H. A. Chapman Stadium
+2025,401762443,2025-10-30 23:30:00+00:00,10,2655,Tulane,American,2636,UTSA,away,False,False,True,STATUS_FINAL,26.0,48.0,False,16715,Alamodome
+2025,401762457,2025-08-31 00:00:00+00:00,1,202,Tulsa,American,2000,Abilene Christian,home,False,False,True,STATUS_FINAL,35.0,7.0,True,17337,H. A. Chapman Stadium
+2025,401762517,2025-11-29 20:00:00+00:00,14,202,Tulsa,American,5,UAB,home,False,False,True,STATUS_FINAL,24.0,31.0,False,13026,H. A. Chapman Stadium
+2025,401762430,2025-08-29 00:30:00+00:00,1,5,UAB,American,2011,Alabama State,home,False,False,True,STATUS_FINAL,52.0,42.0,True,26294,Protective Stadium
+2025,401757173,2025-11-01 16:00:00+00:00,10,5,UAB,American,41,UConn,away,False,False,True,STATUS_FINAL,19.0,38.0,False,23170,Pratt & Whitney Stadium
+2025,401756886,2025-09-06 23:00:00+00:00,2,2116,UCF,Big 12,2448,North Carolina A&T,home,False,False,True,STATUS_FINAL,68.0,7.0,True,44009,Acrisure Bounce House
+2025,401756928,2025-10-18 17:00:00+00:00,8,2116,UCF,Big 12,277,West Virginia,home,False,False,True,STATUS_FINAL,45.0,13.0,True,43445,Acrisure Bounce House
+2025,401752800,2025-08-31 03:00:00+00:00,1,26,UCLA,Big Ten,254,Utah,home,False,False,True,STATUS_FINAL,10.0,43.0,False,35032,Rose Bowl
+2025,401752823,2025-09-07 00:00:00+00:00,2,26,UCLA,Big Ten,2439,UNLV,away,False,False,True,STATUS_FINAL,23.0,30.0,False,36117,Allegiant Stadium
+2025,401752910,2025-11-23 03:30:00+00:00,13,26,UCLA,Big Ten,264,Washington,home,False,False,True,STATUS_FINAL,14.0,48.0,False,38201,Rose Bowl
+2025,401752919,2025-11-30 00:30:00+00:00,14,26,UCLA,Big Ten,30,USC,away,False,False,True,STATUS_FINAL,10.0,29.0,False,69614,Los Angeles Memorial Coliseum
+2025,401757167,2025-08-30 18:00:00+00:00,1,41,UConn,FBS Independents,2115,Central Connecticut,home,False,False,True,STATUS_FINAL,59.0,13.0,True,37594,Pratt & Whitney Stadium
+2025,401761588,2025-08-28 23:00:00+00:00,1,2433,UL Monroe,Sun Belt,2598,Saint Francis,home,False,False,True,STATUS_FINAL,29.0,0.0,True,12459,Malone Stadium
+2025,401757267,2025-09-21 01:00:00+00:00,4,2433,UL Monroe,Sun Belt,2638,UTEP,away,False,False,True,STATUS_FINAL,31.0,25.0,True,15272,Sun Bowl
+2025,401760371,2025-08-23 20:00:00+00:00,1,2439,UNLV,Mountain West,304,Idaho State,home,False,False,True,STATUS_FINAL,38.0,31.0,True,25723,Allegiant Stadium
+2025,401760385,2025-10-04 23:00:00+00:00,6,2439,UNLV,Mountain West,2751,Wyoming,away,False,False,True,STATUS_FINAL,31.0,17.0,True,19861,War Memorial Stadium
+2025,401760414,2025-11-16 00:00:00+00:00,12,2439,UNLV,Mountain West,328,Utah State,home,False,False,True,STATUS_FINAL,29.0,26.0,True,31682,Allegiant Stadium
+2025,401757225,2025-08-30 23:30:00+00:00,1,2638,UTEP,Conference USA,328,Utah State,away,False,False,True,STATUS_FINAL,16.0,28.0,False,16448,Maverik Stadium
+2025,401757231,2025-09-07 01:00:00+00:00,2,2638,UTEP,Conference USA,2630,UT Martin,home,False,False,True,STATUS_FINAL,42.0,17.0,True,31122,Sun Bowl
+2025,401762467,2025-09-13 19:30:00+00:00,3,2636,UTSA,American,2916,Incarnate Word,home,False,False,True,STATUS_FINAL,48.0,20.0,True,20421,Alamodome
+2025,401756887,2025-09-06 22:00:00+00:00,2,254,Utah,Big 12,13,Cal Poly,home,False,False,True,STATUS_FINAL,63.0,9.0,True,51463,Rice-Eccles Stadium
+2025,401756895,2025-09-14 00:00:00+00:00,3,254,Utah,Big 12,2751,Wyoming,away,False,False,True,STATUS_FINAL,31.0,6.0,True,23500,War Memorial Stadium
+2025,401756908,2025-09-27 19:30:00+00:00,5,254,Utah,Big 12,277,West Virginia,away,False,False,True,STATUS_FINAL,48.0,14.0,True,53965,Milan Puskar Stadium
+2025,401760377,2025-09-21 00:00:00+00:00,4,328,Utah State,Mountain West,2377,McNeese,home,False,False,True,STATUS_FINAL,48.0,7.0,True,16273,Maverik Stadium
+2025,401752725,2025-09-27 16:45:00+00:00,5,328,Utah State,Mountain West,238,Vanderbilt,away,False,False,True,STATUS_FINAL,35.0,55.0,False,33688,FirstBank Stadium
+2025,401752679,2025-08-30 23:00:00+00:00,1,238,Vanderbilt,SEC,2127,Charleston Southern,home,False,False,True,STATUS_FINAL,45.0,3.0,True,35000,FirstBank Stadium
+2025,401752695,2025-09-06 23:30:00+00:00,2,238,Vanderbilt,SEC,259,Virginia Tech,away,False,False,True,STATUS_FINAL,44.0,20.0,True,65632,Lane Stadium
+2025,401754619,2025-09-13 16:00:00+00:00,3,258,Virginia,ACC,2729,William & Mary,home,False,False,True,STATUS_FINAL,55.0,16.0,True,38512,Scott Stadium
+2025,401752951,2025-10-18 22:30:00+00:00,8,258,Virginia,ACC,265,Washington State,home,False,False,True,STATUS_FINAL,22.0,20.0,True,56048,Scott Stadium
+2025,401754589,2025-11-09 00:00:00+00:00,11,258,Virginia,ACC,154,Wake Forest,home,False,False,True,STATUS_FINAL,9.0,16.0,False,55568,Scott Stadium
+2025,401754613,2025-11-30 00:00:00+00:00,14,258,Virginia,ACC,259,Virginia Tech,home,False,False,True,STATUS_FINAL,27.0,7.0,True,58832,Scott Stadium
+2025,401754617,2025-09-20 16:00:00+00:00,4,259,Virginia Tech,ACC,2747,Wofford,home,False,False,True,STATUS_FINAL,38.0,6.0,True,57229,Lane Stadium
+2025,401754556,2025-10-04 17:00:00+00:00,6,259,Virginia Tech,ACC,154,Wake Forest,home,False,False,True,STATUS_FINAL,23.0,30.0,False,65632,Lane Stadium
+2025,401754620,2025-09-06 20:25:00+00:00,2,154,Wake Forest,ACC,2717,Western Carolina,home,False,False,True,STATUS_FINAL,42.0,10.0,True,28239,Allegacy Federal Credit Union Stadium
+2025,401752821,2025-09-07 03:00:00+00:00,2,264,Washington,Big Ten,302,UC Davis,home,False,False,True,STATUS_FINAL,70.0,10.0,True,65421,Husky Stadium
+2025,401752842,2025-09-20 23:30:00+00:00,4,264,Washington,Big Ten,265,Washington State,away,False,False,True,STATUS_FINAL,59.0,24.0,True,32952,Martin Stadium
+2025,401752899,2025-11-08 21:30:00+00:00,11,264,Washington,Big Ten,275,Wisconsin,away,False,False,True,STATUS_FINAL,10.0,13.0,False,71217,Camp Randall Stadium
+2025,401752947,2025-08-31 02:00:00+00:00,1,265,Washington State,Pac-12,70,Idaho,home,False,False,True,STATUS_FINAL,13.0,10.0,True,28243,Martin Stadium
+2025,401756878,2025-08-30 18:00:00+00:00,1,277,West Virginia,Big 12,2523,Robert Morris,home,False,False,True,STATUS_FINAL,45.0,3.0,True,57093,Milan Puskar Stadium
+2025,401757226,2025-08-30 23:00:00+00:00,1,98,Western Kentucky,Conference USA,2453,North Alabama,home,False,False,True,STATUS_FINAL,55.0,6.0,True,12226,Houchens Industries-L.T. Smith Stadium
+2025,401762828,2025-09-27 22:30:00+00:00,5,2711,Western Michigan,MAC,227,Rhode Island,home,False,False,True,STATUS_FINAL,47.0,14.0,True,20191,Waldo Stadium
+2025,401760367,2025-09-06 20:00:00+00:00,2,2751,Wyoming,Mountain West,2460,Northern Iowa,home,False,False,True,STATUS_FINAL,31.0,7.0,True,25009,War Memorial Stadium

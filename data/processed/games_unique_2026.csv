@@ -1,0 +1,893 @@
+season,game_id,date,week,team_id,school,conference,opponent_id,opponent,home_away,neutral_site,conference_game,completed,status,points_for,points_against,won,attendance,venue
+2026,401864496,2026-09-05 17:00:00+00:00,1,2005,Air Force,Mountain West,2184,Duquesne,home,False,False,True,STATUS_FINAL,34.0,0.0,True,26703,Falcon Stadium
+2026,401864502,2026-09-13 02:00:00+00:00,2,2005,Air Force,Mountain West,2449,North Dakota State,home,False,False,True,STATUS_FINAL,32.0,38.0,False,25970,Falcon Stadium
+2026,401864509,2026-09-27 02:30:00+00:00,4,2005,Air Force,Mountain West,2440,Nevada,away,False,False,False,STATUS_SCHEDULED,,,,0,Mackay Stadium
+2026,401862791,2026-10-03 16:00:00+00:00,5,2005,Air Force,Mountain West,2426,Navy,home,False,False,False,STATUS_SCHEDULED,,,,0,Falcon Stadium
+2026,401864516,2026-10-10 23:30:00+00:00,6,2005,Air Force,Mountain West,2459,Northern Illinois,away,False,False,False,STATUS_SCHEDULED,,,,0,Huskie Stadium
+2026,401864524,2026-10-17 19:30:00+00:00,7,2005,Air Force,Mountain West,2439,UNLV,home,False,False,False,STATUS_SCHEDULED,,,,0,Falcon Stadium
+2026,401864525,2026-10-24 01:00:00+00:00,8,2005,Air Force,Mountain West,2751,Wyoming,away,False,False,False,STATUS_SCHEDULED,,,,0,War Memorial Stadium
+2026,401861966,2026-10-31 19:00:00+00:00,9,2005,Air Force,Mountain West,41,UConn,home,False,False,False,STATUS_SCHEDULED,,,,0,Falcon Stadium
+2026,401862823,2026-11-08 00:30:00+00:00,10,2005,Air Force,Mountain West,349,Army,away,False,False,False,STATUS_SCHEDULED,,,,0,Michie Stadium
+2026,401864538,2026-11-15 00:00:00+00:00,11,2005,Air Force,Mountain West,23,San José State,home,False,False,False,STATUS_SCHEDULED,,,,0,Falcon Stadium
+2026,401864545,2026-11-21 01:00:00+00:00,12,2005,Air Force,Mountain West,2638,UTEP,home,False,False,False,STATUS_SCHEDULED,,,,0,Falcon Stadium
+2026,401864546,2026-11-28 21:30:00+00:00,13,2005,Air Force,Mountain West,167,New Mexico,away,False,False,False,STATUS_SCHEDULED,,,,0,University Stadium (NM)
+2026,401858204,2026-09-03 23:00:00+00:00,1,2006,Akron,MAC,154,Wake Forest,away,False,False,True,STATUS_FINAL,16.0,38.0,False,30735,Allegacy Federal Credit Union Stadium
+2026,401866412,2026-09-12 19:30:00+00:00,2,2006,Akron,MAC,2523,Robert Morris,home,False,False,True,STATUS_FINAL,45.0,10.0,True,10032,InfoCision Stadium
+2026,401858451,2026-09-19 16:00:00+00:00,3,2006,Akron,MAC,135,Minnesota,away,False,False,False,STATUS_SCHEDULED,,,,0,Huntington Bank Stadium
+2026,401864512,2026-09-26 16:00:00+00:00,4,2006,Akron,MAC,2439,UNLV,home,False,False,False,STATUS_SCHEDULED,,,,0,InfoCision Stadium
+2026,401866430,2026-10-03 04:00:00+00:00,5,2006,Akron,MAC,2117,Central Michigan,away,False,False,False,STATUS_SCHEDULED,,,,0,Kelly/Shorts Stadium
+2026,401866435,2026-10-10 19:30:00+00:00,6,2006,Akron,MAC,2199,Eastern Michigan,home,False,False,False,STATUS_SCHEDULED,,,,0,InfoCision Stadium
+2026,401866478,2026-10-17 04:00:00+00:00,7,2006,Akron,MAC,193,Miami (OH),away,False,False,False,STATUS_SCHEDULED,,,,0,Yager Stadium
+2026,401866446,2026-10-24 04:00:00+00:00,8,2006,Akron,MAC,2309,Kent State,away,False,False,False,STATUS_SCHEDULED,,,,0,Zoeller Field at Dix Stadium
+2026,401866453,2026-11-04 00:00:00+00:00,10,2006,Akron,MAC,195,Ohio,home,False,False,False,STATUS_SCHEDULED,,,,0,InfoCision Stadium
+2026,401866458,2026-11-11 00:00:00+00:00,11,2006,Akron,MAC,2711,Western Michigan,home,False,False,False,STATUS_SCHEDULED,,,,0,InfoCision Stadium
+2026,401866467,2026-11-18 05:00:00+00:00,12,2006,Akron,MAC,113,Massachusetts,away,False,False,False,STATUS_SCHEDULED,,,,0,Warren McGuirk Alumni Stadium
+2026,401866472,2026-11-27 17:00:00+00:00,13,2006,Akron,MAC,2084,Buffalo,home,False,False,False,STATUS_SCHEDULED,,,,0,InfoCision Stadium
+2026,401856634,2026-09-05 16:00:00+00:00,1,333,Alabama,SEC,151,East Carolina,home,False,False,True,STATUS_FINAL,48.0,10.0,True,100077,Bryant-Denny Stadium
+2026,401856674,2026-09-12 19:30:00+00:00,2,333,Alabama,SEC,96,Kentucky,away,False,False,True,STATUS_FINAL,45.0,17.0,True,61820,Kroger Field
+2026,401856685,2026-09-19 19:30:00+00:00,3,333,Alabama,SEC,52,Florida State,home,False,False,False,STATUS_SCHEDULED,,,,0,Bryant-Denny Stadium
+2026,401856696,2026-09-26 23:00:00+00:00,4,333,Alabama,SEC,2579,South Carolina,home,False,False,False,STATUS_SCHEDULED,,,,0,Bryant-Denny Stadium
+2026,401856707,2026-10-03 04:00:00+00:00,5,333,Alabama,SEC,344,Mississippi State,away,False,False,False,STATUS_SCHEDULED,,,,0,Davis Wade Stadium
+2026,401856712,2026-10-10 04:00:00+00:00,6,333,Alabama,SEC,61,Georgia,home,False,False,False,STATUS_SCHEDULED,,,,0,Bryant-Denny Stadium
+2026,401856723,2026-10-17 04:00:00+00:00,7,333,Alabama,SEC,2633,Tennessee,away,False,False,False,STATUS_SCHEDULED,,,,0,Neyland Stadium
+2026,401856727,2026-10-24 04:00:00+00:00,8,333,Alabama,SEC,245,Texas A&M,home,False,False,False,STATUS_SCHEDULED,,,,0,Bryant-Denny Stadium
+2026,401856740,2026-11-07 05:00:00+00:00,10,333,Alabama,SEC,99,LSU,away,False,False,False,STATUS_SCHEDULED,,,,0,Tiger Stadium (LA)
+2026,401856889,2026-11-14 05:00:00+00:00,11,333,Alabama,SEC,238,Vanderbilt,away,False,False,False,STATUS_SCHEDULED,,,,0,FirstBank Stadium
+2026,401856746,2026-11-21 19:00:00+00:00,12,333,Alabama,SEC,236,Chattanooga,home,False,False,False,STATUS_SCHEDULED,,,,0,Bryant-Denny Stadium
+2026,401856757,2026-11-28 05:00:00+00:00,13,333,Alabama,SEC,2,Auburn,home,False,False,False,STATUS_SCHEDULED,,,,0,Bryant-Denny Stadium
+2026,401866627,2026-09-05 19:30:00+00:00,1,2026,App State,Sun Belt,311,Maine,home,False,False,True,STATUS_FINAL,55.0,3.0,True,33664,Kidd Brewer Stadium
+2026,401864571,2026-09-12 16:00:00+00:00,2,2026,App State,Sun Belt,151,East Carolina,away,False,False,True,STATUS_FINAL,27.0,24.0,True,40074,Dowdy-Ficklen Stadium
+2026,401864574,2026-09-19 22:00:00+00:00,3,2026,App State,Sun Belt,2429,Charlotte,home,False,False,False,STATUS_SCHEDULED,,,,0,Kidd Brewer Stadium
+2026,401864572,2026-09-26 23:30:00+00:00,4,2026,App State,Sun Belt,152,NC State,away,False,False,False,STATUS_SCHEDULED,,,,0,Carter-Finley Stadium
+2026,401869843,2026-10-10 04:00:00+00:00,6,2026,App State,Sun Belt,295,Old Dominion,home,False,False,False,STATUS_SCHEDULED,,,,0,Kidd Brewer Stadium
+2026,401869844,2026-10-17 00:00:00+00:00,7,2026,App State,Sun Belt,324,Coastal Carolina,away,False,False,False,STATUS_SCHEDULED,,,,0,Brooks Stadium (SC)
+2026,401869845,2026-10-22 23:00:00+00:00,8,2026,App State,Sun Belt,256,James Madison,home,False,False,False,STATUS_SCHEDULED,,,,0,Kidd Brewer Stadium
+2026,401869846,2026-10-31 04:00:00+00:00,9,2026,App State,Sun Belt,290,Georgia Southern,away,False,False,False,STATUS_SCHEDULED,,,,0,Allen E. Paulson Stadium
+2026,401869927,2026-11-07 05:00:00+00:00,10,2026,App State,Sun Belt,2247,Georgia State,home,False,False,False,STATUS_SCHEDULED,,,,0,Kidd Brewer Stadium
+2026,401869928,2026-11-14 05:00:00+00:00,11,2026,App State,Sun Belt,276,Marshall,away,False,False,False,STATUS_SCHEDULED,,,,0,Joan C. Edwards Stadium
+2026,401869929,2026-11-21 05:00:00+00:00,12,2026,App State,Sun Belt,2433,UL Monroe,home,False,False,False,STATUS_SCHEDULED,,,,0,Kidd Brewer Stadium
+2026,401869930,2026-11-27 20:00:00+00:00,13,2026,App State,Sun Belt,6,South Alabama,away,False,False,False,STATUS_SCHEDULED,,,,0,Hancock Whitney Stadium
+2026,401856773,2026-09-06 01:30:00+00:00,1,12,Arizona,Big 12,2464,Northern Arizona,home,False,False,True,STATUS_FINAL,35.0,7.0,True,40129,Casino Del Sol Stadium
+2026,401856810,2026-09-12 19:30:00+00:00,2,12,Arizona,Big 12,252,BYU,away,False,False,True,STATUS_FINAL,17.0,28.0,False,64409,LaVell Edwards Stadium
+2026,401856793,2026-09-20 02:30:00+00:00,3,12,Arizona,Big 12,2459,Northern Illinois,home,False,False,False,STATUS_SCHEDULED,,,,0,Casino Del Sol Stadium
+2026,401856804,2026-09-26 23:30:00+00:00,4,12,Arizona,Big 12,265,Washington State,away,False,False,False,STATUS_SCHEDULED,,,,0,Martin Stadium
+2026,401856820,2026-10-03 04:00:00+00:00,5,12,Arizona,Big 12,2132,Cincinnati,home,False,False,False,STATUS_SCHEDULED,,,,0,Casino Del Sol Stadium
+2026,401856823,2026-10-10 04:00:00+00:00,6,12,Arizona,Big 12,277,West Virginia,away,False,False,False,STATUS_SCHEDULED,,,,0,Milan Puskar Stadium
+2026,401856838,2026-10-24 04:00:00+00:00,8,12,Arizona,Big 12,66,Iowa State,home,False,False,False,STATUS_SCHEDULED,,,,0,Casino Del Sol Stadium
+2026,401856842,2026-10-31 04:00:00+00:00,9,12,Arizona,Big 12,2641,Texas Tech,away,False,False,False,STATUS_SCHEDULED,,,,0,Galaxy Stadium
+2026,401856855,2026-11-07 03:15:00+00:00,10,12,Arizona,Big 12,2628,TCU,home,False,False,False,STATUS_SCHEDULED,,,,0,Casino Del Sol Stadium
+2026,401856864,2026-11-14 05:00:00+00:00,11,12,Arizona,Big 12,254,Utah,home,False,False,False,STATUS_SCHEDULED,,,,0,Casino Del Sol Stadium
+2026,401856865,2026-11-21 05:00:00+00:00,12,12,Arizona,Big 12,2306,Kansas State,away,False,False,False,STATUS_SCHEDULED,,,,0,Bill Snyder Family Stadium
+2026,401856873,2026-11-28 05:00:00+00:00,13,12,Arizona,Big 12,9,Arizona State,home,False,False,False,STATUS_SCHEDULED,,,,0,Casino Del Sol Stadium
+2026,401856774,2026-09-06 02:00:00+00:00,1,9,Arizona State,Big 12,2415,Morgan State,home,False,False,True,STATUS_FINAL,70.0,7.0,True,54004,Mountain America Stadium
+2026,401856683,2026-09-12 16:00:00+00:00,2,9,Arizona State,Big 12,245,Texas A&M,away,False,False,True,STATUS_FINAL,20.0,48.0,False,107523,Kyle Field
+2026,401856812,2026-09-19 16:00:00+00:00,3,9,Arizona State,Big 12,2305,Kansas,away,True,False,False,STATUS_SCHEDULED,,,,0,Wembley Stadium
+2026,401856817,2026-10-03 04:00:00+00:00,5,9,Arizona State,Big 12,239,Baylor,home,False,False,False,STATUS_SCHEDULED,,,,0,Mountain America Stadium
+2026,401856808,2026-10-10 04:00:00+00:00,6,9,Arizona State,Big 12,62,Hawai'i,home,False,False,False,STATUS_SCHEDULED,,,,0,Mountain America Stadium
+2026,401856828,2026-10-17 04:00:00+00:00,7,9,Arizona State,Big 12,2641,Texas Tech,away,False,False,False,STATUS_SCHEDULED,,,,0,Galaxy Stadium
+2026,401856839,2026-10-24 04:00:00+00:00,8,9,Arizona State,Big 12,2306,Kansas State,home,False,False,False,STATUS_SCHEDULED,,,,0,Mountain America Stadium
+2026,401856843,2026-10-31 04:00:00+00:00,9,9,Arizona State,Big 12,252,BYU,away,False,False,False,STATUS_SCHEDULED,,,,0,LaVell Edwards Stadium
+2026,401856852,2026-11-07 05:00:00+00:00,10,9,Arizona State,Big 12,38,Colorado,home,False,False,False,STATUS_SCHEDULED,,,,0,Mountain America Stadium
+2026,401856857,2026-11-14 05:00:00+00:00,11,9,Arizona State,Big 12,2116,UCF,away,False,False,False,STATUS_SCHEDULED,,,,0,Acrisure Bounce House
+2026,401856870,2026-11-21 05:00:00+00:00,12,9,Arizona State,Big 12,197,Oklahoma State,home,False,False,False,STATUS_SCHEDULED,,,,0,Mountain America Stadium
+2026,401856635,2026-09-05 20:15:00+00:00,1,8,Arkansas,SEC,2453,North Alabama,home,False,False,True,STATUS_FINAL,31.0,14.0,True,69178,Donald W. Reynolds Razorback Stadium
+2026,401856670,2026-09-13 02:30:00+00:00,2,8,Arkansas,SEC,254,Utah,away,False,False,True,STATUS_FINAL,10.0,43.0,False,51532,Rice-Eccles Stadium
+2026,401856686,2026-09-19 16:00:00+00:00,3,8,Arkansas,SEC,61,Georgia,home,False,False,False,STATUS_SCHEDULED,,,,0,Donald W. Reynolds Razorback Stadium
+2026,401856697,2026-09-27 00:00:00+00:00,4,8,Arkansas,SEC,202,Tulsa,home,False,False,False,STATUS_SCHEDULED,,,,0,Donald W. Reynolds Razorback Stadium
+2026,401856711,2026-10-03 04:00:00+00:00,5,8,Arkansas,SEC,245,Texas A&M,away,False,False,False,STATUS_SCHEDULED,,,,0,Kyle Field
+2026,401856713,2026-10-10 04:00:00+00:00,6,8,Arkansas,SEC,2633,Tennessee,home,False,False,False,STATUS_SCHEDULED,,,,0,Donald W. Reynolds Razorback Stadium
+2026,401856726,2026-10-17 04:00:00+00:00,7,8,Arkansas,SEC,238,Vanderbilt,away,False,False,False,STATUS_SCHEDULED,,,,0,FirstBank Stadium
+2026,401856733,2026-10-31 04:00:00+00:00,9,8,Arkansas,SEC,142,Missouri,home,False,False,False,STATUS_SCHEDULED,,,,0,Donald W. Reynolds Razorback Stadium
+2026,401856738,2026-11-07 05:00:00+00:00,10,8,Arkansas,SEC,2,Auburn,away,False,False,False,STATUS_SCHEDULED,,,,0,Jordan-Hare Stadium
+2026,401856882,2026-11-14 05:00:00+00:00,11,8,Arkansas,SEC,2579,South Carolina,home,False,False,False,STATUS_SCHEDULED,,,,0,Donald W. Reynolds Razorback Stadium
+2026,401856755,2026-11-21 05:00:00+00:00,12,8,Arkansas,SEC,251,Texas,away,False,False,False,STATUS_SCHEDULED,,,,0,DKR-Texas Memorial Stadium
+2026,401856758,2026-11-28 05:00:00+00:00,13,8,Arkansas,SEC,99,LSU,home,False,False,False,STATUS_SCHEDULED,,,,0,Donald W. Reynolds Razorback Stadium
+2026,401862695,2026-09-05 23:00:00+00:00,1,2032,Arkansas State,Sun Belt,235,Memphis,away,False,False,True,STATUS_FINAL,24.0,42.0,False,45632,Simmons Bank Liberty Stadium
+2026,401868241,2026-09-12 23:00:00+00:00,2,2032,Arkansas State,Sun Belt,2698,West Georgia,home,False,False,True,STATUS_FINAL,52.0,7.0,True,16678,Centennial Bank Stadium
+2026,401856799,2026-09-20 00:00:00+00:00,3,2032,Arkansas State,Sun Belt,2628,TCU,away,False,False,False,STATUS_SCHEDULED,,,,0,Amon G. Carter Stadium
+2026,401869931,2026-09-26 23:00:00+00:00,4,2032,Arkansas State,Sun Belt,338,Kennesaw State,home,False,False,False,STATUS_SCHEDULED,,,,0,Centennial Bank Stadium
+2026,401869932,2026-10-03 04:00:00+00:00,5,2032,Arkansas State,Sun Belt,309,Louisiana,away,False,False,False,STATUS_SCHEDULED,,,,0,Our Lady of Lourdes Stadium
+2026,401869933,2026-10-08 23:30:00+00:00,6,2032,Arkansas State,Sun Belt,6,South Alabama,home,False,False,False,STATUS_SCHEDULED,,,,0,Centennial Bank Stadium
+2026,401869934,2026-10-17 04:00:00+00:00,7,2032,Arkansas State,Sun Belt,2572,Southern Miss,away,False,False,False,STATUS_SCHEDULED,,,,0,M. M. Roberts Stadium
+2026,401869935,2026-10-24 23:00:00+00:00,8,2032,Arkansas State,Sun Belt,2247,Georgia State,home,False,False,False,STATUS_SCHEDULED,,,,0,Centennial Bank Stadium
+2026,401869936,2026-11-07 20:00:00+00:00,10,2032,Arkansas State,Sun Belt,2433,UL Monroe,home,False,False,False,STATUS_SCHEDULED,,,,0,Centennial Bank Stadium
+2026,401869937,2026-11-14 05:00:00+00:00,11,2032,Arkansas State,Sun Belt,324,Coastal Carolina,away,False,False,False,STATUS_SCHEDULED,,,,0,Brooks Stadium (SC)
+2026,401869938,2026-11-21 05:00:00+00:00,12,2032,Arkansas State,Sun Belt,2348,Louisiana Tech,away,False,False,False,STATUS_SCHEDULED,,,,0,Joe Aillet Stadium
+2026,401869939,2026-11-28 20:00:00+00:00,13,2032,Arkansas State,Sun Belt,2653,Troy,home,False,False,False,STATUS_SCHEDULED,,,,0,Centennial Bank Stadium
+2026,401862701,2026-09-05 16:00:00+00:00,1,349,Army,American,2803,Bryant,home,False,False,True,STATUS_FINAL,59.0,3.0,True,21538,Michie Stadium
+2026,401862702,2026-09-12 16:00:00+00:00,2,349,Army,American,58,South Florida,home,False,False,True,STATUS_FINAL,24.0,28.0,False,23670,Michie Stadium
+2026,401862779,2026-09-25 20:00:00+00:00,4,349,Army,American,218,Temple,away,False,False,False,STATUS_SCHEDULED,,,,0,Lincoln Financial Field
+2026,401869842,2026-10-03 04:00:00+00:00,5,349,Army,American,2348,Louisiana Tech,away,False,False,False,STATUS_SCHEDULED,,,,0,Joe Aillet Stadium
+2026,401862795,2026-10-10 16:00:00+00:00,6,349,Army,American,2655,Tulane,home,False,False,False,STATUS_SCHEDULED,,,,0,Michie Stadium
+2026,401862802,2026-10-17 16:00:00+00:00,7,349,Army,American,2226,Florida Atlantic,home,False,False,False,STATUS_SCHEDULED,,,,0,Michie Stadium
+2026,401862808,2026-10-24 00:30:00+00:00,8,349,Army,American,202,Tulsa,away,False,False,False,STATUS_SCHEDULED,,,,0,H. A. Chapman Stadium
+2026,401862814,2026-10-31 04:00:00+00:00,9,349,Army,American,235,Memphis,away,False,False,False,STATUS_SCHEDULED,,,,0,Simmons Bank Liberty Stadium
+2026,401862831,2026-11-21 17:00:00+00:00,12,349,Army,American,151,East Carolina,home,False,False,False,STATUS_SCHEDULED,,,,0,Michie Stadium
+2026,401862841,2026-11-28 05:00:00+00:00,13,349,Army,American,242,Rice,away,False,False,False,STATUS_SCHEDULED,,,,0,Rice Stadium
+2026,401862844,2026-12-12 20:00:00+00:00,15,349,Army,American,2426,Navy,home,True,False,False,STATUS_SCHEDULED,,,,0,MetLife Stadium
+2026,401856636,2026-09-05 19:30:00+00:00,1,2,Auburn,SEC,239,Baylor,home,True,False,True,STATUS_FINAL,17.0,16.0,True,55068,Mercedes-Benz Stadium
+2026,401856671,2026-09-13 00:50:00+00:00,2,2,Auburn,SEC,2572,Southern Miss,home,False,False,True,STATUS_FINAL,43.0,8.0,True,88043,Jordan-Hare Stadium
+2026,401856687,2026-09-19 23:00:00+00:00,3,2,Auburn,SEC,57,Florida,home,False,False,False,STATUS_SCHEDULED,,,,0,Jordan-Hare Stadium
+2026,401856698,2026-09-26 20:15:00+00:00,4,2,Auburn,SEC,238,Vanderbilt,home,False,False,False,STATUS_SCHEDULED,,,,0,Jordan-Hare Stadium
+2026,401856710,2026-10-03 04:00:00+00:00,5,2,Auburn,SEC,2633,Tennessee,away,False,False,False,STATUS_SCHEDULED,,,,0,Neyland Stadium
+2026,401856719,2026-10-17 04:00:00+00:00,7,2,Auburn,SEC,61,Georgia,away,False,False,False,STATUS_SCHEDULED,,,,0,Sanford Stadium
+2026,401856728,2026-10-24 16:00:00+00:00,8,2,Auburn,SEC,99,LSU,home,False,False,False,STATUS_SCHEDULED,,,,0,Jordan-Hare Stadium
+2026,401856735,2026-10-31 04:00:00+00:00,9,2,Auburn,SEC,145,Ole Miss,away,False,False,False,STATUS_SCHEDULED,,,,0,Vaught-Hemingway Stadium
+2026,401856886,2026-11-14 05:00:00+00:00,11,2,Auburn,SEC,344,Mississippi State,away,False,False,False,STATUS_SCHEDULED,,,,0,Davis Wade Stadium
+2026,401856747,2026-11-21 20:30:00+00:00,12,2,Auburn,SEC,2535,Samford,home,False,False,False,STATUS_SCHEDULED,,,,0,Jordan-Hare Stadium
+2026,401856775,2026-09-06 00:00:00+00:00,1,252,BYU,Big 12,3101,Utah Tech,home,False,False,True,STATUS_FINAL,63.0,7.0,True,64077,LaVell Edwards Stadium
+2026,401856795,2026-09-19 23:30:00+00:00,3,252,BYU,Big 12,36,Colorado State,away,False,False,False,STATUS_SCHEDULED,,,,0,Canvas Stadium
+2026,401856818,2026-10-03 04:00:00+00:00,5,252,BYU,Big 12,2628,TCU,away,False,False,False,STATUS_SCHEDULED,,,,0,Amon G. Carter Stadium
+2026,401856826,2026-10-10 02:15:00+00:00,6,252,BYU,Big 12,66,Iowa State,home,False,False,False,STATUS_SCHEDULED,,,,0,LaVell Edwards Stadium
+2026,401856809,2026-10-17 04:00:00+00:00,7,252,BYU,Big 12,87,Notre Dame,home,False,False,False,STATUS_SCHEDULED,,,,0,LaVell Edwards Stadium
+2026,401856835,2026-10-24 04:00:00+00:00,8,252,BYU,Big 12,2116,UCF,away,False,False,False,STATUS_SCHEDULED,,,,0,Acrisure Bounce House
+2026,401856849,2026-11-07 05:00:00+00:00,10,252,BYU,Big 12,254,Utah,away,False,False,False,STATUS_SCHEDULED,,,,0,Rice-Eccles Stadium
+2026,401856858,2026-11-14 05:00:00+00:00,11,252,BYU,Big 12,239,Baylor,home,False,False,False,STATUS_SCHEDULED,,,,0,LaVell Edwards Stadium
+2026,401856866,2026-11-21 05:00:00+00:00,12,252,BYU,Big 12,2305,Kansas,away,False,False,False,STATUS_SCHEDULED,,,,0,David Booth Kansas Memorial Stadium
+2026,401856876,2026-11-28 05:00:00+00:00,13,252,BYU,Big 12,2132,Cincinnati,home,False,False,False,STATUS_SCHEDULED,,,,0,LaVell Edwards Stadium
+2026,401858432,2026-09-05 16:30:00+00:00,1,2050,Ball State,MAC,194,Ohio State,away,False,False,True,STATUS_FINAL,3.0,56.0,False,101120,Ohio Stadium
+2026,401866413,2026-09-12 18:00:00+00:00,2,2050,Ball State,MAC,2619,Stony Brook,home,False,False,True,STATUS_FINAL,41.0,17.0,True,10390,Scheumann Stadium
+2026,401866422,2026-09-19 20:00:00+00:00,3,2050,Ball State,MAC,2335,Liberty,away,False,False,False,STATUS_SCHEDULED,,,,0,Williams Stadium (VA)
+2026,401866425,2026-09-26 16:00:00+00:00,4,2050,Ball State,MAC,2309,Kent State,away,False,False,False,STATUS_SCHEDULED,,,,0,Zoeller Field at Dix Stadium
+2026,401866431,2026-10-03 04:00:00+00:00,5,2050,Ball State,MAC,2649,Toledo,home,False,False,False,STATUS_SCHEDULED,,,,0,Scheumann Stadium
+2026,401858482,2026-10-10 04:00:00+00:00,6,2050,Ball State,MAC,77,Northwestern,away,False,False,False,STATUS_SCHEDULED,,,,0,Ryan Field
+2026,401866441,2026-10-17 04:00:00+00:00,7,2050,Ball State,MAC,189,Bowling Green,away,False,False,False,STATUS_SCHEDULED,,,,0,Doyt L. Perry Stadium
+2026,401866447,2026-10-24 04:00:00+00:00,8,2050,Ball State,MAC,16,Sacramento State,home,False,False,False,STATUS_SCHEDULED,,,,0,Scheumann Stadium
+2026,401866455,2026-11-04 05:00:00+00:00,10,2050,Ball State,MAC,113,Massachusetts,away,False,False,False,STATUS_SCHEDULED,,,,0,Warren McGuirk Alumni Stadium
+2026,401866461,2026-11-11 05:00:00+00:00,11,2050,Ball State,MAC,2084,Buffalo,home,False,False,False,STATUS_SCHEDULED,,,,0,Scheumann Stadium
+2026,401866464,2026-11-18 00:00:00+00:00,12,2050,Ball State,MAC,195,Ohio,away,False,False,False,STATUS_SCHEDULED,,,,0,Peden Stadium
+2026,401866474,2026-11-28 17:00:00+00:00,13,2050,Ball State,MAC,2117,Central Michigan,home,False,False,False,STATUS_SCHEDULED,,,,0,Scheumann Stadium
+2026,401856784,2026-09-13 00:08:00+00:00,2,239,Baylor,Big 12,2504,Prairie View A&M,home,False,False,True,STATUS_FINAL,44.0,3.0,True,38642,McLane Stadium
+2026,401867804,2026-09-19 20:00:00+00:00,3,239,Baylor,Big 12,2348,Louisiana Tech,home,False,False,False,STATUS_SCHEDULED,,,,0,McLane Stadium
+2026,401856813,2026-09-26 16:00:00+00:00,4,239,Baylor,Big 12,38,Colorado,home,False,False,False,STATUS_SCHEDULED,,,,0,McLane Stadium
+2026,401856832,2026-10-17 04:00:00+00:00,7,239,Baylor,Big 12,2628,TCU,home,False,False,False,STATUS_SCHEDULED,,,,0,McLane Stadium
+2026,401856834,2026-10-24 04:00:00+00:00,8,239,Baylor,Big 12,2305,Kansas,away,False,False,False,STATUS_SCHEDULED,,,,0,David Booth Kansas Memorial Stadium
+2026,401856844,2026-10-30 23:30:00+00:00,9,239,Baylor,Big 12,2116,UCF,away,False,False,False,STATUS_SCHEDULED,,,,0,Acrisure Bounce House
+2026,401856853,2026-11-07 05:00:00+00:00,10,239,Baylor,Big 12,66,Iowa State,home,False,False,False,STATUS_SCHEDULED,,,,0,McLane Stadium
+2026,401856871,2026-11-21 05:00:00+00:00,12,239,Baylor,Big 12,2641,Texas Tech,home,False,False,False,STATUS_SCHEDULED,,,,0,McLane Stadium
+2026,401856874,2026-11-28 05:00:00+00:00,13,239,Baylor,Big 12,248,Houston,away,False,False,False,STATUS_SCHEDULED,,,,0,TDECU Stadium
+2026,401858433,2026-09-05 19:30:00+00:00,1,68,Boise State,Pac-12,2483,Oregon,away,False,False,True,STATUS_FINAL,27.0,34.0,False,57652,Autzen Stadium
+2026,401860881,2026-09-12 22:00:00+00:00,2,68,Boise State,Pac-12,235,Memphis,home,False,False,True,STATUS_FINAL,38.0,20.0,True,34439,Albertsons Stadium
+2026,401860885,2026-09-20 02:00:00+00:00,3,68,Boise State,Pac-12,233,South Dakota,home,False,False,False,STATUS_SCHEDULED,,,,0,Albertsons Stadium
+2026,401860897,2026-09-26 04:00:00+00:00,4,68,Boise State,Pac-12,2711,Western Michigan,away,False,False,False,STATUS_SCHEDULED,,,,0,Waldo Stadium
+2026,401860898,2026-10-03 23:30:00+00:00,5,68,Boise State,Pac-12,328,Utah State,home,False,False,False,STATUS_SCHEDULED,,,,0,Albertsons Stadium
+2026,401860901,2026-10-11 02:30:00+00:00,6,68,Boise State,Pac-12,278,Fresno State,away,False,False,False,STATUS_SCHEDULED,,,,0,Valley Children's Stadium
+2026,401860907,2026-10-24 22:00:00+00:00,8,68,Boise State,Pac-12,265,Washington State,away,False,False,False,STATUS_SCHEDULED,,,,0,Martin Stadium
+2026,401860908,2026-11-01 02:00:00+00:00,9,68,Boise State,Pac-12,326,Texas State,home,False,False,False,STATUS_SCHEDULED,,,,0,Albertsons Stadium
+2026,401860911,2026-11-07 23:00:00+00:00,10,68,Boise State,Pac-12,36,Colorado State,away,False,False,False,STATUS_SCHEDULED,,,,0,Canvas Stadium
+2026,401860914,2026-11-14 23:00:00+00:00,11,68,Boise State,Pac-12,204,Oregon State,home,False,False,False,STATUS_SCHEDULED,,,,0,Albertsons Stadium
+2026,401860925,2026-11-22 02:30:00+00:00,12,68,Boise State,Pac-12,21,San Diego State,home,False,False,False,STATUS_SCHEDULED,,,,0,Albertsons Stadium
+2026,401856777,2026-09-05 19:30:00+00:00,1,103,Boston College,ACC,2132,Cincinnati,away,False,False,True,STATUS_FINAL,15.0,34.0,False,37097,Nippert Stadium
+2026,401858214,2026-09-11 23:30:00+00:00,2,103,Boston College,ACC,164,Rutgers,home,False,False,True,STATUS_FINAL,28.0,21.0,True,40611,"Alumni Stadium (Chestnut Hill, MA)"
+2026,401858227,2026-09-19 18:00:00+00:00,3,103,Boston College,ACC,311,Maine,home,False,False,False,STATUS_SCHEDULED,,,,0,"Alumni Stadium (Chestnut Hill, MA)"
+2026,401858242,2026-09-26 16:00:00+00:00,4,103,Boston College,ACC,259,Virginia Tech,home,False,False,False,STATUS_SCHEDULED,,,,0,"Alumni Stadium (Chestnut Hill, MA)"
+2026,401858246,2026-10-03 04:00:00+00:00,5,103,Boston College,ACC,2567,SMU,away,False,False,False,STATUS_SCHEDULED,,,,0,Gerald J. Ford Stadium
+2026,401858267,2026-10-17 04:00:00+00:00,7,103,Boston College,ACC,221,Pittsburgh,home,False,False,False,STATUS_SCHEDULED,,,,0,"Alumni Stadium (Chestnut Hill, MA)"
+2026,401858273,2026-10-24 04:00:00+00:00,8,103,Boston College,ACC,59,Georgia Tech,away,False,False,False,STATUS_SCHEDULED,,,,0,Bobby Dodd Stadium
+2026,401858279,2026-10-31 04:00:00+00:00,9,103,Boston College,ACC,150,Duke,away,False,False,False,STATUS_SCHEDULED,,,,0,Wallace Wade Stadium
+2026,401858289,2026-11-07 05:00:00+00:00,10,103,Boston College,ACC,52,Florida State,home,False,False,False,STATUS_SCHEDULED,,,,0,"Alumni Stadium (Chestnut Hill, MA)"
+2026,401858294,2026-11-14 20:30:00+00:00,11,103,Boston College,ACC,87,Notre Dame,away,False,False,False,STATUS_SCHEDULED,,,,0,Notre Dame Stadium
+2026,401858309,2026-11-21 05:00:00+00:00,12,103,Boston College,ACC,183,Syracuse,home,False,False,False,STATUS_SCHEDULED,,,,0,"Alumni Stadium (Chestnut Hill, MA)"
+2026,401858311,2026-11-28 05:00:00+00:00,13,103,Boston College,ACC,2390,Miami,away,False,False,False,STATUS_SCHEDULED,,,,0,Hard Rock Stadium
+2026,401866410,2026-09-05 16:00:00+00:00,1,189,Bowling Green,MAC,2627,Tarleton State,home,False,False,True,STATUS_FINAL,13.0,20.0,False,13367,Doyt L. Perry Stadium
+2026,401858441,2026-09-12 23:00:00+00:00,2,189,Bowling Green,MAC,158,Nebraska,away,False,False,True,STATUS_FINAL,7.0,56.0,False,86193,"Memorial Stadium (Lincoln, NE)"
+2026,401856798,2026-09-19 16:00:00+00:00,3,189,Bowling Green,MAC,66,Iowa State,away,False,False,False,STATUS_SCHEDULED,,,,0,Jack Trice Stadium
+2026,401862785,2026-09-26 21:00:00+00:00,4,189,Bowling Green,MAC,58,South Florida,home,False,False,False,STATUS_SCHEDULED,,,,0,Doyt L. Perry Stadium
+2026,401866477,2026-10-03 04:00:00+00:00,5,189,Bowling Green,MAC,193,Miami (OH),away,False,False,False,STATUS_SCHEDULED,,,,0,Yager Stadium
+2026,401866436,2026-10-10 04:00:00+00:00,6,189,Bowling Green,MAC,16,Sacramento State,home,False,False,False,STATUS_SCHEDULED,,,,0,Doyt L. Perry Stadium
+2026,401866448,2026-10-24 04:00:00+00:00,8,189,Bowling Green,MAC,2084,Buffalo,away,False,False,False,STATUS_SCHEDULED,,,,0,Broadview Stadium
+2026,401866452,2026-10-31 16:00:00+00:00,9,189,Bowling Green,MAC,2711,Western Michigan,away,False,False,False,STATUS_SCHEDULED,,,,0,Waldo Stadium
+2026,401866459,2026-11-11 00:00:00+00:00,11,189,Bowling Green,MAC,2309,Kent State,home,False,False,False,STATUS_SCHEDULED,,,,0,Doyt L. Perry Stadium
+2026,401866468,2026-11-21 00:30:00+00:00,12,189,Bowling Green,MAC,2649,Toledo,away,False,False,False,STATUS_SCHEDULED,,,,0,Glass Bowl
+2026,401866475,2026-11-28 17:00:00+00:00,13,189,Bowling Green,MAC,113,Massachusetts,home,False,False,False,STATUS_SCHEDULED,,,,0,Doyt L. Perry Stadium
+2026,401866409,2026-09-03 23:00:00+00:00,1,2084,Buffalo,MAC,399,UAlbany,home,False,False,True,STATUS_FINAL,21.0,17.0,True,8690,Broadview Stadium
+2026,401866414,2026-09-12 22:00:00+00:00,2,2084,Buffalo,MAC,2229,Florida International,away,False,False,True,STATUS_FINAL,20.0,33.0,False,18202,Pitbull Stadium
+2026,401858456,2026-09-19 16:00:00+00:00,3,2084,Buffalo,MAC,213,Penn State,away,False,False,False,STATUS_SCHEDULED,,,,0,Beaver Stadium
+2026,401866426,2026-09-26 19:30:00+00:00,4,2084,Buffalo,MAC,2523,Robert Morris,home,False,False,False,STATUS_SCHEDULED,,,,0,Broadview Stadium
+2026,401866432,2026-10-03 04:00:00+00:00,5,2084,Buffalo,MAC,2711,Western Michigan,home,False,False,False,STATUS_SCHEDULED,,,,0,Broadview Stadium
+2026,401866437,2026-10-10 04:00:00+00:00,6,2084,Buffalo,MAC,2649,Toledo,away,False,False,False,STATUS_SCHEDULED,,,,0,Glass Bowl
+2026,401866442,2026-10-17 04:00:00+00:00,7,2084,Buffalo,MAC,113,Massachusetts,home,False,False,False,STATUS_SCHEDULED,,,,0,Broadview Stadium
+2026,401866454,2026-11-04 00:00:00+00:00,10,2084,Buffalo,MAC,193,Miami (OH),away,False,False,False,STATUS_SCHEDULED,,,,0,Yager Stadium
+2026,401866469,2026-11-18 05:00:00+00:00,12,2084,Buffalo,MAC,2117,Central Michigan,home,False,False,False,STATUS_SCHEDULED,,,,0,Broadview Stadium
+2026,401858210,2026-09-06 02:30:00+00:00,1,25,California,ACC,26,UCLA,home,False,False,True,STATUS_FINAL,24.0,45.0,False,54283,California Memorial Stadium
+2026,401858216,2026-09-12 19:30:00+00:00,2,25,California,ACC,183,Syracuse,away,False,False,True,STATUS_FINAL,21.0,18.0,True,36031,JMA Wireless Dome
+2026,401858233,2026-09-19 19:30:00+00:00,3,25,California,ACC,2681,Wagner,home,False,False,False,STATUS_SCHEDULED,,,,0,California Memorial Stadium
+2026,401858234,2026-09-26 02:30:00+00:00,4,25,California,ACC,228,Clemson,home,False,False,False,STATUS_SCHEDULED,,,,0,California Memorial Stadium
+2026,401858247,2026-10-03 19:30:00+00:00,5,25,California,ACC,2439,UNLV,away,False,False,False,STATUS_SCHEDULED,,,,0,Allegiant Stadium
+2026,401858259,2026-10-10 04:00:00+00:00,6,25,California,ACC,259,Virginia Tech,home,False,False,False,STATUS_SCHEDULED,,,,0,California Memorial Stadium
+2026,401858269,2026-10-17 04:00:00+00:00,7,25,California,ACC,154,Wake Forest,home,False,False,False,STATUS_SCHEDULED,,,,0,California Memorial Stadium
+2026,401858270,2026-10-24 04:00:00+00:00,8,25,California,ACC,2567,SMU,away,False,False,False,STATUS_SCHEDULED,,,,0,Gerald J. Ford Stadium
+2026,401858277,2026-10-31 04:00:00+00:00,9,25,California,ACC,152,NC State,away,False,False,False,STATUS_SCHEDULED,,,,0,Carter-Finley Stadium
+2026,401858295,2026-11-14 05:00:00+00:00,11,25,California,ACC,258,Virginia,away,False,False,False,STATUS_SCHEDULED,,,,0,Scott Stadium
+2026,401858308,2026-11-21 05:00:00+00:00,12,25,California,ACC,24,Stanford,home,False,False,False,STATUS_SCHEDULED,,,,0,California Memorial Stadium
+2026,401858315,2026-11-28 05:00:00+00:00,13,25,California,ACC,221,Pittsburgh,home,False,False,False,STATUS_SCHEDULED,,,,0,California Memorial Stadium
+2026,401864498,2026-09-06 02:00:00+00:00,1,2117,Central Michigan,MAC,167,New Mexico,away,False,False,True,STATUS_FINAL,7.0,38.0,False,24126,University Stadium (NM)
+2026,401866415,2026-09-12 17:00:00+00:00,2,2117,Central Michigan,MAC,2142,Colgate,home,False,False,True,STATUS_FINAL,13.0,10.0,True,19005,Kelly/Shorts Stadium
+2026,401864508,2026-09-19 17:00:00+00:00,3,2117,Central Michigan,MAC,2751,Wyoming,home,False,False,False,STATUS_SCHEDULED,,,,0,Kelly/Shorts Stadium
+2026,401858238,2026-09-26 22:30:00+00:00,4,2117,Central Michigan,MAC,2390,Miami,away,False,False,False,STATUS_SCHEDULED,,,,0,Hard Rock Stadium
+2026,401866438,2026-10-10 04:00:00+00:00,6,2117,Central Michigan,MAC,195,Ohio,away,False,False,False,STATUS_SCHEDULED,,,,0,Peden Stadium
+2026,401866443,2026-10-17 04:00:00+00:00,7,2117,Central Michigan,MAC,2711,Western Michigan,home,False,False,False,STATUS_SCHEDULED,,,,0,Kelly/Shorts Stadium
+2026,401866476,2026-10-24 04:00:00+00:00,8,2117,Central Michigan,MAC,193,Miami (OH),home,False,False,False,STATUS_SCHEDULED,,,,0,Kelly/Shorts Stadium
+2026,401866456,2026-11-04 05:00:00+00:00,10,2117,Central Michigan,MAC,2199,Eastern Michigan,away,True,False,False,STATUS_SCHEDULED,,,,0,Ford Field
+2026,401866462,2026-11-11 05:00:00+00:00,11,2117,Central Michigan,MAC,16,Sacramento State,home,False,False,False,STATUS_SCHEDULED,,,,0,Kelly/Shorts Stadium
+2026,401862694,2026-09-05 19:30:00+00:00,1,2429,Charlotte,American,2643,The Citadel,home,False,False,True,STATUS_FINAL,41.0,43.0,False,13274,Jerry Richardson Stadium
+2026,401856676,2026-09-12 23:45:00+00:00,2,2429,Charlotte,American,145,Ole Miss,away,False,False,True,STATUS_FINAL,9.0,41.0,False,68134,Vaught-Hemingway Stadium
+2026,401862780,2026-09-26 22:30:00+00:00,4,2429,Charlotte,American,309,Louisiana,home,False,False,False,STATUS_SCHEDULED,,,,0,Jerry Richardson Stadium
+2026,401862787,2026-10-03 04:00:00+00:00,5,2429,Charlotte,American,235,Memphis,home,False,False,False,STATUS_SCHEDULED,,,,0,Jerry Richardson Stadium
+2026,401862796,2026-10-10 04:00:00+00:00,6,2429,Charlotte,American,249,North Texas,away,False,False,False,STATUS_SCHEDULED,,,,0,DATCU Stadium
+2026,401862803,2026-10-17 04:00:00+00:00,7,2429,Charlotte,American,218,Temple,away,False,False,False,STATUS_SCHEDULED,,,,0,Lincoln Financial Field
+2026,401862813,2026-10-30 23:00:00+00:00,9,2429,Charlotte,American,2655,Tulane,home,False,False,False,STATUS_SCHEDULED,,,,0,Jerry Richardson Stadium
+2026,401862819,2026-11-07 05:00:00+00:00,10,2429,Charlotte,American,5,UAB,away,False,False,False,STATUS_SCHEDULED,,,,0,Protective Stadium
+2026,401862825,2026-11-14 05:00:00+00:00,11,2429,Charlotte,American,151,East Carolina,home,False,False,False,STATUS_SCHEDULED,,,,0,Jerry Richardson Stadium
+2026,401862832,2026-11-21 05:00:00+00:00,12,2429,Charlotte,American,202,Tulsa,away,False,False,False,STATUS_SCHEDULED,,,,0,H. A. Chapman Stadium
+2026,401862842,2026-11-28 05:00:00+00:00,13,2429,Charlotte,American,2426,Navy,home,False,False,False,STATUS_SCHEDULED,,,,0,Jerry Richardson Stadium
+2026,401856786,2026-09-12 23:00:00+00:00,2,2132,Cincinnati,Big 12,2717,Western Carolina,home,False,False,True,STATUS_FINAL,62.0,10.0,True,34827,Nippert Stadium
+2026,401856797,2026-09-19 19:30:00+00:00,3,2132,Cincinnati,Big 12,193,Miami (OH),home,False,False,False,STATUS_SCHEDULED,,,,0,TQL Stadium
+2026,401856814,2026-09-26 23:00:00+00:00,4,2132,Cincinnati,Big 12,2306,Kansas State,home,False,False,False,STATUS_SCHEDULED,,,,0,Nippert Stadium
+2026,401856829,2026-10-17 04:00:00+00:00,7,2132,Cincinnati,Big 12,277,West Virginia,away,False,False,False,STATUS_SCHEDULED,,,,0,Milan Puskar Stadium
+2026,401856840,2026-10-24 04:00:00+00:00,8,2132,Cincinnati,Big 12,2641,Texas Tech,home,False,False,False,STATUS_SCHEDULED,,,,0,Nippert Stadium
+2026,401856848,2026-10-31 04:00:00+00:00,9,2132,Cincinnati,Big 12,254,Utah,home,False,False,False,STATUS_SCHEDULED,,,,0,Nippert Stadium
+2026,401856851,2026-11-07 05:00:00+00:00,10,2132,Cincinnati,Big 12,248,Houston,away,False,False,False,STATUS_SCHEDULED,,,,0,TDECU Stadium
+2026,401856859,2026-11-14 05:00:00+00:00,11,2132,Cincinnati,Big 12,66,Iowa State,away,False,False,False,STATUS_SCHEDULED,,,,0,Jack Trice Stadium
+2026,401856867,2026-11-21 05:00:00+00:00,12,2132,Cincinnati,Big 12,38,Colorado,home,False,False,False,STATUS_SCHEDULED,,,,0,Nippert Stadium
+2026,401856660,2026-09-06 01:40:00+00:00,1,228,Clemson,ACC,99,LSU,away,False,False,True,STATUS_FINAL,10.0,51.0,False,102321,Tiger Stadium (LA)
+2026,401858219,2026-09-13 01:30:00+00:00,2,228,Clemson,ACC,290,Georgia Southern,home,False,False,True,STATUS_FINAL,22.0,7.0,True,81150,"Memorial Stadium (Clemson, SC)"
+2026,401858229,2026-09-19 16:00:00+00:00,3,228,Clemson,ACC,153,North Carolina,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Clemson, SC)"
+2026,401858249,2026-10-03 04:00:00+00:00,5,228,Clemson,ACC,2390,Miami,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Clemson, SC)"
+2026,401858261,2026-10-17 04:00:00+00:00,7,228,Clemson,ACC,2127,Charleston Southern,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Clemson, SC)"
+2026,401858276,2026-10-24 04:00:00+00:00,8,228,Clemson,ACC,259,Virginia Tech,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Clemson, SC)"
+2026,401858280,2026-10-31 04:00:00+00:00,9,228,Clemson,ACC,52,Florida State,away,False,False,False,STATUS_SCHEDULED,,,,0,Doak Campbell Stadium
+2026,401858285,2026-11-07 05:00:00+00:00,10,228,Clemson,ACC,183,Syracuse,away,False,False,False,STATUS_SCHEDULED,,,,0,JMA Wireless Dome
+2026,401858297,2026-11-14 05:00:00+00:00,11,228,Clemson,ACC,59,Georgia Tech,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Clemson, SC)"
+2026,401858303,2026-11-21 00:30:00+00:00,12,228,Clemson,ACC,150,Duke,away,False,False,False,STATUS_SCHEDULED,,,,0,Wallace Wade Stadium
+2026,401856764,2026-11-28 05:00:00+00:00,13,228,Clemson,ACC,2579,South Carolina,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Clemson, SC)"
+2026,401856780,2026-09-05 16:00:00+00:00,1,324,Coastal Carolina,Sun Belt,277,West Virginia,away,False,False,True,STATUS_FINAL,24.0,31.0,False,54158,Milan Puskar Stadium
+2026,401868008,2026-09-12 23:30:00+00:00,2,324,Coastal Carolina,Sun Belt,2230,Fordham,home,False,False,True,STATUS_FINAL,45.0,7.0,True,18113,Brooks Stadium (SC)
+2026,401869940,2026-09-19 15:30:00+00:00,3,324,Coastal Carolina,Sun Belt,48,Delaware,away,False,False,False,STATUS_SCHEDULED,,,,0,Delaware Stadium
+2026,401869941,2026-09-24 23:30:00+00:00,4,324,Coastal Carolina,Sun Belt,2335,Liberty,home,False,False,False,STATUS_SCHEDULED,,,,0,Brooks Stadium (SC)
+2026,401869942,2026-10-03 04:00:00+00:00,5,324,Coastal Carolina,Sun Belt,290,Georgia Southern,home,False,False,False,STATUS_SCHEDULED,,,,0,Brooks Stadium (SC)
+2026,401869943,2026-10-10 04:00:00+00:00,6,324,Coastal Carolina,Sun Belt,276,Marshall,away,False,False,False,STATUS_SCHEDULED,,,,0,Joan C. Edwards Stadium
+2026,401869944,2026-10-31 04:00:00+00:00,9,324,Coastal Carolina,Sun Belt,2247,Georgia State,away,False,False,False,STATUS_SCHEDULED,,,,0,Center Parc Stadium
+2026,401869945,2026-11-07 05:00:00+00:00,10,324,Coastal Carolina,Sun Belt,295,Old Dominion,home,False,False,False,STATUS_SCHEDULED,,,,0,Brooks Stadium (SC)
+2026,401869946,2026-11-21 05:00:00+00:00,12,324,Coastal Carolina,Sun Belt,309,Louisiana,away,False,False,False,STATUS_SCHEDULED,,,,0,Our Lady of Lourdes Stadium
+2026,401869947,2026-11-28 05:00:00+00:00,13,324,Coastal Carolina,Sun Belt,256,James Madison,away,False,False,False,STATUS_SCHEDULED,,,,0,Bridgeforth Stadium
+2026,401856776,2026-09-04 00:00:00+00:00,1,38,Colorado,Big 12,59,Georgia Tech,away,False,False,True,STATUS_FINAL,14.0,13.0,True,52113,Bobby Dodd Stadium
+2026,401856785,2026-09-12 19:30:00+00:00,2,38,Colorado,Big 12,2692,Weber State,home,False,False,True,STATUS_FINAL,52.0,21.0,True,49363,Folsom Field
+2026,401856796,2026-09-19 23:30:00+00:00,3,38,Colorado,Big 12,77,Northwestern,away,False,False,False,STATUS_SCHEDULED,,,,0,Northwestern Medicine Field at Martin Stadium
+2026,401856821,2026-10-03 04:00:00+00:00,5,38,Colorado,Big 12,2641,Texas Tech,home,False,False,False,STATUS_SCHEDULED,,,,0,Folsom Field
+2026,401856833,2026-10-17 04:00:00+00:00,7,38,Colorado,Big 12,254,Utah,home,False,False,False,STATUS_SCHEDULED,,,,0,Folsom Field
+2026,401856836,2026-10-24 04:00:00+00:00,8,38,Colorado,Big 12,197,Oklahoma State,away,False,False,False,STATUS_SCHEDULED,,,,0,Boone Pickens Stadium
+2026,401856846,2026-10-31 04:00:00+00:00,9,38,Colorado,Big 12,2306,Kansas State,home,False,False,False,STATUS_SCHEDULED,,,,0,Folsom Field
+2026,401856860,2026-11-14 03:15:00+00:00,11,38,Colorado,Big 12,248,Houston,home,False,False,False,STATUS_SCHEDULED,,,,0,Folsom Field
+2026,401856875,2026-11-28 05:00:00+00:00,13,38,Colorado,Big 12,2116,UCF,home,False,False,False,STATUS_SCHEDULED,,,,0,Folsom Field
+2026,401860878,2026-09-05 22:00:00+00:00,1,36,Colorado State,Pac-12,2751,Wyoming,home,False,False,True,STATUS_FINAL,35.0,13.0,True,40546,Canvas Stadium
+2026,401860882,2026-09-12 23:00:00+00:00,2,36,Colorado State,Pac-12,253,Southern Utah,home,False,False,True,STATUS_FINAL,58.0,24.0,True,35749,Canvas Stadium
+2026,401860896,2026-09-26 16:00:00+00:00,4,36,Colorado State,Pac-12,2636,UTSA,away,False,False,False,STATUS_SCHEDULED,,,,0,Alamodome
+2026,401860899,2026-10-03 22:00:00+00:00,5,36,Colorado State,Pac-12,204,Oregon State,home,False,False,False,STATUS_SCHEDULED,,,,0,Canvas Stadium
+2026,401860923,2026-10-16 00:00:00+00:00,7,36,Colorado State,Pac-12,326,Texas State,away,False,False,False,STATUS_SCHEDULED,,,,0,UFCU Stadium
+2026,401860905,2026-10-24 22:30:00+00:00,8,36,Colorado State,Pac-12,21,San Diego State,home,False,False,False,STATUS_SCHEDULED,,,,0,Canvas Stadium
+2026,401860910,2026-10-31 19:30:00+00:00,9,36,Colorado State,Pac-12,328,Utah State,away,False,False,False,STATUS_SCHEDULED,,,,0,Maverik Stadium
+2026,401860917,2026-11-15 03:30:00+00:00,11,36,Colorado State,Pac-12,265,Washington State,away,False,False,False,STATUS_SCHEDULED,,,,0,Martin Stadium
+2026,401860918,2026-11-22 00:30:00+00:00,12,36,Colorado State,Pac-12,278,Fresno State,away,False,False,False,STATUS_SCHEDULED,,,,0,Valley Children's Stadium
+2026,401860926,2026-11-28 05:00:00+00:00,13,36,Colorado State,Pac-12,-2,TBD,home,False,False,False,STATUS_SCHEDULED,,,,0,Canvas Stadium
+2026,401864424,2026-09-03 23:00:00+00:00,1,48,Delaware,Conference USA,2771,Merrimack,home,False,False,True,STATUS_FINAL,42.0,7.0,True,17268,Delaware Stadium
+2026,401856684,2026-09-12 20:15:00+00:00,2,48,Delaware,Conference USA,238,Vanderbilt,away,False,False,True,STATUS_FINAL,26.0,35.0,False,35000,FirstBank Stadium
+2026,401858239,2026-09-26 22:00:00+00:00,4,48,Delaware,Conference USA,258,Virginia,away,False,False,False,STATUS_SCHEDULED,,,,0,Scott Stadium
+2026,401871050,2026-10-02 23:00:00+00:00,5,48,Delaware,Conference USA,2335,Liberty,home,False,False,False,STATUS_SCHEDULED,,,,0,Delaware Stadium
+2026,401871067,2026-10-13 23:00:00+00:00,7,48,Delaware,Conference USA,2393,Middle Tennessee,away,False,False,False,STATUS_SCHEDULED,,,,0,"Johnny ""Red"" Floyd Stadium"
+2026,401871069,2026-10-20 23:00:00+00:00,8,48,Delaware,Conference USA,2623,Missouri State,home,False,False,False,STATUS_SCHEDULED,,,,0,Delaware Stadium
+2026,401871071,2026-10-27 23:00:00+00:00,9,48,Delaware,Conference USA,98,Western Kentucky,away,False,False,False,STATUS_SCHEDULED,,,,0,Houchens Industries-L.T. Smith Stadium
+2026,401871073,2026-11-07 20:00:00+00:00,10,48,Delaware,Conference USA,338,Kennesaw State,away,False,False,False,STATUS_SCHEDULED,,,,0,Walens Family Field at Fifth Third Stadium
+2026,401871060,2026-11-14 20:00:00+00:00,11,48,Delaware,Conference USA,2229,Florida International,home,False,False,False,STATUS_SCHEDULED,,,,0,Delaware Stadium
+2026,401871077,2026-11-21 20:00:00+00:00,12,48,Delaware,Conference USA,166,New Mexico State,away,False,False,False,STATUS_SCHEDULED,,,,0,Aggie Memorial Stadium
+2026,401871062,2026-11-28 20:30:00+00:00,13,48,Delaware,Conference USA,55,Jacksonville State,home,False,False,False,STATUS_SCHEDULED,,,,0,Delaware Stadium
+2026,401858209,2026-09-05 19:30:00+00:00,1,150,Duke,ACC,2655,Tulane,home,False,False,True,STATUS_FINAL,17.0,3.0,True,16113,Wallace Wade Stadium
+2026,401858217,2026-09-12 19:30:00+00:00,2,150,Duke,ACC,356,Illinois,away,False,False,True,STATUS_FINAL,31.0,27.0,True,60670,Gies Memorial Stadium
+2026,401858231,2026-09-19 20:00:00+00:00,3,150,Duke,ACC,24,Stanford,home,False,False,False,STATUS_SCHEDULED,,,,0,Wallace Wade Stadium
+2026,401858244,2026-09-26 19:30:00+00:00,4,150,Duke,ACC,2729,William & Mary,home,False,False,False,STATUS_SCHEDULED,,,,0,Wallace Wade Stadium
+2026,401858255,2026-10-10 04:00:00+00:00,6,150,Duke,ACC,59,Georgia Tech,away,False,False,False,STATUS_SCHEDULED,,,,0,Bobby Dodd Stadium
+2026,401858266,2026-10-17 04:00:00+00:00,7,150,Duke,ACC,153,North Carolina,home,False,False,False,STATUS_SCHEDULED,,,,0,Wallace Wade Stadium
+2026,401858271,2026-10-23 23:00:00+00:00,8,150,Duke,ACC,258,Virginia,away,False,False,False,STATUS_SCHEDULED,,,,0,Scott Stadium
+2026,401858286,2026-11-07 05:00:00+00:00,10,150,Duke,ACC,152,NC State,away,False,False,False,STATUS_SCHEDULED,,,,0,Carter-Finley Stadium
+2026,401858296,2026-11-14 05:00:00+00:00,11,150,Duke,ACC,2390,Miami,away,False,False,False,STATUS_SCHEDULED,,,,0,Hard Rock Stadium
+2026,401858312,2026-11-28 05:00:00+00:00,13,150,Duke,ACC,154,Wake Forest,away,False,False,False,STATUS_SCHEDULED,,,,0,Allegacy Federal Credit Union Stadium
+2026,401862710,2026-09-19 22:00:00+00:00,3,151,East Carolina,American,295,Old Dominion,away,False,False,False,STATUS_SCHEDULED,,,,0,S.B. Ballard Stadium
+2026,401862781,2026-09-26 20:00:00+00:00,4,151,East Carolina,American,2428,North Carolina Central,home,False,False,False,STATUS_SCHEDULED,,,,0,Dowdy-Ficklen Stadium
+2026,401862797,2026-10-10 04:00:00+00:00,6,151,East Carolina,American,242,Rice,home,False,False,False,STATUS_SCHEDULED,,,,0,Dowdy-Ficklen Stadium
+2026,401862800,2026-10-15 23:30:00+00:00,7,151,East Carolina,American,5,UAB,away,False,False,False,STATUS_SCHEDULED,,,,0,Protective Stadium
+2026,401862807,2026-10-22 23:30:00+00:00,8,151,East Carolina,American,235,Memphis,away,False,False,False,STATUS_SCHEDULED,,,,0,Simmons Bank Liberty Stadium
+2026,401862815,2026-10-31 04:00:00+00:00,9,151,East Carolina,American,218,Temple,home,False,False,False,STATUS_SCHEDULED,,,,0,Dowdy-Ficklen Stadium
+2026,401862818,2026-11-07 00:30:00+00:00,10,151,East Carolina,American,58,South Florida,home,False,False,False,STATUS_SCHEDULED,,,,0,Dowdy-Ficklen Stadium
+2026,401862837,2026-11-27 05:00:00+00:00,13,151,East Carolina,American,2226,Florida Atlantic,home,False,False,False,STATUS_SCHEDULED,,,,0,Dowdy-Ficklen Stadium
+2026,401866408,2026-08-29 22:30:00+00:00,1,2199,Eastern Michigan,MAC,16,Sacramento State,home,False,False,True,STATUS_FINAL,28.0,17.0,True,9401,Rynearson Stadium
+2026,401864495,2026-09-04 22:30:00+00:00,1,2199,Eastern Michigan,MAC,23,San José State,home,False,False,True,STATUS_FINAL,21.0,27.0,False,5646,Rynearson Stadium
+2026,401858440,2026-09-12 19:30:00+00:00,2,2199,Eastern Michigan,MAC,127,Michigan State,away,False,False,True,STATUS_FINAL,7.0,35.0,False,70712,Spartan Stadium
+2026,401858460,2026-09-19 16:30:00+00:00,3,2199,Eastern Michigan,MAC,275,Wisconsin,away,False,False,False,STATUS_SCHEDULED,,,,0,Camp Randall Stadium
+2026,401866427,2026-09-26 17:00:00+00:00,4,2199,Eastern Michigan,MAC,2815,Lindenwood,home,False,False,False,STATUS_SCHEDULED,,,,0,Rynearson Stadium
+2026,401866433,2026-10-03 04:00:00+00:00,5,2199,Eastern Michigan,MAC,113,Massachusetts,away,False,False,False,STATUS_SCHEDULED,,,,0,Warren McGuirk Alumni Stadium
+2026,401866444,2026-10-17 04:00:00+00:00,7,2199,Eastern Michigan,MAC,2649,Toledo,home,False,False,False,STATUS_SCHEDULED,,,,0,Rynearson Stadium
+2026,401866449,2026-10-24 04:00:00+00:00,8,2199,Eastern Michigan,MAC,195,Ohio,away,False,False,False,STATUS_SCHEDULED,,,,0,Peden Stadium
+2026,401866465,2026-11-18 00:00:00+00:00,12,2199,Eastern Michigan,MAC,2711,Western Michigan,away,False,False,False,STATUS_SCHEDULED,,,,0,Waldo Stadium
+2026,401866470,2026-11-25 00:00:00+00:00,13,2199,Eastern Michigan,MAC,2309,Kent State,home,False,False,False,STATUS_SCHEDULED,,,,0,Rynearson Stadium
+2026,401856637,2026-09-05 23:45:00+00:00,1,57,Florida,SEC,2226,Florida Atlantic,home,False,False,True,STATUS_FINAL,66.0,21.0,True,90295,Ben Hill Griffin Stadium
+2026,401856672,2026-09-12 21:30:00+00:00,2,57,Florida,SEC,2097,Campbell,home,False,False,True,STATUS_FINAL,52.0,3.0,True,88863,Ben Hill Griffin Stadium
+2026,401856699,2026-09-26 19:30:00+00:00,4,57,Florida,SEC,145,Ole Miss,home,False,False,False,STATUS_SCHEDULED,,,,0,Ben Hill Griffin Stadium
+2026,401856708,2026-10-03 04:00:00+00:00,5,57,Florida,SEC,142,Missouri,away,False,False,False,STATUS_SCHEDULED,,,,0,Memorial Stadium
+2026,401856714,2026-10-10 04:00:00+00:00,6,57,Florida,SEC,2579,South Carolina,home,False,False,False,STATUS_SCHEDULED,,,,0,Ben Hill Griffin Stadium
+2026,401856724,2026-10-17 04:00:00+00:00,7,57,Florida,SEC,251,Texas,away,False,False,False,STATUS_SCHEDULED,,,,0,DKR-Texas Memorial Stadium
+2026,401856734,2026-10-31 19:30:00+00:00,9,57,Florida,SEC,61,Georgia,away,True,False,False,STATUS_SCHEDULED,,,,0,Mercedes-Benz Stadium
+2026,401856739,2026-11-07 05:00:00+00:00,10,57,Florida,SEC,201,Oklahoma,home,False,False,False,STATUS_SCHEDULED,,,,0,Ben Hill Griffin Stadium
+2026,401856884,2026-11-14 05:00:00+00:00,11,57,Florida,SEC,96,Kentucky,away,False,False,False,STATUS_SCHEDULED,,,,0,Kroger Field
+2026,401856748,2026-11-21 05:00:00+00:00,12,57,Florida,SEC,238,Vanderbilt,home,False,False,False,STATUS_SCHEDULED,,,,0,Ben Hill Griffin Stadium
+2026,401856759,2026-11-27 20:30:00+00:00,13,57,Florida,SEC,52,Florida State,away,False,False,False,STATUS_SCHEDULED,,,,0,Doak Campbell Stadium
+2026,401862703,2026-09-12 23:30:00+00:00,2,2226,Florida Atlantic,American,2426,Navy,home,False,False,True,STATUS_FINAL,38.0,30.0,True,22273,Flagler Credit Union Stadium
+2026,401862771,2026-09-19 22:00:00+00:00,3,2226,Florida Atlantic,American,2229,Florida International,home,False,False,False,STATUS_SCHEDULED,,,,0,Flagler Credit Union Stadium
+2026,401862782,2026-09-27 00:00:00+00:00,4,2226,Florida Atlantic,American,2433,UL Monroe,away,False,False,False,STATUS_SCHEDULED,,,,0,Malone Stadium
+2026,401862790,2026-10-03 22:00:00+00:00,5,2226,Florida Atlantic,American,2640,Texas Southern,home,False,False,False,STATUS_SCHEDULED,,,,0,Flagler Credit Union Stadium
+2026,401862809,2026-10-24 04:00:00+00:00,8,2226,Florida Atlantic,American,242,Rice,home,False,False,False,STATUS_SCHEDULED,,,,0,Flagler Credit Union Stadium
+2026,401862812,2026-10-29 23:30:00+00:00,9,2226,Florida Atlantic,American,249,North Texas,away,False,False,False,STATUS_SCHEDULED,,,,0,DATCU Stadium
+2026,401862817,2026-11-06 01:00:00+00:00,10,2226,Florida Atlantic,American,2636,UTSA,home,False,False,False,STATUS_SCHEDULED,,,,0,Flagler Credit Union Stadium
+2026,401862826,2026-11-14 05:00:00+00:00,11,2226,Florida Atlantic,American,202,Tulsa,away,False,False,False,STATUS_SCHEDULED,,,,0,H. A. Chapman Stadium
+2026,401862833,2026-11-21 05:00:00+00:00,12,2226,Florida Atlantic,American,58,South Florida,home,False,False,False,STATUS_SCHEDULED,,,,0,Flagler Credit Union Stadium
+2026,401862699,2026-09-05 23:00:00+00:00,1,2229,Florida International,Conference USA,58,South Florida,away,False,False,True,STATUS_FINAL,9.0,19.0,False,41847,Raymond James Stadium
+2026,401867909,2026-09-26 22:00:00+00:00,4,2229,Florida International,Conference USA,2341,Long Island University,home,False,False,False,STATUS_SCHEDULED,,,,0,Pitbull Stadium
+2026,401871066,2026-10-07 23:30:00+00:00,6,2229,Florida International,Conference USA,166,New Mexico State,home,False,False,False,STATUS_SCHEDULED,,,,0,Pitbull Stadium
+2026,401871053,2026-10-14 00:00:00+00:00,7,2229,Florida International,Conference USA,55,Jacksonville State,away,False,False,False,STATUS_SCHEDULED,,,,0,AmFirst Stadium
+2026,401871055,2026-10-20 23:00:00+00:00,8,2229,Florida International,Conference USA,2393,Middle Tennessee,home,False,False,False,STATUS_SCHEDULED,,,,0,Pitbull Stadium
+2026,401871059,2026-10-31 19:30:00+00:00,9,2229,Florida International,Conference USA,2335,Liberty,away,False,False,False,STATUS_SCHEDULED,,,,0,Williams Stadium (VA)
+2026,401871074,2026-11-07 21:00:00+00:00,10,2229,Florida International,Conference USA,2623,Missouri State,home,False,False,False,STATUS_SCHEDULED,,,,0,Pitbull Stadium
+2026,401871078,2026-11-21 20:00:00+00:00,12,2229,Florida International,Conference USA,338,Kennesaw State,away,False,False,False,STATUS_SCHEDULED,,,,0,Walens Family Field at Fifth Third Stadium
+2026,401871082,2026-11-28 19:00:00+00:00,13,2229,Florida International,Conference USA,2534,Sam Houston,home,False,False,False,STATUS_SCHEDULED,,,,0,Pitbull Stadium
+2026,401864570,2026-08-29 23:00:00+00:00,1,52,Florida State,ACC,166,New Mexico State,home,False,False,True,STATUS_FINAL,34.0,17.0,True,65915,Doak Campbell Stadium
+2026,401858212,2026-09-07 23:30:00+00:00,1,52,Florida State,ACC,2567,SMU,home,False,False,True,STATUS_FINAL,24.0,27.0,False,60107,Doak Campbell Stadium
+2026,401858237,2026-09-26 19:00:00+00:00,4,52,Florida State,ACC,2110,Central Arkansas,home,False,False,False,STATUS_SCHEDULED,,,,0,Doak Campbell Stadium
+2026,401858253,2026-10-03 04:00:00+00:00,5,52,Florida State,ACC,258,Virginia,home,False,False,False,STATUS_SCHEDULED,,,,0,Doak Campbell Stadium
+2026,401858254,2026-10-09 23:00:00+00:00,6,52,Florida State,ACC,97,Louisville,away,False,False,False,STATUS_SCHEDULED,,,,0,L&N Federal Credit Union Stadium
+2026,401858263,2026-10-17 04:00:00+00:00,7,52,Florida State,ACC,2390,Miami,away,False,False,False,STATUS_SCHEDULED,,,,0,Hard Rock Stadium
+2026,401858293,2026-11-14 00:00:00+00:00,11,52,Florida State,ACC,221,Pittsburgh,away,False,False,False,STATUS_SCHEDULED,,,,0,Acrisure Stadium
+2026,401858304,2026-11-21 05:00:00+00:00,12,52,Florida State,ACC,152,NC State,home,False,False,False,STATUS_SCHEDULED,,,,0,Doak Campbell Stadium
+2026,401858436,2026-09-05 01:00:00+00:00,1,278,Fresno State,Pac-12,30,USC,away,False,False,True,STATUS_FINAL,0.0,39.0,False,53014,Los Angeles Memorial Coliseum
+2026,401860883,2026-09-13 02:30:00+00:00,2,278,Fresno State,Pac-12,16,Sacramento State,home,False,False,True,STATUS_FINAL,49.0,3.0,True,40198,Valley Children's Stadium
+2026,401860888,2026-09-20 03:00:00+00:00,3,278,Fresno State,Pac-12,23,San José State,away,False,False,False,STATUS_SCHEDULED,,,,0,CEFCU Stadium
+2026,401860891,2026-09-27 02:00:00+00:00,4,278,Fresno State,Pac-12,242,Rice,home,False,False,False,STATUS_SCHEDULED,,,,0,Valley Children's Stadium
+2026,401860921,2026-10-04 01:30:00+00:00,5,278,Fresno State,Pac-12,265,Washington State,away,False,False,False,STATUS_SCHEDULED,,,,0,Martin Stadium
+2026,401860904,2026-10-18 02:30:00+00:00,7,278,Fresno State,Pac-12,21,San Diego State,away,False,False,False,STATUS_SCHEDULED,,,,0,Snapdragon Stadium
+2026,401860924,2026-10-31 04:00:00+00:00,9,278,Fresno State,Pac-12,204,Oregon State,home,False,False,False,STATUS_SCHEDULED,,,,0,Valley Children's Stadium
+2026,401860913,2026-11-08 02:30:00+00:00,10,278,Fresno State,Pac-12,328,Utah State,away,False,False,False,STATUS_SCHEDULED,,,,0,Maverik Stadium
+2026,401860916,2026-11-14 21:00:00+00:00,11,278,Fresno State,Pac-12,326,Texas State,away,False,False,False,STATUS_SCHEDULED,,,,0,UFCU Stadium
+2026,401860927,2026-11-28 05:00:00+00:00,13,278,Fresno State,Pac-12,-2,TBD,home,False,False,False,STATUS_SCHEDULED,,,,0,Valley Children's Stadium
+2026,401856658,2026-09-05 19:00:00+00:00,1,61,Georgia,SEC,2634,Tennessee State,home,False,False,True,STATUS_FINAL,63.0,3.0,True,93033,Sanford Stadium
+2026,401856673,2026-09-12 16:45:00+00:00,2,61,Georgia,SEC,98,Western Kentucky,home,False,False,True,STATUS_FINAL,70.0,20.0,True,93033,Sanford Stadium
+2026,401856700,2026-09-26 19:30:00+00:00,4,61,Georgia,SEC,201,Oklahoma,home,False,False,False,STATUS_SCHEDULED,,,,0,Sanford Stadium
+2026,401856705,2026-10-03 04:00:00+00:00,5,61,Georgia,SEC,238,Vanderbilt,home,False,False,False,STATUS_SCHEDULED,,,,0,Sanford Stadium
+2026,401856741,2026-11-07 05:00:00+00:00,10,61,Georgia,SEC,145,Ole Miss,away,False,False,False,STATUS_SCHEDULED,,,,0,Vaught-Hemingway Stadium
+2026,401856883,2026-11-14 05:00:00+00:00,11,61,Georgia,SEC,142,Missouri,home,False,False,False,STATUS_SCHEDULED,,,,0,Sanford Stadium
+2026,401856753,2026-11-21 05:00:00+00:00,12,61,Georgia,SEC,2579,South Carolina,away,False,False,False,STATUS_SCHEDULED,,,,0,Williams-Brice Stadium
+2026,401856760,2026-11-28 05:00:00+00:00,13,61,Georgia,SEC,59,Georgia Tech,home,False,False,False,STATUS_SCHEDULED,,,,0,Sanford Stadium
+2026,401868170,2026-09-05 23:00:00+00:00,1,290,Georgia Southern,Sun Belt,2127,Charleston Southern,home,False,False,True,STATUS_FINAL,31.0,0.0,True,22426,Allen E. Paulson Stadium
+2026,401869948,2026-09-19 23:00:00+00:00,3,290,Georgia Southern,Sun Belt,55,Jacksonville State,away,False,False,False,STATUS_SCHEDULED,,,,0,AmFirst Stadium
+2026,401856806,2026-09-26 04:00:00+00:00,4,290,Georgia Southern,Sun Belt,248,Houston,home,False,False,False,STATUS_SCHEDULED,,,,0,Allen E. Paulson Stadium
+2026,401869949,2026-10-10 04:00:00+00:00,6,290,Georgia Southern,Sun Belt,256,James Madison,home,False,False,False,STATUS_SCHEDULED,,,,0,Allen E. Paulson Stadium
+2026,401869950,2026-10-15 23:30:00+00:00,7,290,Georgia Southern,Sun Belt,295,Old Dominion,away,False,False,False,STATUS_SCHEDULED,,,,0,S.B. Ballard Stadium
+2026,401869951,2026-11-07 05:00:00+00:00,10,290,Georgia Southern,Sun Belt,276,Marshall,home,False,False,False,STATUS_SCHEDULED,,,,0,Allen E. Paulson Stadium
+2026,401869952,2026-11-14 05:00:00+00:00,11,290,Georgia Southern,Sun Belt,2247,Georgia State,away,False,False,False,STATUS_SCHEDULED,,,,0,Center Parc Stadium
+2026,401869953,2026-11-21 05:00:00+00:00,12,290,Georgia Southern,Sun Belt,2653,Troy,away,False,False,False,STATUS_SCHEDULED,,,,0,Veterans Memorial Stadium (AL)
+2026,401869954,2026-11-28 05:00:00+00:00,13,290,Georgia Southern,Sun Belt,2348,Louisiana Tech,home,False,False,False,STATUS_SCHEDULED,,,,0,Allen E. Paulson Stadium
+2026,401866623,2026-09-04 23:00:00+00:00,1,2247,Georgia State,Sun Belt,2448,North Carolina A&T,home,False,False,True,STATUS_FINAL,59.0,10.0,True,16703,Center Parc Stadium
+2026,401869955,2026-09-12 23:00:00+00:00,2,2247,Georgia State,Sun Belt,338,Kennesaw State,away,False,False,True,STATUS_FINAL,31.0,17.0,True,11040,Walens Family Field at Fifth Third Stadium
+2026,401856800,2026-09-19 23:00:00+00:00,3,2247,Georgia State,Sun Belt,2116,UCF,away,False,False,False,STATUS_SCHEDULED,,,,0,Acrisure Bounce House
+2026,401864511,2026-09-26 18:00:00+00:00,4,2247,Georgia State,Sun Belt,2459,Northern Illinois,home,False,False,False,STATUS_SCHEDULED,,,,0,Center Parc Stadium
+2026,401869956,2026-10-03 04:00:00+00:00,5,2247,Georgia State,Sun Belt,295,Old Dominion,home,False,False,False,STATUS_SCHEDULED,,,,0,Center Parc Stadium
+2026,401869957,2026-10-17 04:00:00+00:00,7,2247,Georgia State,Sun Belt,256,James Madison,away,False,False,False,STATUS_SCHEDULED,,,,0,Bridgeforth Stadium
+2026,401869958,2026-11-21 05:00:00+00:00,12,2247,Georgia State,Sun Belt,276,Marshall,away,False,False,False,STATUS_SCHEDULED,,,,0,Joan C. Edwards Stadium
+2026,401869959,2026-11-28 05:00:00+00:00,13,2247,Georgia State,Sun Belt,309,Louisiana,home,False,False,False,STATUS_SCHEDULED,,,,0,Center Parc Stadium
+2026,401856681,2026-09-12 23:00:00+00:00,2,59,Georgia Tech,ACC,2633,Tennessee,home,False,False,True,STATUS_FINAL,24.0,45.0,False,52113,Bobby Dodd Stadium
+2026,401858228,2026-09-19 16:00:00+00:00,3,59,Georgia Tech,ACC,2382,Mercer,home,False,False,False,STATUS_SCHEDULED,,,,0,Bobby Dodd Stadium
+2026,401858240,2026-09-27 02:30:00+00:00,4,59,Georgia Tech,ACC,24,Stanford,away,False,False,False,STATUS_SCHEDULED,,,,0,Stanford Stadium
+2026,401858264,2026-10-17 04:00:00+00:00,7,59,Georgia Tech,ACC,259,Virginia Tech,away,False,False,False,STATUS_SCHEDULED,,,,0,Lane Stadium
+2026,401858281,2026-10-31 04:00:00+00:00,9,59,Georgia Tech,ACC,221,Pittsburgh,away,False,False,False,STATUS_SCHEDULED,,,,0,Acrisure Stadium
+2026,401858287,2026-11-07 05:00:00+00:00,10,59,Georgia Tech,ACC,97,Louisville,home,False,False,False,STATUS_SCHEDULED,,,,0,Bobby Dodd Stadium
+2026,401858310,2026-11-21 05:00:00+00:00,12,59,Georgia Tech,ACC,154,Wake Forest,home,False,False,False,STATUS_SCHEDULED,,,,0,Bobby Dodd Stadium
+2026,401858201,2026-08-29 23:00:00+00:00,1,62,Hawai'i,Mountain West,24,Stanford,away,False,False,True,STATUS_FINAL,27.0,37.0,False,23222,Stanford Stadium
+2026,401864497,2026-09-06 02:00:00+00:00,1,62,Hawai'i,Mountain West,2439,UNLV,home,False,False,True,STATUS_FINAL,6.0,21.0,False,15014,Clarence T.C. Ching Athletics Complex
+2026,401864578,2026-09-13 03:59:00+00:00,2,62,Hawai'i,Mountain West,166,New Mexico State,home,False,False,True,STATUS_FINAL,29.0,19.0,True,12905,Clarence T.C. Ching Athletics Complex
+2026,401864510,2026-09-26 19:00:00+00:00,4,62,Hawai'i,Mountain West,2751,Wyoming,away,False,False,False,STATUS_SCHEDULED,,,,0,War Memorial Stadium
+2026,401864513,2026-10-04 03:59:00+00:00,5,62,Hawai'i,Mountain West,23,San José State,home,False,False,False,STATUS_SCHEDULED,,,,0,Clarence T.C. Ching Athletics Complex
+2026,401864521,2026-10-17 04:00:00+00:00,7,62,Hawai'i,Mountain West,167,New Mexico,home,False,False,False,STATUS_SCHEDULED,,,,0,Clarence T.C. Ching Athletics Complex
+2026,401864526,2026-10-24 04:00:00+00:00,8,62,Hawai'i,Mountain West,2459,Northern Illinois,away,False,False,False,STATUS_SCHEDULED,,,,0,Huskie Stadium
+2026,401864532,2026-11-07 05:00:00+00:00,10,62,Hawai'i,Mountain West,2638,UTEP,away,False,False,False,STATUS_SCHEDULED,,,,0,Sun Bowl
+2026,401864537,2026-11-15 04:59:00+00:00,11,62,Hawai'i,Mountain West,2449,North Dakota State,home,False,False,False,STATUS_SCHEDULED,,,,0,Clarence T.C. Ching Athletics Complex
+2026,401864541,2026-11-21 05:00:00+00:00,12,62,Hawai'i,Mountain West,2440,Nevada,away,False,False,False,STATUS_SCHEDULED,,,,0,Mackay Stadium
+2026,401864547,2026-11-29 04:00:00+00:00,13,62,Hawai'i,Mountain West,16,Sacramento State,home,False,False,False,STATUS_SCHEDULED,,,,0,Clarence T.C. Ching Athletics Complex
+2026,401856778,2026-09-05 16:00:00+00:00,1,248,Houston,Big 12,204,Oregon State,home,False,False,True,STATUS_FINAL,33.0,20.0,True,28742,TDECU Stadium
+2026,401856787,2026-09-12 23:00:00+00:00,2,248,Houston,Big 12,2582,Southern,home,False,False,True,STATUS_FINAL,77.0,6.0,True,28936,TDECU Stadium
+2026,401856811,2026-09-19 00:00:00+00:00,3,248,Houston,Big 12,2641,Texas Tech,away,False,False,False,STATUS_SCHEDULED,,,,0,Galaxy Stadium
+2026,401856819,2026-10-03 04:00:00+00:00,5,248,Houston,Big 12,2116,UCF,home,False,False,False,STATUS_SCHEDULED,,,,0,TDECU Stadium
+2026,401856825,2026-10-10 04:00:00+00:00,6,248,Houston,Big 12,2306,Kansas State,away,False,False,False,STATUS_SCHEDULED,,,,0,Bill Snyder Family Stadium
+2026,401856831,2026-10-17 04:00:00+00:00,7,248,Houston,Big 12,197,Oklahoma State,home,False,False,False,STATUS_SCHEDULED,,,,0,TDECU Stadium
+2026,401856837,2026-10-24 04:00:00+00:00,8,248,Houston,Big 12,254,Utah,away,False,False,False,STATUS_SCHEDULED,,,,0,Rice-Eccles Stadium
+2026,401856868,2026-11-21 05:00:00+00:00,12,248,Houston,Big 12,277,West Virginia,away,False,False,False,STATUS_SCHEDULED,,,,0,Milan Puskar Stadium
+2026,401858424,2026-09-04 01:00:00+00:00,1,356,Illinois,Big Ten,5,UAB,home,False,False,True,STATUS_FINAL,42.0,23.0,True,52673,Gies Memorial Stadium
+2026,401858448,2026-09-19 18:00:00+00:00,3,356,Illinois,Big Ten,79,Southern Illinois,home,False,False,False,STATUS_SCHEDULED,,,,0,Gies Memorial Stadium
+2026,401858465,2026-09-26 04:00:00+00:00,4,356,Illinois,Big Ten,194,Ohio State,away,False,False,False,STATUS_SCHEDULED,,,,0,Ohio Stadium
+2026,401858472,2026-10-03 04:00:00+00:00,5,356,Illinois,Big Ten,2509,Purdue,home,False,False,False,STATUS_SCHEDULED,,,,0,Gies Memorial Stadium
+2026,401858480,2026-10-10 04:00:00+00:00,6,356,Illinois,Big Ten,127,Michigan State,away,False,False,False,STATUS_SCHEDULED,,,,0,Spartan Stadium
+2026,401858495,2026-10-24 04:00:00+00:00,8,356,Illinois,Big Ten,2483,Oregon,home,False,False,False,STATUS_SCHEDULED,,,,0,Gies Memorial Stadium
+2026,401858503,2026-10-31 04:00:00+00:00,9,356,Illinois,Big Ten,120,Maryland,away,False,False,False,STATUS_SCHEDULED,,,,0,SECU Stadium
+2026,401858510,2026-11-07 01:00:00+00:00,10,356,Illinois,Big Ten,158,Nebraska,home,False,False,False,STATUS_SCHEDULED,,,,0,Gies Memorial Stadium
+2026,401858526,2026-11-14 02:00:00+00:00,11,356,Illinois,Big Ten,26,UCLA,away,False,False,False,STATUS_SCHEDULED,,,,0,Rose Bowl
+2026,401858527,2026-11-21 05:00:00+00:00,12,356,Illinois,Big Ten,2294,Iowa,home,False,False,False,STATUS_SCHEDULED,,,,0,Gies Memorial Stadium
+2026,401858537,2026-11-28 05:00:00+00:00,13,356,Illinois,Big Ten,77,Northwestern,away,False,False,False,STATUS_SCHEDULED,,,,0,Ryan Field
+2026,401858425,2026-09-05 16:00:00+00:00,1,84,Indiana,Big Ten,249,North Texas,home,False,False,True,STATUS_FINAL,52.0,16.0,True,54493,"Memorial Stadium (Bloomington, IN)"
+2026,401858439,2026-09-12 16:00:00+00:00,2,84,Indiana,Big Ten,47,Howard,home,False,False,True,STATUS_FINAL,55.0,0.0,True,54376,"Memorial Stadium (Bloomington, IN)"
+2026,401858449,2026-09-19 20:00:00+00:00,3,84,Indiana,Big Ten,98,Western Kentucky,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Bloomington, IN)"
+2026,401858461,2026-09-26 00:00:00+00:00,4,84,Indiana,Big Ten,77,Northwestern,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Bloomington, IN)"
+2026,401858477,2026-10-04 00:00:00+00:00,5,84,Indiana,Big Ten,164,Rutgers,away,False,False,False,STATUS_SCHEDULED,,,,0,SHI Stadium
+2026,401858481,2026-10-10 04:00:00+00:00,6,84,Indiana,Big Ten,158,Nebraska,away,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Lincoln, NE)"
+2026,401858488,2026-10-17 04:00:00+00:00,7,84,Indiana,Big Ten,194,Ohio State,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Bloomington, IN)"
+2026,401858496,2026-10-24 04:00:00+00:00,8,84,Indiana,Big Ten,130,Michigan,away,False,False,False,STATUS_SCHEDULED,,,,0,Michigan Stadium
+2026,401858501,2026-10-31 04:00:00+00:00,9,84,Indiana,Big Ten,135,Minnesota,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Bloomington, IN)"
+2026,401858518,2026-11-14 05:00:00+00:00,11,84,Indiana,Big Ten,30,USC,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Bloomington, IN)"
+2026,401858535,2026-11-21 05:00:00+00:00,12,84,Indiana,Big Ten,264,Washington,away,False,False,False,STATUS_SCHEDULED,,,,0,Husky Stadium
+2026,401858538,2026-11-28 05:00:00+00:00,13,84,Indiana,Big Ten,2509,Purdue,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Bloomington, IN)"
+2026,401858426,2026-09-05 20:15:00+00:00,1,2294,Iowa,Big Ten,2459,Northern Illinois,home,False,False,True,STATUS_FINAL,40.0,0.0,True,69250,Kinnick Stadium
+2026,401856788,2026-09-12 23:30:00+00:00,2,2294,Iowa,Big Ten,66,Iowa State,home,False,False,True,STATUS_FINAL,16.0,13.0,True,69250,Kinnick Stadium
+2026,401858471,2026-09-19 20:00:00+00:00,3,2294,Iowa,Big Ten,2460,Northern Iowa,home,False,False,False,STATUS_SCHEDULED,,,,0,Kinnick Stadium
+2026,401858463,2026-09-26 19:30:00+00:00,4,2294,Iowa,Big Ten,130,Michigan,away,False,False,False,STATUS_SCHEDULED,,,,0,Michigan Stadium
+2026,401858473,2026-10-03 04:00:00+00:00,5,2294,Iowa,Big Ten,194,Ohio State,home,False,False,False,STATUS_SCHEDULED,,,,0,Kinnick Stadium
+2026,401858487,2026-10-10 01:00:00+00:00,6,2294,Iowa,Big Ten,264,Washington,away,False,False,False,STATUS_SCHEDULED,,,,0,Husky Stadium
+2026,401858497,2026-10-24 04:00:00+00:00,8,2294,Iowa,Big Ten,135,Minnesota,away,False,False,False,STATUS_SCHEDULED,,,,0,Huntington Bank Stadium
+2026,401858502,2026-10-31 04:00:00+00:00,9,2294,Iowa,Big Ten,275,Wisconsin,home,False,False,False,STATUS_SCHEDULED,,,,0,Kinnick Stadium
+2026,401858513,2026-11-07 05:00:00+00:00,10,2294,Iowa,Big Ten,77,Northwestern,away,False,False,False,STATUS_SCHEDULED,,,,0,Ryan Field
+2026,401858519,2026-11-14 05:00:00+00:00,11,2294,Iowa,Big Ten,2509,Purdue,home,False,False,False,STATUS_SCHEDULED,,,,0,Kinnick Stadium
+2026,401858536,2026-11-27 17:00:00+00:00,13,2294,Iowa,Big Ten,158,Nebraska,home,False,False,False,STATUS_SCHEDULED,,,,0,Kinnick Stadium
+2026,401856779,2026-09-05 17:00:00+00:00,1,66,Iowa State,Big 12,2546,Southeast Missouri State,home,False,False,True,STATUS_FINAL,38.0,10.0,True,51802,Jack Trice Stadium
+2026,401856816,2026-09-26 19:30:00+00:00,4,66,Iowa State,Big 12,254,Utah,home,False,False,False,STATUS_SCHEDULED,,,,0,Jack Trice Stadium
+2026,401856822,2026-10-03 04:00:00+00:00,5,66,Iowa State,Big 12,277,West Virginia,home,False,False,False,STATUS_SCHEDULED,,,,0,Jack Trice Stadium
+2026,401856847,2026-10-31 04:00:00+00:00,9,66,Iowa State,Big 12,197,Oklahoma State,home,False,False,False,STATUS_SCHEDULED,,,,0,Jack Trice Stadium
+2026,401856869,2026-11-20 23:00:00+00:00,12,66,Iowa State,Big 12,2116,UCF,away,False,False,False,STATUS_SCHEDULED,,,,0,Acrisure Bounce House
+2026,401856878,2026-11-28 05:00:00+00:00,13,66,Iowa State,Big 12,2306,Kansas State,home,False,False,False,STATUS_SCHEDULED,,,,0,Jack Trice Stadium
+2026,401864577,2026-08-29 21:30:00+00:00,1,55,Jacksonville State,Conference USA,2449,North Dakota State,away,False,False,True,STATUS_FINAL,7.0,33.0,False,18573,Fargodome
+2026,401868140,2026-09-05 23:00:00+00:00,1,55,Jacksonville State,Conference USA,2198,Eastern Kentucky,home,False,False,True,STATUS_FINAL,49.0,7.0,True,19677,AmFirst Stadium
+2026,401866418,2026-09-12 22:00:00+00:00,2,55,Jacksonville State,Conference USA,195,Ohio,away,False,False,True,STATUS_FINAL,27.0,29.0,False,21037,Peden Stadium
+2026,401871048,2026-09-26 23:00:00+00:00,4,55,Jacksonville State,Conference USA,2393,Middle Tennessee,home,False,False,False,STATUS_SCHEDULED,,,,0,AmFirst Stadium
+2026,401871051,2026-10-07 23:00:00+00:00,6,55,Jacksonville State,Conference USA,338,Kennesaw State,away,False,False,False,STATUS_SCHEDULED,,,,0,Walens Family Field at Fifth Third Stadium
+2026,401871057,2026-10-29 00:00:00+00:00,9,55,Jacksonville State,Conference USA,166,New Mexico State,away,False,False,False,STATUS_SCHEDULED,,,,0,Aggie Memorial Stadium
+2026,401871075,2026-11-08 00:00:00+00:00,10,55,Jacksonville State,Conference USA,2534,Sam Houston,home,False,False,False,STATUS_SCHEDULED,,,,0,AmFirst Stadium
+2026,401870752,2026-11-14 20:30:00+00:00,11,55,Jacksonville State,Conference USA,98,Western Kentucky,away,False,False,False,STATUS_SCHEDULED,,,,0,Houchens Industries-L.T. Smith Stadium
+2026,401871079,2026-11-21 19:00:00+00:00,12,55,Jacksonville State,Conference USA,2623,Missouri State,home,False,False,False,STATUS_SCHEDULED,,,,0,AmFirst Stadium
+2026,401869960,2026-09-05 16:00:00+00:00,1,256,James Madison,Sun Belt,2335,Liberty,home,False,False,True,STATUS_FINAL,20.0,13.0,True,25035,Bridgeforth Stadium
+2026,401867929,2026-09-12 16:00:00+00:00,2,256,James Madison,Sun Belt,2681,Wagner,home,False,False,True,STATUS_FINAL,87.0,3.0,True,25028,Bridgeforth Stadium
+2026,401860887,2026-09-20 02:00:00+00:00,3,256,James Madison,Sun Belt,21,San Diego State,away,False,False,False,STATUS_SCHEDULED,,,,0,Snapdragon Stadium
+2026,401869961,2026-09-26 22:00:00+00:00,4,256,James Madison,Sun Belt,295,Old Dominion,away,False,False,False,STATUS_SCHEDULED,,,,0,S.B. Ballard Stadium
+2026,401869962,2026-10-03 04:00:00+00:00,5,256,James Madison,Sun Belt,276,Marshall,home,False,False,False,STATUS_SCHEDULED,,,,0,Bridgeforth Stadium
+2026,401869963,2026-10-29 23:30:00+00:00,9,256,James Madison,Sun Belt,2653,Troy,home,False,False,False,STATUS_SCHEDULED,,,,0,Bridgeforth Stadium
+2026,401869964,2026-11-06 01:00:00+00:00,10,256,James Madison,Sun Belt,2572,Southern Miss,away,False,False,False,STATUS_SCHEDULED,,,,0,M. M. Roberts Stadium
+2026,401861967,2026-11-14 17:00:00+00:00,11,256,James Madison,Sun Belt,41,UConn,away,False,False,False,STATUS_SCHEDULED,,,,0,Pratt & Whitney Stadium
+2026,401856769,2026-09-05 00:00:00+00:00,1,2305,Kansas,Big 12,2341,Long Island University,home,False,False,True,STATUS_FINAL,51.0,6.0,True,30904,David Booth Kansas Memorial Stadium
+2026,401856678,2026-09-12 00:00:00+00:00,2,2305,Kansas,Big 12,142,Missouri,home,False,False,True,STATUS_FINAL,21.0,38.0,False,32000,David Booth Kansas Memorial Stadium
+2026,401856807,2026-10-03 04:00:00+00:00,5,2305,Kansas,Big 12,2393,Middle Tennessee,home,False,False,False,STATUS_SCHEDULED,,,,0,David Booth Kansas Memorial Stadium
+2026,401856827,2026-10-10 04:00:00+00:00,6,2305,Kansas,Big 12,254,Utah,away,False,False,False,STATUS_SCHEDULED,,,,0,Rice-Eccles Stadium
+2026,401856830,2026-10-17 04:00:00+00:00,7,2305,Kansas,Big 12,2306,Kansas State,away,False,False,False,STATUS_SCHEDULED,,,,0,Bill Snyder Family Stadium
+2026,401856845,2026-10-31 04:00:00+00:00,9,2305,Kansas,Big 12,2628,TCU,away,False,False,False,STATUS_SCHEDULED,,,,0,Amon G. Carter Stadium
+2026,401856850,2026-11-07 05:00:00+00:00,10,2305,Kansas,Big 12,2116,UCF,home,False,False,False,STATUS_SCHEDULED,,,,0,David Booth Kansas Memorial Stadium
+2026,401856861,2026-11-14 05:00:00+00:00,11,2305,Kansas,Big 12,277,West Virginia,away,False,False,False,STATUS_SCHEDULED,,,,0,Milan Puskar Stadium
+2026,401856877,2026-11-28 05:00:00+00:00,13,2305,Kansas,Big 12,197,Oklahoma State,away,False,False,False,STATUS_SCHEDULED,,,,0,Boone Pickens Stadium
+2026,401856771,2026-09-05 23:00:00+00:00,1,2306,Kansas State,Big 12,2447,Nicholls,home,False,False,True,STATUS_FINAL,71.0,3.0,True,51719,Bill Snyder Family Stadium
+2026,401856781,2026-09-12 16:00:00+00:00,2,2306,Kansas State,Big 12,265,Washington State,home,False,False,True,STATUS_FINAL,34.0,7.0,True,51759,Bill Snyder Family Stadium
+2026,401856792,2026-09-19 16:00:00+00:00,3,2306,Kansas State,Big 12,2655,Tulane,home,False,False,False,STATUS_SCHEDULED,,,,0,Bill Snyder Family Stadium
+2026,401856854,2026-11-07 05:00:00+00:00,10,2306,Kansas State,Big 12,197,Oklahoma State,home,False,False,False,STATUS_SCHEDULED,,,,0,Bill Snyder Family Stadium
+2026,401856862,2026-11-14 05:00:00+00:00,11,2306,Kansas State,Big 12,2628,TCU,away,False,False,False,STATUS_SCHEDULED,,,,0,Amon G. Carter Stadium
+2026,401864425,2026-09-03 23:00:00+00:00,1,338,Kennesaw State,Conference USA,2698,West Georgia,home,False,False,True,STATUS_FINAL,47.0,0.0,True,11040,Walens Family Field at Fifth Third Stadium
+2026,401856692,2026-09-19 23:45:00+00:00,3,338,Kennesaw State,Conference USA,2633,Tennessee,away,False,False,False,STATUS_SCHEDULED,,,,0,Neyland Stadium
+2026,401871054,2026-10-14 23:30:00+00:00,7,338,Kennesaw State,Conference USA,2623,Missouri State,away,False,False,False,STATUS_SCHEDULED,,,,0,Robert W. Plaster Stadium
+2026,401871056,2026-10-22 23:00:00+00:00,8,338,Kennesaw State,Conference USA,2335,Liberty,home,False,False,False,STATUS_SCHEDULED,,,,0,Walens Family Field at Fifth Third Stadium
+2026,401871058,2026-10-28 23:00:00+00:00,9,338,Kennesaw State,Conference USA,2393,Middle Tennessee,away,False,False,False,STATUS_SCHEDULED,,,,0,"Johnny ""Red"" Floyd Stadium"
+2026,401870769,2026-11-14 19:00:00+00:00,11,338,Kennesaw State,Conference USA,2534,Sam Houston,away,False,False,False,STATUS_SCHEDULED,,,,0,Elliott T. Bowers Stadium
+2026,401870804,2026-11-28 18:00:00+00:00,13,338,Kennesaw State,Conference USA,98,Western Kentucky,away,False,False,False,STATUS_SCHEDULED,,,,0,Houchens Industries-L.T. Smith Stadium
+2026,401856665,2026-09-05 16:45:00+00:00,1,2309,Kent State,MAC,2579,South Carolina,away,False,False,True,STATUS_FINAL,0.0,57.0,False,77559,Williams-Brice Stadium
+2026,401866416,2026-09-12 16:00:00+00:00,2,2309,Kent State,MAC,2747,Wofford,home,False,False,True,STATUS_FINAL,36.0,15.0,True,7887,Zoeller Field at Dix Stadium
+2026,401858454,2026-09-19 16:00:00+00:00,3,2309,Kent State,MAC,194,Ohio State,away,False,False,False,STATUS_SCHEDULED,,,,0,Ohio Stadium
+2026,401866434,2026-10-03 04:00:00+00:00,5,2309,Kent State,MAC,195,Ohio,home,False,False,False,STATUS_SCHEDULED,,,,0,Zoeller Field at Dix Stadium
+2026,401866439,2026-10-10 04:00:00+00:00,6,2309,Kent State,MAC,2711,Western Michigan,away,False,False,False,STATUS_SCHEDULED,,,,0,Waldo Stadium
+2026,401862806,2026-10-17 04:00:00+00:00,7,2309,Kent State,MAC,58,South Florida,away,False,False,False,STATUS_SCHEDULED,,,,0,Raymond James Stadium
+2026,401866451,2026-10-31 02:30:00+00:00,9,2309,Kent State,MAC,16,Sacramento State,away,False,False,False,STATUS_SCHEDULED,,,,0,Hornet Stadium
+2026,401866466,2026-11-18 00:00:00+00:00,12,2309,Kent State,MAC,193,Miami (OH),home,False,False,False,STATUS_SCHEDULED,,,,0,Zoeller Field at Dix Stadium
+2026,401856659,2026-09-05 17:00:00+00:00,1,96,Kentucky,SEC,2754,Youngstown State,home,False,False,True,STATUS_FINAL,45.0,13.0,True,60166,Kroger Field
+2026,401856694,2026-09-19 19:30:00+00:00,3,96,Kentucky,SEC,245,Texas A&M,away,False,False,False,STATUS_SCHEDULED,,,,0,Kyle Field
+2026,401864576,2026-09-26 16:45:00+00:00,4,96,Kentucky,SEC,6,South Alabama,home,False,False,False,STATUS_SCHEDULED,,,,0,Kroger Field
+2026,401856709,2026-10-03 04:00:00+00:00,5,96,Kentucky,SEC,2579,South Carolina,away,False,False,False,STATUS_SCHEDULED,,,,0,Williams-Brice Stadium
+2026,401856715,2026-10-10 04:00:00+00:00,6,96,Kentucky,SEC,99,LSU,home,False,False,False,STATUS_SCHEDULED,,,,0,Kroger Field
+2026,401856722,2026-10-17 04:00:00+00:00,7,96,Kentucky,SEC,201,Oklahoma,away,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Norman, OK)"
+2026,401856729,2026-10-24 04:00:00+00:00,8,96,Kentucky,SEC,238,Vanderbilt,home,False,False,False,STATUS_SCHEDULED,,,,0,Kroger Field
+2026,401856745,2026-11-07 05:00:00+00:00,10,96,Kentucky,SEC,2633,Tennessee,away,False,False,False,STATUS_SCHEDULED,,,,0,Neyland Stadium
+2026,401856751,2026-11-21 05:00:00+00:00,12,96,Kentucky,SEC,142,Missouri,away,False,False,False,STATUS_SCHEDULED,,,,0,Memorial Stadium
+2026,401856761,2026-11-28 05:00:00+00:00,13,96,Kentucky,SEC,97,Louisville,home,False,False,False,STATUS_SCHEDULED,,,,0,Kroger Field
+2026,401867796,2026-09-12 23:30:00+00:00,2,99,LSU,SEC,2348,Louisiana Tech,home,False,False,True,STATUS_FINAL,45.0,14.0,True,102321,Tiger Stadium (LA)
+2026,401856688,2026-09-19 23:30:00+00:00,3,99,LSU,SEC,145,Ole Miss,away,False,False,False,STATUS_SCHEDULED,,,,0,Vaught-Hemingway Stadium
+2026,401856702,2026-09-26 23:30:00+00:00,4,99,LSU,SEC,245,Texas A&M,home,False,False,False,STATUS_SCHEDULED,,,,0,Tiger Stadium (LA)
+2026,401856706,2026-10-03 23:45:00+00:00,5,99,LSU,SEC,2377,McNeese,home,False,False,False,STATUS_SCHEDULED,,,,0,Tiger Stadium (LA)
+2026,401856720,2026-10-17 04:00:00+00:00,7,99,LSU,SEC,344,Mississippi State,home,False,False,False,STATUS_SCHEDULED,,,,0,Tiger Stadium (LA)
+2026,401856885,2026-11-14 05:00:00+00:00,11,99,LSU,SEC,251,Texas,home,False,False,False,STATUS_SCHEDULED,,,,0,Tiger Stadium (LA)
+2026,401856754,2026-11-21 05:00:00+00:00,12,99,LSU,SEC,2633,Tennessee,away,False,False,False,STATUS_SCHEDULED,,,,0,Neyland Stadium
+2026,401868187,2026-09-12 16:00:00+00:00,2,2335,Liberty,Conference USA,2241,Gardner-Webb,home,False,False,True,STATUS_FINAL,24.0,23.0,True,15708,Williams Stadium (VA)
+2026,401870766,2026-10-08 23:00:00+00:00,6,2335,Liberty,Conference USA,2534,Sam Houston,home,False,False,False,STATUS_SCHEDULED,,,,0,Williams Stadium (VA)
+2026,401870795,2026-11-07 22:00:00+00:00,10,2335,Liberty,Conference USA,166,New Mexico State,away,False,False,False,STATUS_SCHEDULED,,,,0,Aggie Memorial Stadium
+2026,401871061,2026-11-14 20:30:00+00:00,11,2335,Liberty,Conference USA,2393,Middle Tennessee,home,False,False,False,STATUS_SCHEDULED,,,,0,Williams Stadium (VA)
+2026,401871080,2026-11-21 18:00:00+00:00,12,2335,Liberty,Conference USA,98,Western Kentucky,home,False,False,False,STATUS_SCHEDULED,,,,0,Williams Stadium (VA)
+2026,401871063,2026-11-28 19:00:00+00:00,13,2335,Liberty,Conference USA,2623,Missouri State,away,False,False,False,STATUS_SCHEDULED,,,,0,Robert W. Plaster Stadium
+2026,401869142,2026-09-06 00:00:00+00:00,1,309,Louisiana,Sun Belt,2320,Lamar,home,False,False,True,STATUS_FINAL,38.0,7.0,True,20851,Our Lady of Lourdes Stadium
+2026,401858445,2026-09-13 03:00:00+00:00,2,309,Louisiana,Sun Belt,30,USC,away,False,False,True,STATUS_FINAL,30.0,49.0,False,60019,Los Angeles Memorial Coliseum
+2026,401862776,2026-09-20 00:00:00+00:00,3,309,Louisiana,Sun Belt,5,UAB,home,False,False,False,STATUS_SCHEDULED,,,,0,Our Lady of Lourdes Stadium
+2026,401869965,2026-10-10 04:00:00+00:00,6,309,Louisiana,Sun Belt,2348,Louisiana Tech,away,False,False,False,STATUS_SCHEDULED,,,,0,Joe Aillet Stadium
+2026,401869966,2026-10-17 04:00:00+00:00,7,309,Louisiana,Sun Belt,2653,Troy,home,False,False,False,STATUS_SCHEDULED,,,,0,Our Lady of Lourdes Stadium
+2026,401869967,2026-10-24 04:00:00+00:00,8,309,Louisiana,Sun Belt,2572,Southern Miss,away,False,False,False,STATUS_SCHEDULED,,,,0,M. M. Roberts Stadium
+2026,401869968,2026-11-07 05:00:00+00:00,10,309,Louisiana,Sun Belt,6,South Alabama,home,False,False,False,STATUS_SCHEDULED,,,,0,Our Lady of Lourdes Stadium
+2026,401869969,2026-11-13 02:00:00+00:00,11,309,Louisiana,Sun Belt,2433,UL Monroe,away,False,False,False,STATUS_SCHEDULED,,,,0,Malone Stadium
+2026,401869129,2026-09-05 23:30:00+00:00,1,2348,Louisiana Tech,Sun Belt,2466,Northwestern State,home,False,False,True,STATUS_FINAL,80.0,6.0,True,13108,Joe Aillet Stadium
+2026,401871091,2026-10-17 04:00:00+00:00,7,2348,Louisiana Tech,Sun Belt,2433,UL Monroe,away,False,False,False,STATUS_SCHEDULED,,,,0,Malone Stadium
+2026,401871093,2026-10-24 04:00:00+00:00,8,2348,Louisiana Tech,Sun Belt,295,Old Dominion,home,False,False,False,STATUS_SCHEDULED,,,,0,Joe Aillet Stadium
+2026,401871097,2026-10-31 04:00:00+00:00,9,2348,Louisiana Tech,Sun Belt,6,South Alabama,away,False,False,False,STATUS_SCHEDULED,,,,0,Hancock Whitney Stadium
+2026,401871098,2026-11-07 05:00:00+00:00,10,2348,Louisiana Tech,Sun Belt,2653,Troy,away,False,False,False,STATUS_SCHEDULED,,,,0,Veterans Memorial Stadium (AL)
+2026,401871099,2026-11-14 05:00:00+00:00,11,2348,Louisiana Tech,Sun Belt,2572,Southern Miss,home,False,False,False,STATUS_SCHEDULED,,,,0,Joe Aillet Stadium
+2026,401856661,2026-09-06 23:30:00+00:00,1,97,Louisville,ACC,145,Ole Miss,away,True,False,True,STATUS_FINAL,38.0,41.0,False,57390,Nissan Stadium
+2026,401858215,2026-09-11 23:00:00+00:00,2,97,Louisville,ACC,222,Villanova,home,False,False,True,STATUS_FINAL,59.0,13.0,True,46385,L&N Federal Credit Union Stadium
+2026,401858230,2026-09-19 19:30:00+00:00,3,97,Louisville,ACC,2567,SMU,home,False,False,False,STATUS_SCHEDULED,,,,0,L&N Federal Credit Union Stadium
+2026,401858243,2026-09-26 16:00:00+00:00,4,97,Louisville,ACC,154,Wake Forest,home,False,False,False,STATUS_SCHEDULED,,,,0,L&N Federal Credit Union Stadium
+2026,401858248,2026-10-03 04:00:00+00:00,5,97,Louisville,ACC,152,NC State,away,False,False,False,STATUS_SCHEDULED,,,,0,Carter-Finley Stadium
+2026,401858265,2026-10-17 04:00:00+00:00,7,97,Louisville,ACC,183,Syracuse,away,False,False,False,STATUS_SCHEDULED,,,,0,JMA Wireless Dome
+2026,401858283,2026-10-31 04:00:00+00:00,9,97,Louisville,ACC,24,Stanford,home,False,False,False,STATUS_SCHEDULED,,,,0,L&N Federal Credit Union Stadium
+2026,401858298,2026-11-14 05:00:00+00:00,11,97,Louisville,ACC,153,North Carolina,away,False,False,False,STATUS_SCHEDULED,,,,0,Kenan Stadium
+2026,401858306,2026-11-21 05:00:00+00:00,12,97,Louisville,ACC,221,Pittsburgh,home,False,False,False,STATUS_SCHEDULED,,,,0,L&N Federal Credit Union Stadium
+2026,401858434,2026-09-05 19:30:00+00:00,1,276,Marshall,Sun Belt,213,Penn State,away,False,False,True,STATUS_FINAL,0.0,45.0,False,108489,Beaver Stadium
+2026,401871045,2026-09-12 23:00:00+00:00,2,276,Marshall,Sun Belt,2393,Middle Tennessee,home,False,False,True,STATUS_FINAL,28.0,26.0,True,25662,Joan C. Edwards Stadium
+2026,401871047,2026-09-19 22:30:00+00:00,3,276,Marshall,Sun Belt,2623,Missouri State,away,False,False,False,STATUS_SCHEDULED,,,,0,Robert W. Plaster Stadium
+2026,401868188,2026-09-26 19:30:00+00:00,4,276,Marshall,Sun Belt,2241,Gardner-Webb,home,False,False,False,STATUS_SCHEDULED,,,,0,Joan C. Edwards Stadium
+2026,401871092,2026-10-20 23:30:00+00:00,8,276,Marshall,Sun Belt,6,South Alabama,home,False,False,False,STATUS_SCHEDULED,,,,0,Joan C. Edwards Stadium
+2026,401871096,2026-10-31 04:00:00+00:00,9,276,Marshall,Sun Belt,295,Old Dominion,away,False,False,False,STATUS_SCHEDULED,,,,0,S.B. Ballard Stadium
+2026,401871102,2026-11-28 05:00:00+00:00,13,276,Marshall,Sun Belt,2433,UL Monroe,away,False,False,False,STATUS_SCHEDULED,,,,0,Malone Stadium
+2026,401858427,2026-09-06 00:00:00+00:00,1,120,Maryland,Big Ten,2261,Hampton,home,False,False,True,STATUS_FINAL,62.0,0.0,True,43421,SECU Stadium
+2026,401858444,2026-09-12 19:30:00+00:00,2,120,Maryland,Big Ten,41,UConn,away,False,False,True,STATUS_FINAL,38.0,14.0,True,34494,Pratt & Whitney Stadium
+2026,401858232,2026-09-19 23:30:00+00:00,3,120,Maryland,Big Ten,259,Virginia Tech,home,False,False,False,STATUS_SCHEDULED,,,,0,SECU Stadium
+2026,401858462,2026-09-26 17:30:00+00:00,4,120,Maryland,Big Ten,26,UCLA,home,False,False,False,STATUS_SCHEDULED,,,,0,SECU Stadium
+2026,401858475,2026-10-03 04:00:00+00:00,5,120,Maryland,Big Ten,158,Nebraska,away,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Lincoln, NE)"
+2026,401858483,2026-10-10 04:00:00+00:00,6,120,Maryland,Big Ten,194,Ohio State,away,False,False,False,STATUS_SCHEDULED,,,,0,Ohio Stadium
+2026,401858489,2026-10-17 04:00:00+00:00,7,120,Maryland,Big Ten,164,Rutgers,home,False,False,False,STATUS_SCHEDULED,,,,0,SECU Stadium
+2026,401858515,2026-11-07 05:00:00+00:00,10,120,Maryland,Big Ten,2509,Purdue,away,False,False,False,STATUS_SCHEDULED,,,,0,Ross-Ade Stadium
+2026,401858520,2026-11-14 05:00:00+00:00,11,120,Maryland,Big Ten,275,Wisconsin,home,False,False,False,STATUS_SCHEDULED,,,,0,SECU Stadium
+2026,401858534,2026-11-21 05:00:00+00:00,12,120,Maryland,Big Ten,30,USC,away,False,False,False,STATUS_SCHEDULED,,,,0,Los Angeles Memorial Coliseum
+2026,401858539,2026-11-28 05:00:00+00:00,13,120,Maryland,Big Ten,213,Penn State,home,False,False,False,STATUS_SCHEDULED,,,,0,SECU Stadium
+2026,401858423,2026-09-03 22:00:00+00:00,1,113,Massachusetts,MAC,164,Rutgers,away,False,False,True,STATUS_FINAL,37.0,21.0,True,42454,SHI Stadium
+2026,401866420,2026-09-12 19:30:00+00:00,2,113,Massachusetts,MAC,2529,Sacred Heart,home,False,False,True,STATUS_FINAL,37.0,10.0,True,14895,Warren McGuirk Alumni Stadium
+2026,401866424,2026-09-19 19:30:00+00:00,3,113,Massachusetts,MAC,284,Stonehill,home,False,False,False,STATUS_SCHEDULED,,,,0,Warren McGuirk Alumni Stadium
+2026,401866429,2026-09-27 01:00:00+00:00,4,113,Massachusetts,MAC,16,Sacramento State,away,False,False,False,STATUS_SCHEDULED,,,,0,Hornet Stadium
+2026,401866440,2026-10-10 04:00:00+00:00,6,113,Massachusetts,MAC,193,Miami (OH),home,False,False,False,STATUS_SCHEDULED,,,,0,Warren McGuirk Alumni Stadium
+2026,401861965,2026-10-23 23:00:00+00:00,8,113,Massachusetts,MAC,41,UConn,away,False,False,False,STATUS_SCHEDULED,,,,0,Pratt & Whitney Stadium
+2026,401866463,2026-11-11 05:00:00+00:00,11,113,Massachusetts,MAC,2649,Toledo,away,False,False,False,STATUS_SCHEDULED,,,,0,Glass Bowl
+2026,401862693,2026-08-30 02:00:00+00:00,1,235,Memphis,American,2439,UNLV,away,False,False,True,STATUS_FINAL,27.0,21.0,True,31384,Allegiant Stadium
+2026,401862772,2026-09-19 23:00:00+00:00,3,235,Memphis,American,2630,UT Martin,home,False,False,False,STATUS_SCHEDULED,,,,0,Simmons Bank Liberty Stadium
+2026,401862798,2026-10-10 04:00:00+00:00,6,235,Memphis,American,5,UAB,home,False,False,False,STATUS_SCHEDULED,,,,0,Simmons Bank Liberty Stadium
+2026,401862801,2026-10-16 23:30:00+00:00,7,235,Memphis,American,2655,Tulane,away,False,False,False,STATUS_SCHEDULED,,,,0,Yulman Stadium
+2026,401862824,2026-11-13 01:00:00+00:00,11,235,Memphis,American,58,South Florida,away,False,False,False,STATUS_SCHEDULED,,,,0,Raymond James Stadium
+2026,401862834,2026-11-21 17:00:00+00:00,12,235,Memphis,American,2426,Navy,away,False,False,False,STATUS_SCHEDULED,,,,0,Navy-Marine Corps Memorial Stadium
+2026,401862838,2026-11-27 05:00:00+00:00,13,235,Memphis,American,218,Temple,home,False,False,False,STATUS_SCHEDULED,,,,0,Simmons Bank Liberty Stadium
+2026,401858206,2026-09-05 01:00:00+00:00,1,2390,Miami,ACC,24,Stanford,away,False,False,True,STATUS_FINAL,45.0,6.0,True,37648,Stanford Stadium
+2026,401858213,2026-09-11 00:00:00+00:00,2,2390,Miami,ACC,50,Florida A&M,home,False,False,True,STATUS_FINAL,77.0,7.0,True,63618,Hard Rock Stadium
+2026,401858226,2026-09-18 23:30:00+00:00,3,2390,Miami,ACC,154,Wake Forest,away,False,False,False,STATUS_SCHEDULED,,,,0,Allegacy Federal Credit Union Stadium
+2026,401858274,2026-10-24 04:00:00+00:00,8,2390,Miami,ACC,221,Pittsburgh,home,False,False,False,STATUS_SCHEDULED,,,,0,Hard Rock Stadium
+2026,401858282,2026-10-31 04:00:00+00:00,9,2390,Miami,ACC,153,North Carolina,away,False,False,False,STATUS_SCHEDULED,,,,0,Kenan Stadium
+2026,401858291,2026-11-08 00:30:00+00:00,10,2390,Miami,ACC,87,Notre Dame,away,False,False,False,STATUS_SCHEDULED,,,,0,Notre Dame Stadium
+2026,401858302,2026-11-21 05:00:00+00:00,12,2390,Miami,ACC,259,Virginia Tech,home,False,False,False,STATUS_SCHEDULED,,,,0,Hard Rock Stadium
+2026,401858207,2026-09-05 16:30:00+00:00,1,193,Miami (OH),MAC,221,Pittsburgh,away,False,False,True,STATUS_FINAL,14.0,59.0,False,43929,Acrisure Stadium
+2026,401866417,2026-09-12 17:00:00+00:00,2,193,Miami (OH),MAC,107,Holy Cross,home,False,False,True,STATUS_FINAL,45.0,7.0,True,11126,Yager Stadium
+2026,401861970,2026-09-26 19:30:00+00:00,4,193,Miami (OH),MAC,41,UConn,home,False,False,False,STATUS_SCHEDULED,,,,0,Yager Stadium
+2026,401866460,2026-11-11 00:00:00+00:00,11,193,Miami (OH),MAC,195,Ohio,home,False,False,False,STATUS_SCHEDULED,,,,0,Yager Stadium
+2026,401866471,2026-11-24 05:00:00+00:00,13,193,Miami (OH),MAC,2711,Western Michigan,away,False,False,False,STATUS_SCHEDULED,,,,0,Waldo Stadium
+2026,401858428,2026-09-05 23:30:00+00:00,1,130,Michigan,Big Ten,2711,Western Michigan,home,False,False,True,STATUS_FINAL,13.0,12.0,True,110879,Michigan Stadium
+2026,401856679,2026-09-12 16:00:00+00:00,2,130,Michigan,Big Ten,201,Oklahoma,home,False,False,True,STATUS_FINAL,17.0,10.0,True,111240,Michigan Stadium
+2026,401858450,2026-09-19 19:30:00+00:00,3,130,Michigan,Big Ten,2638,UTEP,home,False,False,False,STATUS_SCHEDULED,,,,0,Michigan Stadium
+2026,401858474,2026-10-03 04:00:00+00:00,5,130,Michigan,Big Ten,135,Minnesota,away,False,False,False,STATUS_SCHEDULED,,,,0,Huntington Bank Stadium
+2026,401858490,2026-10-17 04:00:00+00:00,7,130,Michigan,Big Ten,213,Penn State,home,False,False,False,STATUS_SCHEDULED,,,,0,Michigan Stadium
+2026,401858507,2026-10-31 04:00:00+00:00,9,130,Michigan,Big Ten,164,Rutgers,away,False,False,False,STATUS_SCHEDULED,,,,0,SHI Stadium
+2026,401858511,2026-11-07 05:00:00+00:00,10,130,Michigan,Big Ten,127,Michigan State,home,False,False,False,STATUS_SCHEDULED,,,,0,Michigan Stadium
+2026,401858523,2026-11-14 05:00:00+00:00,11,130,Michigan,Big Ten,2483,Oregon,away,False,False,False,STATUS_SCHEDULED,,,,0,Autzen Stadium
+2026,401858528,2026-11-21 05:00:00+00:00,12,130,Michigan,Big Ten,26,UCLA,home,False,False,False,STATUS_SCHEDULED,,,,0,Michigan Stadium
+2026,401858540,2026-11-28 17:00:00+00:00,13,130,Michigan,Big Ten,194,Ohio State,away,False,False,False,STATUS_SCHEDULED,,,,0,Ohio Stadium
+2026,401858429,2026-09-05 00:00:00+00:00,1,127,Michigan State,Big Ten,2649,Toledo,home,False,False,True,STATUS_FINAL,30.0,20.0,True,72083,Spartan Stadium
+2026,401858453,2026-09-19 23:30:00+00:00,3,127,Michigan State,Big Ten,87,Notre Dame,away,False,False,False,STATUS_SCHEDULED,,,,0,Notre Dame Stadium
+2026,401858464,2026-09-26 21:00:00+00:00,4,127,Michigan State,Big Ten,158,Nebraska,home,False,False,False,STATUS_SCHEDULED,,,,0,Spartan Stadium
+2026,401858479,2026-10-03 04:00:00+00:00,5,127,Michigan State,Big Ten,275,Wisconsin,away,False,False,False,STATUS_SCHEDULED,,,,0,Camp Randall Stadium
+2026,401858491,2026-10-17 04:00:00+00:00,7,127,Michigan State,Big Ten,77,Northwestern,home,False,False,False,STATUS_SCHEDULED,,,,0,Spartan Stadium
+2026,401858499,2026-10-24 04:00:00+00:00,8,127,Michigan State,Big Ten,26,UCLA,away,False,False,False,STATUS_SCHEDULED,,,,0,Rose Bowl
+2026,401858521,2026-11-14 05:00:00+00:00,11,127,Michigan State,Big Ten,264,Washington,home,False,False,False,STATUS_SCHEDULED,,,,0,Spartan Stadium
+2026,401858529,2026-11-21 01:00:00+00:00,12,127,Michigan State,Big Ten,2483,Oregon,home,False,False,False,STATUS_SCHEDULED,,,,0,Spartan Stadium
+2026,401858542,2026-11-28 05:00:00+00:00,13,127,Michigan State,Big Ten,164,Rutgers,away,False,False,False,STATUS_SCHEDULED,,,,0,SHI Stadium
+2026,401867866,2026-09-05 23:45:00+00:00,1,2393,Middle Tennessee,Conference USA,93,Murray State,home,False,False,True,STATUS_FINAL,38.0,14.0,True,16227,"Johnny ""Red"" Floyd Stadium"
+2026,401864443,2026-09-19 23:00:00+00:00,3,2393,Middle Tennessee,Conference USA,2440,Nevada,home,False,False,False,STATUS_SCHEDULED,,,,0,"Johnny ""Red"" Floyd Stadium"
+2026,401871076,2026-11-07 20:30:00+00:00,10,2393,Middle Tennessee,Conference USA,98,Western Kentucky,home,False,False,False,STATUS_SCHEDULED,,,,0,"Johnny ""Red"" Floyd Stadium"
+2026,401871081,2026-11-21 19:00:00+00:00,12,2393,Middle Tennessee,Conference USA,2534,Sam Houston,away,False,False,False,STATUS_SCHEDULED,,,,0,Elliott T. Bowers Stadium
+2026,401871083,2026-11-28 19:00:00+00:00,13,2393,Middle Tennessee,Conference USA,166,New Mexico State,home,False,False,False,STATUS_SCHEDULED,,,,0,"Johnny ""Red"" Floyd Stadium"
+2026,401858422,2026-09-04 00:00:00+00:00,1,135,Minnesota,Big Ten,2197,Eastern Illinois,home,False,False,True,STATUS_FINAL,59.0,7.0,True,41048,Huntington Bank Stadium
+2026,401856677,2026-09-12 19:30:00+00:00,2,135,Minnesota,Big Ten,344,Mississippi State,home,False,False,True,STATUS_FINAL,13.0,38.0,False,48048,Huntington Bank Stadium
+2026,401858470,2026-09-27 03:00:00+00:00,4,135,Minnesota,Big Ten,264,Washington,away,False,False,False,STATUS_SCHEDULED,,,,0,Husky Stadium
+2026,401858486,2026-10-10 04:00:00+00:00,6,135,Minnesota,Big Ten,2509,Purdue,away,False,False,False,STATUS_SCHEDULED,,,,0,Ross-Ade Stadium
+2026,401858512,2026-11-07 05:00:00+00:00,10,135,Minnesota,Big Ten,26,UCLA,home,False,False,False,STATUS_SCHEDULED,,,,0,Huntington Bank Stadium
+2026,401858524,2026-11-14 05:00:00+00:00,11,135,Minnesota,Big Ten,213,Penn State,away,False,False,False,STATUS_SCHEDULED,,,,0,Beaver Stadium
+2026,401858530,2026-11-21 05:00:00+00:00,12,135,Minnesota,Big Ten,77,Northwestern,home,False,False,False,STATUS_SCHEDULED,,,,0,Huntington Bank Stadium
+2026,401858544,2026-11-28 00:30:00+00:00,13,135,Minnesota,Big Ten,275,Wisconsin,away,False,False,False,STATUS_SCHEDULED,,,,0,Camp Randall Stadium
+2026,401856662,2026-09-05 23:30:00+00:00,1,344,Mississippi State,SEC,2433,UL Monroe,home,False,False,True,STATUS_FINAL,62.0,13.0,True,48771,Davis Wade Stadium
+2026,401856691,2026-09-19 20:15:00+00:00,3,344,Mississippi State,SEC,2579,South Carolina,away,False,False,False,STATUS_SCHEDULED,,,,0,Williams-Brice Stadium
+2026,401856703,2026-09-26 23:45:00+00:00,4,344,Mississippi State,SEC,142,Missouri,home,False,False,False,STATUS_SCHEDULED,,,,0,Davis Wade Stadium
+2026,401856730,2026-10-24 04:00:00+00:00,8,344,Mississippi State,SEC,201,Oklahoma,home,False,False,False,STATUS_SCHEDULED,,,,0,Davis Wade Stadium
+2026,401856737,2026-10-31 04:00:00+00:00,9,344,Mississippi State,SEC,251,Texas,away,False,False,False,STATUS_SCHEDULED,,,,0,DKR-Texas Memorial Stadium
+2026,401856742,2026-11-07 05:00:00+00:00,10,344,Mississippi State,SEC,238,Vanderbilt,home,False,False,False,STATUS_SCHEDULED,,,,0,Davis Wade Stadium
+2026,401856750,2026-11-21 18:00:00+00:00,12,344,Mississippi State,SEC,2635,Tennessee Tech,home,False,False,False,STATUS_SCHEDULED,,,,0,Davis Wade Stadium
+2026,401856762,2026-11-27 17:00:00+00:00,13,344,Mississippi State,SEC,145,Ole Miss,away,False,False,False,STATUS_SCHEDULED,,,,0,Vaught-Hemingway Stadium
+2026,401856663,2026-09-04 00:00:00+00:00,1,142,Missouri,SEC,2029,Arkansas-Pine Bluff,home,False,False,True,STATUS_FINAL,54.0,14.0,True,63609,Memorial Stadium
+2026,401856689,2026-09-19 23:00:00+00:00,3,142,Missouri,SEC,2653,Troy,home,False,False,False,STATUS_SCHEDULED,,,,0,Memorial Stadium
+2026,401856716,2026-10-10 04:00:00+00:00,6,142,Missouri,SEC,245,Texas A&M,home,False,False,False,STATUS_SCHEDULED,,,,0,Memorial Stadium
+2026,401856721,2026-10-17 04:00:00+00:00,7,142,Missouri,SEC,145,Ole Miss,away,False,False,False,STATUS_SCHEDULED,,,,0,Vaught-Hemingway Stadium
+2026,401856743,2026-11-07 05:00:00+00:00,10,142,Missouri,SEC,251,Texas,home,False,False,False,STATUS_SCHEDULED,,,,0,Memorial Stadium
+2026,401856763,2026-11-28 05:00:00+00:00,13,142,Missouri,SEC,201,Oklahoma,home,False,False,False,STATUS_SCHEDULED,,,,0,Memorial Stadium
+2026,401856668,2026-09-05 23:00:00+00:00,1,2623,Missouri State,Conference USA,245,Texas A&M,away,False,False,True,STATUS_FINAL,0.0,50.0,False,107782,Kyle Field
+2026,401871046,2026-09-12 23:00:00+00:00,2,2623,Missouri State,Conference USA,2815,Lindenwood,home,False,False,True,STATUS_FINAL,48.0,14.0,True,12138,Robert W. Plaster Stadium
+2026,401858241,2026-09-27 01:00:00+00:00,4,2623,Missouri State,Conference USA,2567,SMU,away,False,False,False,STATUS_SCHEDULED,,,,0,Gerald J. Ford Stadium
+2026,401871052,2026-10-08 23:00:00+00:00,6,2623,Missouri State,Conference USA,98,Western Kentucky,away,False,False,False,STATUS_SCHEDULED,,,,0,Houchens Industries-L.T. Smith Stadium
+2026,401871072,2026-10-28 00:00:00+00:00,9,2623,Missouri State,Conference USA,2534,Sam Houston,home,False,False,False,STATUS_SCHEDULED,,,,0,Robert W. Plaster Stadium
+2026,401870796,2026-11-14 20:00:00+00:00,11,2623,Missouri State,Conference USA,166,New Mexico State,home,False,False,False,STATUS_SCHEDULED,,,,0,Robert W. Plaster Stadium
+2026,401858202,2026-08-29 19:30:00+00:00,1,152,NC State,ACC,258,Virginia,away,False,False,True,STATUS_FINAL,8.0,34.0,False,62779,Scott Stadium
+2026,401858222,2026-09-11 23:00:00+00:00,2,152,NC State,ACC,257,Richmond,home,False,False,True,STATUS_FINAL,73.0,0.0,True,56919,Carter-Finley Stadium
+2026,401856695,2026-09-19 16:45:00+00:00,3,152,NC State,ACC,238,Vanderbilt,away,False,False,False,STATUS_SCHEDULED,,,,0,FirstBank Stadium
+2026,401858260,2026-10-10 04:00:00+00:00,6,152,NC State,ACC,154,Wake Forest,home,False,False,False,STATUS_SCHEDULED,,,,0,Carter-Finley Stadium
+2026,401858272,2026-10-24 02:30:00+00:00,8,152,NC State,ACC,24,Stanford,away,False,False,False,STATUS_SCHEDULED,,,,0,Stanford Stadium
+2026,401858300,2026-11-14 05:00:00+00:00,11,152,NC State,ACC,183,Syracuse,home,False,False,False,STATUS_SCHEDULED,,,,0,Carter-Finley Stadium
+2026,401858313,2026-11-28 05:00:00+00:00,13,152,NC State,ACC,153,North Carolina,away,False,False,False,STATUS_SCHEDULED,,,,0,Kenan Stadium
+2026,401862696,2026-09-05 19:30:00+00:00,1,2426,Navy,American,119,Towson,home,False,False,True,STATUS_FINAL,42.0,15.0,True,32654,Navy-Marine Corps Memorial Stadium
+2026,401862778,2026-09-25 23:00:00+00:00,4,2426,Navy,American,5,UAB,away,False,False,False,STATUS_SCHEDULED,,,,0,Protective Stadium
+2026,401862799,2026-10-10 19:30:00+00:00,6,2426,Navy,American,202,Tulsa,home,False,False,False,STATUS_SCHEDULED,,,,0,Navy-Marine Corps Memorial Stadium
+2026,401862804,2026-10-17 04:00:00+00:00,7,2426,Navy,American,2636,UTSA,away,False,False,False,STATUS_SCHEDULED,,,,0,Alamodome
+2026,401862810,2026-10-24 19:30:00+00:00,8,2426,Navy,American,249,North Texas,home,False,False,False,STATUS_SCHEDULED,,,,0,Navy-Marine Corps Memorial Stadium
+2026,401859185,2026-10-31 16:00:00+00:00,9,2426,Navy,American,87,Notre Dame,home,True,False,False,STATUS_SCHEDULED,,,,0,Gillette Stadium
+2026,401862820,2026-11-07 20:30:00+00:00,10,2426,Navy,American,218,Temple,home,False,False,False,STATUS_SCHEDULED,,,,0,Navy-Marine Corps Memorial Stadium
+2026,401858430,2026-09-05 16:00:00+00:00,1,158,Nebraska,Big Ten,195,Ohio,home,False,False,True,STATUS_FINAL,49.0,21.0,True,85577,"Memorial Stadium (Lincoln, NE)"
+2026,401858452,2026-09-19 23:15:00+00:00,3,158,Nebraska,Big Ten,155,North Dakota,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Lincoln, NE)"
+2026,401858492,2026-10-17 04:00:00+00:00,7,158,Nebraska,Big Ten,2483,Oregon,away,False,False,False,STATUS_SCHEDULED,,,,0,Autzen Stadium
+2026,401858504,2026-10-31 04:00:00+00:00,9,158,Nebraska,Big Ten,264,Washington,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Lincoln, NE)"
+2026,401858525,2026-11-14 05:00:00+00:00,11,158,Nebraska,Big Ten,164,Rutgers,away,False,False,False,STATUS_SCHEDULED,,,,0,SHI Stadium
+2026,401858531,2026-11-21 05:00:00+00:00,12,158,Nebraska,Big Ten,194,Ohio State,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Lincoln, NE)"
+2026,401864432,2026-09-06 02:30:00+00:00,1,2440,Nevada,Mountain West,98,Western Kentucky,home,False,False,True,STATUS_FINAL,49.0,14.0,True,19404,Mackay Stadium
+2026,401864500,2026-09-13 02:30:00+00:00,2,2440,Nevada,Mountain West,147,Montana State,home,False,False,True,STATUS_FINAL,7.0,20.0,False,21679,Mackay Stadium
+2026,401864517,2026-10-10 04:00:00+00:00,6,2440,Nevada,Mountain West,2638,UTEP,away,False,False,False,STATUS_SCHEDULED,,,,0,Sun Bowl
+2026,401864520,2026-10-17 23:00:00+00:00,7,2440,Nevada,Mountain West,2449,North Dakota State,away,False,False,False,STATUS_SCHEDULED,,,,0,Fargodome
+2026,401864528,2026-10-24 21:00:00+00:00,8,2440,Nevada,Mountain West,23,San José State,home,False,False,False,STATUS_SCHEDULED,,,,0,Mackay Stadium
+2026,401858508,2026-10-31 04:00:00+00:00,9,2440,Nevada,Mountain West,26,UCLA,away,False,False,False,STATUS_SCHEDULED,,,,0,Rose Bowl
+2026,401864533,2026-11-07 02:00:00+00:00,10,2440,Nevada,Mountain West,167,New Mexico,home,False,False,False,STATUS_SCHEDULED,,,,0,Mackay Stadium
+2026,401864536,2026-11-14 05:00:00+00:00,11,2440,Nevada,Mountain West,2459,Northern Illinois,away,False,False,False,STATUS_SCHEDULED,,,,0,Huskie Stadium
+2026,401864548,2026-11-29 02:00:00+00:00,13,2440,Nevada,Mountain West,2439,UNLV,away,False,False,False,STATUS_SCHEDULED,,,,0,Allegiant Stadium
+2026,401865252,2026-09-12 20:00:00+00:00,2,167,New Mexico,Mountain West,2385,Mercyhurst,home,False,False,True,STATUS_FINAL,70.0,7.0,True,23874,University Stadium (NM)
+2026,401856690,2026-09-19 23:30:00+00:00,3,167,New Mexico,Mountain West,201,Oklahoma,away,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Norman, OK)"
+2026,401864579,2026-09-26 19:30:00+00:00,4,167,New Mexico,Mountain West,166,New Mexico State,away,False,False,False,STATUS_SCHEDULED,,,,0,Aggie Memorial Stadium
+2026,401864514,2026-10-03 04:00:00+00:00,5,167,New Mexico,Mountain West,2638,UTEP,home,False,False,False,STATUS_SCHEDULED,,,,0,University Stadium (NM)
+2026,401864527,2026-10-25 02:00:00+00:00,8,167,New Mexico,Mountain West,2449,North Dakota State,home,False,False,False,STATUS_SCHEDULED,,,,0,University Stadium (NM)
+2026,401864529,2026-10-31 04:00:00+00:00,9,167,New Mexico,Mountain West,23,San José State,away,False,False,False,STATUS_SCHEDULED,,,,0,CEFCU Stadium
+2026,401864539,2026-11-15 00:30:00+00:00,11,167,New Mexico,Mountain West,2439,UNLV,home,False,False,False,STATUS_SCHEDULED,,,,0,University Stadium (NM)
+2026,401864542,2026-11-22 02:00:00+00:00,12,167,New Mexico,Mountain West,2751,Wyoming,away,False,False,False,STATUS_SCHEDULED,,,,0,War Memorial Stadium
+2026,401870790,2026-09-06 01:00:00+00:00,1,166,New Mexico State,Conference USA,2385,Mercyhurst,home,False,False,True,STATUS_FINAL,51.0,14.0,True,9189,Aggie Memorial Stadium
+2026,401871049,2026-10-02 00:00:00+00:00,5,166,New Mexico State,Conference USA,98,Western Kentucky,home,False,False,False,STATUS_SCHEDULED,,,,0,Aggie Memorial Stadium
+2026,401871070,2026-10-22 00:00:00+00:00,8,166,New Mexico State,Conference USA,2534,Sam Houston,away,False,False,False,STATUS_SCHEDULED,,,,0,Elliott T. Bowers Stadium
+2026,401856766,2026-08-29 16:00:00+00:00,1,153,North Carolina,ACC,2628,TCU,away,True,False,True,STATUS_FINAL,15.0,10.0,True,0,Aviva Stadium
+2026,401858218,2026-09-12 16:00:00+00:00,2,153,North Carolina,ACC,2193,East Tennessee State,home,False,False,True,STATUS_FINAL,35.0,3.0,True,42362,Kenan Stadium
+2026,401858250,2026-10-03 04:00:00+00:00,5,153,North Carolina,ACC,87,Notre Dame,home,False,False,False,STATUS_SCHEDULED,,,,0,Kenan Stadium
+2026,401858256,2026-10-10 04:00:00+00:00,6,153,North Carolina,ACC,221,Pittsburgh,away,False,False,False,STATUS_SCHEDULED,,,,0,Acrisure Stadium
+2026,401858275,2026-10-24 04:00:00+00:00,8,153,North Carolina,ACC,183,Syracuse,home,False,False,False,STATUS_SCHEDULED,,,,0,Kenan Stadium
+2026,401858292,2026-11-07 17:00:00+00:00,10,153,North Carolina,ACC,41,UConn,away,False,False,False,STATUS_SCHEDULED,,,,0,Pratt & Whitney Stadium
+2026,401858305,2026-11-21 05:00:00+00:00,12,153,North Carolina,ACC,258,Virginia,away,False,False,False,STATUS_SCHEDULED,,,,0,Scott Stadium
+2026,401864499,2026-09-05 19:30:00+00:00,1,2449,North Dakota State,Mountain West,2230,Fordham,home,False,False,True,STATUS_FINAL,38.0,0.0,True,15212,Fargodome
+2026,401864507,2026-09-20 02:30:00+00:00,3,2449,North Dakota State,Mountain West,16,Sacramento State,away,False,False,False,STATUS_SCHEDULED,,,,0,Hornet Stadium
+2026,401864515,2026-10-03 19:30:00+00:00,5,2449,North Dakota State,Mountain West,2751,Wyoming,home,False,False,False,STATUS_SCHEDULED,,,,0,Fargodome
+2026,401864518,2026-10-10 23:00:00+00:00,6,2449,North Dakota State,Mountain West,2439,UNLV,away,False,False,False,STATUS_SCHEDULED,,,,0,Allegiant Stadium
+2026,401864531,2026-10-31 19:30:00+00:00,9,2449,North Dakota State,Mountain West,2638,UTEP,home,False,False,False,STATUS_SCHEDULED,,,,0,Fargodome
+2026,401864543,2026-11-21 21:00:00+00:00,12,2449,North Dakota State,Mountain West,2459,Northern Illinois,home,False,False,False,STATUS_SCHEDULED,,,,0,Fargodome
+2026,401864549,2026-11-27 20:30:00+00:00,13,2449,North Dakota State,Mountain West,23,San José State,away,False,False,False,STATUS_SCHEDULED,,,,0,CEFCU Stadium
+2026,401862705,2026-09-12 19:45:00+00:00,2,249,North Texas,American,2439,UNLV,home,False,False,True,STATUS_FINAL,44.0,6.0,True,20331,DATCU Stadium
+2026,401860889,2026-09-19 16:00:00+00:00,3,249,North Texas,American,326,Texas State,away,False,False,False,STATUS_SCHEDULED,,,,0,UFCU Stadium
+2026,401862783,2026-09-26 23:30:00+00:00,4,249,North Texas,American,2277,Houston Christian,home,False,False,False,STATUS_SCHEDULED,,,,0,DATCU Stadium
+2026,401862786,2026-10-02 01:00:00+00:00,5,249,North Texas,American,202,Tulsa,away,False,False,False,STATUS_SCHEDULED,,,,0,H. A. Chapman Stadium
+2026,401862821,2026-11-07 05:00:00+00:00,10,249,North Texas,American,242,Rice,home,False,False,False,STATUS_SCHEDULED,,,,0,DATCU Stadium
+2026,401862827,2026-11-14 05:00:00+00:00,11,249,North Texas,American,2636,UTSA,away,False,False,False,STATUS_SCHEDULED,,,,0,Alamodome
+2026,401862835,2026-11-21 05:00:00+00:00,12,249,North Texas,American,2655,Tulane,away,False,False,False,STATUS_SCHEDULED,,,,0,Yulman Stadium
+2026,401862843,2026-11-28 05:00:00+00:00,13,249,North Texas,American,5,UAB,home,False,False,False,STATUS_SCHEDULED,,,,0,DATCU Stadium
+2026,401864503,2026-09-12 23:00:00+00:00,2,2459,Northern Illinois,Mountain West,2287,Illinois State,home,False,False,True,STATUS_FINAL,24.0,28.0,False,17582,Huskie Stadium
+2026,401864522,2026-10-17 19:30:00+00:00,7,2459,Northern Illinois,Mountain West,2751,Wyoming,away,False,False,False,STATUS_SCHEDULED,,,,0,War Memorial Stadium
+2026,401864530,2026-11-01 02:30:00+00:00,9,2459,Northern Illinois,Mountain West,2439,UNLV,away,False,False,False,STATUS_SCHEDULED,,,,0,Allegiant Stadium
+2026,401864534,2026-11-07 05:00:00+00:00,10,2459,Northern Illinois,Mountain West,23,San José State,away,False,False,False,STATUS_SCHEDULED,,,,0,CEFCU Stadium
+2026,401864550,2026-11-28 05:00:00+00:00,13,2459,Northern Illinois,Mountain West,2638,UTEP,home,False,False,False,STATUS_SCHEDULED,,,,0,Huskie Stadium
+2026,401858431,2026-09-06 00:00:00+00:00,1,77,Northwestern,Big Ten,2571,South Dakota State,home,False,False,True,STATUS_FINAL,34.0,18.0,True,9574,Northwestern Medicine Field at Martin Stadium
+2026,401858476,2026-10-03 00:00:00+00:00,5,77,Northwestern,Big Ten,213,Penn State,home,False,False,False,STATUS_SCHEDULED,,,,0,Ryan Field
+2026,401858498,2026-10-24 04:00:00+00:00,8,77,Northwestern,Big Ten,164,Rutgers,home,False,False,False,STATUS_SCHEDULED,,,,0,Ryan Field
+2026,401858505,2026-10-31 04:00:00+00:00,9,77,Northwestern,Big Ten,2483,Oregon,away,False,False,False,STATUS_SCHEDULED,,,,0,Autzen Stadium
+2026,401858522,2026-11-14 05:00:00+00:00,11,77,Northwestern,Big Ten,194,Ohio State,away,False,False,False,STATUS_SCHEDULED,,,,0,Ohio Stadium
+2026,401858438,2026-09-06 23:30:00+00:00,1,87,Notre Dame,FBS Independents,275,Wisconsin,home,True,False,True,STATUS_FINAL,41.0,13.0,True,75939,Lambeau Field
+2026,401859184,2026-09-12 19:30:00+00:00,2,87,Notre Dame,FBS Independents,242,Rice,home,False,False,True,STATUS_FINAL,52.0,0.0,True,77622,Notre Dame Stadium
+2026,401858467,2026-09-26 18:00:00+00:00,4,87,Notre Dame,FBS Independents,2509,Purdue,away,False,False,False,STATUS_SCHEDULED,,,,0,Ross-Ade Stadium
+2026,401858257,2026-10-10 19:30:00+00:00,6,87,Notre Dame,FBS Independents,24,Stanford,home,False,False,False,STATUS_SCHEDULED,,,,0,Notre Dame Stadium
+2026,401858307,2026-11-22 00:30:00+00:00,12,87,Notre Dame,FBS Independents,2567,SMU,home,False,False,False,STATUS_SCHEDULED,,,,0,Notre Dame Stadium
+2026,401858314,2026-11-28 05:00:00+00:00,13,87,Notre Dame,FBS Independents,183,Syracuse,away,False,False,False,STATUS_SCHEDULED,,,,0,JMA Wireless Dome
+2026,401866423,2026-09-19 23:00:00+00:00,3,195,Ohio,MAC,6,South Alabama,away,False,False,False,STATUS_SCHEDULED,,,,0,Hancock Whitney Stadium
+2026,401866428,2026-09-26 19:30:00+00:00,4,195,Ohio,MAC,284,Stonehill,home,False,False,False,STATUS_SCHEDULED,,,,0,Peden Stadium
+2026,401866445,2026-10-17 04:00:00+00:00,7,195,Ohio,MAC,16,Sacramento State,away,False,False,False,STATUS_SCHEDULED,,,,0,Hornet Stadium
+2026,401866473,2026-11-27 17:00:00+00:00,13,195,Ohio,MAC,2649,Toledo,home,False,False,False,STATUS_SCHEDULED,,,,0,Peden Stadium
+2026,401856682,2026-09-12 23:30:00+00:00,2,194,Ohio State,Big Ten,251,Texas,away,False,False,True,STATUS_FINAL,23.0,24.0,False,105044,DKR-Texas Memorial Stadium
+2026,401858509,2026-10-31 04:00:00+00:00,9,194,Ohio State,Big Ten,30,USC,away,False,False,False,STATUS_SCHEDULED,,,,0,Los Angeles Memorial Coliseum
+2026,401858514,2026-11-07 05:00:00+00:00,10,194,Ohio State,Big Ten,2483,Oregon,home,False,False,False,STATUS_SCHEDULED,,,,0,Ohio Stadium
+2026,401856664,2026-09-05 00:00:00+00:00,1,201,Oklahoma,SEC,2638,UTEP,home,False,False,True,STATUS_FINAL,51.0,0.0,True,0,"Memorial Stadium (Norman, OK)"
+2026,401856717,2026-10-10 19:30:00+00:00,6,201,Oklahoma,SEC,251,Texas,home,True,False,False,STATUS_SCHEDULED,,,,0,Cotton Bowl
+2026,401856736,2026-10-31 04:00:00+00:00,9,201,Oklahoma,SEC,2579,South Carolina,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Norman, OK)"
+2026,401856887,2026-11-14 05:00:00+00:00,11,201,Oklahoma,SEC,145,Ole Miss,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Norman, OK)"
+2026,401856752,2026-11-21 05:00:00+00:00,12,201,Oklahoma,SEC,245,Texas A&M,home,False,False,False,STATUS_SCHEDULED,,,,0,"Memorial Stadium (Norman, OK)"
+2026,401856772,2026-09-05 19:45:00+00:00,1,197,Oklahoma State,Big 12,202,Tulsa,away,False,False,True,STATUS_FINAL,10.0,24.0,False,28520,H. A. Chapman Stadium
+2026,401856782,2026-09-12 17:30:00+00:00,2,197,Oklahoma State,Big 12,2483,Oregon,home,False,False,True,STATUS_FINAL,39.0,31.0,True,51035,Boone Pickens Stadium
+2026,401856803,2026-09-19 23:00:00+00:00,3,197,Oklahoma State,Big 12,93,Murray State,home,False,False,False,STATUS_SCHEDULED,,,,0,Boone Pickens Stadium
+2026,401856881,2026-09-26 23:00:00+00:00,4,197,Oklahoma State,Big 12,277,West Virginia,away,False,False,False,STATUS_SCHEDULED,,,,0,Milan Puskar Stadium
+2026,401856824,2026-10-10 04:00:00+00:00,6,197,Oklahoma State,Big 12,2116,UCF,home,False,False,False,STATUS_SCHEDULED,,,,0,Boone Pickens Stadium
+2026,401856863,2026-11-14 05:00:00+00:00,11,197,Oklahoma State,Big 12,2641,Texas Tech,home,False,False,False,STATUS_SCHEDULED,,,,0,Boone Pickens Stadium
+2026,401867973,2026-09-05 22:00:00+00:00,1,295,Old Dominion,Sun Belt,2450,Norfolk State,home,False,False,True,STATUS_FINAL,31.0,10.0,True,21944,S.B. Ballard Stadium
+2026,401858221,2026-09-12 16:00:00+00:00,2,295,Old Dominion,Sun Belt,259,Virginia Tech,away,False,False,True,STATUS_FINAL,21.0,44.0,False,65632,Lane Stadium
+2026,401861968,2026-11-21 20:30:00+00:00,12,295,Old Dominion,Sun Belt,41,UConn,away,False,False,False,STATUS_SCHEDULED,,,,0,Pratt & Whitney Stadium
+2026,401871103,2026-11-28 05:00:00+00:00,13,295,Old Dominion,Sun Belt,2572,Southern Miss,home,False,False,False,STATUS_SCHEDULED,,,,0,S.B. Ballard Stadium
+2026,401856718,2026-10-10 04:00:00+00:00,6,145,Ole Miss,SEC,238,Vanderbilt,away,False,False,False,STATUS_SCHEDULED,,,,0,FirstBank Stadium
+2026,401856732,2026-10-24 04:00:00+00:00,8,145,Ole Miss,SEC,251,Texas,away,False,False,False,STATUS_SCHEDULED,,,,0,DKR-Texas Memorial Stadium
+2026,401856749,2026-11-21 17:00:00+00:00,12,145,Ole Miss,SEC,2747,Wofford,home,False,False,False,STATUS_SCHEDULED,,,,0,Vaught-Hemingway Stadium
+2026,401858455,2026-09-19 02:30:00+00:00,3,2483,Oregon,Big Ten,2502,Portland State,home,False,False,False,STATUS_SCHEDULED,,,,0,Autzen Stadium
+2026,401858469,2026-09-26 23:30:00+00:00,4,2483,Oregon,Big Ten,30,USC,away,False,False,False,STATUS_SCHEDULED,,,,0,Los Angeles Memorial Coliseum
+2026,401858484,2026-10-10 04:00:00+00:00,6,2483,Oregon,Big Ten,26,UCLA,home,False,False,False,STATUS_SCHEDULED,,,,0,Autzen Stadium
+2026,401858541,2026-11-28 05:00:00+00:00,13,2483,Oregon,Big Ten,264,Washington,home,False,False,False,STATUS_SCHEDULED,,,,0,Autzen Stadium
+2026,401856783,2026-09-12 23:30:00+00:00,2,204,Oregon State,Pac-12,2641,Texas Tech,home,False,False,True,STATUS_FINAL,24.0,35.0,False,30539,Reser Stadium
+2026,401860886,2026-09-20 03:00:00+00:00,3,204,Oregon State,Pac-12,149,Montana,home,False,False,False,STATUS_SCHEDULED,,,,0,Reser Stadium
+2026,401860895,2026-09-27 01:00:00+00:00,4,204,Oregon State,Pac-12,2638,UTEP,away,False,False,False,STATUS_SCHEDULED,,,,0,Sun Bowl
+2026,401860902,2026-10-10 22:00:00+00:00,6,204,Oregon State,Pac-12,21,San Diego State,home,False,False,False,STATUS_SCHEDULED,,,,0,Reser Stadium
+2026,401860903,2026-10-17 22:00:00+00:00,7,204,Oregon State,Pac-12,265,Washington State,home,False,False,False,STATUS_SCHEDULED,,,,0,Reser Stadium
+2026,401860912,2026-11-08 03:30:00+00:00,10,204,Oregon State,Pac-12,326,Texas State,home,False,False,False,STATUS_SCHEDULED,,,,0,Reser Stadium
+2026,401860919,2026-11-22 03:30:00+00:00,12,204,Oregon State,Pac-12,328,Utah State,home,False,False,False,STATUS_SCHEDULED,,,,0,Reser Stadium
+2026,401858442,2026-09-12 16:00:00+00:00,2,213,Penn State,Big Ten,218,Temple,away,False,False,True,STATUS_FINAL,27.0,9.0,True,61714,Lincoln Financial Field
+2026,401858466,2026-09-26 21:00:00+00:00,4,213,Penn State,Big Ten,275,Wisconsin,home,False,False,False,STATUS_SCHEDULED,,,,0,Beaver Stadium
+2026,401858485,2026-10-10 04:00:00+00:00,6,213,Penn State,Big Ten,30,USC,home,False,False,False,STATUS_SCHEDULED,,,,0,Beaver Stadium
+2026,401858506,2026-10-31 04:00:00+00:00,9,213,Penn State,Big Ten,2509,Purdue,home,False,False,False,STATUS_SCHEDULED,,,,0,Beaver Stadium
+2026,401858516,2026-11-07 05:00:00+00:00,10,213,Penn State,Big Ten,264,Washington,away,False,False,False,STATUS_SCHEDULED,,,,0,Husky Stadium
+2026,401858532,2026-11-21 05:00:00+00:00,12,213,Penn State,Big Ten,164,Rutgers,home,False,False,False,STATUS_SCHEDULED,,,,0,Beaver Stadium
+2026,401856790,2026-09-12 19:30:00+00:00,2,221,Pittsburgh,ACC,2116,UCF,home,False,False,True,STATUS_FINAL,12.0,7.0,True,45926,Acrisure Stadium
+2026,401858225,2026-09-17 23:30:00+00:00,3,221,Pittsburgh,ACC,183,Syracuse,home,False,False,False,STATUS_SCHEDULED,,,,0,Acrisure Stadium
+2026,401858236,2026-09-26 16:00:00+00:00,4,221,Pittsburgh,ACC,2083,Bucknell,home,False,False,False,STATUS_SCHEDULED,,,,0,Acrisure Stadium
+2026,401858245,2026-10-02 23:00:00+00:00,5,221,Pittsburgh,ACC,259,Virginia Tech,away,False,False,False,STATUS_SCHEDULED,,,,0,Lane Stadium
+2026,401858435,2026-09-04 23:00:00+00:00,1,2509,Purdue,Big Ten,282,Indiana State,home,False,False,True,STATUS_FINAL,44.0,19.0,True,0,Ross-Ade Stadium
+2026,401858224,2026-09-12 16:00:00+00:00,2,2509,Purdue,Big Ten,154,Wake Forest,home,False,False,True,STATUS_FINAL,36.0,38.0,False,50363,Ross-Ade Stadium
+2026,401858458,2026-09-20 03:00:00+00:00,3,2509,Purdue,Big Ten,26,UCLA,away,False,False,False,STATUS_SCHEDULED,,,,0,Rose Bowl
+2026,401858493,2026-10-17 00:00:00+00:00,7,2509,Purdue,Big Ten,264,Washington,home,False,False,False,STATUS_SCHEDULED,,,,0,Ross-Ade Stadium
+2026,401858533,2026-11-21 05:00:00+00:00,12,2509,Purdue,Big Ten,275,Wisconsin,home,False,False,False,STATUS_SCHEDULED,,,,0,Ross-Ade Stadium
+2026,401862697,2026-09-05 23:00:00+00:00,1,242,Rice,American,2277,Houston Christian,home,False,False,True,STATUS_FINAL,31.0,3.0,True,15128,Rice Stadium
+2026,401862773,2026-09-19 23:00:00+00:00,3,242,Rice,American,2711,Western Michigan,home,False,False,False,STATUS_SCHEDULED,,,,0,Rice Stadium
+2026,401862788,2026-10-03 04:00:00+00:00,5,242,Rice,American,2636,UTSA,home,False,False,False,STATUS_SCHEDULED,,,,0,Rice Stadium
+2026,401862805,2026-10-17 04:00:00+00:00,7,242,Rice,American,202,Tulsa,home,False,False,False,STATUS_SCHEDULED,,,,0,Rice Stadium
+2026,401862828,2026-11-14 05:00:00+00:00,11,242,Rice,American,2655,Tulane,home,False,False,False,STATUS_SCHEDULED,,,,0,Rice Stadium
+2026,401862830,2026-11-20 00:30:00+00:00,12,242,Rice,American,218,Temple,away,False,False,False,STATUS_SCHEDULED,,,,0,Lincoln Financial Field
+2026,401858457,2026-09-19 19:30:00+00:00,3,164,Rutgers,Big Ten,30,USC,home,False,False,False,STATUS_SCHEDULED,,,,0,SHI Stadium
+2026,401858468,2026-09-25 23:00:00+00:00,4,164,Rutgers,Big Ten,47,Howard,home,False,False,False,STATUS_SCHEDULED,,,,0,SHI Stadium
+2026,401858517,2026-11-07 05:00:00+00:00,10,164,Rutgers,Big Ten,275,Wisconsin,away,False,False,False,STATUS_SCHEDULED,,,,0,Camp Randall Stadium
+2026,401858223,2026-09-12 20:00:00+00:00,2,2567,SMU,ACC,302,UC Davis,home,False,False,True,STATUS_FINAL,56.0,10.0,True,29054,Gerald J. Ford Stadium
+2026,401858268,2026-10-17 04:00:00+00:00,7,2567,SMU,ACC,258,Virginia,home,False,False,False,STATUS_SCHEDULED,,,,0,Gerald J. Ford Stadium
+2026,401858278,2026-10-31 04:00:00+00:00,9,2567,SMU,ACC,183,Syracuse,away,False,False,False,STATUS_SCHEDULED,,,,0,JMA Wireless Dome
+2026,401858288,2026-11-07 00:00:00+00:00,10,2567,SMU,ACC,259,Virginia Tech,home,False,False,False,STATUS_SCHEDULED,,,,0,Gerald J. Ford Stadium
+2026,401858301,2026-11-14 05:00:00+00:00,11,2567,SMU,ACC,154,Wake Forest,home,False,False,False,STATUS_SCHEDULED,,,,0,Gerald J. Ford Stadium
+2026,401858316,2026-11-28 05:00:00+00:00,13,2567,SMU,ACC,24,Stanford,away,False,False,False,STATUS_SCHEDULED,,,,0,Stanford Stadium
+2026,401866411,2026-09-06 02:00:00+00:00,1,16,Sacramento State,MAC,2400,Mississippi Valley State,home,False,False,True,STATUS_FINAL,52.0,0.0,True,18523,Hornet Stadium
+2026,401866457,2026-11-04 05:00:00+00:00,10,16,Sacramento State,MAC,2649,Toledo,home,False,False,False,STATUS_SCHEDULED,,,,0,Hornet Stadium
+2026,401870763,2026-09-05 23:00:00+00:00,1,2534,Sam Houston,Conference USA,2653,Troy,away,False,False,True,STATUS_FINAL,21.0,24.0,False,24356,Veterans Memorial Stadium (AL)
+2026,401862707,2026-09-12 23:00:00+00:00,2,2534,Sam Houston,Conference USA,202,Tulsa,home,False,False,True,STATUS_FINAL,17.0,23.0,False,0,Elliott T. Bowers Stadium
+2026,401870764,2026-09-19 23:00:00+00:00,3,2534,Sam Houston,Conference USA,2447,Nicholls,home,False,False,False,STATUS_SCHEDULED,,,,0,Elliott T. Bowers Stadium
+2026,401856805,2026-09-26 16:00:00+00:00,4,2534,Sam Houston,Conference USA,2641,Texas Tech,away,False,False,False,STATUS_SCHEDULED,,,,0,Galaxy Stadium
+2026,401871068,2026-10-15 00:00:00+00:00,7,2534,Sam Houston,Conference USA,98,Western Kentucky,home,False,False,False,STATUS_SCHEDULED,,,,0,Elliott T. Bowers Stadium
+2026,401860879,2026-09-06 01:30:00+00:00,1,21,San Diego State,Pac-12,2502,Portland State,home,False,False,True,STATUS_FINAL,53.0,20.0,True,26913,Snapdragon Stadium
+2026,401858443,2026-09-12 23:15:00+00:00,2,21,San Diego State,Pac-12,26,UCLA,away,False,False,True,STATUS_FINAL,10.0,28.0,False,31976,Rose Bowl
+2026,401860893,2026-09-26 16:00:00+00:00,4,21,San Diego State,Pac-12,2649,Toledo,away,False,False,False,STATUS_SCHEDULED,,,,0,Glass Bowl
+2026,401860900,2026-10-04 02:30:00+00:00,5,21,San Diego State,Pac-12,326,Texas State,home,False,False,False,STATUS_SCHEDULED,,,,0,Snapdragon Stadium
+2026,401860909,2026-10-31 23:00:00+00:00,9,21,San Diego State,Pac-12,265,Washington State,home,False,False,False,STATUS_SCHEDULED,,,,0,Snapdragon Stadium
+2026,401860915,2026-11-15 02:30:00+00:00,11,21,San Diego State,Pac-12,328,Utah State,home,False,False,False,STATUS_SCHEDULED,,,,0,Snapdragon Stadium
+2026,401864494,2026-08-29 19:00:00+00:00,1,23,San José State,Mountain West,30,USC,away,False,False,True,STATUS_FINAL,26.0,42.0,False,51144,Los Angeles Memorial Coliseum
+2026,401864504,2026-09-13 01:00:00+00:00,2,23,San José State,Mountain West,13,Cal Poly,home,False,False,True,STATUS_FINAL,30.0,20.0,True,15017,CEFCU Stadium
+2026,401864519,2026-10-10 01:00:00+00:00,6,23,San José State,Mountain West,2751,Wyoming,home,False,False,False,STATUS_SCHEDULED,,,,0,CEFCU Stadium
+2026,401864523,2026-10-18 01:00:00+00:00,7,23,San José State,Mountain West,2638,UTEP,away,False,False,False,STATUS_SCHEDULED,,,,0,Sun Bowl
+2026,401864544,2026-11-22 00:00:00+00:00,12,23,San José State,Mountain West,2439,UNLV,home,False,False,False,STATUS_SCHEDULED,,,,0,CEFCU Stadium
+2026,401868316,2026-09-05 23:00:00+00:00,1,6,South Alabama,Sun Belt,2545,SE Louisiana,home,False,False,True,STATUS_FINAL,39.0,14.0,True,15087,Hancock Whitney Stadium
+2026,401864575,2026-09-12 23:00:00+00:00,2,6,South Alabama,Sun Belt,2655,Tulane,away,False,False,True,STATUS_FINAL,24.0,28.0,False,24323,Yulman Stadium
+2026,401871089,2026-10-03 04:00:00+00:00,5,6,South Alabama,Sun Belt,2433,UL Monroe,home,False,False,False,STATUS_SCHEDULED,,,,0,Hancock Whitney Stadium
+2026,401871100,2026-11-14 05:00:00+00:00,11,6,South Alabama,Sun Belt,2653,Troy,home,False,False,False,STATUS_SCHEDULED,,,,0,Hancock Whitney Stadium
+2026,401871101,2026-11-21 05:00:00+00:00,12,6,South Alabama,Sun Belt,2572,Southern Miss,away,False,False,False,STATUS_SCHEDULED,,,,0,M. M. Roberts Stadium
+2026,401856680,2026-09-12 23:00:00+00:00,2,2579,South Carolina,SEC,119,Towson,home,False,False,True,STATUS_FINAL,45.0,9.0,True,78399,Williams-Brice Stadium
+2026,401856731,2026-10-24 04:00:00+00:00,8,2579,South Carolina,SEC,2633,Tennessee,home,False,False,False,STATUS_SCHEDULED,,,,0,Williams-Brice Stadium
+2026,401856744,2026-11-07 05:00:00+00:00,10,2579,South Carolina,SEC,245,Texas A&M,home,False,False,False,STATUS_SCHEDULED,,,,0,Williams-Brice Stadium
+2026,401862777,2026-09-19 23:00:00+00:00,3,58,South Florida,American,2169,Delaware State,home,False,False,False,STATUS_SCHEDULED,,,,0,Raymond James Stadium
+2026,401862792,2026-10-03 04:00:00+00:00,5,58,South Florida,American,218,Temple,home,False,False,False,STATUS_SCHEDULED,,,,0,Raymond James Stadium
+2026,401862794,2026-10-08 23:30:00+00:00,6,58,South Florida,American,2636,UTSA,away,False,False,False,STATUS_SCHEDULED,,,,0,Alamodome
+2026,401862816,2026-10-31 04:00:00+00:00,9,58,South Florida,American,5,UAB,home,False,False,False,STATUS_SCHEDULED,,,,0,Raymond James Stadium
+2026,401862839,2026-11-27 05:00:00+00:00,13,58,South Florida,American,2655,Tulane,home,False,False,False,STATUS_SCHEDULED,,,,0,Raymond James Stadium
+2026,401868356,2026-09-05 21:00:00+00:00,1,2572,Southern Miss,Sun Belt,2016,Alcorn State,home,False,False,True,STATUS_FINAL,49.0,3.0,True,26246,M. M. Roberts Stadium
+2026,401861963,2026-09-19 23:00:00+00:00,3,2572,Southern Miss,Sun Belt,41,UConn,home,False,False,False,STATUS_SCHEDULED,,,,0,M. M. Roberts Stadium
+2026,401862784,2026-09-26 23:00:00+00:00,4,2572,Southern Miss,Sun Belt,2655,Tulane,away,False,False,False,STATUS_SCHEDULED,,,,0,Yulman Stadium
+2026,401871090,2026-10-07 00:00:00+00:00,6,2572,Southern Miss,Sun Belt,2653,Troy,away,False,False,False,STATUS_SCHEDULED,,,,0,Veterans Memorial Stadium (AL)
+2026,401871095,2026-10-31 04:00:00+00:00,9,2572,Southern Miss,Sun Belt,2433,UL Monroe,away,False,False,False,STATUS_SCHEDULED,,,,0,Malone Stadium
+2026,401858251,2026-10-03 04:00:00+00:00,5,24,Stanford,ACC,154,Wake Forest,away,False,False,False,STATUS_SCHEDULED,,,,0,Allegacy Federal Credit Union Stadium
+2026,401858262,2026-10-17 23:30:00+00:00,7,24,Stanford,ACC,2210,Elon,home,False,False,False,STATUS_SCHEDULED,,,,0,Stanford Stadium
+2026,401858299,2026-11-14 05:00:00+00:00,11,24,Stanford,ACC,259,Virginia Tech,away,False,False,False,STATUS_SCHEDULED,,,,0,Lane Stadium
+2026,401858208,2026-09-05 16:00:00+00:00,1,183,Syracuse,ACC,160,New Hampshire,home,False,False,True,STATUS_FINAL,66.0,3.0,True,33257,JMA Wireless Dome
+2026,401858252,2026-10-03 16:00:00+00:00,5,183,Syracuse,ACC,41,UConn,away,False,False,False,STATUS_SCHEDULED,,,,0,Pratt & Whitney Stadium
+2026,401858258,2026-10-10 04:00:00+00:00,6,183,Syracuse,ACC,258,Virginia,away,False,False,False,STATUS_SCHEDULED,,,,0,Scott Stadium
+2026,401856789,2026-09-13 00:00:00+00:00,2,2628,TCU,Big 12,2755,Grambling,home,False,False,True,STATUS_FINAL,63.0,7.0,True,37600,Amon G. Carter Stadium
+2026,401856815,2026-09-26 19:30:00+00:00,4,2628,TCU,Big 12,2116,UCF,away,False,False,False,STATUS_SCHEDULED,,,,0,Acrisure Bounce House
+2026,401856841,2026-10-24 04:00:00+00:00,8,2628,TCU,Big 12,277,West Virginia,home,False,False,False,STATUS_SCHEDULED,,,,0,Amon G. Carter Stadium
+2026,401856872,2026-11-21 05:00:00+00:00,12,2628,TCU,Big 12,254,Utah,home,False,False,False,STATUS_SCHEDULED,,,,0,Amon G. Carter Stadium
+2026,401856879,2026-11-27 01:00:00+00:00,13,2628,TCU,Big 12,2641,Texas Tech,away,False,False,False,STATUS_SCHEDULED,,,,0,Galaxy Stadium
+2026,401862698,2026-09-05 18:00:00+00:00,1,218,Temple,American,227,Rhode Island,home,False,False,True,STATUS_FINAL,38.0,14.0,True,13484,Lincoln Financial Field
+2026,401862774,2026-09-19 19:00:00+00:00,3,218,Temple,American,2649,Toledo,away,False,False,False,STATUS_SCHEDULED,,,,0,Glass Bowl
+2026,401861964,2026-10-10 04:00:00+00:00,6,218,Temple,American,41,UConn,home,False,False,False,STATUS_SCHEDULED,,,,0,Lincoln Financial Field
+2026,401862829,2026-11-14 05:00:00+00:00,11,218,Temple,American,5,UAB,home,False,False,False,STATUS_SCHEDULED,,,,0,Lincoln Financial Field
+2026,401856666,2026-09-05 19:30:00+00:00,1,2633,Tennessee,SEC,231,Furman,home,False,False,True,STATUS_FINAL,56.0,9.0,True,101915,Neyland Stadium
+2026,401856704,2026-09-26 16:00:00+00:00,4,2633,Tennessee,SEC,251,Texas,home,False,False,False,STATUS_SCHEDULED,,,,0,Neyland Stadium
+2026,401856888,2026-11-14 05:00:00+00:00,11,2633,Tennessee,SEC,245,Texas A&M,away,False,False,False,STATUS_SCHEDULED,,,,0,Kyle Field
+2026,401856765,2026-11-28 05:00:00+00:00,13,2633,Tennessee,SEC,238,Vanderbilt,away,False,False,False,STATUS_SCHEDULED,,,,0,FirstBank Stadium
+2026,401856667,2026-09-05 19:30:00+00:00,1,251,Texas,SEC,326,Texas State,home,False,False,True,STATUS_FINAL,59.0,7.0,True,102738,DKR-Texas Memorial Stadium
+2026,401856693,2026-09-20 00:00:00+00:00,3,251,Texas,SEC,2636,UTSA,home,False,False,False,STATUS_SCHEDULED,,,,0,DKR-Texas Memorial Stadium
+2026,401856756,2026-11-28 00:30:00+00:00,13,251,Texas,SEC,245,Texas A&M,away,False,False,False,STATUS_SCHEDULED,,,,0,Kyle Field
+2026,401856725,2026-10-17 17:00:00+00:00,7,245,Texas A&M,SEC,2643,The Citadel,home,False,False,False,STATUS_SCHEDULED,,,,0,Kyle Field
+2026,401860884,2026-09-12 19:30:00+00:00,2,326,Texas State,Pac-12,2636,UTSA,home,False,False,True,STATUS_FINAL,26.0,31.0,False,22019,UFCU Stadium
+2026,401860892,2026-09-26 22:00:00+00:00,4,326,Texas State,Pac-12,2916,Incarnate Word,home,False,False,False,STATUS_SCHEDULED,,,,0,UFCU Stadium
+2026,401860906,2026-10-24 23:30:00+00:00,8,326,Texas State,Pac-12,328,Utah State,home,False,False,False,STATUS_SCHEDULED,,,,0,UFCU Stadium
+2026,401860920,2026-11-21 23:00:00+00:00,12,326,Texas State,Pac-12,265,Washington State,home,False,False,False,STATUS_SCHEDULED,,,,0,UFCU Stadium
+2026,401856770,2026-09-05 23:00:00+00:00,1,2641,Texas Tech,Big 12,2000,Abilene Christian,home,False,False,True,STATUS_FINAL,33.0,10.0,True,60229,Galaxy Stadium
+2026,401856856,2026-11-07 05:00:00+00:00,10,2641,Texas Tech,Big 12,277,West Virginia,home,False,False,False,STATUS_SCHEDULED,,,,0,Galaxy Stadium
+2026,401866419,2026-09-12 19:30:00+00:00,2,2649,Toledo,MAC,2115,Central Connecticut,home,False,False,True,STATUS_FINAL,63.0,10.0,True,18435,Glass Bowl
+2026,401866450,2026-10-24 04:00:00+00:00,8,2649,Toledo,MAC,2711,Western Michigan,home,False,False,False,STATUS_SCHEDULED,,,,0,Glass Bowl
+2026,401868326,2026-09-12 20:00:00+00:00,2,2653,Troy,Sun Belt,2011,Alabama State,home,False,False,True,STATUS_FINAL,34.0,17.0,True,26634,Veterans Memorial Stadium (AL)
+2026,401860894,2026-09-26 23:30:00+00:00,4,2653,Troy,Sun Belt,328,Utah State,away,False,False,False,STATUS_SCHEDULED,,,,0,Maverik Stadium
+2026,401871094,2026-10-24 04:00:00+00:00,8,2653,Troy,Sun Belt,2433,UL Monroe,home,False,False,False,STATUS_SCHEDULED,,,,0,Veterans Memorial Stadium (AL)
+2026,401862811,2026-10-24 04:00:00+00:00,8,2655,Tulane,American,2636,UTSA,home,False,False,False,STATUS_SCHEDULED,,,,0,Yulman Stadium
+2026,401862822,2026-11-07 05:00:00+00:00,10,2655,Tulane,American,202,Tulsa,home,False,False,False,STATUS_SCHEDULED,,,,0,Yulman Stadium
+2026,401862775,2026-09-20 00:00:00+00:00,3,202,Tulsa,American,2837,East Texas A&M,home,False,False,False,STATUS_SCHEDULED,,,,0,H. A. Chapman Stadium
+2026,401862840,2026-11-28 05:00:00+00:00,13,202,Tulsa,American,2636,UTSA,away,False,False,False,STATUS_SCHEDULED,,,,0,Alamodome
+2026,401862708,2026-09-12 19:30:00+00:00,2,5,UAB,American,2433,UL Monroe,home,False,False,True,STATUS_FINAL,26.0,20.0,True,21153,Protective Stadium
+2026,401862793,2026-10-03 19:30:00+00:00,5,5,UAB,American,2535,Samford,home,False,False,False,STATUS_SCHEDULED,,,,0,Protective Stadium
+2026,401862836,2026-11-21 05:00:00+00:00,12,5,UAB,American,2636,UTSA,home,False,False,False,STATUS_SCHEDULED,,,,0,Protective Stadium
+2026,401856767,2026-09-03 23:00:00+00:00,1,2116,UCF,Big 12,2065,Bethune-Cookman,home,False,False,True,STATUS_FINAL,73.0,6.0,True,43127,Acrisure Bounce House
+2026,401858494,2026-10-17 04:00:00+00:00,7,26,UCLA,Big Ten,275,Wisconsin,home,False,False,False,STATUS_SCHEDULED,,,,0,Rose Bowl
+2026,401858543,2026-11-28 05:00:00+00:00,13,26,UCLA,Big Ten,30,USC,home,False,False,False,STATUS_SCHEDULED,,,,0,Rose Bowl
+2026,401861962,2026-09-05 16:00:00+00:00,1,41,UConn,FBS Independents,322,Lafayette,home,False,False,True,STATUS_FINAL,56.0,7.0,True,31831,Pratt & Whitney Stadium
+2026,401861969,2026-11-28 05:00:00+00:00,13,41,UConn,FBS Independents,2751,Wyoming,away,False,False,False,STATUS_SCHEDULED,,,,0,War Memorial Stadium
+2026,401868317,2026-09-19 20:30:00+00:00,3,2433,UL Monroe,Sun Belt,2545,SE Louisiana,home,False,False,False,STATUS_SCHEDULED,,,,0,Malone Stadium
+2026,401864535,2026-11-08 03:30:00+00:00,10,2439,UNLV,Mountain West,2751,Wyoming,home,False,False,False,STATUS_SCHEDULED,,,,0,Allegiant Stadium
+2026,401858478,2026-10-03 04:00:00+00:00,5,30,USC,Big Ten,264,Washington,home,False,False,False,STATUS_SCHEDULED,,,,0,Los Angeles Memorial Coliseum
+2026,401858500,2026-10-24 04:00:00+00:00,8,30,USC,Big Ten,275,Wisconsin,away,False,False,False,STATUS_SCHEDULED,,,,0,Camp Randall Stadium
+2026,401864505,2026-09-13 01:00:00+00:00,2,2638,UTEP,Mountain West,2640,Texas Southern,home,False,False,True,STATUS_FINAL,51.0,10.0,True,24580,Sun Bowl
+2026,401864540,2026-11-14 05:00:00+00:00,11,2638,UTEP,Mountain West,2751,Wyoming,home,False,False,False,STATUS_SCHEDULED,,,,0,Sun Bowl
+2026,401862700,2026-09-05 19:30:00+00:00,1,2636,UTSA,American,292,UT Rio Grande Valley,home,False,False,True,STATUS_FINAL,45.0,16.0,True,33403,Alamodome
+2026,401856768,2026-09-04 01:00:00+00:00,1,254,Utah,Big 12,70,Idaho,home,False,False,True,STATUS_FINAL,66.0,14.0,True,51444,Rice-Eccles Stadium
+2026,401856801,2026-09-19 19:30:00+00:00,3,254,Utah,Big 12,328,Utah State,home,False,False,False,STATUS_SCHEDULED,,,,0,Rice-Eccles Stadium
+2026,401856880,2026-11-28 02:00:00+00:00,13,254,Utah,Big 12,277,West Virginia,home,False,False,False,STATUS_SCHEDULED,,,,0,Rice-Eccles Stadium
+2026,401860880,2026-09-05 23:00:00+00:00,1,328,Utah State,Pac-12,304,Idaho State,home,False,False,True,STATUS_FINAL,17.0,29.0,False,20723,Maverik Stadium
+2026,401858446,2026-09-12 19:30:00+00:00,2,328,Utah State,Pac-12,264,Washington,away,False,False,True,STATUS_FINAL,14.0,16.0,False,62152,Husky Stadium
+2026,401860922,2026-10-10 01:00:00+00:00,6,328,Utah State,Pac-12,265,Washington State,home,False,False,False,STATUS_SCHEDULED,,,,0,Maverik Stadium
+2026,401860928,2026-11-28 05:00:00+00:00,13,328,Utah State,Pac-12,-2,TBD,home,False,False,False,STATUS_SCHEDULED,,,,0,Maverik Stadium
+2026,401856669,2026-09-05 23:00:00+00:00,1,238,Vanderbilt,SEC,2046,Austin Peay,home,False,False,True,STATUS_FINAL,28.0,9.0,True,35000,FirstBank Stadium
+2026,401858220,2026-09-11 23:00:00+00:00,2,258,Virginia,ACC,2450,Norfolk State,home,False,False,True,STATUS_FINAL,59.0,3.0,True,46918,Scott Stadium
+2026,401856802,2026-09-19 23:30:00+00:00,3,258,Virginia,ACC,277,West Virginia,home,True,False,False,STATUS_SCHEDULED,,,,0,Bank of America Stadium
+2026,401858284,2026-10-31 04:00:00+00:00,9,258,Virginia,ACC,154,Wake Forest,away,False,False,False,STATUS_SCHEDULED,,,,0,Allegacy Federal Credit Union Stadium
+2026,401858317,2026-11-28 05:00:00+00:00,13,258,Virginia,ACC,259,Virginia Tech,away,False,False,False,STATUS_SCHEDULED,,,,0,Lane Stadium
+2026,401858211,2026-09-05 23:30:00+00:00,1,259,Virginia Tech,ACC,2678,VMI,home,False,False,True,STATUS_FINAL,73.0,3.0,True,65632,Lane Stadium
+2026,401858290,2026-11-07 05:00:00+00:00,10,154,Wake Forest,ACC,2771,Merrimack,home,False,False,False,STATUS_SCHEDULED,,,,0,Allegacy Federal Credit Union Stadium
+2026,401858437,2026-09-06 20:00:00+00:00,1,264,Washington,Big Ten,265,Washington State,home,False,False,True,STATUS_FINAL,24.0,10.0,True,71056,Husky Stadium
+2026,401858459,2026-09-19 23:15:00+00:00,3,264,Washington,Big Ten,331,Eastern Washington,home,False,False,False,STATUS_SCHEDULED,,,,0,Husky Stadium
+2026,401860890,2026-09-19 19:30:00+00:00,3,265,Washington State,Pac-12,2184,Duquesne,home,False,False,False,STATUS_SCHEDULED,,,,0,Martin Stadium
+2026,401860929,2026-11-28 05:00:00+00:00,13,265,Washington State,Pac-12,-2,TBD,home,False,False,False,STATUS_SCHEDULED,,,,0,Martin Stadium
+2026,401856791,2026-09-12 17:00:00+00:00,2,277,West Virginia,Big 12,2630,UT Martin,home,False,False,True,STATUS_FINAL,52.0,7.0,True,47049,Milan Puskar Stadium
+2026,401870745,2026-09-26 23:00:00+00:00,4,98,Western Kentucky,Conference USA,2385,Mercyhurst,home,False,False,False,STATUS_SCHEDULED,,,,0,Houchens Industries-L.T. Smith Stadium
+2026,401866421,2026-09-12 22:30:00+00:00,2,2711,Western Michigan,MAC,2405,Monmouth,home,False,False,True,STATUS_FINAL,49.0,14.0,True,24605,Waldo Stadium
+2026,401858447,2026-09-12 23:15:00+00:00,2,275,Wisconsin,Big Ten,2710,Western Illinois,home,False,False,True,STATUS_FINAL,36.0,9.0,True,65274,Camp Randall Stadium
+2026,401864506,2026-09-12 20:00:00+00:00,2,2751,Wyoming,Mountain West,2458,Northern Colorado,home,False,False,True,STATUS_FINAL,21.0,13.0,True,24105,War Memorial Stadium

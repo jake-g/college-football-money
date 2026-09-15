@@ -1,0 +1,134 @@
+team_id,school,mascot,display_name,abbreviation,conference,conference_group_id,is_power
+103,Boston College,Eagles,Boston College Eagles,BC,ACC,1,True
+228,Clemson,Tigers,Clemson Tigers,CLEM,ACC,1,True
+150,Duke,Blue Devils,Duke Blue Devils,DUKE,ACC,1,True
+52,Florida State,Seminoles,Florida State Seminoles,FSU,ACC,1,True
+59,Georgia Tech,Yellow Jackets,Georgia Tech Yellow Jackets,GT,ACC,1,True
+97,Louisville,Cardinals,Louisville Cardinals,LOU,ACC,1,True
+2390,Miami,Hurricanes,Miami Hurricanes,MIA,ACC,1,True
+152,NC State,Wolfpack,NC State Wolfpack,NCSU,ACC,1,True
+153,North Carolina,Tar Heels,North Carolina Tar Heels,UNC,ACC,1,True
+221,Pittsburgh,Panthers,Pittsburgh Panthers,PITT,ACC,1,True
+183,Syracuse,Orange,Syracuse Orange,SYR,ACC,1,True
+258,Virginia,Cavaliers,Virginia Cavaliers,UVA,ACC,1,True
+259,Virginia Tech,Hokies,Virginia Tech Hokies,VT,ACC,1,True
+154,Wake Forest,Demon Deacons,Wake Forest Demon Deacons,WAKE,ACC,1,True
+2429,Charlotte,49ers,Charlotte 49ers,CLT,American,151,False
+151,East Carolina,Pirates,East Carolina Pirates,ECU,American,151,False
+2226,Florida Atlantic,Owls,Florida Atlantic Owls,FAU,American,151,False
+235,Memphis,Tigers,Memphis Tigers,MEM,American,151,False
+2426,Navy,Midshipmen,Navy Midshipmen,NAVY,American,151,False
+249,North Texas,Mean Green,North Texas Mean Green,UNT,American,151,False
+242,Rice,Owls,Rice Owls,RICE,American,151,False
+2567,SMU,Mustangs,SMU Mustangs,SMU,American,151,False
+58,South Florida,Bulls,South Florida Bulls,USF,American,151,False
+218,Temple,Owls,Temple Owls,TEM,American,151,False
+2655,Tulane,Green Wave,Tulane Green Wave,TULN,American,151,False
+202,Tulsa,Golden Hurricane,Tulsa Golden Hurricane,TLSA,American,151,False
+5,UAB,Blazers,UAB Blazers,UAB,American,151,False
+2636,UTSA,Roadrunners,UTSA Roadrunners,UTSA,American,151,False
+252,BYU,Cougars,BYU Cougars,BYU,Big 12,4,True
+239,Baylor,Bears,Baylor Bears,BAY,Big 12,4,True
+2132,Cincinnati,Bearcats,Cincinnati Bearcats,CIN,Big 12,4,True
+248,Houston,Cougars,Houston Cougars,HOU,Big 12,4,True
+66,Iowa State,Cyclones,Iowa State Cyclones,ISU,Big 12,4,True
+2305,Kansas,Jayhawks,Kansas Jayhawks,KU,Big 12,4,True
+2306,Kansas State,Wildcats,Kansas State Wildcats,KSU,Big 12,4,True
+201,Oklahoma,Sooners,Oklahoma Sooners,OU,Big 12,4,True
+197,Oklahoma State,Cowboys,Oklahoma State Cowboys,OKST,Big 12,4,True
+2628,TCU,Horned Frogs,TCU Horned Frogs,TCU,Big 12,4,True
+251,Texas,Longhorns,Texas Longhorns,TEX,Big 12,4,True
+2641,Texas Tech,Red Raiders,Texas Tech Red Raiders,TTU,Big 12,4,True
+2116,UCF,Knights,UCF Knights,UCF,Big 12,4,True
+277,West Virginia,Mountaineers,West Virginia Mountaineers,WVU,Big 12,4,True
+356,Illinois,Fighting Illini,Illinois Fighting Illini,ILL,Big Ten,5,True
+84,Indiana,Hoosiers,Indiana Hoosiers,IU,Big Ten,5,True
+2294,Iowa,Hawkeyes,Iowa Hawkeyes,IOWA,Big Ten,5,True
+120,Maryland,Terrapins,Maryland Terrapins,MD,Big Ten,5,True
+130,Michigan,Wolverines,Michigan Wolverines,MICH,Big Ten,5,True
+127,Michigan State,Spartans,Michigan State Spartans,MSU,Big Ten,5,True
+135,Minnesota,Golden Gophers,Minnesota Golden Gophers,MINN,Big Ten,5,True
+158,Nebraska,Cornhuskers,Nebraska Cornhuskers,NEB,Big Ten,5,True
+77,Northwestern,Wildcats,Northwestern Wildcats,NU,Big Ten,5,True
+194,Ohio State,Buckeyes,Ohio State Buckeyes,OSU,Big Ten,5,True
+213,Penn State,Nittany Lions,Penn State Nittany Lions,PSU,Big Ten,5,True
+2509,Purdue,Boilermakers,Purdue Boilermakers,PUR,Big Ten,5,True
+164,Rutgers,Scarlet Knights,Rutgers Scarlet Knights,RUTG,Big Ten,5,True
+275,Wisconsin,Badgers,Wisconsin Badgers,WIS,Big Ten,5,True
+2229,Florida International,Panthers,Florida International Panthers,FIU,Conference USA,12,False
+55,Jacksonville State,Gamecocks,Jacksonville State Gamecocks,JVST,Conference USA,12,False
+2335,Liberty,Flames,Liberty Flames,LIB,Conference USA,12,False
+2348,Louisiana Tech,Bulldogs,Louisiana Tech Bulldogs,LT,Conference USA,12,False
+2393,Middle Tennessee,Blue Raiders,Middle Tennessee Blue Raiders,MTSU,Conference USA,12,False
+166,New Mexico State,Aggies,New Mexico State Aggies,NMSU,Conference USA,12,False
+2534,Sam Houston,Bearkats,Sam Houston Bearkats,SHSU,Conference USA,12,False
+2638,UTEP,Miners,UTEP Miners,UTEP,Conference USA,12,False
+98,Western Kentucky,Hilltoppers,Western Kentucky Hilltoppers,WKU,Conference USA,12,False
+349,Army,Black Knights,Army Black Knights,ARMY,FBS Independents,18,False
+113,Massachusetts,Minutemen,Massachusetts Minutemen,MASS,FBS Independents,18,False
+87,Notre Dame,Fighting Irish,Notre Dame Fighting Irish,ND,FBS Independents,18,False
+41,UConn,Huskies,UConn Huskies,CONN,FBS Independents,18,False
+2006,Akron,Zips,Akron Zips,AKR,MAC,15,False
+2050,Ball State,Cardinals,Ball State Cardinals,BALL,MAC,15,False
+189,Bowling Green,Falcons,Bowling Green Falcons,BGSU,MAC,15,False
+2084,Buffalo,Bulls,Buffalo Bulls,BUFF,MAC,15,False
+2117,Central Michigan,Chippewas,Central Michigan Chippewas,CMU,MAC,15,False
+2199,Eastern Michigan,Eagles,Eastern Michigan Eagles,EMU,MAC,15,False
+2309,Kent State,Golden Flashes,Kent State Golden Flashes,KENT,MAC,15,False
+193,Miami (OH),RedHawks,Miami (OH) RedHawks,M-OH,MAC,15,False
+2459,Northern Illinois,Huskies,Northern Illinois Huskies,NIU,MAC,15,False
+195,Ohio,Bobcats,Ohio Bobcats,OHIO,MAC,15,False
+2649,Toledo,Rockets,Toledo Rockets,TOL,MAC,15,False
+2711,Western Michigan,Broncos,Western Michigan Broncos,WMU,MAC,15,False
+2005,Air Force,Falcons,Air Force Falcons,AFA,Mountain West,17,False
+68,Boise State,Broncos,Boise State Broncos,BOIS,Mountain West,17,False
+36,Colorado State,Rams,Colorado State Rams,CSU,Mountain West,17,False
+278,Fresno State,Bulldogs,Fresno State Bulldogs,FRES,Mountain West,17,False
+62,Hawai'i,Rainbow Warriors,Hawai'i Rainbow Warriors,HAW,Mountain West,17,False
+2440,Nevada,Wolf Pack,Nevada Wolf Pack,NEV,Mountain West,17,False
+167,New Mexico,Lobos,New Mexico Lobos,UNM,Mountain West,17,False
+21,San Diego State,Aztecs,San Diego State Aztecs,SDSU,Mountain West,17,False
+23,San José State,Spartans,San José State Spartans,SJSU,Mountain West,17,False
+2439,UNLV,Rebels,UNLV Rebels,UNLV,Mountain West,17,False
+328,Utah State,Aggies,Utah State Aggies,USU,Mountain West,17,False
+2751,Wyoming,Cowboys,Wyoming Cowboys,WYO,Mountain West,17,False
+12,Arizona,Wildcats,Arizona Wildcats,ARIZ,Pac-12,9,False
+9,Arizona State,Sun Devils,Arizona State Sun Devils,ASU,Pac-12,9,False
+25,California,Golden Bears,California Golden Bears,CAL,Pac-12,9,False
+38,Colorado,Buffaloes,Colorado Buffaloes,COLO,Pac-12,9,False
+2483,Oregon,Ducks,Oregon Ducks,ORE,Pac-12,9,False
+204,Oregon State,Beavers,Oregon State Beavers,ORST,Pac-12,9,False
+24,Stanford,Cardinal,Stanford Cardinal,STAN,Pac-12,9,False
+26,UCLA,Bruins,UCLA Bruins,UCLA,Pac-12,9,False
+30,USC,Trojans,USC Trojans,USC,Pac-12,9,False
+254,Utah,Utes,Utah Utes,UTAH,Pac-12,9,False
+264,Washington,Huskies,Washington Huskies,WASH,Pac-12,9,False
+265,Washington State,Cougars,Washington State Cougars,WSU,Pac-12,9,False
+333,Alabama,Crimson Tide,Alabama Crimson Tide,ALA,SEC,8,True
+8,Arkansas,Razorbacks,Arkansas Razorbacks,ARK,SEC,8,True
+2,Auburn,Tigers,Auburn Tigers,AUB,SEC,8,True
+57,Florida,Gators,Florida Gators,FLA,SEC,8,True
+61,Georgia,Bulldogs,Georgia Bulldogs,UGA,SEC,8,True
+96,Kentucky,Wildcats,Kentucky Wildcats,UK,SEC,8,True
+99,LSU,Tigers,LSU Tigers,LSU,SEC,8,True
+344,Mississippi State,Bulldogs,Mississippi State Bulldogs,MSST,SEC,8,True
+142,Missouri,Tigers,Missouri Tigers,MIZ,SEC,8,True
+145,Ole Miss,Rebels,Ole Miss Rebels,MISS,SEC,8,True
+2579,South Carolina,Gamecocks,South Carolina Gamecocks,SC,SEC,8,True
+2633,Tennessee,Volunteers,Tennessee Volunteers,TENN,SEC,8,True
+245,Texas A&M,Aggies,Texas A&M Aggies,TA&M,SEC,8,True
+238,Vanderbilt,Commodores,Vanderbilt Commodores,VAN,SEC,8,True
+2026,App State,Mountaineers,App State Mountaineers,APP,Sun Belt,37,False
+2032,Arkansas State,Red Wolves,Arkansas State Red Wolves,ARST,Sun Belt,37,False
+324,Coastal Carolina,Chanticleers,Coastal Carolina Chanticleers,CCU,Sun Belt,37,False
+290,Georgia Southern,Eagles,Georgia Southern Eagles,GASO,Sun Belt,37,False
+2247,Georgia State,Panthers,Georgia State Panthers,GAST,Sun Belt,37,False
+256,James Madison,Dukes,James Madison Dukes,JMU,Sun Belt,37,False
+309,Louisiana,Ragin' Cajuns,Louisiana Ragin' Cajuns,UL,Sun Belt,37,False
+276,Marshall,Thundering Herd,Marshall Thundering Herd,MRSH,Sun Belt,37,False
+295,Old Dominion,Monarchs,Old Dominion Monarchs,ODU,Sun Belt,37,False
+6,South Alabama,Jaguars,South Alabama Jaguars,USA,Sun Belt,37,False
+2572,Southern Miss,Golden Eagles,Southern Miss Golden Eagles,USM,Sun Belt,37,False
+326,Texas State,Bobcats,Texas State Bobcats,TXST,Sun Belt,37,False
+2653,Troy,Trojans,Troy Trojans,TROY,Sun Belt,37,False
+2433,UL Monroe,Warhawks,UL Monroe Warhawks,ULM,Sun Belt,37,False
