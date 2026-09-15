@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cfbmoney"
+version = "0.1.0"
+description = "Does money buy wins in college football? Federal athletics finance filings joined to live ESPN results."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas>=2.0",
+  "numpy>=1.24",
+  "requests>=2.31",
+  "scipy>=1.11",
+  "matplotlib>=3.7",
+  "openpyxl>=3.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "ruff>=0.6",
+  "pytest>=8.0",
+  "pre-commit>=3.7",
+]
+
+[project.scripts]
+cfbmoney = "cfbmoney.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
+
+# Ruff is configured to match the Google Python Style Guide: two-space
+# indentation, 80 character lines, single quotes.
+[tool.ruff]
+line-length = 80
+indent-width = 2
+src = ["src"]
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle errors
+  "W",   # pycodestyle warnings
+  "F",   # pyflakes
+  "I",   # import sorting
+  "B",   # bugbear
+  "UP",  # pyupgrade
+  "D",   # docstrings
+]
+ignore = [
+  "D203",  # conflicts with D211
+  "D213",  # conflicts with D212
+  "E501",  # line length is enforced by the formatter
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+force-single-line = true
+known-first-party = ["cfbmoney"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D100", "D103"]
+"src/cfbmoney/__init__.py" = ["D104"]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+docstring-code-format = true

@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+.DS_Store
+.idea/
+.vscode/
+
+# Re-downloadable: ESPN response cache and federal zip archives.
+data/raw/
+data/finance/raw/
+scratch/
+*.log

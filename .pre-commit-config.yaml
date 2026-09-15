@@ -1,0 +1,39 @@
+# Install with:  make setup   (or: pre-commit install)
+# Run over everything with:  make hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^(reports/|data/)
+      - id: end-of-file-fixer
+        exclude: ^(reports/figures/|data/)
+      - id: check-yaml
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+      - id: check-added-large-files
+        # The EADA archives are ~12 MB and are gitignored; this catches
+        # anyone who force-adds one.
+        args: ['--maxkb=2048']
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        args: [--fix]
+        files: ^(src|tests)/
+      - id: ruff-format
+        files: ^(src|tests)/
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        # Bare `python` does not exist on macOS; use the project venv
+        # created by `make setup`.
+        entry: .venv/bin/python -m pytest
+        language: system
+        pass_filenames: false
+        types: [python]
+        args: ['-q']
