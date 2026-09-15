@@ -1,0 +1,76 @@
+school,espn_school,head_coach,total_pay_usd,pay_year,source_url,source_title,retrieved_date,confidence,buyout
+Georgia,Georgia,Kirby Smart,13282580.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,105107583.0
+Clemson,Clemson,Dabo Swinney,11447025.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,high,60000000.0
+Texas,Texas,Steve Sarkisian,10800000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,60307500.0
+Alabama,Alabama,Kalen DeBoer,10250000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,60843750.0
+Florida State,Florida State,Mike Norvell,5650000.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,high,58667708.0
+LSU,LSU,Brian Kelly,10175000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,53293333.0
+Ole Miss,Ole Miss,Lane Kiffin,9000000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,37625000.0
+Missouri,Missouri,Eliah Drinkwitz,9000000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,42562500.0
+Tennessee,Tennessee,Josh Heupel,9000000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,37500000.0
+Ohio State,Ohio State,Ryan Day,12575000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,70916667.0
+USC,USC,Lincoln Riley,,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,unverified,
+Oregon,Oregon,Dan Lanning,10400000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,56733333.0
+Michigan,Michigan,Sherrone Moore,6110000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,13897916.0
+Washington,Washington,Jedd Fisch,7575024.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,33686666.0
+Miami,Miami,Mario Cristobal,8302883.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,unverified,
+Texas A&M,Texas A&M,Mike Elko,7000000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,21875000.0
+Notre Dame,Notre Dame,Marcus Freeman,,2026,,,2026-09-14,unverified,
+Oklahoma,Oklahoma,Brent Venables,7552750.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,36158333.0
+Auburn,Auburn,Hugh Freeze,6734500.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,15437500.0
+Wisconsin,Wisconsin,Luke Fickell,7825000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,27493333.0
+Florida,Florida,Billy Napier,7470000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,20428333.0
+Nebraska,Nebraska,Matt Rhule,8500000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,49612500.0
+Iowa,Iowa,Kirk Ferentz,7175000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,25729167.0
+Kentucky,Kentucky,Mark Stoops,9000000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,37687500.0
+Utah,Utah,Morgan Scalley,,2026,https://en.wikipedia.org/wiki/Morgan_Scalley,Morgan Scalley - Wikipedia,2026-09-14,medium,
+South Carolina,South Carolina,Shane Beamer,8150000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,27903958.0
+Arkansas,Arkansas,Sam Pittman,6814600.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,
+North Carolina,North Carolina,Bill Belichick,10100000.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,high,20833333.0
+NC State,NC State,Dave Doeren,6215377.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,high,13129456.0
+Virginia Tech,Virginia Tech,Brent Pry,4787500.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,high,
+Louisville,Louisville,Jeff Brohm,5981057.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,high,33633333.0
+Michigan State,Michigan State,Jonathan Smith,7350000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,33033125.0
+Colorado,Colorado,Deion Sanders,8975000.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA TODAY College Football Head Coach Salaries,2026-09-14,high,33625000.0
+Kansas State,Kansas State,Collin Klein,4100000.0,2026,https://en.wikipedia.org/wiki/Collin_Klein,Collin Klein - Wikipedia,2026-09-14,high,
+Kansas,Kansas,Lance Leipold,6650000.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA TODAY College Football Head Coach Salaries,2026-09-14,high,22930000.0
+Oklahoma State,Oklahoma State,Eric Morris,,2026,https://en.wikipedia.org/wiki/Eric_Morris_(American_football),Eric Morris (American football) - Wikipedia,2026-09-14,medium,
+TCU,TCU,Sonny Dykes,7036013.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA TODAY College Football Head Coach Salaries,2026-09-14,high,
+Baylor,Baylor,Dave Aranda,4702570.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA TODAY College Football Head Coach Salaries,2026-09-14,high,
+Iowa State,Iowa State,Jimmy Rogers,,2026,https://en.wikipedia.org/wiki/Jimmy_Rogers_(American_football_coach),Jimmy Rogers (American football coach) - Wikipedia,2026-09-14,medium,
+Arizona,Arizona,Brent Brennan,3400000.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA TODAY College Football Head Coach Salaries,2026-09-14,high,10650000.0
+Arizona State,Arizona State,Kenny Dillingham,7442000.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA TODAY College Football Head Coach Salaries,2026-09-14,high,24683333.0
+BYU,BYU,Kalani Sitake,,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA TODAY College Football Head Coach Salaries,2026-09-14,unverified,
+Cincinnati,Cincinnati,Scott Satterfield,3700000.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,high,12008333.0
+Houston,Houston,Willie Fritz,4500000.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA TODAY College Football Head Coach Salaries,2026-09-14,high,10375000.0
+Syracuse,Syracuse,Fran Brown,,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,unverified,
+Duke,Duke,Manny Diaz,,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,unverified,
+Boston College,Boston College,Bill O'Brien,,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,unverified,
+Wake Forest,Wake Forest,Jake Dickert,,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,unverified,
+Georgia Tech,Georgia Tech,Brent Key,4500000.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,high,11123333.0
+Pittsburgh,Pittsburgh,Pat Narduzzi,,2026,,,2026-09-14,unverified,
+Virginia,Virginia,Tony Elliott,4406000.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,high,11175000.0
+Stanford,Stanford,Frank Reich,,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,unverified,
+California,California,Justin Wilcox,,2026,,,2026-09-14,unverified,
+SMU,SMU,Rhett Lashlee,2470818.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA Today College Football Head Coach Salaries,2026-09-14,unverified,
+Rutgers,Rutgers,Greg Schiano,6500000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,23735156.0
+Maryland,Maryland,Mike Locksley,6100000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,13395417.0
+Indiana,Indiana,Curt Cignetti,8300000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,56700000.0
+Purdue,Purdue,Barry Odom,6050000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,25125000.0
+Illinois,Illinois,Bret Bielema,8200000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,49491667.0
+Northwestern,Northwestern,David Braun,,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,unverified,
+Minnesota,Minnesota,P.J. Fleck,7000000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,26600000.0
+UCLA,UCLA,DeShaun Foster,3100000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,
+Mississippi State,Mississippi State,Jeff Lebby,4350000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,11006250.0
+Vanderbilt,Vanderbilt,Clark Lea,3711137.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,unverified,
+West Virginia,West Virginia,Rich Rodriguez,3600000.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA TODAY College Football Head Coach Salaries,2026-09-14,high,7645833.0
+Texas Tech,Texas Tech,Joey McGuire,4554960.0,2026,https://sports.usatoday.com/ncaa/salaries/football/coach,USA TODAY College Football Head Coach Salaries,2026-09-14,high,9940761.0
+Penn State,Penn State,James Franklin,8500000.0,2026,https://sports.usatoday.com/ncaa/salaries,Highest Paid College Football Coaches & Salaries - USA TODAY,2026-09-14,high,48666667.0
+Washington State,Washington State,Kirby Moore,,2026,https://wsucougars.com/news/2025/12/12/kirby-moore-named-washington-state-head-football-coach,Kirby Moore Named Washington State Head Football Coach,2026-09-14,medium,
+Oregon State,Oregon State,Trent Bray,2000000.0,2026,https://en.wikipedia.org/wiki/Trent_Bray,Trent Bray - Wikipedia,2026-09-14,medium,
+Boise State,Boise State,Spencer Danielson,2300000.0,2026,https://idahonews.com/sports/boise-state/boise-state-extends-head-football-coach-spencer-danielson-through-2030-season,Boise State extends Head Football Coach Spencer Danielson through 2030 season,2026-09-14,high,3500000.0
+Colorado State,Colorado State,Jay Norvell,,2026,https://en.wikipedia.org/wiki/Jay_Norvell,Jay Norvell - Wikipedia,2026-09-14,unverified,
+Fresno State,Fresno State,Matt Entz,,2026,https://en.wikipedia.org/wiki/Matt_Entz,Matt Entz - Wikipedia,2026-09-14,medium,
+San Diego State,San Diego State,Sean Lewis,1750000.0,2026,https://en.wikipedia.org/wiki/Sean_Lewis_(American_football),Sean Lewis - Wikipedia,2026-09-14,medium,
+Utah State,Utah State,Bronco Mendenhall,,2026,https://en.wikipedia.org/wiki/Bronco_Mendenhall,Bronco Mendenhall - Wikipedia,2026-09-14,medium,
+Texas State,Texas State,GJ Kinne,2000000.0,2026,https://www.espn.com/college-football/story/_/id/42532455/texas-state-giving-gj-kinne-new-7-year-deal-sources-say,"Texas State giving GJ Kinne new 7-year deal, sources say",2026-09-14,high,
