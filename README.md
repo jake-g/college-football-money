@@ -1,4 +1,4 @@
-# Money vs winning in college football (2026 season)
+# college-football-money: Money vs winning in college football (2023–2026)
 
 Pairs **live 2026 results** for every FBS program with **real athletics
 finance data** to ask two different questions that often get conflated:
