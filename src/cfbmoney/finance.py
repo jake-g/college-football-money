@@ -41,7 +41,6 @@ MONEY_COLUMNS = [
   'football_nonoperating_spend',
   'football_operating_expenses',
   'football_opexp_per_participant',
-  'football_coach_payroll_est',
   'mens_coaching_payroll',
   'avg_head_coach_salary_men',
   'avg_asst_coach_salary_men',
@@ -54,6 +53,7 @@ MONEY_COLUMNS = [
   'football_assistant_coaches',
   # Sourced outside EADA.
   'head_coach_pay',
+  'head_coach_buyout',
   'revshare_cap',
   'football_allocation_est',
   'roster_payroll_est',
@@ -207,9 +207,20 @@ def build_money_frame(
   if coach is not None:
     coach = _attach_espn_school(coach, lookup)
     coach = coach[coach['espn_school'].notna()].drop_duplicates('espn_school')
+    if 'confidence' in coach.columns:
+      unverified = (
+        coach['confidence'].astype(str).str.strip().str.lower() == 'unverified'
+      )
+      for pay_col in ('total_pay_usd', 'buyout', 'buyout_usd'):
+        if pay_col in coach.columns:
+          coach.loc[unverified, pay_col] = pd.NA
     columns = {'espn_school': 'espn_school'}
     if 'total_pay_usd' in coach.columns:
       columns['total_pay_usd'] = 'head_coach_pay'
+    if 'buyout' in coach.columns:
+      columns['buyout'] = 'head_coach_buyout'
+    elif 'buyout_usd' in coach.columns:
+      columns['buyout_usd'] = 'head_coach_buyout'
     for extra in ('head_coach', 'confidence'):
       if extra in coach.columns:
         columns[extra] = (

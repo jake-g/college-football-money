@@ -271,7 +271,7 @@ def scatter_money_vs_performance(
   annotate: list[str] | None = None,
   filename: str | None = None,
   shade_quadrants: bool = True,
-  project: bool = True,
+  project: bool = False,
 ) -> str | None:
   """Plots money against performance with a trend line and quadrants.
 
@@ -399,7 +399,7 @@ def revenue_vs_spending_panel(
     axes.set_xscale('log')
     log_x = np.log10(data[column].to_numpy(dtype=float) / 1e6)
     correlation = _trend_with_projection(
-      axes, log_x, data[performance_column].to_numpy(dtype=float), True
+      axes, log_x, data[performance_column].to_numpy(dtype=float), False
     )
     y_divider = (
       0.0
@@ -642,7 +642,7 @@ def money_vs_wins_history(
   ),
   season_column: str = 'season',
   filename: str = 'correlation_by_season.png',
-  project: bool = True,
+  project: bool = False,
 ) -> str | None:
   """Plots how the money/wins correlation moves across seasons.
 
@@ -663,6 +663,7 @@ def money_vs_wins_history(
   figure, axes = plt.subplots(figsize=(9.5, 5.6))
   drew_anything = False
   colors = {'football_revenue': '#0033a0', 'football_expenses': '#c8102e'}
+  all_seasons: set[int] = set()
 
   for money_column in money_columns:
     if money_column not in panel.columns:
@@ -682,6 +683,7 @@ def money_vs_wins_history(
     if len(seasons) < 2:
       continue
     drew_anything = True
+    all_seasons.update(seasons)
     color = colors.get(money_column, '#555555')
     # Everything up to the final season is complete; the final season
     # is in progress, so that last hop is drawn dotted.
@@ -704,6 +706,7 @@ def money_vs_wins_history(
     if project and len(seasons) >= 3:
       slope, intercept = np.polyfit(seasons[:-1], correlations[:-1], 1)
       next_season = seasons[-1] + 1
+      all_seasons.add(next_season)
       axes.plot(
         [seasons[-1], next_season],
         [correlations[-1], slope * next_season + intercept],
@@ -724,12 +727,16 @@ def money_vs_wins_history(
     plt.close(figure)
     return None
 
+  if all_seasons:
+    axes.set_xticks(sorted(all_seasons))
   axes.set_xlabel('Season')
   axes.set_ylabel('Correlation with win percentage')
-  axes.set_title(
-    'Does money matter more over time?\n'
+  subtitle = (
     'Solid = completed seasons, dotted = in progress or projected'
+    if project
+    else 'Solid = completed seasons, dotted = in progress'
   )
+  axes.set_title(f'Does money matter more over time?\n{subtitle}')
   axes.grid(alpha=0.25)
   axes.set_ylim(0, 1)
   axes.legend(fontsize=9)

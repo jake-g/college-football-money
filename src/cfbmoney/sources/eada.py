@@ -289,17 +289,10 @@ def _add_spending_metrics(frame: pd.DataFrame) -> pd.DataFrame:
     if {'num_head_coaches_men', 'num_asst_coaches_men'} <= set(out.columns):
       out['mens_coaching_payroll'] = (
         head * out['num_head_coaches_men']
+        + assistant * out['num_asst_coach_salary_men']
+        if 'num_asst_coach_salary_men' in out.columns
+        else head * out['num_head_coaches_men']
         + assistant * out['num_asst_coaches_men']
-      )
-    if {'football_head_coaches', 'football_assistant_coaches'} <= set(
-      out.columns
-    ):
-      # Average men's-sport salaries applied to the football staff.
-      # Football coaches are paid far above the men's-sport average, so
-      # treat this as a floor, not a true payroll.
-      out['football_coach_payroll_est'] = (
-        head * out['football_head_coaches']
-        + assistant * out['football_assistant_coaches']
       )
   return out
 
