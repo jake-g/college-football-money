@@ -1,9 +1,9 @@
 # Money vs winning: the 2026 college football season
 
-_Generated 2026-09-14 20:12. Season 2026, through week 3; teams have played 1-3 games._
+_Generated 2026-09-20 11:20. Season 2026, through week 3; teams have played 2-4 games._
 
 > [!WARNING]
-> Sample-size warning: this is an in-progress season. Two or three games per team is not enough to separate skill from luck. Treat every coefficient below as directional until November.
+> Sample-size warning: this is an in-progress season. Teams have played 2-4 games, which is not enough to separate skill from luck. Treat every coefficient below as directional until November.
 
 ## What is being measured
 
@@ -21,26 +21,26 @@ _Generated 2026-09-14 20:12. Season 2026, through week 3; teams have played 1-3 
 
 | # | Program | Conf | Football rev | Football exp | Dept rev | Record | Win% | Margin/g |
 | ---: | --- | --- | ---: | ---: | ---: | :---: | ---: | ---: |
-| 1 | Notre Dame | FBS Independents | $195.7M | $93.3M | $289.6M | 2-0 | 100.0% | +40.0 |
-| 2 | Michigan | Big Ten | $175.3M | $61.7M | $236.4M | 2-0 | 100.0% | +4.0 |
-| 3 | Texas | SEC | $171.9M | $70.4M | $343.1M | 2-0 | 100.0% | +26.5 |
-| 4 | Tennessee | SEC | $162.5M | $61.2M | $285.4M | 2-0 | 100.0% | +34.0 |
-| 5 | Ohio State | Big Ten | $160.5M | $92.4M | $295.3M | 1-1 | 50.0% | +26.0 |
-| 6 | Penn State | Big Ten | $150.3M | $77.4M | $254.4M | 2-0 | 100.0% | +31.5 |
-| 7 | Georgia | SEC | $149.3M | $71.1M | $233.5M | 2-0 | 100.0% | +55.0 |
-| 8 | Alabama | SEC | $146.3M | $81.5M | $244.6M | 2-0 | 100.0% | +33.0 |
-| 9 | Oklahoma | SEC | $126.2M | $71.2M | $234.4M | 1-1 | 50.0% | +22.0 |
-| 10 | Nebraska | Big Ten | $122.3M | $70.6M | $205.8M | 2-0 | 100.0% | +38.5 |
-| 11 | Auburn | SEC | $121.4M | $58.7M | $205.3M | 2-0 | 100.0% | +18.0 |
-| 12 | Washington | Big Ten | $121.0M | $68.9M | $178.4M | 2-0 | 100.0% | +8.0 |
-| 13 | Oregon | Big Ten | $119.6M | $60.8M | $167.1M | 1-1 | 50.0% | -0.5 |
-| 14 | LSU | SEC | $117.6M | $50.7M | $223.5M | 2-0 | 100.0% | +36.0 |
-| 15 | Florida | SEC | $113.4M | $51.8M | $199.2M | 2-0 | 100.0% | +47.0 |
-| 16 | Wisconsin | Big Ten | $112.3M | $40.9M | $190.5M | 1-1 | 50.0% | -0.5 |
-| 17 | Texas A&M | SEC | $108.5M | $60.2M | $235.5M | 2-0 | 100.0% | +39.0 |
-| 18 | Iowa | Big Ten | $105.2M | $50.9M | $180.0M | 2-0 | 100.0% | +21.5 |
-| 19 | Minnesota | Big Ten | $101.7M | $45.5M | $156.8M | 1-1 | 50.0% | +13.5 |
-| 20 | Miami | ACC | $99.9M | $88.1M | $230.5M | 2-0 | 100.0% | +54.5 |
+| 1 | Notre Dame | FBS Independents | $195.7M | $93.3M | $289.6M | 3-0 | 100.0% | +32.3 |
+| 2 | Michigan | Big Ten | $175.3M | $61.7M | $236.4M | 3-0 | 100.0% | +14.3 |
+| 3 | Texas | SEC | $171.9M | $70.4M | $343.1M | 3-0 | 100.0% | +25.7 |
+| 4 | Tennessee | SEC | $162.5M | $61.2M | $285.4M | 3-0 | 100.0% | +33.7 |
+| 5 | Ohio State | Big Ten | $160.5M | $92.4M | $295.3M | 2-1 | 66.7% | +36.0 |
+| 6 | Penn State | Big Ten | $150.3M | $77.4M | $254.4M | 3-0 | 100.0% | +35.0 |
+| 7 | Georgia | SEC | $149.3M | $71.1M | $233.5M | 3-0 | 100.0% | +46.0 |
+| 8 | Alabama | SEC | $146.3M | $81.5M | $244.6M | 3-0 | 100.0% | +26.7 |
+| 9 | Oklahoma | SEC | $126.2M | $71.2M | $234.4M | 2-1 | 66.7% | +17.3 |
+| 10 | Nebraska | Big Ten | $122.3M | $70.6M | $205.8M | 3-0 | 100.0% | +34.7 |
+| 11 | Auburn | SEC | $121.4M | $58.7M | $205.3M | 2-1 | 66.7% | +10.3 |
+| 12 | Washington | Big Ten | $121.0M | $68.9M | $178.4M | 3-0 | 100.0% | +16.0 |
+| 13 | Oregon | Big Ten | $119.6M | $60.8M | $167.1M | 2-1 | 66.7% | +27.7 |
+| 14 | LSU | SEC | $117.6M | $50.7M | $223.5M | 2-1 | 66.7% | +21.3 |
+| 15 | Florida | SEC | $113.4M | $51.8M | $199.2M | 3-0 | 100.0% | +33.0 |
+| 16 | Wisconsin | Big Ten | $112.3M | $40.9M | $190.5M | 2-1 | 66.7% | +14.3 |
+| 17 | Texas A&M | SEC | $108.5M | $60.2M | $235.5M | 2-1 | 66.7% | +22.7 |
+| 18 | Iowa | Big Ten | $105.2M | $50.9M | $180.0M | 3-0 | 100.0% | +32.7 |
+| 19 | Minnesota | Big Ten | $101.7M | $45.5M | $156.8M | 2-1 | 66.7% | +20.3 |
+| 20 | Miami | ACC | $99.9M | $88.1M | $230.5M | 3-0 | 100.0% | +40.7 |
 
 ## Spending versus revenue: which one tracks winning?
 
@@ -53,20 +53,42 @@ In practice the two move together: the correlation between log revenue and log s
 
 | Money metric | In/Out | Performance metric | n | r | R² |
 | --- | :---: | --- | ---: | ---: | ---: |
-| Athletics dept revenue | IN | point margin per game | 135 | +0.498 | 0.248 |
-| Athletics dept expenses | OUT | point margin per game | 135 | +0.495 | 0.245 |
-| Men's coaching payroll | OUT | point margin per game | 135 | +0.487 | 0.237 |
-| 247 team talent composite | OUT | points per game | 19 | +0.482 | 0.233 |
-| Men's coaching payroll | OUT | win pct | 135 | +0.479 | 0.230 |
-| Football coaching payroll (est) | OUT | point margin per game | 135 | +0.476 | 0.227 |
-| Athletics dept expenses | OUT | win pct | 135 | +0.475 | 0.225 |
-| Athletics dept revenue | IN | win pct | 135 | +0.474 | 0.225 |
-| Football revenue | IN | point margin per game | 135 | +0.464 | 0.215 |
-| Men's recruiting spend | OUT | point margin per game | 135 | +0.461 | 0.213 |
-| Football expenses | OUT | point margin per game | 135 | +0.460 | 0.212 |
-| Football coaching payroll (est) | OUT | win pct | 135 | +0.460 | 0.212 |
-| Football non-operating spend | OUT | point margin per game | 135 | +0.459 | 0.211 |
-| Football spend per player | OUT | point margin per game | 135 | +0.456 | 0.208 |
+| Athletics dept revenue | IN | point margin per game | 135 | +0.601 | 0.361 |
+| Athletics dept expenses | OUT | point margin per game | 135 | +0.595 | 0.355 |
+| Football revenue | IN | point margin per game | 135 | +0.592 | 0.350 |
+| Men's coaching payroll | OUT | point margin per game | 135 | +0.591 | 0.349 |
+| Football expenses | OUT | point margin per game | 135 | +0.570 | 0.325 |
+| Football non-operating spend | OUT | point margin per game | 135 | +0.568 | 0.322 |
+| Football spend per player | OUT | point margin per game | 135 | +0.558 | 0.311 |
+| Athletics dept revenue | IN | win pct | 135 | +0.558 | 0.311 |
+| Athletics dept expenses | OUT | win pct | 135 | +0.556 | 0.309 |
+| Men's coaching payroll | OUT | win pct | 135 | +0.549 | 0.302 |
+| Men's coaching payroll | OUT | points per game | 135 | +0.549 | 0.301 |
+| Athletics dept revenue | IN | points per game | 135 | +0.548 | 0.301 |
+| Athletics dept expenses | OUT | points per game | 135 | +0.546 | 0.298 |
+| Football revenue | IN | points per game | 135 | +0.542 | 0.293 |
+
+## Roster economics: NIL, revenue sharing and the House settlement
+
+Following the landmark *House v. NCAA* settlement, college football entered an era structured by an institutional revenue-sharing cap: ~$20.5M for the 2025-26 academic year, escalating ~4% to ~$21.32M for 2026-27.
+
+> [!IMPORTANT]
+> Revenue-sharing caps and 247Sports team talent scores are public, > but **per-school football allocations and NIL collective payrolls > remain undisclosed.** While athletic departments widely cite a > rule of thumb directing ~75% of the cap to football (~$16M), no > major program publishes its exact balance sheet split. Rather than > interpolating or fabricating synthetic estimates, per-school > allocation and roster payroll columns (`football_allocation_est`, > `roster_payroll_est`) are left blank (`n/a`) until audited disclosures > exist.
+
+| Data point | Reported figure | Scope | Confidence | Source |
+| :--- | :--- | :--- | :--- | :--- |
+| Revenue-share cap | ~$20.5M (25-26), ~$21.32M (26-27) | Every school | High | [ESPN](https://www.espn.com/college-sports/story/_/id/40206364/ncaa-power-conferences-agree-settle-house-vs-ncaa-lawsuit) |
+| Football share of cap | ~75% | League-wide rule of thumb | Low per school | [Yahoo Sports](https://sports.yahoo.com/college-sports-revenue-sharing-model/) |
+| Collective budgets | $15M-$20M+ | Elite tier only | Medium | [On3](https://www.on3.com/nil/news/college-football-nil-collective-budgets/) |
+| Roster valuations | $12M-$15M+ | Top 5 rosters | Medium | [On3](https://www.on3.com/nil/rankings/player/college/football/) |
+| 2026 recruiting spend | $3M-$5M | Top 15 classes | Medium | [247Sports](https://247sports.com/college-football/recruiting/) |
+| Per-school football allocation | not disclosed | — | — | — |
+
+### Talent composite and the equal-cap paradox
+
+Because the House settlement revenue-share cap is uniform across all participating institutions, direct school-to-athlete distributions provide virtually zero competitive variance among top programs: every Power 4 powerhouse will max out the same cap. Consequently, competitive talent differentiation shifts into two distinct arenas: third-party booster collective fundraising ($15M-$20M+ at perennial blue-bloods) and discretionary athletic department spending on coaching, analysts, and support infrastructure.
+
+Verified 247Sports Team Talent Composite ratings are on file for **19 elite programs**. Talent composite exhibits a strong positive correlation with scoring output (r = +0.517 with points per game, p = 0.023), confirming that even in an era of transfer portal mobility, concentrated roster talent remains an indispensable engine of scoring efficiency.
 
 ## The same question across four seasons
 
@@ -77,7 +99,7 @@ A three-game sample cannot settle anything, so the table below repeats the headl
 | 2023 | 130 | +0.367 | 0.135 |
 | 2024 | 131 | +0.397 | 0.158 |
 | 2025 | 133 | +0.298 | 0.089 |
-| 2026 (in progress) | 135 | +0.446 | 0.199 |
+| 2026 (in progress) | 135 | +0.537 | 0.289 |
 
 ## What happened to the schools that switched conference
 
@@ -92,77 +114,95 @@ Ten of the twelve 2023 Pac-12 members left. Two did not, and the gap between tho
 
 | School | Role | Football revenue before | After | Change | Point margin change |
 | --- | --- | ---: | ---: | ---: | ---: |
-| Arizona | left | $37.1M | $37.8M | +1.8% | -9.4 |
-| Arizona State | left | $40.2M | $50.4M | +25.4% | +24.4 |
-| California | left | $45.1M | $64.0M | +41.9% | -1.2 |
-| Colorado | left | $64.7M | $69.3M | +7.2% | +13.0 |
-| Oregon | left | $109.2M | $119.6M | +9.5% | -13.2 |
-| Stanford | left | $33.7M | $36.0M | +6.7% | +5.2 |
-| UCLA | left | $45.8M | $55.2M | +20.6% | -8.5 |
-| USC | left | $74.9M | $74.0M | -1.1% | +8.1 |
-| Utah | left | $72.8M | $95.9M | +31.8% | +17.9 |
-| Washington | left | $127.8M | $121.0M | -5.3% | -6.7 |
-| Oregon State | stayed behind | $47.4M | $32.6M | -31.2% | -22.0 |
-| Washington State | stayed behind | $57.0M | $38.8M | -31.9% | -7.1 |
-| Boise State | joined new Pac-12 | $41.1M | - | n/a | -5.7 |
-| Colorado State | joined new Pac-12 | $19.6M | - | n/a | +33.1 |
-| Fresno State | joined new Pac-12 | $18.3M | - | n/a | -1.1 |
-| San Diego State | joined new Pac-12 | $27.5M | - | n/a | +8.3 |
-| Texas State | joined new Pac-12 | $18.0M | - | n/a | -35.3 |
-| Utah State | joined new Pac-12 | $17.4M | - | n/a | -6.3 |
+| Arizona | left | $37.1M | $37.8M | +1.8% | -7.6 |
+| Arizona State | left | $40.2M | $50.4M | +25.4% | +23.2 |
+| California | left | $45.1M | $64.0M | +41.9% | +4.5 |
+| Colorado | left | $64.7M | $69.3M | +7.2% | +7.4 |
+| Oregon | left | $109.2M | $119.6M | +9.5% | -3.8 |
+| Stanford | left | $33.7M | $36.0M | +6.7% | +3.7 |
+| UCLA | left | $45.8M | $55.2M | +20.6% | -9.1 |
+| USC | left | $74.9M | $74.0M | -1.1% | +6.6 |
+| Utah | left | $72.8M | $95.9M | +31.8% | +16.8 |
+| Washington | left | $127.8M | $121.0M | -5.3% | -4.1 |
+| Oregon State | stayed behind | $47.4M | $32.6M | -31.2% | -16.8 |
+| Washington State | stayed behind | $57.0M | $38.8M | -31.9% | -0.2 |
+| Boise State | joined new Pac-12 | $41.1M | - | n/a | -2.9 |
+| Colorado State | joined new Pac-12 | $19.6M | - | n/a | +17.7 |
+| Fresno State | joined new Pac-12 | $18.3M | - | n/a | +3.1 |
+| San Diego State | joined new Pac-12 | $27.5M | - | n/a | +1.5 |
+| Texas State | joined new Pac-12 | $18.0M | - | n/a | -21.2 |
+| Utah State | joined new Pac-12 | $17.4M | - | n/a | -15.0 |
 
 Median revenue change for the schools that left: **+8.3%**. For the two left behind: **-31.6%**. Washington State and Oregon State did nothing differently on the field; they simply lost their conference, and roughly a third of their football revenue went with it.
 
 > [!NOTE]
-> The leavers gained less than the headline media deals imply because several joined on **reduced shares**. Oregon and Washington entered the Big Ten at a reported ~$30M annual share against a full share of $65M+, escalating roughly $1M a year until they phase in near the end of the decade. That is why their measured revenue change here is single digit or even negative while UCLA and California, which did not take the same discount, moved much more. See research_notes_2026.md for the sourcing.
+> The leavers gained less than the headline media deals imply because several joined on **reduced shares**. Oregon and Washington entered the Big Ten at a reported ~$30M annual share against a full share of $65M+, escalating roughly $1M a year until they phase in near the end of the decade. That is why their measured revenue change here is single digit or even negative while UCLA and California, which did not take the same discount, moved much more.
+
+#### Realignment financial mechanics
+
+The dissolution of the original Pac-12 resulted in massive financial shifts, driven by media rights disparities and legal settlements:
+
+- **WSU/OSU Settlement & Exit Fees**: The 10 departing members forfeited **$65 million total** ($6.5M per school) to Washington State and Oregon State, who retained conference assets and liabilities.
+- **Media-Rights Hierarchy**: Big Ten agreements pay ~$1.1B-$1.2B annually (~$65M-$75M/school full share), compared to ~$380M for the Big 12 (~$31M/school) and ~$240M-$400M for the ACC.
+- **Tiered Big Ten Entry**: USC and UCLA entered at full shares (~$65M+), while Oregon and Washington entered at a $30M partial share increasing $1M/year until reaching parity in 2030.
+- **Travel Cost Inflation**: In their official presentation to the UC Board of Regents, UCLA Athletics projected an increase of **$4.6 million to $5.8 million** in annual travel and logistics costs due to cross-country Big Ten travel.
+
+| Financial impact | Reported figure | Scope | Confidence | Source |
+| :--- | :--- | :--- | :--- | :--- |
+| WSU/OSU Settlement | $65M Withheld | 10 Departing Schools | High | [The Athletic](https://theathletic.com/5155122/2023/12/21/pac-12-settlement-washington-state-oregon-state/) |
+| B1G Media Deal | ~$1.1 - $1.2B/yr | Big Ten | High | [CBS Sports](https://www.cbssports.com/college-football/news/big-ten-reaches-seven-year-media-rights-deal-with-cbs-fox-and-nbc-worth-more-than-7-billion/) |
+| Big 12 Media Deal | ~$380M/yr | Big 12 | High | [ESPN](https://www.espn.com/college-football/story/_/id/34907937/big-12-agrees-new-media-rights-deal-espn-fox-sports) |
+| USC / UCLA B1G Share | Full Share (~$65M+) | USC, UCLA | High | [LA Times](https://www.latimes.com/sports/ucla/story/2022-06-30/ucla-usc-big-ten-conference-move) |
+| Oregon / UW B1G Share | $30M, +$1M/yr | Oregon, Washington | High | [ESPN](https://www.espn.com/college-football/story/_/id/38135860/oregon-washington-join-big-ten-2024) |
+| Increased Travel Costs | $4.6M to $5.8M | UCLA | High | [LA Times](https://www.latimes.com/sports/ucla/story/2022-12-14/ucla-big-ten-move-uc-regents-approval-travel-costs) |
 
 ### Every school that moved
 
 | School | Move | Effective | Revenue change | Point margin change |
 | --- | --- | ---: | ---: | ---: |
-| Arizona | Pac-12 to Big 12 | 2024 | +1.8% | -9.4 |
-| Arizona State | Pac-12 to Big 12 | 2024 | +25.4% | +24.4 |
+| Arizona | Pac-12 to Big 12 | 2024 | +1.8% | -7.6 |
+| Arizona State | Pac-12 to Big 12 | 2024 | +25.4% | +23.2 |
 | Army | FBS Independents to American | 2024 | not yet filed | +14.4 |
-| California | Pac-12 to ACC | 2024 | +41.9% | -1.2 |
-| Colorado | Pac-12 to Big 12 | 2024 | +7.2% | +13.0 |
-| Oklahoma | Big 12 to SEC | 2024 | +1.1% | -8.5 |
-| Oregon | Pac-12 to Big Ten | 2024 | +9.5% | -13.2 |
-| SMU | American to ACC | 2024 | +41.8% | -5.1 |
-| Stanford | Pac-12 to ACC | 2024 | +6.7% | +5.2 |
-| Texas | Big 12 to SEC | 2024 | -14.4% | +0.5 |
-| UCLA | Pac-12 to Big Ten | 2024 | +20.6% | -8.5 |
-| USC | Pac-12 to Big Ten | 2024 | -1.1% | +8.1 |
-| Utah | Pac-12 to Big 12 | 2024 | +31.8% | +17.9 |
-| Washington | Pac-12 to Big Ten | 2024 | -5.3% | -6.7 |
-| Massachusetts | FBS Independents to MAC | 2025 | not yet filed | +10.8 |
-| Boise State | Mountain West to Pac-12 | 2026 | not yet filed | -5.7 |
-| Colorado State | Mountain West to Pac-12 | 2026 | not yet filed | +33.1 |
-| Fresno State | Mountain West to Pac-12 | 2026 | not yet filed | -1.1 |
-| Louisiana Tech | Conference USA to Sun Belt | 2026 | not yet filed | +21.3 |
-| Northern Illinois | MAC to Mountain West | 2026 | not yet filed | -22.9 |
-| San Diego State | Mountain West to Pac-12 | 2026 | not yet filed | +8.3 |
-| Texas State | Sun Belt to Pac-12 | 2026 | not yet filed | -35.3 |
-| UTEP | Conference USA to Mountain West | 2026 | not yet filed | +4.5 |
-| Utah State | Mountain West to Pac-12 | 2026 | not yet filed | -6.3 |
+| California | Pac-12 to ACC | 2024 | +41.9% | +4.5 |
+| Colorado | Pac-12 to Big 12 | 2024 | +7.2% | +7.4 |
+| Oklahoma | Big 12 to SEC | 2024 | +1.1% | -10.1 |
+| Oregon | Pac-12 to Big Ten | 2024 | +9.5% | -3.8 |
+| SMU | American to ACC | 2024 | +41.8% | -8.9 |
+| Stanford | Pac-12 to ACC | 2024 | +6.7% | +3.7 |
+| Texas | Big 12 to SEC | 2024 | -14.4% | +0.3 |
+| UCLA | Pac-12 to Big Ten | 2024 | +20.6% | -9.1 |
+| USC | Pac-12 to Big Ten | 2024 | -1.1% | +6.6 |
+| Utah | Pac-12 to Big 12 | 2024 | +31.8% | +16.8 |
+| Washington | Pac-12 to Big Ten | 2024 | -5.3% | -4.1 |
+| Massachusetts | FBS Independents to MAC | 2025 | not yet filed | +10.9 |
+| Boise State | Mountain West to Pac-12 | 2026 | not yet filed | -2.9 |
+| Colorado State | Mountain West to Pac-12 | 2026 | not yet filed | +17.7 |
+| Fresno State | Mountain West to Pac-12 | 2026 | not yet filed | +3.1 |
+| Louisiana Tech | Conference USA to Sun Belt | 2026 | not yet filed | +8.5 |
+| Northern Illinois | MAC to Mountain West | 2026 | not yet filed | -23.9 |
+| San Diego State | Mountain West to Pac-12 | 2026 | not yet filed | +1.5 |
+| Texas State | Sun Belt to Pac-12 | 2026 | not yet filed | -21.2 |
+| UTEP | Conference USA to Mountain West | 2026 | not yet filed | -5.5 |
+| Utah State | Mountain West to Pac-12 | 2026 | not yet filed | -15.0 |
 
 ## What the head coach is paid
 
-Verified total pay is on file for **57 of 138 teams**. Private universities are exempt from public-records law, so the missing rows are not missing at random: they skew private and wealthy. Read this section as suggestive.
+Verified total pay is on file for **52 of 138 teams**. Public universities subject to open-records laws provide high-confidence, cited figures. Private institutions (e.g., USC, Notre Dame, Stanford, Miami, TCU, Baylor, SMU, Vanderbilt) are exempt from FOIA disclosure and remain marked as unverified with blank salaries rather than synthetic estimates.
 
-Across those 57 teams, head coach pay correlates **r = +0.27** with point margin per game (p = 0.045). That is a real but much weaker signal than total program spending, which is the more telling result: paying one person more matters far less than the scale of the operation behind them.
+Across those 52 teams, head coach pay correlates **r = +0.33** with point margin per game (p = 0.017). That is a real but much weaker signal than total program spending, which is the more telling result: paying one person more matters far less than the scale of the operation behind them.
 
-| Coach | School | Total pay | Win% | Point margin |
-| --- | --- | ---: | ---: | ---: |
-| Kirby Smart | Georgia | $13.3M | 1.000 | +55.0 |
-| Ryan Day | Ohio State | $12.6M | 0.500 | +26.0 |
-| Dabo Swinney | Clemson | $11.4M | 0.500 | -13.0 |
-| Steve Sarkisian | Texas | $10.8M | 1.000 | +26.5 |
-| Dan Lanning | Oregon | $10.4M | 0.500 | -0.5 |
-| Kalen DeBoer | Alabama | $10.2M | 1.000 | +33.0 |
-| Brian Kelly | LSU | $10.2M | 1.000 | +36.0 |
-| Bill Belichick | North Carolina | $10.1M | 1.000 | +18.5 |
-| Josh Heupel | Tennessee | $9.0M | 1.000 | +34.0 |
-| Eliah Drinkwitz | Missouri | $9.0M | 1.000 | +28.5 |
+| Coach | School | Total pay | Buyout | Win% | Point margin |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Kirby Smart | Georgia | $13.3M | $105.1M | 1.000 | +46.0 |
+| Ryan Day | Ohio State | $12.6M | $70.9M | 0.667 | +36.0 |
+| Dabo Swinney | Clemson | $11.4M | $60.0M | 0.667 | -6.0 |
+| Steve Sarkisian | Texas | $10.8M | $60.3M | 1.000 | +25.7 |
+| Dan Lanning | Oregon | $10.4M | $56.7M | 0.667 | +27.7 |
+| Kalen DeBoer | Alabama | $10.2M | $60.8M | 1.000 | +26.7 |
+| Brian Kelly | LSU | $10.2M | $53.3M | 0.667 | +21.3 |
+| Bill Belichick | North Carolina | $10.1M | $20.8M | 0.667 | +9.7 |
+| Josh Heupel | Tennessee | $9.0M | $37.5M | 1.000 | +33.7 |
+| Eliah Drinkwitz | Missouri | $9.0M | $42.6M | 1.000 | +22.3 |
 
 ## Travel, time zones and the cost of flying east
 
@@ -170,16 +210,16 @@ Realignment moved miles as well as money. A team flying east loses hours: a noon
 
 | Travel | Games | Mean margin | Win rate |
 | --- | ---: | ---: | ---: |
-| 3 zones west | 51 | -3.0 | 41% |
-| 2 zones west | 67 | -7.5 | 42% |
-| 1 zone west | 362 | -6.2 | 35% |
-| same zone | 1249 | -5.3 | 41% |
-| 1 zone east | 358 | -3.2 | 42% |
-| 2 zones east | 74 | -8.6 | 38% |
-| 3 zones east | 51 | -7.8 | 35% |
+| 3 zones west | 53 | -2.9 | 42% |
+| 2 zones west | 68 | -7.1 | 43% |
+| 1 zone west | 376 | -6.2 | 36% |
+| same zone | 1277 | -5.4 | 41% |
+| 1 zone east | 363 | -3.4 | 42% |
+| 2 zones east | 77 | -9.0 | 36% |
+| 3 zones east | 53 | -7.9 | 36% |
 
 > [!IMPORTANT]
-> The raw split above is confounded. The teams that fly two or more zones east are disproportionately Group of Five programs taking a paycheque game at a blue blood, so they would have lost anyway. Comparing each team against **itself** - its own margin on long eastward trips versus its own margin on every other away game - the penalty is **-2.1 points** across 58 team-seasons (-6.3 on long eastward trips versus -4.2 on other away games).
+> The raw split above is confounded. The teams that fly two or more zones east are disproportionately Group of Five programs taking a paycheque game at a blue blood, so they would have lost anyway. Comparing each team against **itself** - its own margin on long eastward trips versus its own margin on every other away game - the penalty is **-1.0 points** across 61 team-seasons (-6.8 on long eastward trips versus -5.7 on other away games).
 
 ### Who now travels further
 
@@ -187,94 +227,88 @@ Average time zones crossed per away game, before and after the move. The old Pac
 
 | School | Move | Zones before | Zones after | Change | Away margin change |
 | --- | --- | ---: | ---: | ---: | ---: |
-| Stanford | Pac-12 to ACC | -0.20 | +1.83 | +2.03 | -4.1 |
+| Stanford | Pac-12 to ACC | -0.20 | +1.92 | +2.12 | -4.8 |
 | Arizona State | Pac-12 to Big 12 | -0.75 | +0.83 | +1.58 | +15.5 |
 | California | Pac-12 to ACC | +0.50 | +2.08 | +1.58 | -2.0 |
-| Colorado | Pac-12 to Big 12 | -0.33 | +1.00 | +1.33 | +11.8 |
+| Colorado | Pac-12 to Big 12 | -0.33 | +1.00 | +1.33 | +9.4 |
 | UCLA | Pac-12 to Big Ten | +0.33 | +1.46 | +1.13 | -14.9 |
 | Washington | Pac-12 to Big Ten | +0.80 | +1.90 | +1.10 | -16.9 |
 | Arizona | Pac-12 to Big 12 | -0.33 | +0.73 | +1.06 | -18.8 |
 | Oregon | Pac-12 to Big Ten | +0.80 | +1.82 | +1.02 | -3.7 |
 | Utah | Pac-12 to Big 12 | -0.40 | +0.58 | +0.98 | +17.5 |
-| USC | Pac-12 to Big Ten | +1.00 | +1.80 | +0.80 | +1.3 |
+| USC | Pac-12 to Big Ten | +1.00 | +1.91 | +0.91 | +2.1 |
 | Texas | Big 12 to SEC | +0.00 | +0.56 | +0.56 | -11.1 |
 
 ## Every money metric against every performance metric
 
 | Money metric | Performance metric | n | Pearson r | R² | Spearman ρ | p |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| Athletics dept revenue (log) | point margin per game | 135 | +0.498 | 0.248 | +0.474 | 0.0000*** |
-| Athletics dept expenses (log) | point margin per game | 135 | +0.495 | 0.245 | +0.468 | 0.0000*** |
-| Men's coaching payroll (log) | point margin per game | 135 | +0.487 | 0.237 | +0.474 | 0.0000*** |
-| 247 team talent composite | points per game | 19 | +0.482 | 0.233 | +0.467 | 0.0365* |
-| Men's coaching payroll (log) | win pct | 135 | +0.479 | 0.230 | +0.507 | 0.0000*** |
-| Football coaching payroll (est) (log) | point margin per game | 135 | +0.476 | 0.227 | +0.489 | 0.0000*** |
-| Athletics dept expenses (log) | win pct | 135 | +0.475 | 0.225 | +0.476 | 0.0000*** |
-| Athletics dept revenue (log) | win pct | 135 | +0.474 | 0.225 | +0.480 | 0.0000*** |
-| Athletics dept revenue (log) | points allowed per game | 135 | -0.470 | 0.221 | -0.448 | 0.0000*** |
-| Athletics dept expenses (log) | points allowed per game | 135 | -0.466 | 0.217 | -0.441 | 0.0000*** |
-| Football revenue (log) | point margin per game | 135 | +0.464 | 0.215 | +0.461 | 0.0000*** |
-| Men's recruiting spend (log) | point margin per game | 135 | +0.461 | 0.213 | +0.460 | 0.0000*** |
-| Football expenses (log) | point margin per game | 135 | +0.460 | 0.212 | +0.456 | 0.0000*** |
-| Football coaching payroll (est) (log) | win pct | 135 | +0.460 | 0.212 | +0.490 | 0.0000*** |
-| Football non-operating spend (log) | point margin per game | 135 | +0.459 | 0.211 | +0.455 | 0.0000*** |
-| Football spend per player (log) | point margin per game | 135 | +0.456 | 0.208 | +0.454 | 0.0000*** |
-| Men's coaching payroll (log) | points allowed per game | 135 | -0.452 | 0.204 | -0.429 | 0.0000*** |
-| Men's recruiting spend (log) | win pct | 135 | +0.449 | 0.202 | +0.448 | 0.0000*** |
-| Football revenue (log) | win pct | 135 | +0.446 | 0.199 | +0.464 | 0.0000*** |
-| Football revenue (log) | points allowed per game | 135 | -0.446 | 0.199 | -0.444 | 0.0000*** |
-| Football non-operating spend (log) | points allowed per game | 135 | -0.441 | 0.195 | -0.430 | 0.0000*** |
-| Football coaching payroll (est) (log) | points allowed per game | 135 | -0.441 | 0.194 | -0.433 | 0.0000*** |
-| Football expenses (log) | points allowed per game | 135 | -0.439 | 0.193 | -0.434 | 0.0000*** |
-| Football spend per player (log) | win pct | 135 | +0.437 | 0.191 | +0.459 | 0.0000*** |
-| Football expenses (log) | win pct | 135 | +0.435 | 0.189 | +0.450 | 0.0000*** |
-| Football spend per player (log) | points allowed per game | 135 | -0.434 | 0.188 | -0.433 | 0.0000*** |
-| Avg men's head coach salary (log) | point margin per game | 135 | +0.433 | 0.188 | +0.449 | 0.0000*** |
-| Football non-operating spend (log) | win pct | 135 | +0.433 | 0.188 | +0.450 | 0.0000*** |
-| Athletics dept revenue (log) | points per game | 135 | +0.424 | 0.180 | +0.389 | 0.0000*** |
-| Athletics dept expenses (log) | points per game | 135 | +0.423 | 0.179 | +0.385 | 0.0000*** |
-| Men's coaching payroll (log) | points per game | 135 | +0.421 | 0.177 | +0.399 | 0.0000*** |
-| Men's recruiting spend (log) | points allowed per game | 135 | -0.416 | 0.173 | -0.419 | 0.0000*** |
-| Football coaching payroll (est) (log) | points per game | 135 | +0.413 | 0.171 | +0.423 | 0.0000*** |
-| Men's recruiting spend (log) | points per game | 135 | +0.409 | 0.167 | +0.387 | 0.0000*** |
-| Avg men's head coach salary (log) | win pct | 135 | +0.401 | 0.161 | +0.427 | 0.0000*** |
-| Avg men's head coach salary (log) | points per game | 135 | +0.396 | 0.156 | +0.402 | 0.0000*** |
-| Football revenue (log) | points per game | 135 | +0.389 | 0.151 | +0.375 | 0.0000*** |
-| Football expenses (log) | points per game | 135 | +0.389 | 0.151 | +0.373 | 0.0000*** |
-| Football spend per player (log) | points per game | 135 | +0.385 | 0.149 | +0.370 | 0.0000*** |
-| Football non-operating spend (log) | points per game | 135 | +0.385 | 0.148 | +0.370 | 0.0000*** |
-| Avg men's head coach salary (log) | points allowed per game | 135 | -0.376 | 0.142 | -0.375 | 0.0000*** |
-| 247 team talent composite | point margin per game | 19 | +0.328 | 0.108 | +0.370 | 0.1705 |
-| Football coaching payroll (est) (log) | opponent win pct | 134 | -0.276 | 0.076 | -0.264 | 0.0012** |
-| Head coach total pay (log) | point margin per game | 57 | +0.267 | 0.071 | +0.178 | 0.0449* |
-| Head coach total pay (log) | points allowed per game | 57 | -0.265 | 0.070 | -0.158 | 0.0463* |
-| Head coach total pay (log) | win pct | 57 | +0.262 | 0.069 | +0.191 | 0.0485* |
-| Men's coaching payroll (log) | opponent win pct | 134 | -0.247 | 0.061 | -0.251 | 0.0040** |
-| Football revenue (log) | opponent win pct | 134 | -0.245 | 0.060 | -0.256 | 0.0043** |
-| Head coach total pay (log) | opponent win pct | 57 | -0.236 | 0.056 | -0.263 | 0.0771 |
-| Avg men's head coach salary (log) | opponent win pct | 134 | -0.233 | 0.054 | -0.221 | 0.0067** |
-| Athletics dept revenue (log) | opponent win pct | 134 | -0.228 | 0.052 | -0.240 | 0.0080** |
-| Athletics dept expenses (log) | opponent win pct | 134 | -0.225 | 0.051 | -0.236 | 0.0090** |
-| Football expenses (log) | opponent win pct | 134 | -0.221 | 0.049 | -0.238 | 0.0104* |
-| Football coaching payroll (est) (log) | yards per carry | 135 | +0.216 | 0.047 | +0.175 | 0.0119* |
-| Football non-operating spend (log) | opponent win pct | 134 | -0.215 | 0.046 | -0.225 | 0.0125* |
-| Head coach total pay (log) | points per game | 57 | +0.208 | 0.043 | +0.152 | 0.1211 |
-| Football spend per player (log) | opponent win pct | 134 | -0.205 | 0.042 | -0.221 | 0.0172* |
-| Men's recruiting spend (log) | opponent win pct | 134 | -0.198 | 0.039 | -0.196 | 0.0220* |
-| Athletics dept expenses (log) | yards per carry | 135 | +0.193 | 0.037 | +0.139 | 0.0253* |
-| Men's coaching payroll (log) | yards per carry | 135 | +0.191 | 0.036 | +0.138 | 0.0267* |
-| Athletics dept revenue (log) | yards per carry | 135 | +0.190 | 0.036 | +0.142 | 0.0274* |
-| Football non-operating spend (log) | yards per carry | 135 | +0.187 | 0.035 | +0.148 | 0.0301* |
-| Men's recruiting spend (log) | yards per carry | 135 | +0.186 | 0.034 | +0.108 | 0.0311* |
-| 247 team talent composite | yards per carry | 19 | +0.176 | 0.031 | +0.107 | 0.4719 |
-| Football expenses (log) | yards per carry | 135 | +0.175 | 0.031 | +0.138 | 0.0423* |
-| Avg men's head coach salary (log) | yards per carry | 135 | +0.171 | 0.029 | +0.131 | 0.0473* |
-| Football spend per player (log) | yards per carry | 135 | +0.171 | 0.029 | +0.126 | 0.0477* |
-| Football revenue (log) | yards per carry | 135 | +0.162 | 0.026 | +0.146 | 0.0612 |
-| 247 team talent composite | opponent win pct | 19 | -0.132 | 0.017 | -0.214 | 0.5912 |
-| 247 team talent composite | points allowed per game | 19 | +0.115 | 0.013 | +0.099 | 0.6401 |
-| 247 team talent composite | win pct | 19 | +0.082 | 0.007 | +0.131 | 0.7394 |
-| Head coach total pay (log) | yards per carry | 57 | +0.038 | 0.001 | -0.061 | 0.7809 |
+| Athletics dept revenue (log) | point margin per game | 135 | +0.601 | 0.361 | +0.576 | 0.0000*** |
+| Athletics dept expenses (log) | point margin per game | 135 | +0.595 | 0.355 | +0.567 | 0.0000*** |
+| Football revenue (log) | point margin per game | 135 | +0.592 | 0.350 | +0.586 | 0.0000*** |
+| Men's coaching payroll (log) | point margin per game | 135 | +0.591 | 0.349 | +0.575 | 0.0000*** |
+| Football expenses (log) | point margin per game | 135 | +0.570 | 0.325 | +0.558 | 0.0000*** |
+| Football non-operating spend (log) | point margin per game | 135 | +0.568 | 0.322 | +0.558 | 0.0000*** |
+| Football spend per player (log) | point margin per game | 135 | +0.558 | 0.311 | +0.552 | 0.0000*** |
+| Athletics dept revenue (log) | win pct | 135 | +0.558 | 0.311 | +0.548 | 0.0000*** |
+| Athletics dept expenses (log) | win pct | 135 | +0.556 | 0.309 | +0.545 | 0.0000*** |
+| Men's coaching payroll (log) | win pct | 135 | +0.549 | 0.302 | +0.566 | 0.0000*** |
+| Men's coaching payroll (log) | points per game | 135 | +0.549 | 0.301 | +0.530 | 0.0000*** |
+| Athletics dept revenue (log) | points per game | 135 | +0.548 | 0.301 | +0.517 | 0.0000*** |
+| Athletics dept expenses (log) | points per game | 135 | +0.546 | 0.298 | +0.510 | 0.0000*** |
+| Football revenue (log) | points per game | 135 | +0.542 | 0.293 | +0.532 | 0.0000*** |
+| Football revenue (log) | win pct | 135 | +0.537 | 0.289 | +0.547 | 0.0000*** |
+| Men's recruiting spend (log) | point margin per game | 135 | +0.534 | 0.285 | +0.556 | 0.0000*** |
+| Football expenses (log) | win pct | 135 | +0.532 | 0.283 | +0.543 | 0.0000*** |
+| Football non-operating spend (log) | win pct | 135 | +0.531 | 0.282 | +0.543 | 0.0000*** |
+| Football expenses (log) | points per game | 135 | +0.530 | 0.281 | +0.516 | 0.0000*** |
+| Football spend per player (log) | win pct | 135 | +0.528 | 0.279 | +0.537 | 0.0000*** |
+| Football non-operating spend (log) | points per game | 135 | +0.528 | 0.279 | +0.518 | 0.0000*** |
+| Avg men's head coach salary (log) | point margin per game | 135 | +0.527 | 0.277 | +0.528 | 0.0000*** |
+| Men's recruiting spend (log) | win pct | 135 | +0.520 | 0.271 | +0.521 | 0.0000*** |
+| 247 team talent composite | points per game | 19 | +0.517 | 0.268 | +0.500 | 0.0233* |
+| Football spend per player (log) | points per game | 135 | +0.517 | 0.268 | +0.506 | 0.0000*** |
+| Avg men's head coach salary (log) | points per game | 135 | +0.515 | 0.266 | +0.517 | 0.0000*** |
+| Men's recruiting spend (log) | points per game | 135 | +0.514 | 0.264 | +0.520 | 0.0000*** |
+| Athletics dept revenue (log) | points allowed per game | 135 | -0.509 | 0.259 | -0.485 | 0.0000*** |
+| Athletics dept expenses (log) | points allowed per game | 135 | -0.502 | 0.252 | -0.476 | 0.0000*** |
+| Football revenue (log) | points allowed per game | 135 | -0.499 | 0.249 | -0.497 | 0.0000*** |
+| Men's coaching payroll (log) | points allowed per game | 135 | -0.490 | 0.240 | -0.477 | 0.0000*** |
+| Avg men's head coach salary (log) | win pct | 135 | +0.473 | 0.223 | +0.480 | 0.0000*** |
+| Football expenses (log) | points allowed per game | 135 | -0.472 | 0.223 | -0.460 | 0.0000*** |
+| Football non-operating spend (log) | points allowed per game | 135 | -0.470 | 0.221 | -0.454 | 0.0000*** |
+| Football spend per player (log) | points allowed per game | 135 | -0.464 | 0.215 | -0.455 | 0.0000*** |
+| 247 team talent composite | point margin per game | 19 | +0.446 | 0.199 | +0.440 | 0.0554 |
+| Men's recruiting spend (log) | points allowed per game | 135 | -0.422 | 0.178 | -0.444 | 0.0000*** |
+| Avg men's head coach salary (log) | points allowed per game | 135 | -0.407 | 0.166 | -0.401 | 0.0000*** |
+| Head coach total pay (log) | points allowed per game | 52 | -0.368 | 0.135 | -0.319 | 0.0073** |
+| Head coach total pay (log) | point margin per game | 52 | +0.330 | 0.109 | +0.298 | 0.0170* |
+| Men's coaching payroll (log) | yards per carry | 135 | +0.283 | 0.080 | +0.260 | 0.0009*** |
+| Athletics dept revenue (log) | yards per carry | 135 | +0.282 | 0.080 | +0.254 | 0.0009*** |
+| Football non-operating spend (log) | yards per carry | 135 | +0.281 | 0.079 | +0.270 | 0.0009*** |
+| Head coach total pay (log) | opponent win pct | 52 | -0.281 | 0.079 | -0.265 | 0.0435* |
+| Athletics dept expenses (log) | yards per carry | 135 | +0.277 | 0.077 | +0.249 | 0.0011** |
+| Football expenses (log) | yards per carry | 135 | +0.274 | 0.075 | +0.263 | 0.0013** |
+| Avg men's head coach salary (log) | yards per carry | 135 | +0.271 | 0.073 | +0.253 | 0.0015** |
+| Football revenue (log) | yards per carry | 135 | +0.263 | 0.069 | +0.273 | 0.0021** |
+| Football spend per player (log) | yards per carry | 135 | +0.259 | 0.067 | +0.244 | 0.0024** |
+| Head coach total pay (log) | win pct | 52 | +0.258 | 0.067 | +0.252 | 0.0647 |
+| Men's recruiting spend (log) | yards per carry | 135 | +0.255 | 0.065 | +0.222 | 0.0028** |
+| Head coach total pay (log) | points per game | 52 | +0.193 | 0.037 | +0.147 | 0.1714 |
+| 247 team talent composite | yards per carry | 19 | +0.185 | 0.034 | +0.220 | 0.4494 |
+| Football expenses (log) | opponent win pct | 135 | -0.181 | 0.033 | -0.220 | 0.0355* |
+| Football non-operating spend (log) | opponent win pct | 135 | -0.180 | 0.032 | -0.217 | 0.0365* |
+| Football revenue (log) | opponent win pct | 135 | -0.179 | 0.032 | -0.192 | 0.0380* |
+| Men's coaching payroll (log) | opponent win pct | 135 | -0.176 | 0.031 | -0.207 | 0.0408* |
+| Football spend per player (log) | opponent win pct | 135 | -0.171 | 0.029 | -0.206 | 0.0473* |
+| Athletics dept expenses (log) | opponent win pct | 135 | -0.171 | 0.029 | -0.190 | 0.0479* |
+| Athletics dept revenue (log) | opponent win pct | 135 | -0.168 | 0.028 | -0.191 | 0.0517 |
+| Men's recruiting spend (log) | opponent win pct | 135 | -0.164 | 0.027 | -0.171 | 0.0578 |
+| Avg men's head coach salary (log) | opponent win pct | 135 | -0.127 | 0.016 | -0.142 | 0.1433 |
+| 247 team talent composite | win pct | 19 | +0.114 | 0.013 | +0.069 | 0.6409 |
+| 247 team talent composite | opponent win pct | 19 | +0.083 | 0.007 | +0.075 | 0.7348 |
+| 247 team talent composite | points allowed per game | 19 | -0.068 | 0.005 | -0.029 | 0.7819 |
+| Head coach total pay (log) | yards per carry | 52 | -0.040 | 0.002 | -0.023 | 0.7810 |
 
 `*` p<0.05, `**` p<0.01, `***` p<0.001
 
@@ -282,74 +316,90 @@ Average time zones crossed per away game, before and after the move. The old Pac
 
 Conference dummies absorb the media-rights advantage, so the money coefficient answers a narrower question: *within the same league, does the bigger budget win more?*
 
-Outcome: **win_pct**, predictor: **football_revenue**, n = 135, R² = 0.295 (adjusted 0.232).
+Outcome: **win_pct**, predictor: **football_expenses**, n = 135, R² = 0.336 (adjusted 0.276).
 
 | Term | Estimate | Std error | t | p |
 | --- | ---: | ---: | ---: | ---: |
-| intercept | -1.0420 | 1.2455 | -0.84 | 0.4044 |
-| log10(football_revenue) | +0.2248 | 0.1600 | +1.41 | 0.1624 |
-| conf[American] | -0.0408 | 0.1317 | -0.31 | 0.7572 |
-| conf[Big 12] | +0.0690 | 0.0997 | +0.69 | 0.4904 |
-| conf[Big Ten] | +0.0233 | 0.1014 | +0.23 | 0.8184 |
-| conf[Conference USA] | -0.1820 | 0.1585 | -1.15 | 0.2532 |
-| conf[FBS Independents] | +0.0381 | 0.2106 | +0.18 | 0.8566 |
-| conf[MAC] | -0.0652 | 0.1574 | -0.41 | 0.6793 |
-| conf[Mountain West] | -0.0260 | 0.1543 | -0.17 | 0.8666 |
-| conf[Pac-12] | -0.3142 | 0.1333 | -2.36 | 0.0200* |
-| conf[SEC] | +0.1566 | 0.1030 | +1.52 | 0.1308 |
-| conf[Sun Belt] | +0.0519 | 0.1477 | +0.35 | 0.7259 |
+| intercept | -2.8423 | 1.4905 | -1.91 | 0.0589 |
+| log10(football_expenses) | +0.4550 | 0.1942 | +2.34 | 0.0207* |
+| conf[American] | +0.0312 | 0.1189 | +0.26 | 0.7937 |
+| conf[Big 12] | +0.1678 | 0.0886 | +1.89 | 0.0606 |
+| conf[Big Ten] | +0.0974 | 0.0853 | +1.14 | 0.2555 |
+| conf[Conference USA] | +0.0394 | 0.1519 | +0.26 | 0.7958 |
+| conf[FBS Independents] | +0.1989 | 0.1859 | +1.07 | 0.2867 |
+| conf[MAC] | +0.0638 | 0.1532 | +0.42 | 0.6779 |
+| conf[Mountain West] | +0.0313 | 0.1487 | +0.21 | 0.8337 |
+| conf[Pac-12] | -0.0764 | 0.1252 | -0.61 | 0.5429 |
+| conf[SEC] | +0.1473 | 0.0882 | +1.67 | 0.0974 |
+| conf[Sun Belt] | +0.1356 | 0.1423 | +0.95 | 0.3426 |
 
 ### Overperformers and underperformers
 
 **Beating their budget**
 
-| Program | Conf | Football rev | Actual | Budget-predicted | Gap |
+| Program | Conf | Football expenses | Actual | Budget-predicted | Gap |
 | --- | --- | ---: | ---: | ---: | ---: |
-| Colorado State | Pac-12 | $21.0M | 100.0% | 29.0% | +71.0 pts |
-| North Dakota State | Mountain West | $8.4M | 100.0% | 48.8% | +51.2 pts |
-| Massachusetts | MAC | $13.4M | 100.0% | 49.5% | +50.5 pts |
-| New Mexico | Mountain West | $15.3M | 100.0% | 54.7% | +45.3 pts |
-| UTSA | American | $17.9M | 100.0% | 54.7% | +45.3 pts |
-| Tulsa | American | $20.7M | 100.0% | 56.2% | +43.8 pts |
-| Georgia State | Sun Belt | $12.3M | 100.0% | 60.3% | +39.7 pts |
-| Troy | Sun Belt | $12.6M | 100.0% | 60.6% | +39.4 pts |
-| South Florida | American | $33.4M | 100.0% | 60.8% | +39.2 pts |
-| App State | Sun Belt | $13.3M | 100.0% | 61.1% | +38.9 pts |
-| James Madison | Sun Belt | $16.9M | 100.0% | 63.5% | +36.5 pts |
-| Wake Forest | ACC | $39.4M | 100.0% | 66.6% | +33.4 pts |
+| North Dakota State | Mountain West | $8.4M | 100.0% | 33.9% | +66.1 pts |
+| Massachusetts | MAC | $13.4M | 100.0% | 46.5% | +53.5 pts |
+| Tulsa | American | $20.7M | 100.0% | 51.8% | +48.2 pts |
+| App State | Sun Belt | $13.3M | 100.0% | 53.5% | +46.5 pts |
+| James Madison | Sun Belt | $16.9M | 100.0% | 58.2% | +41.8 pts |
+| Virginia Tech | ACC | $37.8M | 100.0% | 60.6% | +39.4 pts |
+| South Florida | American | $33.4M | 100.0% | 61.2% | +38.8 pts |
+| Pittsburgh | ACC | $47.1M | 100.0% | 64.9% | +35.1 pts |
+| Duke | ACC | $47.4M | 100.0% | 65.0% | +35.0 pts |
+| Northwestern | Big Ten | $37.9M | 100.0% | 70.4% | +29.6 pts |
+| Kansas State | Big 12 | $27.1M | 100.0% | 70.8% | +29.2 pts |
+| Fresno State | Pac-12 | $17.7M | 66.7% | 37.9% | +28.7 pts |
 
 **Falling short of their budget**
 
-| Program | Conf | Football rev | Actual | Budget-predicted | Gap |
+| Program | Conf | Football expenses | Actual | Budget-predicted | Gap |
 | --- | --- | ---: | ---: | ---: | ---: |
-| Rutgers | Big Ten | $75.9M | 0.0% | 75.3% | -75.3 pts |
-| Georgia Tech | ACC | $70.5M | 0.0% | 72.2% | -72.2 pts |
-| UL Monroe | Sun Belt | $7.8M | 0.0% | 55.9% | -55.9 pts |
-| East Carolina | American | $16.5M | 0.0% | 54.0% | -54.0 pts |
-| Northern Illinois | Mountain West | $13.2M | 0.0% | 53.3% | -53.3 pts |
-| Charlotte | American | $11.9M | 0.0% | 50.8% | -50.8 pts |
-| Bowling Green | MAC | $10.8M | 0.0% | 47.4% | -47.4 pts |
-| Oklahoma | SEC | $126.2M | 50.0% | 93.6% | -43.6 pts |
-| Arkansas | SEC | $90.8M | 50.0% | 90.4% | -40.4 pts |
-| Western Kentucky | Conference USA | $11.0M | 0.0% | 35.9% | -35.9 pts |
-| Washington State | Pac-12 | $38.8M | 0.0% | 35.0% | -35.0 pts |
-| Sam Houston | Conference USA | $9.7M | 0.0% | 34.7% | -34.7 pts |
+| Rutgers | Big Ten | $75.9M | 0.0% | 84.1% | -84.1 pts |
+| Arkansas | SEC | $57.4M | 33.3% | 83.5% | -50.2 pts |
+| Charlotte | American | $15.6M | 0.0% | 46.2% | -46.2 pts |
+| Northern Illinois | Mountain West | $13.2M | 0.0% | 42.9% | -42.9 pts |
+| UL Monroe | Sun Belt | $7.8M | 0.0% | 42.9% | -42.9 pts |
+| Florida State | ACC | $83.3M | 33.3% | 76.2% | -42.8 pts |
+| Bowling Green | MAC | $11.0M | 0.0% | 42.5% | -42.5 pts |
+| Kansas | Big 12 | $34.5M | 33.3% | 75.6% | -42.2 pts |
+| Western Kentucky | Conference USA | $11.0M | 0.0% | 40.2% | -40.2 pts |
+| Utah State | Pac-12 | $17.3M | 0.0% | 37.5% | -37.5 pts |
+| Purdue | Big Ten | $37.2M | 33.3% | 70.0% | -36.7 pts |
+| Georgia Tech | ACC | $42.7M | 33.3% | 63.0% | -29.7 pts |
+
+## Mid-season reality check: what held up and what looks shaky
+
+As the season progresses deeper into September (Week 4, 2-4 games played) and teams move from non-conference slates into conference play, early hypotheses can be evaluated against live results:
+
+### What held up
+
+1. **Program infrastructure over star coach**: Discretionary coaching payroll and total athletic department expenses continue to correlate substantially higher with point margin (r ~ +0.57 to +0.60) than head coach total pay alone (r = +0.33). Investing across an entire staff, analysts, strength training, and nutrition creates a far more resilient winning floor than paying top dollar for one individual.
+2. **Pac-12 stayers’ revenue collapse**: Oregon State and Washington State losing roughly one-third of their football revenue (-31.6% median) remains the clearest natural experiment in modern college sports.
+3. **The eastward travel penalty**: Crossing 2 to 3 time zones eastward imposes a consistent within-team penalty (-1.0 points per game across 61 team-seasons), substantiating concerns raised by West Coast programs during realignment.
+
+### What is looking shaky or evolving
+
+1. **Early-season "buy game" margin distortion**: Early September point differentials were inflated by top-20 programs blowing out paid FCS and lower Group-of-Five opponents (+40 to +55 point margins). As Week 4 conference competition arrived, point margins compressed toward realistic distributions.
+2. **Outlier mean reversion**: Extreme single-game outliers from early weeks (such as Colorado State leading all budget overperformers at 2-0 before dropping to 2-1 in Week 4, while big-budget programs like Rutgers at 0-3, Florida State at 1-2, and Arkansas at 1-2 anchor the underperformer table) shift rapidly as teams reach 3 to 4 games played.
+3. **The revenue-endogeneity puzzle**: Logged football revenue (IN) tracks point margin (r = +0.592) nearly identically to football expenses (OUT, r = +0.570). While past EADA spending serves as a temporal lead, institutional revenue reflects decades of historical success, meaning high revenue is as much a historical reward for legacy winning as it is a causal input.
 
 ## Conference summary
 
 | Conference | Teams | Median football rev | Median dept rev | Mean win% | Mean margin |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| SEC | 16 | $110.9M | $204.9M | 90.6% | +28.0 |
-| FBS Independents | 2 | $108.1M | $193.3M | 75.0% | +26.2 |
-| Big Ten | 18 | $94.8M | $176.5M | 77.8% | +17.6 |
-| ACC | 17 | $64.0M | $151.6M | 70.6% | +15.3 |
-| Big 12 | 16 | $49.0M | $130.7M | 75.0% | +24.1 |
-| Pac-12 | 8 | $23.1M | $72.8M | 31.2% | -2.9 |
-| American | 14 | $19.5M | $62.8M | 54.8% | -0.3 |
-| Mountain West | 10 | $13.2M | $50.4M | 53.3% | +4.7 |
-| Sun Belt | 14 | $12.9M | $39.9M | 60.7% | +10.4 |
-| Conference USA | 10 | $11.6M | $38.5M | 36.7% | -0.8 |
-| MAC | 13 | $11.0M | $38.9M | 47.4% | -2.9 |
+| SEC | 16 | $110.9M | $204.9M | 83.3% | +20.6 |
+| FBS Independents | 2 | $108.1M | $193.3M | 83.3% | +25.0 |
+| Big Ten | 18 | $94.8M | $176.5M | 77.8% | +21.1 |
+| ACC | 17 | $64.0M | $151.6M | 64.7% | +11.4 |
+| Big 12 | 16 | $49.0M | $130.7M | 77.1% | +20.9 |
+| Pac-12 | 8 | $23.1M | $72.8M | 41.7% | +0.4 |
+| American | 14 | $19.5M | $62.8M | 50.6% | +1.7 |
+| Mountain West | 10 | $13.2M | $50.4M | 43.3% | +0.4 |
+| Sun Belt | 14 | $12.9M | $39.9M | 52.4% | +5.1 |
+| Conference USA | 10 | $11.6M | $38.5M | 41.7% | +0.6 |
+| MAC | 13 | $11.0M | $38.9M | 42.3% | -7.9 |
 
 ## Figures
 

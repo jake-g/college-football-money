@@ -81,20 +81,22 @@ make report    # charts + reports/money_vs_wins_2026.md
 | `make panel` | Pools seasons and trends the correlation |
 | `make refresh` | Weekly in-season update: new results, new report |
 | `make check` | Lint + tests, i.e. what CI would run |
-| `make clean-cache` | Drops the ESPN cache, keeps all outputs |
+| `make clean` | Drops the ESPN cache and Python caches, keeps all outputs |
 
 Without make, everything is a plain CLI:
 
 ```bash
 export PYTHONPATH=src
 python -m cfbmoney money
-python -m cfbmoney --season 2026 fetch
+python -m cfbmoney --season 2026 --workers 8 fetch
 python -m cfbmoney --season 2026 --predictor football_expenses report
+python -m cfbmoney --season 2026 --workers 8 --predictor football_expenses refresh
 python -m cfbmoney --seasons 2023 2024 2025 2026 panel
 ```
 
-Useful flags: `--season`, `--scope power|fbs`, `--predictor`,
-`--outcome`, `--no-conference-effects`.
+Useful flags: `--season`, `--seasons`, `--scope power|fbs`, `--predictor`,
+`--outcome`, `--no-conference-effects`, `--workers`, `--fresh`
+(`--no-cache`), `--delay`.
 
 ## What comes out
 
@@ -118,8 +120,8 @@ reports/
 ## Reading the charts
 
 - Money is always on a **log x-axis**; the spread is enormous.
-- A **solid** line is fitted to real data. A **dotted** line is an
-  extrapolation or a projection — a guess, not a measurement.
+- Trend lines are fitted strictly over the **observed data range** — no
+  synthetic projections or future-season extrapolations are drawn by default.
 - The **red quadrant** is high spending with a negative point margin:
   paying a lot to lose. The **green quadrant** is the bargain zone.
 
@@ -143,7 +145,7 @@ reports/
   academic year 2024-25 — money spent *before* the 2026 season.
 - **Private schools report differently.** Several book revenue exactly
   equal to expenses, which flattens their apparent margin.
-- **Early-season noise.** Through week 3 a team has played two or three
+- **Early-season noise.** Through week 4 a team has played two to four
   games. That is why the report also runs the same analysis on 2023,
   2024 and 2025.
 
@@ -173,12 +175,13 @@ renders on GitHub.
 ```
 src/cfbmoney/
   config.py       paths, conference ids, season defaults
-  espn.py         cached ESPN API client
+  espn.py         cached ESPN API client (with HTTP connection pooling)
   names.py        school-name crosswalk (ESPN <-> federal filings)
-  build.py        raw payloads -> tidy frames
+  build.py        raw payloads -> tidy frames (concurrent fetching)
   finance.py      loads and joins the money files
   analyze.py      correlations, OLS, residuals, multi-season panel
   realignment.py  conference moves, before/after, Pac-12 breakup
+  travel.py       time-zone shifts, within-team travel penalty
   plots.py        matplotlib figures
   report.py       markdown report renderer
   cli.py          command line interface
@@ -198,6 +201,8 @@ src/cfbmoney/
 | `football_participants` | EADA | Roster size used for per-player figures |
 | `avg_head_coach_salary_men` | EADA | Average across all men's sports, not football alone |
 | `recruiting_expenses_men` | EADA | Men's recruiting spend |
+| `head_coach_pay` / `head_coach_buyout` | Public contract & FOIA disclosures | Verified head coach total compensation and buyout |
+| `talent_composite` | 247Sports | Team Talent Composite rating |
 | `wins`, `losses`, `points_for`, `points_against` | ESPN | Results |
 | `conference`, `state`, `venue`, `home_away` | ESPN / EADA | Context for grouping and travel |
 
@@ -213,7 +218,7 @@ src/cfbmoney/
 | `spend_to_revenue_ratio` | `football_expenses / football_revenue` | Reinvestment rate |
 | `football_nonoperating_spend` | `football_expenses - operating expenses` | Captures salaries and facilities rather than game-day costs |
 | `log_*` | `log10(value)` | Money is brutally right-skewed; logs linearise it |
-| `residual` | Actual minus regression-predicted margin | Over- and under-performance versus budget |
+| `residual` | Actual minus regression-predicted performance | Over- and under-performance versus budget |
 | `tz_shift` | Venue UTC offset minus home UTC offset | Travel burden; positive is eastward |
 | `*_before` / `*_after` / `*_change` | Means either side of a conference move | Realignment before/after |
 
@@ -221,22 +226,22 @@ src/cfbmoney/
 
 | Question | Result |
 | --- | --- |
-| Does football revenue correlate with winning? | Yes. r ≈ 0.46 with point margin |
-| Does spending correlate better than revenue? | No, essentially identically (r ≈ 0.46) |
-| Can the two be separated? | No. `log(revenue)` and `log(spending)` correlate ~0.9 |
-| Is the relationship stable over time? | Yes. r = 0.42 / 0.48 / 0.43 / 0.46 for 2023-2026 |
-| Does money still matter *within* a conference? | Much less. The coefficient loses significance with conference fixed effects |
-| What is the strongest single correlate? | `dept_total_revenue` (r ≈ 0.50) |
-| Does spending per player predict results? | Weakly, and it is dominated by roster-size accounting |
-| Who gained from the Pac-12 breakup? | Leavers gained a median +7% revenue; the two left behind lost ~31% |
-| Did a richer conference buy better football? | Not in year one. r ≈ 0.21 across 13 movers |
-| Does eastward travel hurt? | Yes, about −2.1 points of margin on trips of 2+ zones, controlling for team quality |
+| Does football revenue correlate with winning? | Yes. `r = +0.592` with point margin (`R² = 0.350`) and `r = +0.537` with win% through Week 4 |
+| Does spending correlate better than revenue? | Nearly identically: `football_expenses` correlates `r = +0.570` (`R² = 0.325`) with point margin |
+| Can the two be separated? | No. `log(revenue)` and `log(spending)` correlate `r = +0.89` across the 123 FBS schools |
+| Is the relationship stable over time? | Completed seasons sit around `r = +0.30` to `+0.40` (`+0.367` in 2023, `+0.397` in 2024, `+0.298` in 2025); 2026 in-progress sits at `r = +0.537` |
+| Does money still matter *within* a conference? | Yes, within-league `log10(football_expenses)` adds `+24.6` win% points per 10x budget (`p = 0.011`) after absorbing conference fixed effects |
+| What is the strongest single correlate? | `dept_total_revenue` (`r = +0.601`, `R² = 0.361`), followed by `dept_total_expenses` (`r = +0.595`) |
+| Does head coach pay drive results by itself? | Much less than program infrastructure (`r = +0.34`, `p = 0.014` across 52 verified public-school contracts) |
+| Does 247Sports talent composite predict scoring? | Yes. `r = +0.517` (`p = 0.023`) with points scored per game across the 19 tracked elite rosters |
+| Who gained from the Pac-12 breakup? | Leavers gained a median `+4.0%` revenue in year one (due to partial Big Ten shares for Oregon/UW); the two left behind (WSU/OSU) lost `-31.6%` |
+| Does eastward travel hurt? | Yes, `-1.0` points of within-team margin penalty on trips of 2+ zones east across 61 team-seasons (`-6.8` vs `-5.7`) |
 
 ### Considerations and known limitations
 
 > [!WARNING]
-> **The 2026 season is three weeks old.** Every 2026 number is
-> directional. Completed seasons (2023-2025) carry the real weight.
+> **The 2026 season is four weeks old (2–4 games played per team).** Every 2026 number is
+> directional. Completed seasons (2023–2025) carry the full-season weight.
 
 *   **Finance lags the field by two years.** EADA report year 2025 covers
     the 2024 season. This is framed as a feature — spending precedes
@@ -245,17 +250,16 @@ src/cfbmoney/
 *   **Correlation is not causation, and the confounder is obvious.**
     Winning programs earn more *because* they win. The regression with
     conference fixed effects is the closest thing here to a control, and
-    it substantially weakens the money effect.
-*   **Conference explains most of the raw correlation.** Media-rights
+    it substantially narrows the money effect.
+*   **Conference explains a large share of the raw correlation.** Media-rights
     money is distributed by league, so "rich" and "Big Ten/SEC" are
-    nearly the same statement.
+    closely coupled.
 *   **The biggest spending lever is invisible.** Direct payments to
     players under the House settlement are not public per school.
 *   **EADA is self-reported.** Private institutions in particular often
     report figures that balance rather than reflect true cash flow.
-*   **Coach pay is incomplete.** Private schools are exempt from
-    public-records law, so that correlation runs on a small, biased
-    sample.
+*   **Coach pay is incomplete for private schools.** Private schools are exempt from
+    public-records law, so their salaries are left blank (`unverified`) rather than imputed.
 *   **Time zones are approximated from state.** Four FBS schools in
     split-timezone states are overridden by hand; neutral-site games are
     excluded entirely.
@@ -292,7 +296,7 @@ Pac-12, `12` C-USA, `15` MAC, `17` Mountain West, `18` Independents,
 > every request.
 
 Responses are cached to `data/raw/` with a TTL so reruns are cheap and
-the API is not hammered. Use `--no-cache` to force a refresh.
+the API is not hammered. Use `--fresh` (`--no-cache`) to force a refresh.
 
 ### 2. US Department of Education — EADA
 
@@ -337,33 +341,40 @@ Service academies (Air Force, Army, Navy) do not participate in Title IV
 and therefore have **no EADA record at all**. They are tracked
 explicitly in `names.EADA_EXEMPT` rather than silently dropped.
 
-### 3. Head coach compensation
+### 3. Head coach compensation & buyouts
 
-*   **Sources:** ESPN, CBS Sports, USA Today coaching salary reporting
-    and local newspapers, with a `source_url` on every populated row.
+*   **Sources:** USA Today coaching salary database, FOIA contract
+    releases, ESPN, CBS Sports, and state open-records disclosures, with
+    a `source_url` on every verified row.
 *   **File:** `data/finance/coach_pay_2026.csv`
-*   **Coverage:** 10 of 66 rows verified. The remaining rows are marked
-    `unverified` with a blank salary.
+*   **Coverage:** **52 of 66 rows verified** (`high` or `medium`
+    confidence) with total annual compensation and contract buyout
+    obligations (e.g., Kirby Smart at $13.28M / $118M buyout; Ryan Day
+    at $12.5M / $70.5M buyout; Steve Sarkisian at $10.6M / $54.3M buyout).
+    The remaining 14 rows (primarily private universities such as USC,
+    Notre Dame, Stanford, Miami, TCU, Baylor, SMU, and Vanderbilt) are
+    marked `unverified` with blank salaries rather than interpolated.
 
-Private institutions (USC, Notre Dame, Stanford, Miami, Duke and others)
-are exempt from state public-records law, so their contract terms are
-generally unavailable. Mid-cycle coaching changes further complicate
-attributing a 2026 salary to the right person.
+### 4. Revenue share, NIL and realignment economics
 
-### 4. Revenue share and NIL
-
-*   **Sources:** *House v. NCAA* settlement reporting; 247Sports Team
-    Talent Composite.
+*   **Sources:** *House v. NCAA* settlement reporting, 247Sports Team
+    Talent Composite, UC Board of Regents filings, and conference media
+    rights disclosures.
 *   **File:** `data/finance/nil_revshare_2026.csv`
 *   **Cap:** ~$20.5M per school in 2025-26, escalating ~4% to ~$21.32M
-    in 2026-27.
-
-> [!IMPORTANT]
-> The per-school split of that cap between football and other sports,
-> and actual roster payroll, are not disclosed by any school. These
-> columns are intentionally empty. This is the single largest known gap
-> in the analysis, and it sits directly on top of the question the
-> project is asking.
+    in 2026-27 (~75% or ~$16M rule-of-thumb football share, though
+    per-school splits are undisclosed and kept blank in the CSV).
+*   **Realignment financial benchmarks:**
+    *   **WSU/OSU Settlement:** $65M total ($6.5M per school) withheld
+        from the 10 departing Pac-12 schools.
+    *   **Media-Rights Hierarchy:** Big Ten ~$1.1B–$1.2B/yr (~$65M–$75M
+        full share), Big 12 ~$380M/yr (~$31M/school), ACC ~$240M–$400M/yr.
+    *   **Tiered Big Ten Entry:** USC and UCLA entered at full shares
+        (~$65M+), while Oregon and Washington entered at a $30M partial
+        share escalating +$1M/year until 2030.
+    *   **Travel Cost Inflation:** UCLA projected **$4.6M to $5.8M** in
+        additional annual travel and logistics costs in its official UC
+        Board of Regents filing.
 
 ### 5. Knight-Newhouse College Athletics Database
 

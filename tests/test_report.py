@@ -132,3 +132,51 @@ def test_markdown_tables_are_well_formed(merged):
       header_columns = count
     else:
       assert count == header_columns, f'ragged table row: {stripped}'
+
+
+def test_nil_revshare_section_renders_cap_and_disclaimer(merged):
+  """NIL section must document the House cap and undisclosed per-school splits."""
+  lines = report._nil_revshare_section(merged, pd.DataFrame())
+  text = '\n'.join(lines)
+  assert 'House v. NCAA' in text
+  assert 'Revenue-share cap' in text
+  assert 'not disclosed' in text
+
+
+def test_realignment_section_includes_financial_mechanics():
+  """Realignment section includes settlement, media deals, and travel costs."""
+  changes = pd.DataFrame(
+    {
+      'school': ['Oregon'],
+      'move': ['Pac-12 to Big Ten'],
+      'move_season': [2024],
+      'football_revenue_pct_change': [9.5],
+      'point_margin_per_game_change': [-13.2],
+    }
+  )
+  diaspora = pd.DataFrame(
+    {
+      'school': ['Oregon', 'Washington State'],
+      'role': ['left', 'stayed'],
+      'football_revenue_before': [1.09e8, 5.7e7],
+      'football_revenue_after': [1.19e8, 3.8e7],
+      'football_revenue_pct_change': [9.5, -31.9],
+      'point_margin_per_game_change': [-13.2, -7.1],
+    }
+  )
+  lines = report._realignment_section(changes, diaspora)
+  text = '\n'.join(lines)
+  assert 'WSU/OSU Settlement' in text
+  assert '$65M Withheld' in text
+  assert 'B1G Media Deal' in text
+  assert 'Increased Travel Costs' in text
+  assert 'research_notes_2026.md' not in text
+
+
+def test_critique_section_includes_evaluations():
+  """Critique section includes what held up and what looks shaky."""
+  lines = report._critique_section(pd.DataFrame(), None)
+  text = '\n'.join(lines)
+  assert 'What held up' in text
+  assert 'What is looking shaky' in text
+  assert 'Program infrastructure over star coach' in text

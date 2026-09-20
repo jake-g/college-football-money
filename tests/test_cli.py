@@ -49,3 +49,30 @@ def test_prune_matches_paths_regardless_of_form(tmp_path, monkeypatch):
 
   assert removed == []
   assert figure.exists()
+
+
+def test_parser_refresh_subcommand():
+  """Refresh subcommand and dev args parse correctly."""
+  parser = cli.build_parser()
+  args = parser.parse_args(
+    ['--workers', '16', '--fresh', '--delay', '0.2', 'refresh']
+  )
+  assert args.command == 'refresh'
+  assert args.workers == 16
+  assert args.fresh is True
+  assert args.delay == 0.2
+  assert args.handler == cli.command_refresh
+
+
+def test_repository_configuration():
+  """Developer repository configuration settings."""
+  import subprocess
+
+  name = subprocess.check_output(
+    ['git', 'config', 'user.name'], text=True
+  ).strip()
+  email = subprocess.check_output(
+    ['git', 'config', 'user.email'], text=True
+  ).strip()
+  assert name == 'jake-g'
+  assert email == 'omonoid@gmail.com'
