@@ -28,6 +28,12 @@ repos:
 
   - repo: local
     hooks:
+      - id: check-config
+        name: check-config
+        entry: bash -c 'test "$(git config user.name)" = "jake-g" && test "$(git config user.email)" = "omonoid@gmail.com"'
+        language: system
+        pass_filenames: false
+        always_run: true
       - id: pytest
         name: pytest
         # Bare `python` does not exist on macOS; use the project venv

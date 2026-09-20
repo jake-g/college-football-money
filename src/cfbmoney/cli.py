@@ -58,17 +58,21 @@ def _group_ids(scope: str) -> list[int]:
 
 def command_fetch(args: argparse.Namespace) -> int:
   """Downloads teams, schedules and statistics from ESPN."""
-  client = espn.EspnClient(season=args.season, use_cache=not args.no_cache)
+  if getattr(args, 'delay', None) is not None:
+    config.REQUEST_DELAY_SECONDS = args.delay
+  use_cache = not (args.no_cache or getattr(args, 'fresh', False))
+  workers = getattr(args, 'workers', 1)
+  client = espn.EspnClient(season=args.season, use_cache=use_cache)
   teams = build.build_teams_frame(client.list_teams(_group_ids(args.scope)))
   logger.info('Fetched %d teams', len(teams))
 
-  games = build.build_games_frame(client, teams)
+  games = build.build_games_frame(client, teams, max_workers=workers)
   logger.info(
     'Fetched %d team-games (%d completed)',
     len(games),
     int(games['completed'].sum()),
   )
-  stats = build.build_stats_frame(client, teams)
+  stats = build.build_stats_frame(client, teams, max_workers=workers)
   season_frame = build.build_team_season_frame(teams, games, stats)
 
   build.write_frames(
@@ -187,6 +191,8 @@ def command_report(args: argparse.Namespace) -> int:
     )
   except ValueError as exc:
     logger.error('Regression skipped: %s', exc)
+
+  analyze.write_outputs(merged, correlations, model, args.season)
 
   figures = []
   panel_figure = plots.revenue_vs_spending_panel(
@@ -346,6 +352,14 @@ def command_panel(args: argparse.Namespace) -> int:
   return 0
 
 
+def command_refresh(args: argparse.Namespace) -> int:
+  """Refreshes live data from ESPN and rebuilds the report."""
+  status = command_fetch(args)
+  if status:
+    return status
+  return command_report(args)
+
+
 def command_all(args: argparse.Namespace) -> int:
   """Runs fetch, money, analyze and report in order."""
   for step in (command_fetch, command_money, command_analyze, command_report):
@@ -374,6 +388,23 @@ def build_parser() -> argparse.ArgumentParser:
     help='Which teams to fetch (default: %(default)s)',
   )
   parser.add_argument('--no-cache', action='store_true')
+  parser.add_argument(
+    '--fresh',
+    action='store_true',
+    help='Bypass cache to fetch latest scores and stats',
+  )
+  parser.add_argument(
+    '--workers',
+    type=int,
+    default=8,
+    help='Number of worker threads for parallel fetching (default: %(default)s)',
+  )
+  parser.add_argument(
+    '--delay',
+    type=float,
+    default=None,
+    help='Seconds to pause between uncached HTTP requests (overrides default)',
+  )
   parser.add_argument(
     '--outcome',
     default='win_pct',
@@ -414,6 +445,7 @@ def build_parser() -> argparse.ArgumentParser:
     ('analyze', command_analyze, 'Correlations and regression'),
     ('report', command_report, 'Charts and markdown report'),
     ('panel', command_panel, 'Pool seasons and trend the correlation'),
+    ('refresh', command_refresh, 'Fetch latest data and rebuild report'),
     ('all', command_all, 'Run the whole pipeline'),
   ):
     subparser = subparsers.add_parser(name, help=help_text)

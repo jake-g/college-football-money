@@ -62,6 +62,11 @@ class EspnClient:
     self.use_cache = use_cache
     self.cache_ttl_seconds = cache_ttl_hours * 3600.0
     self._session = requests.Session()
+    adapter = requests.adapters.HTTPAdapter(
+      pool_connections=32, pool_maxsize=32
+    )
+    self._session.mount('https://', adapter)
+    self._session.mount('http://', adapter)
     if config.USER_AGENT:
       self._session.headers.update({'User-Agent': config.USER_AGENT})
     config.ensure_directories()

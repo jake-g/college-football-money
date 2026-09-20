@@ -11,6 +11,7 @@ Three tables come out of here:
 
 from __future__ import annotations
 
+import concurrent.futures
 import logging
 from collections.abc import Iterable
 from typing import Any
@@ -75,76 +76,99 @@ def _competitor_score(competitor: dict[str, Any]) -> float | None:
   return None
 
 
+def _parse_team_games(
+  client: espn_module.EspnClient,
+  record: dict[str, Any],
+) -> list[dict[str, Any]]:
+  """Fetches and parses the schedule for one team into team-game rows."""
+  team_id = record['team_id']
+  try:
+    payload = client.get_team_schedule(team_id)
+  except espn_module.EspnError as exc:
+    logger.warning('No schedule for %s: %s', record['school'], exc)
+    return []
+
+  team_rows: list[dict[str, Any]] = []
+  for event in payload.get('events', []):
+    competitions = event.get('competitions') or []
+    if not competitions:
+      continue
+    competition = competitions[0]
+    competitors = competition.get('competitors') or []
+    me = next(
+      (c for c in competitors if str(c.get('id')) == str(team_id)),
+      None,
+    )
+    other = next(
+      (c for c in competitors if str(c.get('id')) != str(team_id)),
+      None,
+    )
+    if me is None or other is None:
+      continue
+
+    status = competition.get('status', {}).get('type', {}).get('name', '')
+    completed = status == 'STATUS_FINAL'
+    points_for = _competitor_score(me)
+    points_against = _competitor_score(other)
+    winner = me.get('winner')
+    if winner is None and completed and points_for is not None:
+      winner = points_for > (points_against or 0)
+
+    team_rows.append(
+      {
+        'season': client.season,
+        'game_id': competition.get('id') or event.get('id'),
+        'date': event.get('date'),
+        'week': (event.get('week') or {}).get('number'),
+        'team_id': team_id,
+        'school': record['school'],
+        'conference': record['conference'],
+        'opponent_id': other.get('id'),
+        'opponent': other.get('team', {}).get('location'),
+        'home_away': me.get('homeAway'),
+        'neutral_site': bool(competition.get('neutralSite')),
+        'conference_game': bool(competition.get('conferenceCompetition')),
+        'completed': completed,
+        'status': status,
+        'points_for': points_for,
+        'points_against': points_against,
+        'won': bool(winner) if completed else None,
+        'attendance': competition.get('attendance'),
+        'venue': (competition.get('venue') or {}).get('fullName'),
+      }
+    )
+  return team_rows
+
+
 def build_games_frame(
   client: espn_module.EspnClient,
   teams_frame: pd.DataFrame,
+  max_workers: int = 1,
 ) -> pd.DataFrame:
   """Fetches every team's schedule and flattens it to team-games.
 
   Args:
     client: A configured ESPN client.
     teams_frame: Output of :func:`build_teams_frame`.
+    max_workers: Parallel workers for fetching schedules.
 
   Returns:
     One row per team-game with result, scores and context columns.
   """
+  records = teams_frame.to_dict('records')
   rows: list[dict[str, Any]] = []
-  for record in teams_frame.to_dict('records'):
-    team_id = record['team_id']
-    try:
-      payload = client.get_team_schedule(team_id)
-    except espn_module.EspnError as exc:
-      logger.warning('No schedule for %s: %s', record['school'], exc)
-      continue
 
-    for event in payload.get('events', []):
-      competitions = event.get('competitions') or []
-      if not competitions:
-        continue
-      competition = competitions[0]
-      competitors = competition.get('competitors') or []
-      me = next(
-        (c for c in competitors if str(c.get('id')) == str(team_id)),
-        None,
-      )
-      other = next(
-        (c for c in competitors if str(c.get('id')) != str(team_id)),
-        None,
-      )
-      if me is None or other is None:
-        continue
-
-      status = competition.get('status', {}).get('type', {}).get('name', '')
-      completed = status == 'STATUS_FINAL'
-      points_for = _competitor_score(me)
-      points_against = _competitor_score(other)
-      winner = me.get('winner')
-      if winner is None and completed and points_for is not None:
-        winner = points_for > (points_against or 0)
-
-      rows.append(
-        {
-          'season': client.season,
-          'game_id': competition.get('id') or event.get('id'),
-          'date': event.get('date'),
-          'week': (event.get('week') or {}).get('number'),
-          'team_id': team_id,
-          'school': record['school'],
-          'conference': record['conference'],
-          'opponent_id': other.get('id'),
-          'opponent': other.get('team', {}).get('location'),
-          'home_away': me.get('homeAway'),
-          'neutral_site': bool(competition.get('neutralSite')),
-          'conference_game': bool(competition.get('conferenceCompetition')),
-          'completed': completed,
-          'status': status,
-          'points_for': points_for,
-          'points_against': points_against,
-          'won': bool(winner) if completed else None,
-          'attendance': competition.get('attendance'),
-          'venue': (competition.get('venue') or {}).get('fullName'),
-        }
-      )
+  if max_workers > 1:
+    with concurrent.futures.ThreadPoolExecutor(
+      max_workers=max_workers
+    ) as executor:
+      for result in executor.map(
+        lambda rec: _parse_team_games(client, rec), records
+      ):
+        rows.extend(result)
+  else:
+    for record in records:
+      rows.extend(_parse_team_games(client, record))
 
   frame = pd.DataFrame(rows)
   if frame.empty:
@@ -183,36 +207,61 @@ def flatten_team_stats(payload: dict[str, Any]) -> dict[str, float]:
   return out
 
 
+def _parse_team_stats(
+  client: espn_module.EspnClient,
+  record: dict[str, Any],
+) -> dict[str, Any] | None:
+  """Fetches and flattens season stats for one team."""
+  try:
+    payload = client.get_team_season_stats(record['team_id'])
+  except espn_module.EspnError as exc:
+    logger.warning('No stats for %s: %s', record['school'], exc)
+    return None
+  stats = flatten_team_stats(payload)
+  if not stats:
+    return None
+  stats.update(
+    {
+      'team_id': record['team_id'],
+      'school': record['school'],
+    }
+  )
+  return stats
+
+
 def build_stats_frame(
   client: espn_module.EspnClient,
   teams_frame: pd.DataFrame,
+  max_workers: int = 1,
 ) -> pd.DataFrame:
   """Fetches season statistics for every team.
 
   Args:
     client: A configured ESPN client.
     teams_frame: Output of :func:`build_teams_frame`.
+    max_workers: Parallel workers for fetching statistics.
 
   Returns:
     One row per team with the statistics in :data:`STAT_FIELDS`.
   """
+  records = teams_frame.to_dict('records')
   rows: list[dict[str, Any]] = []
-  for record in teams_frame.to_dict('records'):
-    try:
-      payload = client.get_team_season_stats(record['team_id'])
-    except espn_module.EspnError as exc:
-      logger.warning('No stats for %s: %s', record['school'], exc)
-      continue
-    stats = flatten_team_stats(payload)
-    if not stats:
-      continue
-    stats.update(
-      {
-        'team_id': record['team_id'],
-        'school': record['school'],
-      }
-    )
-    rows.append(stats)
+
+  if max_workers > 1:
+    with concurrent.futures.ThreadPoolExecutor(
+      max_workers=max_workers
+    ) as executor:
+      for stats in executor.map(
+        lambda rec: _parse_team_stats(client, rec), records
+      ):
+        if stats:
+          rows.append(stats)
+  else:
+    for record in records:
+      stats = _parse_team_stats(client, record)
+      if stats:
+        rows.append(stats)
+
   return pd.DataFrame(rows)
 
 

@@ -11,6 +11,7 @@ SHELL := /bin/bash
 PY := .venv/bin/python
 SEASON ?= 2026
 SEASONS ?= 2023 2024 2025 2026
+WORKERS ?= 8
 
 .PHONY: help
 help: ## Show this help
@@ -31,11 +32,11 @@ money: ## Download federal EADA athletics finance filings
 
 .PHONY: fetch
 fetch: ## Pull this season's results and stats from ESPN
-	$(PY) -m cfbmoney --season $(SEASON) fetch
+	$(PY) -m cfbmoney --season $(SEASON) --workers $(WORKERS) fetch
 
 .PHONY: history
 history: ## Pull prior seasons for the trend charts
-	@for s in $(SEASONS); do $(PY) -m cfbmoney --season $$s fetch || exit 1; done
+	@for s in $(SEASONS); do $(PY) -m cfbmoney --season $$s --workers $(WORKERS) fetch || exit 1; done
 
 .PHONY: data
 data: money fetch ## Download finances and the current season
@@ -53,7 +54,8 @@ panel: ## Pool seasons and trend the correlation
 	$(PY) -m cfbmoney --seasons $(SEASONS) panel
 
 .PHONY: refresh
-refresh: fetch report ## Weekly in-season update
+refresh: ## Weekly in-season update (fetch fresh results + rebuild report)
+	$(PY) -m cfbmoney --season $(SEASON) --workers $(WORKERS) --predictor football_expenses refresh
 
 .PHONY: format
 format: ## Auto-format and auto-fix
