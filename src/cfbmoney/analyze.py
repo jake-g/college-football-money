@@ -112,10 +112,9 @@ def merge_money_and_results(
     merged['football_share_of_dept'] = (
       merged['football_revenue'] / merged['dept_total_revenue']
     )
+  # ``football_net`` (revenue minus expenses) already arrives from the
+  # EADA loader, so only the ratio is derived here.
   if {'football_revenue', 'football_expenses'} <= set(merged.columns):
-    merged['football_margin_usd'] = (
-      merged['football_revenue'] - merged['football_expenses']
-    )
     merged['spend_to_revenue_ratio'] = (
       merged['football_expenses'] / merged['football_revenue']
     )

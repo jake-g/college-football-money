@@ -16,6 +16,7 @@ import logging
 from collections.abc import Iterable
 from typing import Any
 
+import numpy as np
 import pandas as pd
 
 from . import config
@@ -174,6 +175,7 @@ def build_games_frame(
   if frame.empty:
     return frame
   frame['date'] = pd.to_datetime(frame['date'], errors='coerce', utc=True)
+  frame = tag_conference_games(frame)
   return frame.sort_values(['school', 'date']).reset_index(drop=True)
 
 
@@ -368,6 +370,42 @@ def dedupe_games(games: pd.DataFrame) -> pd.DataFrame:
   if games.empty:
     return games
   return games.drop_duplicates('game_id').reset_index(drop=True)
+
+
+def tag_conference_games(games: pd.DataFrame) -> pd.DataFrame:
+  """Derives conference-game and game-type columns from the teams.
+
+  ESPN's team schedule endpoint does not return the
+  ``conferenceCompetition`` flag, so it cannot be trusted.  A game is a
+  conference game when both teams are FBS members of the same
+  conference that season (independents never play conference games).
+  Opponents that never appear as a ``school`` are outside the FBS.
+
+  Args:
+    games (pd.DataFrame): Long team-game frame for a single season.
+
+  Returns:
+    pd.DataFrame: Copy with ``conference_game`` (bool) and ``game_type``
+    (``conference``, ``nonconf_fbs`` or ``nonconf_fcs``).
+  """
+  out = games.copy()
+  if out.empty or not {'school', 'opponent', 'conference'} <= set(out.columns):
+    return out
+  conference_of = out.drop_duplicates('school').set_index('school')[
+    'conference'
+  ]
+  opponent_conference = out['opponent'].map(conference_of)
+  opponent_fbs = opponent_conference.notna()
+  same = (opponent_conference == out['conference']) & (
+    out['conference'] != 'FBS Independents'
+  )
+  out['conference_game'] = same
+  out['game_type'] = np.select(
+    [same, opponent_fbs],
+    ['conference', 'nonconf_fbs'],
+    default='nonconf_fcs',
+  )
+  return out
 
 
 def write_frames(frames: dict[str, pd.DataFrame], season: int) -> None:

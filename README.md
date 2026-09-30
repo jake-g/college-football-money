@@ -180,6 +180,8 @@ src/cfbmoney/
   build.py        raw payloads -> tidy frames (concurrent fetching)
   finance.py      loads and joins the money files
   analyze.py      correlations, OLS, residuals, multi-season panel
+  insights.py     conference vs non-conference split, within-league spend
+  drivers.py      momentum, repeat over-performance, box-score markers
   realignment.py  conference moves, before/after, Pac-12 breakup
   travel.py       time-zone shifts, within-team travel penalty
   plots.py        matplotlib figures
@@ -213,7 +215,7 @@ src/cfbmoney/
 | `point_margin_per_game` | `(points_for - points_against) / games_played` | Less noisy than W/L in a short season |
 | `win_pct` | `wins / games_played` | Headline outcome, but coarse early on |
 | `football_spend_per_player` | `football_expenses / football_participants` | Normalises for roster size |
-| `football_net` / `football_margin_usd` | `football_revenue - football_expenses` | Whether football funds the department |
+| `football_net` | `football_revenue - football_expenses` | Whether football funds the department |
 | `football_share_of_dept` | `football_revenue / dept_total_revenue` | How football-dependent a school is |
 | `spend_to_revenue_ratio` | `football_expenses / football_revenue` | Reinvestment rate |
 | `football_nonoperating_spend` | `football_expenses - operating expenses` | Captures salaries and facilities rather than game-day costs |

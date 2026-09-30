@@ -992,3 +992,229 @@ def travel_penalty_chart(
   plt.close(figure)
   logger.info('Wrote %s', path)
   return str(path)
+
+
+def schedule_split_chart(
+  split: pd.DataFrame,
+  filename: str = 'schedule_split.png',
+) -> str | None:
+  """Shows where the money advantage is won: in or out of conference.
+
+  Left panel: how often the higher-spending team wins, by game type.
+  Right panel: correlation of team margin with absolute spending versus
+  spending relative to the conference, by game type.
+
+  Args:
+    split (pd.DataFrame): Output of
+      :func:`cfbmoney.insights.schedule_split`.
+    filename (str): Output filename.
+
+  Returns:
+    str | None: The path written, or ``None`` with nothing to plot.
+  """
+  if split.empty:
+    return None
+  seasons = split['season'].astype(int).tolist()
+  x = np.arange(len(seasons))
+  width = 0.38
+  figure, (left, right) = plt.subplots(1, 2, figsize=(13, 5.2))
+  latest = max(seasons)
+  labels = [f'{s}*' if s == latest else str(s) for s in seasons]
+
+  left.bar(
+    x - width / 2,
+    split['nonconf_fbs_richer_win'] * 100,
+    width,
+    color='#0033a0',
+    label='Non-conference vs FBS',
+  )
+  left.bar(
+    x + width / 2,
+    split['conference_richer_win'] * 100,
+    width,
+    color='#c8102e',
+    label='Conference games',
+  )
+  left.axhline(50, color='black', linewidth=0.8, linestyle='--')
+  left.set_xticks(x, labels)
+  left.set_ylim(40, 90)
+  left.set_ylabel('Higher-spending team win rate (%)')
+  left.set_title('How often does the bigger budget win?')
+  left.legend(fontsize=9, loc='upper left')
+  left.grid(alpha=0.2, axis='y')
+
+  series = (
+    ('nonconf_fbs_r_absolute', 'Non-conf, absolute $', '#0033a0', '-'),
+    ('conference_r_absolute', 'Conference, absolute $', '#c8102e', '-'),
+    ('conference_r_relative', 'Conference, $ vs league median', '#c8102e', ':'),
+  )
+  for column, label, color, style in series:
+    right.plot(
+      x,
+      split[column],
+      marker='o',
+      color=color,
+      linestyle=style,
+      linewidth=2,
+      label=label,
+    )
+  right.axhline(0, color='black', linewidth=0.8)
+  right.set_xticks(x, labels)
+  right.set_ylim(-0.2, 1)
+  right.set_ylabel('Correlation with team point margin')
+  right.set_title('Absolute vs league-relative spending')
+  right.legend(fontsize=9)
+  right.grid(alpha=0.2)
+  figure.suptitle('* = season in progress', fontsize=9, y=0.02)
+  figure.tight_layout()
+
+  path = config.FIGURES_DIR / filename
+  figure.savefig(path, dpi=150)
+  plt.close(figure)
+  logger.info('Wrote %s', path)
+  return str(path)
+
+
+def relative_spend_by_season(
+  panel: pd.DataFrame,
+  outcome: str = 'point_margin_per_game',
+  filename: str | None = None,
+) -> str | None:
+  """Plots conference-relative spend vs margin, one panel per season.
+
+  The within-league effect is the finding a school can act on, so this
+  checks whether it holds in completed seasons and not just the small
+  in-progress sample.
+
+  Args:
+    panel (pd.DataFrame): Multi-season frame with ``season``,
+      ``conference`` and ``relative_spend``.
+    outcome (str): Performance column.
+    filename (str | None): Output filename override.
+
+  Returns:
+    str | None: The path written, or ``None`` with fewer than two seasons.
+  """
+  needed = ['season', 'school', 'conference', 'relative_spend', outcome]
+  if not set(needed) <= set(panel.columns):
+    return None
+  data = panel[needed].dropna()
+  data = data[data['relative_spend'] > 0]
+  seasons = sorted(data['season'].unique())
+  if len(seasons) < 2:
+    return None
+  data = data.assign(
+    margin_vs_conf=data[outcome]
+    - data.groupby(['season', 'conference'])[outcome].transform('mean')
+  )
+
+  figure, axes_list = plt.subplots(
+    1,
+    len(seasons),
+    figsize=(5.2 * len(seasons), 6.0),
+    sharey=True,
+    sharex=True,
+  )
+  ticks = [0.5, 0.67, 1.0, 1.5, 2.0]
+  for axes, season in zip(axes_list, seasons, strict=True):
+    group = data[data['season'] == season]
+    axes.scatter(
+      group['relative_spend'],
+      group['margin_vs_conf'],
+      s=42,
+      alpha=0.8,
+      c=[CONFERENCE_COLORS.get(c, '#888888') for c in group['conference']],
+      edgecolors='white',
+      linewidths=0.6,
+      zorder=2,
+    )
+    x_log = np.log10(group['relative_spend'].to_numpy(dtype=float))
+    y = group['margin_vs_conf'].to_numpy(dtype=float)
+    slope, intercept = np.polyfit(x_log, y, 1)
+    grid = np.linspace(x_log.min(), x_log.max(), 50)
+    axes.plot(10**grid, slope * grid + intercept, color='black', lw=1.5)
+    r = float(np.corrcoef(x_log, y)[0, 1])
+    axes.set_xscale('log')
+    axes.set_xticks(ticks, [f'{t:g}x' for t in ticks])
+    axes.minorticks_off()
+    axes.axvline(1, color='grey', linewidth=0.8, linestyle='--')
+    axes.axhline(0, color='grey', linewidth=0.8, linestyle='--')
+    _annotate_points(
+      axes,
+      group,
+      'relative_spend',
+      'margin_vs_conf',
+      annotate=config.REFERENCE_PROGRAMS,
+      scale_x=1.0,
+      fontsize=7,
+    )
+    partial = season == max(seasons)
+    axes.set_title(
+      f'{season}{" (in progress)" if partial else ""}\n'
+      f'r = {r:+.2f}, n = {len(group)}'
+    )
+    axes.set_xlabel('Spending vs conference median (log)')
+    axes.grid(alpha=0.2)
+  axes_list[0].set_ylabel('Point margin per game vs conference average')
+  figure.suptitle(
+    'Within-league: out-spending your own conference, season by season',
+    fontsize=13,
+  )
+  figure.tight_layout()
+
+  path = config.FIGURES_DIR / (filename or 'relative_spend_by_season.png')
+  figure.savefig(path, dpi=150)
+  plt.close(figure)
+  logger.info('Wrote %s', path)
+  return str(path)
+
+
+def box_score_markers_chart(
+  markers: pd.DataFrame, filename: str | None = None
+) -> str | None:
+  """Compares what winning teams do with what money buys.
+
+  Args:
+    markers (pd.DataFrame): Output of
+      :func:`cfbmoney.drivers.box_score_markers`.
+    filename (str | None): Output filename override.
+
+  Returns:
+    str | None: The path written, or ``None`` with no data.
+  """
+  if markers is None or markers.empty:
+    return None
+  data = markers.iloc[::-1]
+  positions = np.arange(len(data))
+  height = 0.38
+  figure, axes = plt.subplots(figsize=(10.0, 0.55 * len(data) + 1.8))
+  axes.barh(
+    positions + height / 2,
+    data['r_margin'],
+    height,
+    color='#1565c0',
+    label='r with point margin (what winners do)',
+  )
+  axes.barh(
+    positions - height / 2,
+    data['r_money'],
+    height,
+    color='#9e9e9e',
+    label='r with football spending (what money buys)',
+  )
+  axes.set_yticks(positions, data['label'])
+  axes.axvline(0, color='black', linewidth=0.8)
+  axes.set_xlim(-1, 1)
+  axes.set_xlabel('Pearson r, completed seasons pooled')
+  axes.set_title(
+    'Box-score markers of a good team, and how much money explains'
+  )
+  axes.grid(axis='x', alpha=0.2)
+  axes.legend(loc='lower right', fontsize=8)
+  figure.tight_layout()
+
+  path = config.FIGURES_DIR / (filename or 'box_score_markers.png')
+  figure.savefig(path, dpi=150)
+  plt.close(figure)
+  logger.info('Wrote %s', path)
+  return str(path)

@@ -87,8 +87,12 @@ STATE_UTC_OFFSET: dict[str, int] = {
   'AK': -9,
 }
 
-#: Schools whose campus is in a different zone from most of their state.
+#: Schools whose campus is in a different zone from most of their state,
+#: or who are exempt from federal EADA filings and lack a state code.
 SCHOOL_UTC_OFFSET: dict[str, int] = {
+  'Air Force': -7,  # Colorado Springs is Mountain (Title IV exempt).
+  'Army': -5,  # West Point is Eastern (Title IV exempt).
+  'Navy': -5,  # Annapolis is Eastern (Title IV exempt).
   'UTEP': -7,  # El Paso is Mountain; the rest of Texas is Central.
   'Boise State': -7,  # Southern Idaho is Mountain.
   'Tennessee': -5,  # Knoxville is Eastern; Nashville and Memphis are not.
@@ -120,9 +124,11 @@ def school_offsets(frame: pd.DataFrame) -> dict[str, int]:
     raise ValueError('Frame needs school and state columns')
   offsets = {}
   unknown = set()
-  for row in frame.dropna(subset=['state']).itertuples():
+  for row in frame.itertuples():
     if row.school in SCHOOL_UTC_OFFSET:
       offsets[row.school] = SCHOOL_UTC_OFFSET[row.school]
+      continue
+    if pd.isna(getattr(row, 'state', None)):
       continue
     offset = STATE_UTC_OFFSET.get(str(row.state).strip().upper())
     if offset is None:
@@ -282,6 +288,11 @@ def realignment_travel_change(
 ) -> pd.DataFrame:
   """Compares travel burden before and after each conference move.
 
+  Home margins are reported alongside away margins as a control.  A
+  tougher new conference drags down both; a travel burden should show
+  up only on the road, so ``travel_gap_change`` (away change minus home
+  change) is the cleaner read.
+
   Args:
     games (pd.DataFrame): Output of :func:`add_travel_columns`.
     movers (pd.DataFrame): Output of ``realignment.detect_moves``.
@@ -291,9 +302,12 @@ def realignment_travel_change(
   """
   if movers.empty:
     return pd.DataFrame()
-  away = games[games['home_away'].eq('away')].dropna(subset=['tz_shift'])
-  played = away[away['completed'].fillna(False).astype(bool)].copy()
-  played['margin'] = played['points_for'] - played['points_against']
+  completed = games[games['completed'].fillna(False).astype(bool)].copy()
+  completed['margin'] = completed['points_for'] - completed['points_against']
+  played = completed[completed['home_away'].eq('away')].dropna(
+    subset=['tz_shift']
+  )
+  home = completed[completed['home_away'].eq('home')]
 
   rows = []
   for move in movers.itertuples():
@@ -304,6 +318,9 @@ def realignment_travel_change(
     post = team[team['season'] >= move.move_season]
     if pre.empty or post.empty:
       continue
+    team_home = home[home['school'] == move.school]
+    home_pre = team_home[team_home['season'] < move.move_season]
+    home_post = team_home[team_home['season'] >= move.move_season]
     rows.append(
       {
         'school': move.school,
@@ -315,6 +332,8 @@ def realignment_travel_change(
         'long_trips_after': int((post['tz_shift'] >= 2).sum()),
         'away_margin_before': pre['margin'].mean(),
         'away_margin_after': post['margin'].mean(),
+        'home_margin_before': home_pre['margin'].mean(),
+        'home_margin_after': home_post['margin'].mean(),
       }
     )
   frame = pd.DataFrame(rows)
@@ -325,6 +344,12 @@ def realignment_travel_change(
   )
   frame['away_margin_change'] = (
     frame['away_margin_after'] - frame['away_margin_before']
+  )
+  frame['home_margin_change'] = (
+    frame['home_margin_after'] - frame['home_margin_before']
+  )
+  frame['travel_gap_change'] = (
+    frame['away_margin_change'] - frame['home_margin_change']
   )
   return frame.sort_values('tz_shift_change', ascending=False).reset_index(
     drop=True
