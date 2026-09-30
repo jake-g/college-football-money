@@ -25,8 +25,10 @@ import pandas as pd
 from . import analyze
 from . import build
 from . import config
+from . import drivers as drivers_module
 from . import espn
 from . import finance
+from . import insights
 from . import plots
 from . import realignment
 from . import report as report_module
@@ -180,9 +182,8 @@ def _prune_stale_figures(keep: Iterable[pathlib.Path]) -> list[str]:
 
 def command_report(args: argparse.Namespace) -> int:
   """Generates charts and the markdown report."""
-  merged = _load_analysis_table(args.season)
+  merged = insights.add_relative_spend(_load_analysis_table(args.season))
   correlations = analyze.correlation_table(merged)
-  comparison = analyze.revenue_vs_spending(merged)
   overlap = analyze.collinearity(merged)
   model = None
   try:
@@ -194,6 +195,9 @@ def command_report(args: argparse.Namespace) -> int:
 
   analyze.write_outputs(merged, correlations, model, args.season)
 
+  # One figure per idea.  The revenue-vs-spending panel already shows
+  # both single-season scatters side by side, and win% duplicates the
+  # point-margin view, so the individual scatters are not repeated.
   figures = []
   panel_figure = plots.revenue_vs_spending_panel(
     merged, 'point_margin_per_game', args.season
@@ -201,22 +205,22 @@ def command_report(args: argparse.Namespace) -> int:
   if panel_figure:
     figures.append(panel_figure)
 
-  for money_column in (
-    'football_expenses',
-    'football_revenue',
-    'football_spend_per_player',
-  ):
-    if money_column in merged.columns:
-      for outcome in ('point_margin_per_game', 'win_pct'):
-        path = plots.scatter_money_vs_performance(
-          merged, money_column, outcome, args.season
-        )
-        if path:
-          figures.append(path)
+  relative_summary = insights.relative_spend_summary(merged)
+  relative_high, relative_low = insights.relative_spend_extremes(
+    merged, sorted(config.POWER_CONFERENCES)
+  )
+  decomposition = insights.spending_decomposition(merged)
+  decomposition.to_csv(
+    config.PROCESSED_DIR / f'spending_decomposition_{args.season}.csv',
+    index=False,
+  )
 
   # Completed prior seasons give the small-sample 2026 numbers context.
   seasons = args.seasons or [args.season - offset for offset in range(4)]
   season_trend = None
+  relative_by_season = None
+  drivers = None
+  schedule = None
   realignment_changes = None
   pac12_diaspora = None
   travel_by_shift = None
@@ -225,22 +229,55 @@ def command_report(args: argparse.Namespace) -> int:
   try:
     panel = analyze.build_panel(sorted(seasons))
     season_trend = analyze.correlation_by_season(panel)
-    for money_column in ('football_expenses', 'football_revenue'):
-      history = plots.multi_season_scatter(
-        panel, money_column, 'point_margin_per_game'
-      )
-      if history:
-        figures.append(history)
-    # Per-player spend across seasons shows how the arms race compounds.
-    for outcome in ('win_pct', 'point_margin_per_game'):
-      per_player = plots.multi_season_scatter(
-        panel, 'football_spend_per_player', outcome
-      )
-      if per_player:
-        figures.append(per_player)
-    trend = plots.money_vs_wins_history(panel)
-    if trend:
-      figures.append(trend)
+    history = plots.multi_season_scatter(
+      panel, 'football_expenses', 'point_margin_per_game'
+    )
+    if history:
+      figures.append(history)
+    # Replaces the single-season relative chart: 2026 is the last panel.
+    relative_panel = insights.add_relative_spend(panel)
+    relative_by_season = insights.relative_spend_by_season(relative_panel)
+    relative_history = plots.relative_spend_by_season(relative_panel)
+    if relative_history:
+      figures.append(relative_history)
+
+    # Beyond the budget: momentum, repeatable over-performance and the
+    # box-score markers of a good team.
+    momentum_table, momentum = drivers_module.momentum_vs_money(
+      panel, args.season
+    )
+    residuals = drivers_module.budget_residuals(panel)
+    residual_lag, over, under = drivers_module.residual_persistence(
+      residuals, args.season
+    )
+    residuals.to_csv(config.PROCESSED_DIR / 'budget_residuals.csv', index=False)
+    markers = drivers_module.box_score_markers(panel, args.season)
+    markers_chart = plots.box_score_markers_chart(markers)
+    if markers_chart:
+      figures.append(markers_chart)
+    drivers = {
+      'momentum_table': momentum_table,
+      'momentum': momentum,
+      'residual_lag': residual_lag,
+      'over': over,
+      'under': under,
+      'markers': markers,
+      'schedule_strength': drivers_module.schedule_strength(panel, args.season),
+      'budget_change': drivers_module.budget_change_effect(panel, args.season),
+    }
+
+    games_by_season = {}
+    for season in sorted(seasons):
+      try:
+        games_by_season[season] = build.read_frame('games', season)
+      except FileNotFoundError:
+        logger.debug('No games frame for %d', season)
+    schedule = insights.schedule_split(panel, games_by_season)
+    if not schedule.empty:
+      schedule.to_csv(config.PROCESSED_DIR / 'schedule_split.csv', index=False)
+      split_chart = plots.schedule_split_chart(schedule)
+      if split_chart:
+        figures.append(split_chart)
 
     # Realignment needs the same panel, so it rides along here.
     moves = realignment.detect_moves(panel)
@@ -265,15 +302,9 @@ def command_report(args: argparse.Namespace) -> int:
     offsets = travel.school_offsets(
       panel[panel['season'] == args.season][['school', 'state']]
     )
-    all_games = []
-    for season in sorted(seasons):
-      try:
-        all_games.append(build.read_frame('games', season))
-      except FileNotFoundError:
-        logger.debug('No games frame for %d', season)
-    if all_games and offsets:
+    if games_by_season and offsets:
       annotated = travel.add_travel_columns(
-        pd.concat(all_games, ignore_index=True), offsets
+        pd.concat(games_by_season.values(), ignore_index=True), offsets
       )
       travel_by_shift = travel.performance_by_shift(annotated)
       travel_within_team = travel.within_team_travel_effect(annotated)
@@ -314,7 +345,6 @@ def command_report(args: argparse.Namespace) -> int:
     week,
     figures,
     figure_prefix='figures/',
-    comparison=comparison,
     revenue_spending_overlap=overlap,
     season_trend=season_trend,
     realignment_changes=realignment_changes,
@@ -322,6 +352,12 @@ def command_report(args: argparse.Namespace) -> int:
     travel_by_shift=travel_by_shift,
     travel_within_team=travel_within_team,
     realignment_travel=realignment_travel,
+    schedule_split=schedule,
+    relative_summary=relative_summary,
+    relative_by_season=relative_by_season,
+    drivers=drivers,
+    relative_extremes=(relative_high, relative_low),
+    decomposition=decomposition,
   )
   path = report_module.write_report(text, args.season)
 
@@ -361,8 +397,12 @@ def command_refresh(args: argparse.Namespace) -> int:
 
 
 def command_all(args: argparse.Namespace) -> int:
-  """Runs fetch, money, analyze and report in order."""
-  for step in (command_fetch, command_money, command_analyze, command_report):
+  """Runs fetch, money and report in order.
+
+  ``report`` writes every table ``analyze`` does, so running both would
+  compute and write the same outputs twice.
+  """
+  for step in (command_fetch, command_money, command_report):
     status = step(args)
     if status:
       return status
@@ -397,7 +437,9 @@ def build_parser() -> argparse.ArgumentParser:
     '--workers',
     type=int,
     default=8,
-    help='Number of worker threads for parallel fetching (default: %(default)s)',
+    help=(
+      'Number of worker threads for parallel fetching (default: %(default)s)'
+    ),
   )
   parser.add_argument(
     '--delay',
@@ -453,6 +495,40 @@ def build_parser() -> argparse.ArgumentParser:
   return parser
 
 
+def _normalize_cli_args(argv: list[str]) -> list[str]:
+  """Ensures subcommands following multi-argument options parse cleanly.
+
+  When flags with ``nargs='+'`` (such as ``--seasons`` or ``--years``)
+  appear before a subcommand, standard argparse consumes the subcommand
+  name into the list of values unless ``--`` separates them.  This
+  helper inserts ``--`` before the subcommand if omitted.
+
+  Args:
+    argv: Raw argument strings.
+
+  Returns:
+    Normalized argument list.
+  """
+  subcommands = {
+    'fetch',
+    'money',
+    'analyze',
+    'report',
+    'panel',
+    'refresh',
+    'all',
+  }
+  for i, arg in enumerate(argv):
+    if arg in subcommands and i > 0 and argv[i - 1] != '--':
+      preceding = argv[:i]
+      for flag in ('--seasons', '--years'):
+        if flag in preceding:
+          flag_idx = preceding.index(flag)
+          if '--' not in preceding[flag_idx:i]:
+            return argv[:i] + ['--'] + argv[i:]
+  return argv
+
+
 def main(argv: list[str] | None = None) -> int:
   """CLI entry point.
 
@@ -462,8 +538,9 @@ def main(argv: list[str] | None = None) -> int:
   Returns:
     Process exit status.
   """
+  raw_args = list(argv if argv is not None else sys.argv[1:])
   parser = build_parser()
-  args = parser.parse_args(argv)
+  args = parser.parse_args(_normalize_cli_args(raw_args))
   _configure_logging(args.verbose)
   try:
     return args.handler(args)

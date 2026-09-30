@@ -64,6 +64,18 @@ def test_parser_refresh_subcommand():
   assert args.handler == cli.command_refresh
 
 
+def test_parser_multi_arg_flags_before_subcommand():
+  """Multi-arg flags like --seasons before subcommands parse cleanly."""
+  normalized = cli._normalize_cli_args(
+    ['--seasons', '2023', '2024', '2025', '2026', 'panel']
+  )
+  parser = cli.build_parser()
+  args = parser.parse_args(normalized)
+  assert args.command == 'panel'
+  assert args.seasons == [2023, 2024, 2025, 2026]
+  assert args.handler == cli.command_panel
+
+
 def test_repository_configuration():
   """Developer repository configuration settings."""
   import subprocess

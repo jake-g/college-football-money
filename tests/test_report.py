@@ -135,7 +135,7 @@ def test_markdown_tables_are_well_formed(merged):
 
 
 def test_nil_revshare_section_renders_cap_and_disclaimer(merged):
-  """NIL section must document the House cap and undisclosed per-school splits."""
+  """NIL section documents the House cap and undisclosed school splits."""
   lines = report._nil_revshare_section(merged, pd.DataFrame())
   text = '\n'.join(lines)
   assert 'House v. NCAA' in text
@@ -173,10 +173,111 @@ def test_realignment_section_includes_financial_mechanics():
   assert 'research_notes_2026.md' not in text
 
 
-def test_critique_section_includes_evaluations():
-  """Critique section includes what held up and what looks shaky."""
-  lines = report._critique_section(pd.DataFrame(), None)
+def test_key_findings_are_computed_from_inputs():
+  """Findings quote the numbers they are given, not canned text."""
+  split = pd.DataFrame(
+    {
+      'season': [2025, 2026],
+      'nonconf_fbs_richer_win': [0.75, 0.8],
+      'conference_richer_win': [0.6, 0.55],
+    }
+  )
+  lines = report._key_findings(
+    pd.DataFrame(),
+    pd.DataFrame(),
+    split,
+    {'r_within': 0.31},
+    None,
+    None,
+    None,
+    2026,
+  )
   text = '\n'.join(lines)
-  assert 'What held up' in text
-  assert 'What is looking shaky' in text
-  assert 'Program infrastructure over star coach' in text
+  assert '## Summary' in text
+  assert '75.0%' in text
+  assert '60.0%' in text
+  assert '+0.31' in text
+
+
+def test_key_findings_empty_without_inputs():
+  """No inputs means no findings section rather than filler."""
+  assert (
+    report._key_findings(
+      pd.DataFrame(), pd.DataFrame(), None, None, None, None, None, 2026
+    )
+    == []
+  )
+
+
+def test_correlation_matrix_has_one_row_per_metric():
+  """The compact matrix collapses metric/outcome pairs into rows."""
+  correlations = pd.DataFrame(
+    {
+      'money_metric': ['football_expenses'] * 2 + ['football_revenue'] * 2,
+      'performance_metric': ['point_margin_per_game', 'win_pct'] * 2,
+      'n': [100] * 4,
+      'pearson_r': [0.6, 0.5, 0.55, 0.45],
+      'pearson_p': [0.0001] * 4,
+    }
+  )
+  text = '\n'.join(report._correlation_matrix(correlations))
+  assert text.count('| Football expenses |') == 1
+  assert text.count('| Football revenue |') == 1
+  assert '+0.60***' in text
+
+
+def test_figures_are_inlined_and_leftovers_kept(merged):
+  """Known figures sit in their section; unknown ones are not dropped."""
+  text = report.build_report(
+    merged,
+    pd.DataFrame(),
+    None,
+    pd.DataFrame(),
+    2026,
+    3,
+    figures=['/x/revenue_vs_spending_2026.png', '/x/mystery.png'],
+    figure_prefix='figures/',
+    revenue_spending_overlap=0.9,
+  )
+  spending = text.index('## Spending versus revenue')
+  assert text.index('revenue_vs_spending_2026.png') > spending
+  assert '## Other figures' in text
+  assert 'figures/mystery.png' in text
+
+
+def test_report_is_organised_into_numbered_parts(merged):
+  """Parts get a contents entry and sections are nested beneath them."""
+  markers = pd.DataFrame(
+    {
+      'stat': ['passer_rating'],
+      'label': ['Passer rating (offense)'],
+      'n': [300],
+      'r_margin': [0.7],
+      'r_money': [0.3],
+    }
+  )
+  text = report.build_report(
+    merged,
+    pd.DataFrame(),
+    None,
+    pd.DataFrame(),
+    2026,
+    3,
+    revenue_spending_overlap=0.9,
+    drivers={'markers': markers},
+  )
+  assert '## Contents' in text
+  assert '(#2-what-separates-good-teams-from-bad)' in text
+  assert '## 2. What separates good teams from bad' in text
+  assert '### On-field markers of a good team' in text
+  assert '**Quarterback play is the clearest on-field marker.**' in text
+  assert text.index('## Summary') < text.index('## Contents')
+
+
+def test_slug_matches_github_anchors():
+  """Anchors drop punctuation and hyphenate spaces."""
+  assert report._slug('1. Does money buy wins?') == '1-does-money-buy-wins'
+  assert (
+    report._slug('4. Roster economics: NIL and revenue sharing')
+    == '4-roster-economics-nil-and-revenue-sharing'
+  )
