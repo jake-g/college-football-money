@@ -1,0 +1,40 @@
+season,week,winner,winner_conf,loser,winner_spend,loser_spend,ratio,score,game_type
+2023,1,Northern Illinois,MAC,Boston College,9254076.0,38139875.0,4.121413634381217,27-24,nonconf_fbs
+2023,5,Bowling Green,MAC,Georgia Tech,10099082.0,37704644.0,3.733472408680314,38-27,nonconf_fbs
+2023,3,Miami (OH),MAC,Cincinnati,10598977.0,30400338.0,2.868233226659516,31-24,nonconf_fbs
+2023,1,Western Kentucky,Conference USA,South Florida,11025519.0,31067491.0,2.8177803693413437,41-24,nonconf_fbs
+2023,1,Texas State,Sun Belt,Baylor,14291224.0,38996269.0,2.7286864302175937,42-31,nonconf_fbs
+2023,3,Ohio,MAC,Iowa State,11443834.0,30019709.0,2.62322129104634,10-7,nonconf_fbs
+2023,4,Marshall,Sun Belt,Virginia Tech,15542536.0,38930135.0,2.5047479381743107,24-17,nonconf_fbs
+2023,3,South Alabama,Sun Belt,Oklahoma State,14499007.0,33952496.0,2.341711815160859,33-7,nonconf_fbs
+2023,5,West Virginia,Big 12,TCU,23220348.0,54129228.0,2.331111833466062,24-21,conference
+2023,3,UNLV,Mountain West,Vanderbilt,19389498.0,43613902.0,2.2493569457032874,40-37,nonconf_fbs
+2023,1,Wyoming,Mountain West,Texas Tech,15712482.0,34401458.0,2.18943499823898,35-33,nonconf_fbs
+2023,3,Fresno State,Mountain West,Arizona State,18792911.0,40162578.0,2.1371131912453585,29-0,nonconf_fbs
+2023,2,Washington State,Pac-12,Wisconsin,20256043.0,42297448.0,2.0881397220572646,31-22,nonconf_fbs
+2024,2,Northern Illinois,MAC,Notre Dame,13199127.0,93255797.0,7.065300379335694,16-14,nonconf_fbs
+2024,3,Memphis,American,Florida State,22026675.0,83267924.0,3.780321995943555,20-12,nonconf_fbs
+2024,3,Georgia State,Sun Belt,Vanderbilt,12260120.0,44124525.0,3.599028802328199,36-32,nonconf_fbs
+2024,3,Washington State,Pac-12,Washington,22896016.0,68921774.0,3.0102081514967494,24-19,nonconf_fbs
+2024,3,Toledo,MAC,Mississippi State,12624282.0,37575575.0,2.9764524429983426,41-17,nonconf_fbs
+2024,4,James Madison,Sun Belt,North Carolina,16863958.0,49145749.0,2.914247592409801,70-50,nonconf_fbs
+2024,5,Louisiana,Sun Belt,Wake Forest,14846554.0,39399925.0,2.653809429447399,41-38,nonconf_fbs
+2024,5,Sam Houston,Conference USA,Texas State,9740021.0,21622408.0,2.2199549672428835,40-39,nonconf_fbs
+2024,1,Boston College,ACC,Florida State,41224780.0,83267924.0,2.0198512642153577,28-13,conference
+2024,1,Sam Houston,Conference USA,Rice,9740021.0,19591289.0,2.0114216386186436,34-14,nonconf_fbs
+2025,3,New Mexico,Mountain West,UCLA,14730964.0,55205071.0,3.7475531811767375,35-10,nonconf_fbs
+2025,2,Ohio,MAC,West Virginia,10812487.0,35250569.0,3.2601721509584243,17-10,nonconf_fbs
+2025,2,UNLV,Mountain West,UCLA,20854643.0,55205071.0,2.6471357481401143,30-23,nonconf_fbs
+2025,4,Memphis,American,Arkansas,22026675.0,57370871.0,2.6046087754960747,32-31,nonconf_fbs
+2025,1,Hawai'i,Mountain West,Stanford,13857022.0,35992019.0,2.597384849356521,23-20,nonconf_fbs
+2025,3,Old Dominion,Sun Belt,Virginia Tech,14787371.0,37803976.0,2.5565041953704957,45-26,nonconf_fbs
+2025,5,Virginia,ACC,Florida State,33611796.0,83267924.0,2.4773422997093046,46-38,conference
+2025,4,San Diego State,Mountain West,California,22274021.0,46721911.0,2.0975966126636947,34-0,nonconf_fbs
+2025,3,Bowling Green,MAC,Liberty,10984685.0,22964576.0,2.090599411817453,23-13,nonconf_fbs
+2025,3,Tulane,American,Duke,22676121.0,47363558.0,2.088697533409704,34-27,nonconf_fbs
+2025,2,Missouri State,Conference USA,Marshall,6558020.0,13569649.0,2.0691685905196997,21-20,nonconf_fbs
+2025,3,Delaware,Conference USA,UConn,10126804.0,20479873.0,2.022343179546084,44-41,nonconf_fbs
+2026,1,Massachusetts,MAC,Rutgers,13419026.0,75922954.0,5.657858774548913,37-21,nonconf_fbs
+2026,5,UNLV,Mountain West,California,20854643.0,46721911.0,2.2403601442614,39-31,nonconf_fbs
+2026,3,Toledo,MAC,Temple,12624282.0,26295531.0,2.0829327957027575,49-48,nonconf_fbs
+2026,5,Northwestern,Big Ten,Penn State,37901761.0,77386097.0,2.0417546562018583,34-13,conference
