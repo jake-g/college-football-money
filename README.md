@@ -182,6 +182,7 @@ src/cfbmoney/
   analyze.py      correlations, OLS, residuals, multi-season panel
   insights.py     conference vs non-conference split, within-league spend
   drivers.py      momentum, repeat over-performance, box-score markers
+  trends.py       same-week season comparison, upsets, in-season forecast
   realignment.py  conference moves, before/after, Pac-12 breakup
   travel.py       time-zone shifts, within-team travel penalty
   plots.py        matplotlib figures

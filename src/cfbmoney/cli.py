@@ -33,6 +33,7 @@ from . import plots
 from . import realignment
 from . import report as report_module
 from . import travel
+from . import trends as trends_module
 from .sources import eada
 
 logger = logging.getLogger('cfbmoney')
@@ -220,6 +221,7 @@ def command_report(args: argparse.Namespace) -> int:
   season_trend = None
   relative_by_season = None
   drivers = None
+  trends = None
   schedule = None
   realignment_changes = None
   pac12_diaspora = None
@@ -279,6 +281,36 @@ def command_report(args: argparse.Namespace) -> int:
       if split_chart:
         figures.append(split_chart)
 
+    # Same-week comparison with past seasons, upsets and a preseason
+    # forecast: what the in-progress season is actually showing.
+    weekly = trends_module.week_by_week(panel, games_by_season)
+    current_weeks = weekly[weekly['season'] == args.season]['week']
+    if not current_weeks.empty:
+      latest = int(current_weeks.max())
+      weekly.to_csv(config.PROCESSED_DIR / 'week_by_week.csv', index=False)
+      upset_summary, upset_details = trends_module.upsets(
+        panel, games_by_season, latest
+      )
+      upset_details.to_csv(config.PROCESSED_DIR / 'upsets.csv', index=False)
+      better, worse, forecast_fit = trends_module.expectation_vs_reality(
+        panel, games_by_season, args.season, latest
+      )
+      trends = {
+        'week': latest,
+        'comparison': trends_module.same_week_comparison(
+          weekly, args.season, latest
+        ),
+        'upset_summary': upset_summary,
+        'upset_test': trends_module.upset_rate_test(upset_summary, args.season),
+        'upsets': upset_details,
+        'better': better,
+        'worse': worse,
+        'forecast_fit': forecast_fit,
+      }
+      trajectory = plots.season_trajectory_chart(weekly, args.season)
+      if trajectory:
+        figures.append(trajectory)
+
     # Realignment needs the same panel, so it rides along here.
     moves = realignment.detect_moves(panel)
     if not moves.empty:
@@ -325,10 +357,6 @@ def command_report(args: argparse.Namespace) -> int:
   box = plots.conference_money_box(merged, season=args.season)
   if box:
     figures.append(box)
-  if model:
-    bars = plots.residual_bars(model['residuals'], args.season)
-    if bars:
-      figures.append(bars)
 
   week = None
   try:
@@ -356,6 +384,7 @@ def command_report(args: argparse.Namespace) -> int:
     relative_summary=relative_summary,
     relative_by_season=relative_by_season,
     drivers=drivers,
+    trends=trends,
     relative_extremes=(relative_high, relative_low),
     decomposition=decomposition,
   )

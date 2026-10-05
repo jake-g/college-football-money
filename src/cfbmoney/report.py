@@ -703,6 +703,198 @@ def _budget_change_lines(change: dict[str, float] | None) -> list[str]:
   ]
 
 
+def _projected_final_r(comparison: pd.DataFrame, season: int) -> float:
+  """Projects the in-progress season's final r from past fade rates.
+
+  Each completed season's final r is divided by its r at the same week;
+  the mean of those ratios is applied to the in-progress value.
+  """
+  done = comparison[comparison['season'] < season].dropna(
+    subset=['r_final', 'r_at_week']
+  )
+  current = comparison[comparison['season'] == season]
+  if done.empty or current.empty:
+    return float('nan')
+  ratio = (done['r_final'] / done['r_at_week']).mean()
+  return float(current['r_at_week'].iloc[0] * ratio)
+
+
+def _trend_lines(trends: dict[str, object], season: int) -> list[str]:
+  """Renders the in-season trends part.
+
+  Args:
+    trends (dict[str, object]): Outputs of :mod:`cfbmoney.trends` keyed
+      ``comparison``, ``week``, ``upset_summary``, ``upsets``,
+      ``better``, ``worse`` and ``forecast_fit``.
+    season (int): The in-progress season.
+
+  Returns:
+    list[str]: Markdown lines with ``##`` section headings.
+  """
+  lines: list[str] = []
+  comparison = trends.get('comparison')
+  week = trends.get('week')
+  if isinstance(comparison, pd.DataFrame) and not comparison.empty and week:
+    current = comparison[comparison['season'] == season]
+    done = comparison[comparison['season'] < season]
+    lines += [
+      '## Is 2026 more money-driven than usual?',
+      '',
+      'Every early-season number looks money-heavy because September is '
+      'full of mismatches. The fair comparison is the same week of past '
+      f'seasons: here each season is replayed through week {week}, next '
+      'to where it finished.',
+      '',
+      f'| Season | r through week {week} | Final r | Conference share '
+      f'of FBS games | Richer team wins, conf games (to date) | '
+      'Final |',
+      '| --- | ---: | ---: | ---: | ---: | ---: |',
+    ]
+    for row in comparison.itertuples():
+      label = (
+        f'{row.season} (in progress)'
+        if row.season == season
+        else (str(row.season))
+      )
+      final_r = '-' if pd.isna(row.r_final) else f'{row.r_final:+.2f}'
+      lines.append(
+        f'| {label} | {row.r_at_week:+.2f} | {final_r} | '
+        f'{_pct(row.conf_share_at_week)} | '
+        f'{_pct(row.richer_win_conf_at_week)} '
+        f'({row.conf_games_at_week} games) | '
+        f'{_pct(row.richer_win_conf_final)} |'
+      )
+    lines.append('')
+    if not current.empty and not done.empty:
+      now = current.iloc[0]
+      projected = _projected_final_r(comparison, season)
+      low, high = done['r_at_week'].min(), done['r_at_week'].max()
+      verdict = (
+        'right in line with'
+        if low - 0.05 <= now.r_at_week <= high + 0.05
+        else ('above' if now.r_at_week > high else 'below')
+      )
+      lines += [
+        f'At week {week}, 2026 sits at r = **{now.r_at_week:+.2f}**, '
+        f'{verdict} 2023-25 at the same point ({low:+.2f} to '
+        f'{high:+.2f}). Every past season peaked around weeks 3-4 and then '
+        'faded as conference play took over. Applying their average fade '
+        f'projects 2026 to finish near **r = {projected:+.2f}**, not the '
+        'headline number at the top of this report.',
+        '',
+      ]
+      past_conf = done['richer_win_conf_at_week'].mean()
+      lines += [
+        f'Inside conference play, the bigger budget has won '
+        f'**{_pct(now.richer_win_conf_at_week)}** of '
+        f'{int(now.conf_games_at_week)} games so far, against '
+        f'{_pct(past_conf)} for 2023-25 at the same week. With this few '
+        'conference games, a gap under about ten points is noise.',
+        '',
+      ]
+  better = trends.get('better')
+  worse = trends.get('worse')
+  fit = trends.get('forecast_fit') or {}
+  if (
+    isinstance(better, pd.DataFrame)
+    and isinstance(worse, pd.DataFrame)
+    and not better.empty
+    and fit
+  ):
+    lines += [
+      '## Surprises against a preseason forecast',
+      '',
+      "A forecast built only from last season's margin and this "
+      "season's budget. It is fitted on "
+      f'{int(fit["train_first"])}-{int(fit["train_last"])} margins '
+      f'*through week {int(fit["week"])}* against FBS opponents only, so '
+      'early-season schedule quirks are part of the expectation and FCS '
+      'blowouts do not count. It already tracks reality well '
+      f'(r = {fit["r_forecast"]:+.2f} across {int(fit["n"])} teams), so '
+      'the teams far off it are the real stories of the season.',
+      '',
+    ]
+    for title, frame in (
+      ('Ahead of forecast', better),
+      ('Behind forecast', worse),
+    ):
+      lines += [
+        f'**{title}**',
+        '',
+        '| Program | Conf | Football exp | Last season | FBS games | '
+        'Forecast | Actual | Gap |',
+        '| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |',
+      ]
+      for row in frame.itertuples():
+        lines.append(
+          f'| {row.school} | {row.conference} | '
+          f'{_usd_millions(row.football_expenses)} | '
+          f'{row.prior_margin:+.1f} | {row.fbs_games} | '
+          f'{row.expected:+.1f} | {row.fbs_margin:+.1f} | '
+          f'**{row.surprise:+.1f}** |'
+        )
+      lines.append('')
+  summary = trends.get('upset_summary')
+  details = trends.get('upsets')
+  if isinstance(summary, pd.DataFrame) and not summary.empty and week:
+    lines += [
+      '## Upsets: when the smaller budget wins',
+      '',
+      'A money mismatch is a game against an FBS opponent with at least '
+      f'twice the football budget. Through week {week} of each season:',
+      '',
+      '| Season | Mismatch games | Upsets | Upset rate |',
+      '| --- | ---: | ---: | ---: |',
+    ]
+    for row in summary.itertuples():
+      label = (
+        f'{row.season} (in progress)'
+        if row.season == season
+        else (str(row.season))
+      )
+      lines.append(
+        f'| {label} | {row.mismatches} | {row.upsets} | '
+        f'{_pct(row.upset_rate)} |'
+      )
+    lines.append('')
+    test = trends.get('upset_test') or {}
+    if test:
+      fewer = test['rate'] < test['past_rate']
+      if test['p'] < 0.05:
+        meaning = (
+          'Favourites in lopsided games are holding serve.'
+          if fewer
+          else 'Lopsided games are less safe than usual.'
+        )
+      else:
+        meaning = 'The difference is within normal noise.'
+      lines += [
+        f'2026 has produced **{"fewer" if fewer else "more"} upsets** '
+        f'than usual: {_pct(test["rate"])} of mismatches against '
+        f'{_pct(test["past_rate"])} for 2023-25 pooled (Fisher exact '
+        f'p = {test["p"]:.2f}). {meaning}',
+        '',
+      ]
+    if isinstance(details, pd.DataFrame) and not details.empty:
+      current = details[details['season'] == season].head(8)
+      if not current.empty:
+        lines += [
+          f'**Biggest {season} upsets by budget gap**',
+          '',
+          '| Week | Winner | Budget | Beat | Budget | Gap | Score |',
+          '| ---: | --- | ---: | --- | ---: | ---: | :---: |',
+        ]
+        for row in current.itertuples():
+          lines.append(
+            f'| {row.week} | {row.winner} | '
+            f'{_usd_millions(row.winner_spend)} | {row.loser} | '
+            f'{_usd_millions(row.loser_spend)} | {row.ratio:.1f}x | '
+            f'{row.score} |'
+          )
+        lines.append('')
+  return lines
+
+
 def _road_gap_test(movers: pd.DataFrame) -> tuple[float, float, int]:
   """Tests whether movers' road gap (away minus home change) is non-zero.
 
@@ -732,6 +924,7 @@ def _key_findings(
   season: int,
   relative_by_season: pd.DataFrame | None = None,
   drivers: dict[str, object] | None = None,
+  trends: dict[str, object] | None = None,
 ) -> list[str]:
   """Summarises the report's strongest results, computed from the data.
 
@@ -748,6 +941,8 @@ def _key_findings(
       correlations.
     drivers (dict[str, object] | None): Outputs of
       :mod:`cfbmoney.drivers`, keyed as in :func:`build_report`.
+    trends (dict[str, object] | None): Outputs of
+      :mod:`cfbmoney.trends`, keyed as in :func:`_trend_lines`.
 
   Returns:
     list[str]: Markdown lines.
@@ -892,7 +1087,61 @@ def _key_findings(
         f'p = {p_value:.2f}).'
       )
 
+  trend: list[str] = []
+  comparison = (trends or {}).get('comparison')
+  week = (trends or {}).get('week')
+  if isinstance(comparison, pd.DataFrame) and not comparison.empty and week:
+    now = comparison[comparison['season'] == season]
+    done = comparison[comparison['season'] < season]
+    if not now.empty and not done.empty:
+      projected = _projected_final_r(comparison, season)
+      fade = 1 - projected / now.iloc[0].r_at_week
+      trend.append(
+        f'**2026 is a normal season so far, not an unusually rich one.** '
+        f'Through week {week} the money correlation is '
+        f'{now.iloc[0].r_at_week:+.2f}, against '
+        f'{done["r_at_week"].min():+.2f} to {done["r_at_week"].max():+.2f} '
+        'for 2023-25 at the same week. Past seasons faded by '
+        f'{fade:.0%} as conference play took over; 2026 projects to about '
+        f'{projected:+.2f}.'
+      )
+  better = (trends or {}).get('better')
+  worse = (trends or {}).get('worse')
+  if (
+    isinstance(better, pd.DataFrame)
+    and isinstance(worse, pd.DataFrame)
+    and not better.empty
+    and not worse.empty
+  ):
+    up = ', '.join(
+      f'{r.school} ({r.surprise:+.0f})' for r in better.head(3).itertuples()
+    )
+    down = ', '.join(
+      f'{r.school} ({r.surprise:+.0f})' for r in worse.head(3).itertuples()
+    )
+    trend.append(
+      '**Biggest surprises against a same-week forecast:** '
+      f'{up}. **Biggest disappointments:** {down} (points per game).'
+    )
+  upset_summary = (trends or {}).get('upset_summary')
+  if isinstance(upset_summary, pd.DataFrame) and not upset_summary.empty:
+    now = upset_summary[upset_summary['season'] == season]
+    done = upset_summary[upset_summary['season'] < season]
+    if not now.empty and not done.empty and done['mismatches'].sum():
+      past = done['upsets'].sum() / done['mismatches'].sum()
+      test = (trends or {}).get('upset_test') or {}
+      p_text = f', p = {test["p"]:.2f}' if test else ''
+      lower = now.iloc[0].upset_rate < past
+      trend.append(
+        f'**Upsets are {"rare" if lower else "common"} this year.** Teams '
+        "with half the opponent's budget have won "
+        f'{_pct(now.iloc[0].upset_rate)} of such games '
+        f'({int(now.iloc[0].upsets)} of {int(now.iloc[0].mismatches)}), '
+        f'against {_pct(past)} at the same point of 2023-25{p_text}.'
+      )
+
   groups = [
+    (f'What {season} is showing so far', trend),
     ('Does money buy wins?', money),
     ('What else makes a good team?', team),
     ('Realignment and travel', league),
@@ -950,48 +1199,6 @@ def _leaderboard_section(merged: pd.DataFrame) -> list[str]:
       f'{_usd_millions(getattr(row, "dept_total_revenue", None))} | '
       f'{record} | {_pct(getattr(row, "win_pct", None))} | '
       f'{margin_text} |'
-    )
-  lines.append('')
-  return lines
-
-
-def _residual_section(residuals: pd.DataFrame, top_n: int = 6) -> list[str]:
-  """Builds the over/under-performance tables."""
-  if residuals.empty:
-    return []
-  predictor = [
-    c
-    for c in residuals.columns
-    if c not in ('school', 'conference', 'actual', 'predicted', 'residual')
-  ]
-  money_column = predictor[0] if predictor else None
-  money_label = (
-    _MONEY_LABELS.get(money_column, money_column) if money_column else 'Budget'
-  )
-  lines = [
-    '**Beating their budget so far**',
-    '',
-    f'| Program | Conf | {money_label} | Actual | Budget-predicted | Gap |',
-    '| --- | --- | ---: | ---: | ---: | ---: |',
-  ]
-  for row in residuals.head(top_n).itertuples():
-    money = getattr(row, money_column) if money_column else None
-    lines.append(
-      f'| {row.school} | {row.conference} | {_usd_millions(money)} | '
-      f'{_pct(row.actual)} | {_pct(row.predicted)} | '
-      f'{row.residual * 100:+.1f} pts |'
-    )
-  lines += ['', '**Falling short of their budget so far**', '']
-  lines += [
-    f'| Program | Conf | {money_label} | Actual | Budget-predicted | Gap |',
-    '| --- | --- | ---: | ---: | ---: | ---: |',
-  ]
-  for row in residuals.tail(top_n).iloc[::-1].itertuples():
-    money = getattr(row, money_column) if money_column else None
-    lines.append(
-      f'| {row.school} | {row.conference} | {_usd_millions(money)} | '
-      f'{_pct(row.actual)} | {_pct(row.predicted)} | '
-      f'{row.residual * 100:+.1f} pts |'
     )
   lines.append('')
   return lines
@@ -1436,6 +1643,7 @@ def build_report(
   decomposition: pd.DataFrame | None = None,
   relative_by_season: pd.DataFrame | None = None,
   drivers: dict[str, object] | None = None,
+  trends: dict[str, object] | None = None,
 ) -> str:
   """Renders the full markdown report.
 
@@ -1471,6 +1679,8 @@ def build_report(
     drivers: Outputs of :mod:`cfbmoney.drivers` keyed ``momentum_table``,
       ``momentum``, ``residual_lag``, ``over``, ``under``, ``markers``,
       ``schedule_strength`` and ``budget_change``.
+    trends: Outputs of :mod:`cfbmoney.trends`, keyed as in
+      :func:`_trend_lines`.
 
   Returns:
     The report as a markdown string.
@@ -1512,11 +1722,17 @@ def build_report(
     season,
     relative_by_season,
     drivers,
+    trends,
   )
 
   # Each part is built separately so the contents list only names parts
   # that actually have material.
   parts: list[tuple[str, list[str]]] = []
+
+  current: list[str] = _trend_lines(trends or {}, season)
+  current += _figure(pool, 'season_trajectory', figure_prefix)
+  if len(current) > 1:
+    parts.append((f'What {season} is showing so far', current))
 
   money: list[str] = []
   money += ['## Spending versus revenue: which one tracks winning?', '']
@@ -1628,16 +1844,6 @@ def build_report(
   reference: list[str] = []
   reference += ['## The richest programs and what they have done', '']
   reference += _leaderboard_section(merged)
-  if model:
-    reference += [f'## {season} so far: who is beating their budget', '']
-    reference += [
-      'Win percentage against the conference-adjusted budget model '
-      'above. With only a handful of games played these swing weekly; '
-      'the multi-year table in part 2 is the better guide.',
-      '',
-    ]
-    reference += _residual_section(model['residuals'])
-    reference += _figure(pool, 'residuals', figure_prefix)
   if not conference.empty:
     reference += ['## Conference summary', '']
     header = '| Conference | Teams | Median football rev | '
@@ -1657,7 +1863,7 @@ def build_report(
     reference += ['## Other figures', '']
     for name in list(pool):
       reference += _figure(pool, name, figure_prefix)
-  parts.append((f'Reference: the {season} season so far', reference))
+  parts.append(('Reference tables', reference))
 
   parts = [
     (f'{index}. {title}', content)

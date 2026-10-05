@@ -539,51 +539,6 @@ def multi_season_scatter(
   return str(path)
 
 
-def residual_bars(
-  residuals: pd.DataFrame,
-  season: int = config.DEFAULT_SEASON,
-  top_n: int = 15,
-  filename: str | None = None,
-) -> str | None:
-  """Plots the biggest over- and under-performers versus budget.
-
-  Args:
-    residuals: ``residuals`` frame from :func:`cfbmoney.analyze.fit_ols`.
-    season: Season year.
-    top_n: How many teams to show at each end.
-    filename: Optional output filename override.
-
-  Returns:
-    The path written, or ``None`` when the frame is empty.
-  """
-  if residuals.empty:
-    return None
-  ordered = residuals.sort_values('residual', ascending=False)
-  subset = pd.concat([ordered.head(top_n), ordered.tail(top_n)])
-  subset = subset.drop_duplicates('school').sort_values('residual')
-
-  figure, axes = plt.subplots(figsize=(10.0, 0.34 * len(subset) + 2.2))
-  colors = [
-    _GOOD_QUADRANT if value > 0 else _BAD_QUADRANT
-    for value in subset['residual']
-  ]
-  axes.barh(subset['school'], subset['residual'], color=colors)
-  axes.axvline(0, color='black', linewidth=0.9)
-  axes.set_xlabel('Actual minus spending-predicted performance')
-  axes.set_title(
-    f'Who beats their budget - {season} season to date\n'
-    'Green = doing better than their spending predicts'
-  )
-  axes.grid(axis='x', alpha=0.25)
-  figure.tight_layout()
-
-  path = config.FIGURES_DIR / (filename or f'residuals_{season}.png')
-  figure.savefig(path, dpi=150)
-  plt.close(figure)
-  logger.info('Wrote %s', path)
-  return str(path)
-
-
 def conference_money_box(
   frame: pd.DataFrame,
   money_column: str = 'football_expenses',
@@ -1214,6 +1169,63 @@ def box_score_markers_chart(
   figure.tight_layout()
 
   path = config.FIGURES_DIR / (filename or 'box_score_markers.png')
+  figure.savefig(path, dpi=150)
+  plt.close(figure)
+  logger.info('Wrote %s', path)
+  return str(path)
+
+
+def season_trajectory_chart(
+  weekly: pd.DataFrame, season: int, filename: str | None = None
+) -> str | None:
+  """Plots the money signal week by week for every season.
+
+  Args:
+    weekly (pd.DataFrame): Output of :func:`cfbmoney.trends.week_by_week`.
+    season (int): The in-progress season, drawn bold.
+    filename (str | None): Output filename override.
+
+  Returns:
+    str | None: The path written, or ``None`` with no data.
+  """
+  if weekly is None or weekly.empty:
+    return None
+  figure, (left, right) = plt.subplots(1, 2, figsize=(13.0, 5.2))
+  palette = ['#90a4ae', '#78909c', '#546e7a', '#37474f']
+  seasons = sorted(weekly['season'].unique())
+  for index, year in enumerate(seasons):
+    group = weekly[weekly['season'] == year]
+    current = year == season
+    style = {
+      'color': '#c62828' if current else palette[index % len(palette)],
+      'linewidth': 3.0 if current else 1.5,
+      'marker': 'o' if current else None,
+      'label': f'{year}{" (in progress)" if current else ""}',
+      'zorder': 3 if current else 2,
+    }
+    left.plot(group['week'], group['r_margin'], **style)
+    conf = group[group['conf_games'] >= 20]
+    right.plot(conf['week'], conf['richer_win_conf'], **style)
+  left.set_title('Spending vs point margin to date (r)')
+  left.set_xlabel('Week')
+  left.set_ylabel('Pearson r, log spending vs margin per game')
+  right.set_title('Richer team win rate, conference games to date')
+  right.set_xlabel('Week')
+  right.set_ylabel('Share of conference games won by the bigger budget')
+  right.axhline(0.5, color='grey', linewidth=0.8, linestyle='--')
+  right.yaxis.set_major_formatter(
+    matplotlib.ticker.PercentFormatter(xmax=1.0, decimals=0)
+  )
+  for axes in (left, right):
+    axes.grid(alpha=0.2)
+    axes.legend(fontsize=8)
+  figure.suptitle(
+    'Same week, different seasons: money peaks in September and fades',
+    fontsize=13,
+  )
+  figure.tight_layout()
+
+  path = config.FIGURES_DIR / (filename or 'season_trajectory.png')
   figure.savefig(path, dpi=150)
   plt.close(figure)
   logger.info('Wrote %s', path)
