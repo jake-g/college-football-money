@@ -48,7 +48,7 @@ different granularities:
 
 | What | Where | Notes |
 | --- | --- | --- |
-| Schedules, scores, W/L, team stats | ESPN public JSON API | Live, all 138 FBS teams and their opponents |
+| Schedules, scores, W/L, team stats, attendance | ESPN public JSON API | Live, all 138 FBS teams and their opponents |
 | Football revenue & expenses, department finances, coach salaries, recruiting spend | US Dept. of Education [EADA filings](https://ope.ed.gov/athletics/) | Mandatory federal disclosure, ~128 FBS schools per year, published on a ~1 year lag |
 | Head coach total pay | Hand-compiled with a citation on every row | Only verified rows carry a number; the rest are blank and flagged `unverified` |
 | Revenue-share cap, roster payroll, 247 team talent | House settlement reporting / 247Sports | Cap is public, per-school allocations mostly are not |
@@ -111,6 +111,10 @@ data/processed/
   correlations_2026.csv       every money x performance correlation
   model_coefficients_2026.csv OLS terms with standard errors
   residuals_2026.csv          actual minus spending-predicted, per team
+  budget_tiers.csv            win% and margin by budget quintile
+  pythagorean_2026.csv        expected vs actual record, per team
+  close_games.csv             richer-team win rate by game margin
+  attendance.csv              average home crowd per team-season
   panel.csv                   all seasons stacked
 reports/
   money_vs_wins_2026.md       the written report
@@ -183,6 +187,7 @@ src/cfbmoney/
   insights.py     conference vs non-conference split, within-league spend
   drivers.py      momentum, repeat over-performance, box-score markers
   trends.py       same-week season comparison, upsets, in-season forecast
+  gameday.py      Pythagorean luck, close games, home field, attendance
   realignment.py  conference moves, before/after, Pac-12 breakup
   travel.py       time-zone shifts, within-team travel penalty
   plots.py        matplotlib figures
@@ -207,7 +212,8 @@ src/cfbmoney/
 | `head_coach_pay` / `head_coach_buyout` | Public contract & FOIA disclosures | Verified head coach total compensation and buyout |
 | `talent_composite` | 247Sports | Team Talent Composite rating |
 | `wins`, `losses`, `points_for`, `points_against` | ESPN | Results |
-| `conference`, `state`, `venue`, `home_away` | ESPN / EADA | Context for grouping and travel |
+| `attendance` | ESPN | Announced crowd per game |
+| `conference`, `state`, `venue`, `home_away`, `neutral_site` | ESPN / EADA | Context for grouping, home field and travel |
 
 ### Derived statistics
 
@@ -222,29 +228,42 @@ src/cfbmoney/
 | `football_nonoperating_spend` | `football_expenses - operating expenses` | Captures salaries and facilities rather than game-day costs |
 | `log_*` | `log10(value)` | Money is brutally right-skewed; logs linearise it |
 | `residual` | Actual minus regression-predicted performance | Over- and under-performance versus budget |
+| `pythagorean_pct` / `luck` | `PF^2.37 / (PF^2.37 + PA^2.37)`; `win_pct - pythagorean_pct` | What the record *should* be from scoring, and the gap |
+| `richer_win_close` / `richer_win_blowout` | Bigger budget's win rate in one-score (<= 8) vs 17+ point games | Does money decide tight games or only lopsided ones |
+| `hfa` | Own home margin minus own away margin | Within-team home-field edge |
+| `tier` | Budget quintile within each season | Dose-response shape, not just a correlation |
 | `tz_shift` | Venue UTC offset minus home UTC offset | Travel burden; positive is eastward |
 | `*_before` / `*_after` / `*_change` | Means either side of a conference move | Realignment before/after |
 
 ### What has been explored
 
+Numbers below are from the current report (2026 through week 6; completed
+seasons 2023-2025). They move week to week; the report is the source of truth.
+
 | Question | Result |
 | --- | --- |
-| Does football revenue correlate with winning? | Yes. `r = +0.592` with point margin (`R² = 0.350`) and `r = +0.537` with win% through Week 4 |
-| Does spending correlate better than revenue? | Nearly identically: `football_expenses` correlates `r = +0.570` (`R² = 0.325`) with point margin |
-| Can the two be separated? | No. `log(revenue)` and `log(spending)` correlate `r = +0.89` across the 123 FBS schools |
-| Is the relationship stable over time? | Completed seasons sit around `r = +0.30` to `+0.40` (`+0.367` in 2023, `+0.397` in 2024, `+0.298` in 2025); 2026 in-progress sits at `r = +0.537` |
-| Does money still matter *within* a conference? | Yes, within-league `log10(football_expenses)` adds `+24.6` win% points per 10x budget (`p = 0.011`) after absorbing conference fixed effects |
-| What is the strongest single correlate? | `dept_total_revenue` (`r = +0.601`, `R² = 0.361`), followed by `dept_total_expenses` (`r = +0.595`) |
-| Does head coach pay drive results by itself? | Much less than program infrastructure (`r = +0.34`, `p = 0.014` across 52 verified public-school contracts) |
-| Does 247Sports talent composite predict scoring? | Yes. `r = +0.517` (`p = 0.023`) with points scored per game across the 19 tracked elite rosters |
-| Who gained from the Pac-12 breakup? | Leavers gained a median `+4.0%` revenue in year one (due to partial Big Ten shares for Oregon/UW); the two left behind (WSU/OSU) lost `-31.6%` |
-| Does eastward travel hurt? | Yes, `-1.0` points of within-team margin penalty on trips of 2+ zones east across 61 team-seasons (`-6.8` vs `-5.7`) |
+| Does football spending correlate with winning? | Yes. `r = +0.52` with point margin through week 6 of 2026; `+0.40` to `+0.46` over completed seasons |
+| Does revenue tell a different story? | No. `log(revenue)` and `log(spending)` correlate `r = +0.96`, so every money metric says the same thing |
+| What does the relationship look like? | Convex. The poorest fifth wins 44%, the middle three tiers 48-57%, the richest fifth 67%; the top tier is 7 points per game clear of the next |
+| Where is the money edge won? | Across leagues. The bigger budget wins ~75% of non-conference FBS games but ~61% of conference games |
+| Does money still matter *within* a conference? | Yes, spend relative to the league median tracks margin about as well as absolute dollars (`r = +0.41` vs `+0.43`) |
+| Does money win close games? | No. The bigger budget wins 84% of blowouts but 57% of one-score games (50% in 2025) |
+| Is beating the budget luck? | Partly not: the budget residual repeats year to year at `r = +0.43`. Pythagorean luck itself is unrelated to budget (`r = -0.14`) |
+| Does money buy a home-field edge? | No. Teams are ~11 points better at home; the edge is uncorrelated with budget |
+| Is attendance just the budget? | Nearly: log crowd vs log spending `r = +0.88`. Last season's crowd predicts margin as well as the budget (`+0.44` vs `+0.45`); jointly the budget keeps the edge |
+| Are crowds growing? | Slightly shrinking: mean same-week FBS crowd 41.3k (2023) to 40.0k (2026); median school `-0.7%` vs 2025 |
+| Does head coach pay drive results by itself? | Much less than program scale (`r = +0.20`, n = 52 verified contracts); nothing once the budget is held fixed |
+| Which spending line matters? | None individually. Coaching, recruiting and operations all correlate `>= 0.77` with the total and none adds signal on top |
+| Does getting richer help quickly? | Not yet visible: 2023-25 budget changes are unrelated to margin changes (`r = -0.05`) |
+| Who gained from the Pac-12 breakup? | Leavers `+8.3%` median football revenue; Oregon State and Washington State `-31.6%` |
+| Does eastward travel hurt? | Suggestively. Long-haul movers' road gap worsened by ~6 points (9 of 13 negative, p = 0.09) |
 
 ### Considerations and known limitations
 
 > [!WARNING]
-> **The 2026 season is four weeks old (2–4 games played per team).** Every 2026 number is
-> directional. Completed seasons (2023–2025) carry the full-season weight.
+> **The 2026 season is in progress.** Every 2026 number is directional
+> and the report header states how many games have been played.
+> Completed seasons (2023–2025) carry the full-season weight.
 
 *   **Finance lags the field by two years.** EADA report year 2025 covers
     the 2024 season. This is framed as a feature — spending precedes
@@ -272,6 +291,11 @@ src/cfbmoney/
     rather than the raw league-wide split.
 *   **Service academies have no federal filing** and are excluded from
     all money analysis rather than imputed.
+*   **Attendance is the announced figure**, not turnstile count, and a
+    handful of games report zero; those are treated as missing.
+*   **Early-season home rates are inflated.** September is when rich
+    teams buy home games, which is why home advantage is measured
+    within each team rather than from the raw home win rate.
 
 ## Sources, references and APIs
 
