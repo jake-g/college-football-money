@@ -1230,3 +1230,309 @@ def season_trajectory_chart(
   plt.close(figure)
   logger.info('Wrote %s', path)
   return str(path)
+
+
+def _save(figure: plt.Figure, name: str) -> str:
+  """Writes a figure to the figures directory and closes it."""
+  path = config.FIGURES_DIR / name
+  figure.savefig(path, dpi=150)
+  plt.close(figure)
+  logger.info('Wrote %s', path)
+  return str(path)
+
+
+def budget_tiers_chart(
+  tiers: pd.DataFrame, season: int, filename: str | None = None
+) -> str | None:
+  """Shows win% and margin by budget quintile: the shape of the curve.
+
+  Args:
+    tiers (pd.DataFrame): Output of :func:`cfbmoney.insights.budget_tiers`.
+    season (int): The in-progress season.
+    filename (str | None): Output filename override.
+
+  Returns:
+    str | None: The path written, or ``None`` with no data.
+  """
+  if tiers is None or tiers.empty:
+    return None
+  periods = [p for p in ('completed', str(season)) if p in set(tiers['period'])]
+  if not periods:
+    return None
+  figure, (left, right) = plt.subplots(1, 2, figsize=(13.0, 5.2))
+  width = 0.8 / len(periods)
+  colors = {'completed': '#546e7a', str(season): '#c62828'}
+  for offset, period in enumerate(periods):
+    group = tiers[tiers['period'] == period].sort_values('tier')
+    positions = group['tier'] + (offset - (len(periods) - 1) / 2) * width
+    label = (
+      'completed seasons pooled'
+      if period == 'completed'
+      else f'{season} (in progress)'
+    )
+    left.bar(
+      positions, group['win_pct'], width, color=colors[period], label=label
+    )
+    right.bar(
+      positions, group['margin'], width, color=colors[period], label=label
+    )
+  reference = tiers[tiers['period'] == periods[0]].sort_values('tier')
+  ticks = [
+    f'{int(t)}\n${b / 1e6:.0f}M'
+    for t, b in zip(reference['tier'], reference['median_budget'], strict=True)
+  ]
+  for axes in (left, right):
+    axes.set_xticks(reference['tier'], ticks)
+    axes.set_xlabel('Budget tier (1 = poorest fifth) and median budget')
+    axes.grid(axis='y', alpha=0.2)
+    axes.legend(fontsize=8)
+  left.set_ylabel('Mean win percentage')
+  left.yaxis.set_major_formatter(
+    matplotlib.ticker.PercentFormatter(xmax=1.0, decimals=0)
+  )
+  left.axhline(0.5, color='grey', linewidth=0.8, linestyle='--')
+  left.set_title('Win percentage by budget tier')
+  right.set_ylabel('Mean point margin per game')
+  right.axhline(0, color='black', linewidth=0.8)
+  right.set_title('Point margin by budget tier')
+  figure.suptitle(
+    'Dose-response: the richest fifth pulls away from everyone else',
+    fontsize=13,
+  )
+  figure.tight_layout()
+  return _save(figure, filename or 'budget_tiers.png')
+
+
+def close_games_chart(
+  close: pd.DataFrame, season: int, filename: str | None = None
+) -> str | None:
+  """Compares the bigger budget's win rate in tight games and blowouts.
+
+  Args:
+    close (pd.DataFrame): Output of :func:`cfbmoney.gameday.close_games`.
+    season (int): The in-progress season, highlighted.
+    filename (str | None): Output filename override.
+
+  Returns:
+    str | None: The path written, or ``None`` with no data.
+  """
+  if close is None or close.empty:
+    return None
+  data = close.sort_values('season')
+  positions = np.arange(len(data))
+  width = 0.27
+  figure, axes = plt.subplots(figsize=(10.0, 5.2))
+  series = (
+    ('richer_win_blowout', 'Blowouts (17+ points)', '#1565c0'),
+    ('richer_win_all', 'All FBS games', '#78909c'),
+    ('richer_win_close', 'One-score games (8 or fewer)', '#ef6c00'),
+  )
+  for offset, (column, label, color) in enumerate(series):
+    bars = axes.bar(
+      positions + (offset - 1) * width,
+      data[column],
+      width,
+      color=color,
+      label=label,
+    )
+    for bar, value in zip(bars, data[column], strict=True):
+      if pd.notna(value):
+        axes.annotate(
+          f'{value:.0%}',
+          (bar.get_x() + bar.get_width() / 2, value),
+          textcoords='offset points',
+          xytext=(0, 3),
+          ha='center',
+          fontsize=8,
+        )
+  labels = [
+    f'{int(s)}{" (in progress)" if int(s) == season else ""}'
+    for s in data['season']
+  ]
+  axes.set_xticks(positions, labels)
+  axes.axhline(0.5, color='grey', linewidth=0.8, linestyle='--')
+  axes.set_ylim(0, 1)
+  axes.yaxis.set_major_formatter(
+    matplotlib.ticker.PercentFormatter(xmax=1.0, decimals=0)
+  )
+  axes.set_ylabel('Share of games won by the bigger budget')
+  axes.set_title(
+    'Money decides blowouts; one-score games are closer to a coin flip'
+  )
+  axes.grid(axis='y', alpha=0.2)
+  axes.legend(fontsize=8, loc='upper right')
+  figure.tight_layout()
+  return _save(figure, filename or 'close_games.png')
+
+
+def pythagorean_chart(
+  teams: pd.DataFrame, season: int, filename: str | None = None
+) -> str | None:
+  """Plots actual against points-based expected win percentage.
+
+  Teams above the diagonal have won more than their scoring says they
+  should; the furthest from the line are labelled.
+
+  Args:
+    teams (pd.DataFrame): Per-team table from
+      :func:`cfbmoney.gameday.pythagorean_luck`.
+    season (int): Season year for the title and filename.
+    filename (str | None): Output filename override.
+
+  Returns:
+    str | None: The path written, or ``None`` with no data.
+  """
+  if teams is None or teams.empty:
+    return None
+  data = teams.dropna(subset=['pythagorean_pct', 'win_pct'])
+  figure, axes = plt.subplots(figsize=(8.5, 8.0))
+  for conference, group in data.groupby('conference'):
+    axes.scatter(
+      group['pythagorean_pct'],
+      group['win_pct'],
+      s=60,
+      alpha=0.85,
+      label=conference,
+      color=CONFERENCE_COLORS.get(conference, '#888888'),
+      edgecolors='white',
+      linewidths=0.8,
+      zorder=2,
+    )
+  axes.plot([0, 1], [0, 1], color='black', linewidth=1.2, zorder=1)
+  axes.fill_between(
+    [0, 1], [0, 1], [1, 1], color=_GOOD_QUADRANT, alpha=0.05, zorder=0
+  )
+  axes.fill_between(
+    [0, 1], [0, 0], [0, 1], color=_BAD_QUADRANT, alpha=0.05, zorder=0
+  )
+  axes.text(
+    0.03,
+    0.96,
+    'Lucky: record better than scoring',
+    fontsize=9,
+    color=_GOOD_QUADRANT,
+    transform=axes.transAxes,
+  )
+  axes.text(
+    0.97,
+    0.03,
+    'Unlucky: record worse than scoring',
+    fontsize=9,
+    color=_BAD_QUADRANT,
+    ha='right',
+    transform=axes.transAxes,
+  )
+  # Label the extremes; teams sitting on the same point get stacked
+  # labels instead of one unreadable smear.
+  extremes = pd.concat(
+    [data.nlargest(5, 'luck_wins'), data.nsmallest(5, 'luck_wins')]
+  ).drop_duplicates('school')
+  placed: list[tuple[float, float]] = []
+  for row in extremes.sort_values(['pythagorean_pct', 'win_pct']).itertuples():
+    point = (row.pythagorean_pct, row.win_pct)
+    stacked = sum(
+      1
+      for x, y in placed
+      if abs(x - point[0]) < 0.09 and abs(y - point[1]) < 0.03
+    )
+    placed.append(point)
+    axes.annotate(
+      row.school,
+      point,
+      textcoords='offset points',
+      xytext=(6, 5 - 11 * stacked),
+      fontsize=8,
+      zorder=4,
+    )
+  axes.set_xlim(0, 1)
+  axes.set_ylim(0, 1)
+  formatter = matplotlib.ticker.PercentFormatter(xmax=1.0, decimals=0)
+  axes.xaxis.set_major_formatter(formatter)
+  axes.yaxis.set_major_formatter(formatter)
+  axes.set_xlabel('Expected win percentage from points scored and allowed')
+  axes.set_ylabel('Actual win percentage')
+  axes.set_title(f'Who is outrunning their scoring - {season} season')
+  axes.grid(alpha=0.2, zorder=0)
+  axes.legend(
+    fontsize=7,
+    ncol=2,
+    loc='upper left',
+    bbox_to_anchor=(0.0, 0.94),
+    framealpha=0.9,
+  )
+  figure.tight_layout()
+  return _save(figure, filename or f'pythagorean_{season}.png')
+
+
+def attendance_chart(
+  frame: pd.DataFrame,
+  attendance: pd.DataFrame,
+  season: int,
+  filename: str | None = None,
+) -> str | None:
+  """Plots average home crowd against football spending.
+
+  Args:
+    frame (pd.DataFrame): Merged analysis table for ``season``.
+    attendance (pd.DataFrame): Output of
+      :func:`cfbmoney.gameday.home_attendance`.
+    season (int): Season year for the title and filename.
+    filename (str | None): Output filename override.
+
+  Returns:
+    str | None: The path written, or ``None`` with no data.
+  """
+  if attendance is None or attendance.empty:
+    return None
+  crowd = attendance[attendance['season'] == season][['school', 'attendance']]
+  data = frame[['school', 'conference', 'football_expenses']].merge(
+    crowd, on='school', how='inner'
+  )
+  data = data[(data['football_expenses'] > 0) & (data['attendance'] > 0)]
+  if len(data) < 5:
+    return None
+  figure, axes = plt.subplots(figsize=DEFAULT_FIGSIZE)
+  for conference, group in data.groupby('conference'):
+    axes.scatter(
+      group['football_expenses'] / 1e6,
+      group['attendance'] / 1e3,
+      s=70,
+      alpha=0.85,
+      label=conference,
+      color=CONFERENCE_COLORS.get(conference, '#888888'),
+      edgecolors='white',
+      linewidths=0.8,
+      zorder=2,
+    )
+  axes.set_xscale('log')
+  axes.set_yscale('log')
+  log_x = np.log10(data['football_expenses'].to_numpy(dtype=float) / 1e6)
+  log_y = np.log10(data['attendance'].to_numpy(dtype=float) / 1e3)
+  slope, intercept = np.polyfit(log_x, log_y, 1)
+  correlation = float(np.corrcoef(log_x, log_y)[0, 1])
+  grid = np.linspace(log_x.min(), log_x.max(), 100)
+  axes.plot(
+    10**grid,
+    10 ** (slope * grid + intercept),
+    color='black',
+    linewidth=1.8,
+    label=f'fit over observed range (r = {correlation:.2f})',
+    zorder=3,
+  )
+  scaled = data.assign(attendance_k=data['attendance'] / 1e3)
+  _annotate_points(
+    axes, scaled, 'football_expenses', 'attendance_k', scale_x=1e6
+  )
+  axes.set_xlabel('Football spending ($ millions, log scale)')
+  axes.set_ylabel('Average home attendance (thousands, log scale)')
+  plain = matplotlib.ticker.StrMethodFormatter('{x:,.0f}')
+  for axis in (axes.xaxis, axes.yaxis):
+    axis.set_major_formatter(plain)
+    axis.set_minor_formatter(plain)
+  axes.set_title(
+    f'Crowd size tracks the budget almost one for one - {season} season'
+  )
+  axes.grid(alpha=0.2, which='both', zorder=0)
+  axes.legend(fontsize=8, ncol=2, loc='lower right', framealpha=0.9)
+  figure.tight_layout()
+  return _save(figure, filename or f'attendance_vs_spending_{season}.png')

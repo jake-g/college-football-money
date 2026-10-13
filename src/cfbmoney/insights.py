@@ -360,3 +360,59 @@ def spending_decomposition(
       }
     )
   return pd.DataFrame(rows)
+
+
+def budget_tiers(
+  panel: pd.DataFrame,
+  season: int,
+  bins: int = 5,
+  column: str = 'football_expenses',
+) -> pd.DataFrame:
+  """Splits teams into budget quantiles and averages their results.
+
+  A correlation coefficient says the relationship exists; this says
+  what it looks like.  Teams are ranked into ``bins`` equal groups by
+  budget *within each season*, so tier 1 is always the poorest fifth of
+  that year's FBS.  Completed seasons are pooled; the in-progress
+  season is reported separately.
+
+  Args:
+    panel (pd.DataFrame): Multi-season frame.
+    season (int): The in-progress season.
+    bins (int): Number of tiers.
+    column (str): Money column to rank on.
+
+  Returns:
+    pd.DataFrame: One row per ``period`` (``completed`` or the season)
+    and ``tier`` (1 = poorest) with ``median_budget``, ``win_pct``,
+    ``margin``, ``team_seasons`` and the tier's ``label``.
+  """
+  needed = {column, 'win_pct', 'point_margin_per_game', 'season'}
+  if not needed <= set(panel.columns):
+    return pd.DataFrame()
+  data = panel[panel[column] > 0].dropna(
+    subset=['win_pct', 'point_margin_per_game']
+  )
+  if data.empty:
+    return pd.DataFrame()
+  data = data.assign(
+    tier=data.groupby('season')[column].transform(
+      lambda values: pd.qcut(values.rank(method='first'), bins, labels=False)
+    )
+    + 1,
+    period=np.where(data['season'] < season, 'completed', str(season)),
+  )
+  labels = {1: 'Poorest fifth', bins: 'Richest fifth'}
+  grouped = (
+    data.groupby(['period', 'tier'])
+    .agg(
+      median_budget=(column, 'median'),
+      win_pct=('win_pct', 'mean'),
+      margin=('point_margin_per_game', 'mean'),
+      team_seasons=('school', 'size'),
+    )
+    .reset_index()
+  )
+  grouped['tier'] = grouped['tier'].astype(int)
+  grouped['label'] = grouped['tier'].map(lambda t: labels.get(t, f'Tier {t}'))
+  return grouped.sort_values(['period', 'tier']).reset_index(drop=True)

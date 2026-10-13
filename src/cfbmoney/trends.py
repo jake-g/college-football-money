@@ -33,7 +33,7 @@ MONEY = 'football_expenses'
 MARGIN = 'point_margin_per_game'
 
 
-def _season_money(panel: pd.DataFrame, season: int) -> pd.Series:
+def season_money(panel: pd.DataFrame, season: int) -> pd.Series:
   """Returns positive football spending for one season keyed by school."""
   frame = panel[panel['season'] == season]
   spend = frame.set_index('school')[MONEY]
@@ -41,7 +41,7 @@ def _season_money(panel: pd.DataFrame, season: int) -> pd.Series:
   return spend[~spend.index.duplicated()]
 
 
-def _played(games: pd.DataFrame) -> pd.DataFrame:
+def played_games(games: pd.DataFrame) -> pd.DataFrame:
   """Returns completed team-game rows with a ``margin`` and game type."""
   tagged = build.tag_conference_games(games)
   done = tagged[tagged['completed'].fillna(False).astype(bool)].dropna(
@@ -89,10 +89,10 @@ def week_by_week(
   """
   rows = []
   for season, games in sorted(games_by_season.items()):
-    spend = _season_money(panel, season)
+    spend = season_money(panel, season)
     if spend.empty or games.empty:
       continue
-    played = _played(games)
+    played = played_games(games)
     last = int(played['week'].max()) if not played.empty else 0
     if max_week is not None:
       last = min(last, max_week)
@@ -191,10 +191,10 @@ def upsets(
   summary_rows = []
   upset_rows = []
   for season, games in sorted(games_by_season.items()):
-    spend = _season_money(panel, season)
+    spend = season_money(panel, season)
     if spend.empty or games.empty:
       continue
-    played = _played(games)
+    played = played_games(games)
     played = played[played['week'] <= week]
     own = played['school'].map(spend)
     opp = played['opponent'].map(spend)
@@ -285,7 +285,7 @@ def margin_to_date(
   for season, games in sorted(games_by_season.items()):
     if games.empty:
       continue
-    played = _played(games)
+    played = played_games(games)
     played = played[
       (played['week'] <= week) & (played['game_type'] != 'nonconf_fcs')
     ]
