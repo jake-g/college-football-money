@@ -28,6 +28,7 @@ from . import config
 from . import drivers as drivers_module
 from . import espn
 from . import finance
+from . import gameday
 from . import insights
 from . import plots
 from . import realignment
@@ -181,6 +182,246 @@ def _prune_stale_figures(keep: Iterable[pathlib.Path]) -> list[str]:
   return sorted(removed)
 
 
+def _load_games(seasons: Iterable[int]) -> dict[int, pd.DataFrame]:
+  """Reads the long team-game frame for every season that has one."""
+  games = {}
+  for season in sorted(seasons):
+    try:
+      games[season] = build.read_frame('games', season)
+    except FileNotFoundError:
+      logger.debug('No games frame for %d', season)
+  return games
+
+
+def _history_inputs(
+  panel: pd.DataFrame, season: int, figures: list[str]
+) -> dict[str, object]:
+  """Builds the multi-season context: trends, drivers and relative spend.
+
+  Args:
+    panel (pd.DataFrame): Output of :func:`cfbmoney.analyze.build_panel`.
+    season (int): The in-progress season.
+    figures (list[str]): Figure paths; new charts are appended.
+
+  Returns:
+    dict[str, object]: Keyword arguments for
+      :func:`cfbmoney.report.build_report`.
+  """
+  out: dict[str, object] = {
+    'season_trend': analyze.correlation_by_season(panel),
+  }
+  history = plots.multi_season_scatter(
+    panel, 'football_expenses', 'point_margin_per_game'
+  )
+  if history:
+    figures.append(history)
+
+  relative_panel = insights.add_relative_spend(panel)
+  out['relative_by_season'] = insights.relative_spend_by_season(relative_panel)
+  relative_history = plots.relative_spend_by_season(relative_panel)
+  if relative_history:
+    figures.append(relative_history)
+
+  tiers = insights.budget_tiers(panel, season)
+  if not tiers.empty:
+    tiers.to_csv(config.PROCESSED_DIR / 'budget_tiers.csv', index=False)
+    tiers_chart = plots.budget_tiers_chart(tiers, season)
+    if tiers_chart:
+      figures.append(tiers_chart)
+  out['tiers'] = tiers
+
+  # Beyond the budget: momentum, repeatable over-performance and the
+  # box-score markers of a good team.
+  momentum_table, momentum = drivers_module.momentum_vs_money(panel, season)
+  residuals = drivers_module.budget_residuals(panel)
+  residual_lag, over, under = drivers_module.residual_persistence(
+    residuals, season
+  )
+  residuals.to_csv(config.PROCESSED_DIR / 'budget_residuals.csv', index=False)
+  markers = drivers_module.box_score_markers(panel, season)
+  markers_chart = plots.box_score_markers_chart(markers)
+  if markers_chart:
+    figures.append(markers_chart)
+  out['drivers'] = {
+    'momentum_table': momentum_table,
+    'momentum': momentum,
+    'residual_lag': residual_lag,
+    'over': over,
+    'under': under,
+    'markers': markers,
+    'schedule_strength': drivers_module.schedule_strength(panel, season),
+    'budget_change': drivers_module.budget_change_effect(panel, season),
+  }
+  return out
+
+
+def _trend_inputs(
+  panel: pd.DataFrame,
+  games_by_season: dict[int, pd.DataFrame],
+  season: int,
+  figures: list[str],
+) -> tuple[dict[str, object], int | None]:
+  """Builds the same-week comparison, upsets and the in-season forecast.
+
+  Returns:
+    tuple[dict[str, object], int | None]: Report keyword arguments and
+    the latest completed week of ``season`` (``None`` before kickoff).
+  """
+  out: dict[str, object] = {}
+  schedule = insights.schedule_split(panel, games_by_season)
+  if not schedule.empty:
+    schedule.to_csv(config.PROCESSED_DIR / 'schedule_split.csv', index=False)
+    split_chart = plots.schedule_split_chart(schedule)
+    if split_chart:
+      figures.append(split_chart)
+  out['schedule_split'] = schedule
+
+  weekly = trends_module.week_by_week(panel, games_by_season)
+  current_weeks = weekly[weekly['season'] == season]['week']
+  if current_weeks.empty:
+    return out, None
+  latest = int(current_weeks.max())
+  weekly.to_csv(config.PROCESSED_DIR / 'week_by_week.csv', index=False)
+  upset_summary, upset_details = trends_module.upsets(
+    panel, games_by_season, latest
+  )
+  upset_details.to_csv(config.PROCESSED_DIR / 'upsets.csv', index=False)
+  better, worse, forecast_fit = trends_module.expectation_vs_reality(
+    panel, games_by_season, season, latest
+  )
+  out['trends'] = {
+    'week': latest,
+    'comparison': trends_module.same_week_comparison(weekly, season, latest),
+    'upset_summary': upset_summary,
+    'upset_test': trends_module.upset_rate_test(upset_summary, season),
+    'upsets': upset_details,
+    'better': better,
+    'worse': worse,
+    'forecast_fit': forecast_fit,
+  }
+  trajectory = plots.season_trajectory_chart(weekly, season)
+  if trajectory:
+    figures.append(trajectory)
+  return out, latest
+
+
+def _gameday_inputs(
+  merged: pd.DataFrame,
+  panel: pd.DataFrame,
+  games_by_season: dict[int, pd.DataFrame],
+  season: int,
+  week: int | None,
+  figures: list[str],
+) -> dict[str, object]:
+  """Builds the luck, close-game, home-field and attendance results.
+
+  Args:
+    merged (pd.DataFrame): Merged analysis table for ``season``.
+    panel (pd.DataFrame): Multi-season frame.
+    games_by_season (dict[int, pd.DataFrame]): Long team-game frames.
+    season (int): The in-progress season.
+    week (int | None): Latest completed week, used so every season is
+      compared at the same point.
+    figures (list[str]): Figure paths; new charts are appended.
+
+  Returns:
+    dict[str, object]: The ``gameday`` mapping for the report.
+  """
+  luck_summary, luck_teams = gameday.pythagorean_luck(panel, season)
+  if not luck_teams.empty:
+    luck_teams.to_csv(
+      config.PROCESSED_DIR / f'pythagorean_{season}.csv', index=False
+    )
+    luck_chart = plots.pythagorean_chart(luck_teams, season)
+    if luck_chart:
+      figures.append(luck_chart)
+
+  close = gameday.close_games(panel, games_by_season, week)
+  if not close.empty:
+    close.to_csv(config.PROCESSED_DIR / 'close_games.csv', index=False)
+    close_chart = plots.close_games_chart(close, season)
+    if close_chart:
+      figures.append(close_chart)
+
+  attendance = gameday.home_attendance(games_by_season)
+  same_week = gameday.home_attendance(games_by_season, week)
+  league, gainers, losers, change = gameday.attendance_change(same_week, season)
+  if not attendance.empty:
+    attendance.to_csv(config.PROCESSED_DIR / 'attendance.csv', index=False)
+    crowd_chart = plots.attendance_chart(merged, attendance, season)
+    if crowd_chart:
+      figures.append(crowd_chart)
+
+  return {
+    'week': week,
+    'luck_summary': luck_summary,
+    'luck_teams': luck_teams,
+    'close': close,
+    'home': gameday.home_field(panel, games_by_season, week),
+    'attendance_summary': gameday.attendance_summary(panel, attendance),
+    'attendance_regression': gameday.attendance_vs_budget(
+      panel, attendance, season
+    ),
+    'attendance_league': league,
+    'attendance_gainers': gainers,
+    'attendance_losers': losers,
+    'attendance_change': change,
+  }
+
+
+def _realignment_inputs(
+  panel: pd.DataFrame,
+  games_by_season: dict[int, pd.DataFrame],
+  season: int,
+  figures: list[str],
+) -> dict[str, object]:
+  """Builds the conference-move and travel results."""
+  out: dict[str, object] = {}
+  moves = realignment.detect_moves(panel)
+  if not moves.empty:
+    changes = realignment.before_after(panel, moves)
+    diaspora = realignment.diaspora(panel, moves)
+    changes.to_csv(
+      config.PROCESSED_DIR / 'realignment_changes.csv', index=False
+    )
+    out['realignment_changes'] = changes
+    out['pac12_diaspora'] = diaspora
+    if not diaspora.empty:
+      diaspora.to_csv(config.PROCESSED_DIR / 'pac12_diaspora.csv', index=False)
+      chart = plots.pac12_diaspora_chart(diaspora)
+      if chart:
+        figures.append(chart)
+    scatter = plots.realignment_scatter(changes)
+    if scatter:
+      figures.append(scatter)
+
+  # Travel burden: does flying east cost points?
+  offsets = travel.school_offsets(
+    panel[panel['season'] == season][['school', 'state']]
+  )
+  if games_by_season and offsets:
+    annotated = travel.add_travel_columns(
+      pd.concat(games_by_season.values(), ignore_index=True), offsets
+    )
+    by_shift = travel.performance_by_shift(annotated)
+    within_team = travel.within_team_travel_effect(annotated)
+    out['travel_by_shift'] = by_shift
+    out['travel_within_team'] = within_team
+    if not moves.empty:
+      out['realignment_travel'] = travel.realignment_travel_change(
+        annotated, moves
+      )
+    travel.travel_burden(annotated).to_csv(
+      config.PROCESSED_DIR / 'travel_burden.csv', index=False
+    )
+    travel_chart = plots.travel_penalty_chart(
+      by_shift if by_shift is not None else pd.DataFrame(), within_team
+    )
+    if travel_chart:
+      figures.append(travel_chart)
+  return out
+
+
 def command_report(args: argparse.Namespace) -> int:
   """Generates charts and the markdown report."""
   merged = insights.add_relative_spend(_load_analysis_table(args.season))
@@ -199,14 +440,13 @@ def command_report(args: argparse.Namespace) -> int:
   # One figure per idea.  The revenue-vs-spending panel already shows
   # both single-season scatters side by side, and win% duplicates the
   # point-margin view, so the individual scatters are not repeated.
-  figures = []
+  figures: list[str] = []
   panel_figure = plots.revenue_vs_spending_panel(
     merged, 'point_margin_per_game', args.season
   )
   if panel_figure:
     figures.append(panel_figure)
 
-  relative_summary = insights.relative_spend_summary(merged)
   relative_high, relative_low = insights.relative_spend_extremes(
     merged, sorted(config.POWER_CONFERENCES)
   )
@@ -215,142 +455,29 @@ def command_report(args: argparse.Namespace) -> int:
     config.PROCESSED_DIR / f'spending_decomposition_{args.season}.csv',
     index=False,
   )
+  extras: dict[str, object] = {
+    'relative_summary': insights.relative_spend_summary(merged),
+    'relative_extremes': (relative_high, relative_low),
+    'decomposition': decomposition,
+  }
 
   # Completed prior seasons give the small-sample 2026 numbers context.
   seasons = args.seasons or [args.season - offset for offset in range(4)]
-  season_trend = None
-  relative_by_season = None
-  drivers = None
-  trends = None
-  schedule = None
-  realignment_changes = None
-  pac12_diaspora = None
-  travel_by_shift = None
-  travel_within_team = None
-  realignment_travel = None
+  latest_completed: int | None = None
   try:
     panel = analyze.build_panel(sorted(seasons))
-    season_trend = analyze.correlation_by_season(panel)
-    history = plots.multi_season_scatter(
-      panel, 'football_expenses', 'point_margin_per_game'
+    games_by_season = _load_games(seasons)
+    extras.update(_history_inputs(panel, args.season, figures))
+    trend_inputs, latest_completed = _trend_inputs(
+      panel, games_by_season, args.season, figures
     )
-    if history:
-      figures.append(history)
-    # Replaces the single-season relative chart: 2026 is the last panel.
-    relative_panel = insights.add_relative_spend(panel)
-    relative_by_season = insights.relative_spend_by_season(relative_panel)
-    relative_history = plots.relative_spend_by_season(relative_panel)
-    if relative_history:
-      figures.append(relative_history)
-
-    # Beyond the budget: momentum, repeatable over-performance and the
-    # box-score markers of a good team.
-    momentum_table, momentum = drivers_module.momentum_vs_money(
-      panel, args.season
+    extras.update(trend_inputs)
+    extras['gameday'] = _gameday_inputs(
+      merged, panel, games_by_season, args.season, latest_completed, figures
     )
-    residuals = drivers_module.budget_residuals(panel)
-    residual_lag, over, under = drivers_module.residual_persistence(
-      residuals, args.season
+    extras.update(
+      _realignment_inputs(panel, games_by_season, args.season, figures)
     )
-    residuals.to_csv(config.PROCESSED_DIR / 'budget_residuals.csv', index=False)
-    markers = drivers_module.box_score_markers(panel, args.season)
-    markers_chart = plots.box_score_markers_chart(markers)
-    if markers_chart:
-      figures.append(markers_chart)
-    drivers = {
-      'momentum_table': momentum_table,
-      'momentum': momentum,
-      'residual_lag': residual_lag,
-      'over': over,
-      'under': under,
-      'markers': markers,
-      'schedule_strength': drivers_module.schedule_strength(panel, args.season),
-      'budget_change': drivers_module.budget_change_effect(panel, args.season),
-    }
-
-    games_by_season = {}
-    for season in sorted(seasons):
-      try:
-        games_by_season[season] = build.read_frame('games', season)
-      except FileNotFoundError:
-        logger.debug('No games frame for %d', season)
-    schedule = insights.schedule_split(panel, games_by_season)
-    if not schedule.empty:
-      schedule.to_csv(config.PROCESSED_DIR / 'schedule_split.csv', index=False)
-      split_chart = plots.schedule_split_chart(schedule)
-      if split_chart:
-        figures.append(split_chart)
-
-    # Same-week comparison with past seasons, upsets and a preseason
-    # forecast: what the in-progress season is actually showing.
-    weekly = trends_module.week_by_week(panel, games_by_season)
-    current_weeks = weekly[weekly['season'] == args.season]['week']
-    if not current_weeks.empty:
-      latest = int(current_weeks.max())
-      weekly.to_csv(config.PROCESSED_DIR / 'week_by_week.csv', index=False)
-      upset_summary, upset_details = trends_module.upsets(
-        panel, games_by_season, latest
-      )
-      upset_details.to_csv(config.PROCESSED_DIR / 'upsets.csv', index=False)
-      better, worse, forecast_fit = trends_module.expectation_vs_reality(
-        panel, games_by_season, args.season, latest
-      )
-      trends = {
-        'week': latest,
-        'comparison': trends_module.same_week_comparison(
-          weekly, args.season, latest
-        ),
-        'upset_summary': upset_summary,
-        'upset_test': trends_module.upset_rate_test(upset_summary, args.season),
-        'upsets': upset_details,
-        'better': better,
-        'worse': worse,
-        'forecast_fit': forecast_fit,
-      }
-      trajectory = plots.season_trajectory_chart(weekly, args.season)
-      if trajectory:
-        figures.append(trajectory)
-
-    # Realignment needs the same panel, so it rides along here.
-    moves = realignment.detect_moves(panel)
-    if not moves.empty:
-      realignment_changes = realignment.before_after(panel, moves)
-      pac12_diaspora = realignment.diaspora(panel, moves)
-      realignment_changes.to_csv(
-        config.PROCESSED_DIR / 'realignment_changes.csv', index=False
-      )
-      if not pac12_diaspora.empty:
-        pac12_diaspora.to_csv(
-          config.PROCESSED_DIR / 'pac12_diaspora.csv', index=False
-        )
-        chart = plots.pac12_diaspora_chart(pac12_diaspora)
-        if chart:
-          figures.append(chart)
-      scatter = plots.realignment_scatter(realignment_changes)
-      if scatter:
-        figures.append(scatter)
-
-    # Travel burden: does flying east cost points?
-    offsets = travel.school_offsets(
-      panel[panel['season'] == args.season][['school', 'state']]
-    )
-    if games_by_season and offsets:
-      annotated = travel.add_travel_columns(
-        pd.concat(games_by_season.values(), ignore_index=True), offsets
-      )
-      travel_by_shift = travel.performance_by_shift(annotated)
-      travel_within_team = travel.within_team_travel_effect(annotated)
-      if not moves.empty:
-        realignment_travel = travel.realignment_travel_change(annotated, moves)
-      travel.travel_burden(annotated).to_csv(
-        config.PROCESSED_DIR / 'travel_burden.csv', index=False
-      )
-      travel_chart = plots.travel_penalty_chart(
-        travel_by_shift if travel_by_shift is not None else pd.DataFrame(),
-        travel_within_team,
-      )
-      if travel_chart:
-        figures.append(travel_chart)
   except (ValueError, FileNotFoundError) as exc:
     logger.warning('Multi-season section skipped: %s', exc)
 
@@ -358,11 +485,14 @@ def command_report(args: argparse.Namespace) -> int:
   if box:
     figures.append(box)
 
-  week = None
-  try:
-    week = espn.EspnClient(season=args.season).current_week()
-  except espn.EspnError:
-    logger.warning('Could not determine the current week')
+  # Prefer the latest week with completed games, which is what every
+  # same-week table uses; ESPN's current week is the *upcoming* one.
+  week = latest_completed
+  if week is None:
+    try:
+      week = espn.EspnClient(season=args.season).current_week()
+    except espn.EspnError:
+      logger.warning('Could not determine the current week')
 
   text = report_module.build_report(
     merged,
@@ -374,19 +504,7 @@ def command_report(args: argparse.Namespace) -> int:
     figures,
     figure_prefix='figures/',
     revenue_spending_overlap=overlap,
-    season_trend=season_trend,
-    realignment_changes=realignment_changes,
-    pac12_diaspora=pac12_diaspora,
-    travel_by_shift=travel_by_shift,
-    travel_within_team=travel_within_team,
-    realignment_travel=realignment_travel,
-    schedule_split=schedule,
-    relative_summary=relative_summary,
-    relative_by_season=relative_by_season,
-    drivers=drivers,
-    trends=trends,
-    relative_extremes=(relative_high, relative_low),
-    decomposition=decomposition,
+    **extras,
   )
   path = report_module.write_report(text, args.season)
 
