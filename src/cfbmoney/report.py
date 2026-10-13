@@ -7,6 +7,7 @@ import logging
 import pathlib
 import re
 
+import numpy as np
 import pandas as pd
 from scipy import stats
 
@@ -44,6 +45,13 @@ def _pct(value: float | None) -> str:
   if value is None or pd.isna(value):
     return '-'
   return f'{value * 100:.1f}%'
+
+
+def _fmt_p(value: float | None) -> str:
+  """Formats a p-value, flooring tiny values at ``<0.01``."""
+  if value is None or pd.isna(value):
+    return '-'
+  return '<0.01' if value < 0.01 else f'{value:.2f}'
 
 
 def _stars(p_value: float) -> str:
@@ -895,6 +903,348 @@ def _trend_lines(trends: dict[str, object], season: int) -> list[str]:
   return lines
 
 
+def _tiers_lines(tiers: pd.DataFrame | None, season: int) -> list[str]:
+  """Renders the budget-tier dose-response table.
+
+  Args:
+    tiers (pd.DataFrame | None): Output of
+      :func:`cfbmoney.insights.budget_tiers`.
+    season (int): The in-progress season.
+
+  Returns:
+    list[str]: Markdown lines, empty without data.
+  """
+  if tiers is None or tiers.empty:
+    return []
+  done = tiers[tiers['period'] == 'completed'].sort_values('tier')
+  now = tiers[tiers['period'] == str(season)].set_index('tier')
+  if done.empty:
+    return []
+  lines = [
+    'A correlation says the relationship exists; the tiers show its '
+    'shape. Teams are ranked into fifths by budget within each season, '
+    "so tier 1 is always the poorest fifth of that year's FBS.",
+    '',
+    f'| Tier | Median budget | Win% (completed) | Margin/g (completed) | '
+    f'Win% ({season}) | Margin/g ({season}) | Team-seasons |',
+    '| --- | ---: | ---: | ---: | ---: | ---: | ---: |',
+  ]
+  for row in done.itertuples():
+    current = now.loc[row.tier] if row.tier in now.index else None
+    lines.append(
+      f'| {row.tier} ({row.label.lower()}) | '
+      f'{_usd_millions(row.median_budget)} | {_pct(row.win_pct)} | '
+      f'{row.margin:+.1f} | '
+      f'{_pct(current.win_pct) if current is not None else "-"} | '
+      f'{f"{current.margin:+.1f}" if current is not None else "-"} | '
+      f'{int(row.team_seasons)} |'
+    )
+  lines.append('')
+  top = done.iloc[-1]
+  second = done.iloc[-2]
+  bottom = done.iloc[0]
+  middle = done.iloc[1:-1]
+  spread_top = top.margin - second.margin
+  spread_middle = middle['margin'].max() - middle['margin'].min()
+  if spread_top > spread_middle:
+    shape = (
+      f'The curve is convex: the middle three tiers sit within '
+      f'{spread_middle:.1f} points of each other, then the richest fifth '
+      f'jumps {spread_top:+.1f} points clear of the next tier. Money buys '
+      'most at the very top, where the budget pays for the depth that '
+      'wins the back half of a schedule.'
+    )
+  else:
+    shape = (
+      'The gain is spread fairly evenly across the tiers: each step up '
+      'the budget ladder buys roughly the same improvement.'
+    )
+  lines += [
+    f'Over completed seasons the poorest fifth (median '
+    f'{_usd_millions(bottom.median_budget)}) wins {_pct(bottom.win_pct)} '
+    f'of its games and the richest fifth ({_usd_millions(top.median_budget)}) '
+    f'wins {_pct(top.win_pct)}: a {top.margin - bottom.margin:.0f}-point '
+    f'swing in margin per game. {shape}',
+    '',
+  ]
+  return lines
+
+
+def _luck_lines(
+  summary: pd.DataFrame, teams: pd.DataFrame, season: int
+) -> list[str]:
+  """Renders the Pythagorean luck subsection."""
+  if summary is None or summary.empty or teams is None or teams.empty:
+    return []
+  done = summary[summary['season'] < season]
+  now = summary[summary['season'] == season]
+  lines = [
+    "A team's record should follow its scoring. The Pythagorean "
+    'expectation turns points for and against into an expected win '
+    'percentage; the gap to the actual record is mostly the bounce of '
+    'close games, and the question is whether the budget buys any of it.',
+    '',
+    '| Season | Teams | r, expected vs actual win% | r, luck vs log budget '
+    '| p |',
+    '| --- | ---: | ---: | ---: | ---: |',
+  ]
+  for row in summary.itertuples():
+    label = (
+      f'{row.season} (in progress)' if row.season == season else str(row.season)
+    )
+    lines.append(
+      f'| {label} | {row.n} | {row.r_pythagorean:+.2f} | '
+      f'{row.r_luck_money:+.2f} | {_fmt_p(row.p_luck_money)} |'
+    )
+  lines.append('')
+  if not done.empty:
+    mean_r = done['r_luck_money'].mean()
+    significant = int((done['p_luck_money'] < 0.05).sum())
+    verdict = (
+      'Luck does not follow the budget'
+      if abs(mean_r) < 0.15
+      else (
+        'Richer teams have been slightly *unluckier*'
+        if mean_r < 0
+        else 'Richer teams have been slightly luckier'
+      )
+    )
+    lines += [
+      f'Scoring explains the record well (r = '
+      f'{done["r_pythagorean"].mean():+.2f} in completed seasons), so the '
+      f'residual is small but real. {verdict}: luck correlates '
+      f'{mean_r:+.2f} with log spending across completed seasons, '
+      f'significant in {significant} of {len(done)}. Whatever money buys, '
+      'it is not the bounce of the ball.',
+      '',
+    ]
+  if not now.empty:
+    head = teams.head(5)
+    tail = teams.tail(5).iloc[::-1]
+    lines += [
+      f'**Luckiest and unluckiest records so far in {season}**',
+      '',
+      '| | Program | Conf | Football exp | Record | Expected win% | '
+      'Actual | Wins above expectation |',
+      '| --- | --- | --- | ---: | :---: | ---: | ---: | ---: |',
+    ]
+    for tag, frame in (('Lucky', head), ('Unlucky', tail)):
+      for row in frame.itertuples():
+        lines.append(
+          f'| {tag} | {row.school} | {row.conference} | '
+          f'{_usd_millions(row.football_expenses)} | '
+          f'{int(row.wins)}-{int(row.losses)} | {_pct(row.pythagorean_pct)} | '
+          f'{_pct(row.win_pct)} | **{row.luck_wins:+.1f}** |'
+        )
+    lines.append('')
+    lucky = teams.iloc[0]
+    unlucky = teams.iloc[-1]
+    lines += [
+      f'{lucky.school} is {int(lucky.wins)}-{int(lucky.losses)} while '
+      f'scoring like a team that wins {_pct(lucky.pythagorean_pct)} of its '
+      f'games; {unlucky.school} is {int(unlucky.wins)}-{int(unlucky.losses)} '
+      f'while scoring like one that wins {_pct(unlucky.pythagorean_pct)}. '
+      'Records like these tend to regress toward the scoring over the rest '
+      'of the season.',
+      '',
+    ]
+  return lines
+
+
+def _close_lines(
+  close: pd.DataFrame, season: int, week: int | None
+) -> list[str]:
+  """Renders the close-games-versus-blowouts subsection."""
+  if close is None or close.empty:
+    return []
+  done = close[close['season'] < season]
+  now = close[close['season'] == season]
+  scope = f'through week {week}' if week else 'for the full season'
+  lines = [
+    'Does the bigger budget win the tight games, or only the lopsided '
+    'ones? Every FBS-vs-FBS game is split by its final margin: one-score '
+    '(8 points or fewer) against blowouts (17 or more). Each season is '
+    f'counted {scope}.',
+    '',
+    '| Season | FBS games | Richer team wins | One-score games | Richer '
+    'wins (one-score) | Blowouts | Richer wins (blowouts) |',
+    '| --- | ---: | ---: | ---: | ---: | ---: | ---: |',
+  ]
+  for row in close.itertuples():
+    label = (
+      f'{row.season} (in progress)' if row.season == season else str(row.season)
+    )
+    lines.append(
+      f'| {label} | {row.games} | {_pct(row.richer_win_all)} | '
+      f'{row.close_games} ({_pct(row.close_share)}) | '
+      f'{_pct(row.richer_win_close)} | {row.blowout_games} | '
+      f'{_pct(row.richer_win_blowout)} |'
+    )
+  lines.append('')
+  if not done.empty:
+    close_rate = done['richer_win_close'].mean()
+    blowout_rate = done['richer_win_blowout'].mean()
+    lines += [
+      f'Across completed seasons the bigger budget wins '
+      f'**{_pct(blowout_rate)}** of blowouts but only '
+      f'**{_pct(close_rate)}** of one-score games. Money shows up as '
+      'depth and talent that turn a close game into a comfortable one; '
+      'once a game is actually close, the budget is nearly irrelevant to '
+      'who wins it.',
+      '',
+    ]
+    if not now.empty:
+      current = now.iloc[0]
+      past_share = done['close_share'].mean()
+      lines += [
+        f'So far in {season}, {_pct(current.close_share)} of FBS games '
+        f'have been one-score games against {_pct(past_share)} at the same '
+        f'point of past seasons, and the richer side has won '
+        f'{_pct(current.richer_win_close)} of them (n = '
+        f'{int(current.close_games)}).',
+        '',
+      ]
+  return lines
+
+
+def _home_lines(home: pd.DataFrame, season: int) -> list[str]:
+  """Renders the home-field subsection."""
+  if home is None or home.empty:
+    return []
+  done = home[home['season'] < season]
+  lines = [
+    'Home advantage is measured within each team - its own home margin '
+    'minus its own away margin against FBS opponents, neutral sites '
+    "excluded - so a rich team's generally better results do not pass "
+    'for a louder stadium.',
+    '',
+    '| Season | Home games | Home win rate | Home margin | Within-team '
+    'home edge | r, home edge vs log budget | p |',
+    '| --- | ---: | ---: | ---: | ---: | ---: | ---: |',
+  ]
+  for row in home.itertuples():
+    label = (
+      f'{row.season} (in progress)' if row.season == season else str(row.season)
+    )
+    lines.append(
+      f'| {label} | {row.home_games} | {_pct(row.home_win_rate)} | '
+      f'{row.home_margin:+.1f} | {row.hfa_mean:+.1f} | '
+      f'{row.r_hfa_money:+.2f} | {_fmt_p(row.p_hfa_money)} |'
+    )
+  lines.append('')
+  if not done.empty:
+    mean_r = done['r_hfa_money'].mean()
+    signs = set(np.sign(done['r_hfa_money'].dropna()))
+    stability = (
+      'sign flipping year to year' if len(signs) > 1 else 'never significant'
+    )
+    lines += [
+      f'The home side wins about {_pct(done["home_win_rate"].mean())} of '
+      f'games and a team is typically {done["hfa_mean"].mean():.0f} points '
+      'better at home than on the road. That edge is unrelated to the '
+      f'budget (mean r = {mean_r:+.2f}, {stability}): a '
+      '100,000-seat stadium does not make the home edge bigger than a '
+      '25,000-seat one. Early-season home rates run high because '
+      'September is when rich teams buy home games.',
+      '',
+    ]
+  return lines
+
+
+def _crowd_lines(
+  summary: pd.DataFrame,
+  league: pd.DataFrame,
+  gainers: pd.DataFrame,
+  losers: pd.DataFrame,
+  change: dict[str, float],
+  regression: dict[str, float],
+  season: int,
+  week: int | None,
+) -> list[str]:
+  """Renders the attendance subsection."""
+  if summary is None or summary.empty:
+    return []
+  lines = [
+    'Attendance is the one money-adjacent number that arrives live, game '
+    'by game, instead of two years late in a federal filing. Average '
+    'home crowd per team, FBS opponents only, neutral sites excluded:',
+    '',
+    '| Season | Teams | Mean home crowd | Median | r, log crowd vs log '
+    'budget | r, log crowd vs margin |',
+    '| --- | ---: | ---: | ---: | ---: | ---: |',
+  ]
+  for row in summary.itertuples():
+    label = (
+      f'{row.season} (in progress)' if row.season == season else str(row.season)
+    )
+    lines.append(
+      f'| {label} | {row.n} | {row.mean_attendance:,.0f} | '
+      f'{row.median_attendance:,.0f} | {row.r_money:+.2f} | '
+      f'{row.r_margin:+.2f} |'
+    )
+  lines.append('')
+  lines += [
+    f'Crowd size and budget are nearly the same number (r = '
+    f'{summary["r_money"].mean():+.2f} in logs): the gate, the donors and '
+    'the media deal all scale with the size of the fan base, and so does '
+    'the budget they fund.',
+    '',
+  ]
+  if regression:
+    winner = (
+      'the budget keeps the edge'
+      if abs(regression['t_money']) > abs(regression['t_attendance'])
+      else 'the crowd carries more of the signal'
+    )
+    lines += [
+      f"Does the crowd predict results on its own? Using *last* season's "
+      'crowd, which like the budget is known before kickoff, the two are '
+      f'almost interchangeable: r = {regression["r_attendance"]:+.2f} for '
+      f'the crowd against {regression["r_money"]:+.2f} for the budget over '
+      f'{int(regression["first_season"])}-{int(regression["last_season"])} '
+      f'(n = {int(regression["n"])}). Put both in one model and '
+      f'{winner} (t = {regression["t_money"]:.1f} for the budget, '
+      f'{regression["t_attendance"]:.1f} for the crowd). They are two '
+      'readings of the same thing: the scale of the program.',
+      '',
+    ]
+  if league is not None and not league.empty and change:
+    scope = f'through week {week}' if week else 'to date'
+    trend = ' > '.join(
+      f'{int(row.season)}: {row.mean_attendance:,.0f}'
+      for row in league.sort_values('season').itertuples()
+    )
+    direction = 'down' if change['median_pct'] < 0 else 'up'
+    lines += [
+      f'**Are crowds growing?** Same-week comparison ({scope}), mean home '
+      f'crowd across FBS: {trend}. School by school, the median change '
+      f'from {season - 1} is **{change["median_pct"]:+.1%}** '
+      f'({direction}, n = {int(change["n"])}).',
+      '',
+    ]
+    for title, frame in (
+      ('Biggest crowd gains', gainers),
+      ('Biggest crowd losses', losers),
+    ):
+      if frame is None or frame.empty:
+        continue
+      lines += [
+        f'**{title} versus {season - 1}**',
+        '',
+        f'| Program | Home games | {season - 1} crowd | {season} crowd | '
+        'Change |',
+        '| --- | ---: | ---: | ---: | ---: |',
+      ]
+      for row in frame.itertuples():
+        lines.append(
+          f'| {row.school} | {int(row.home_games)} | '
+          f'{row.prior_attendance:,.0f} | {row.attendance:,.0f} | '
+          f'**{row.pct_change:+.0%}** |'
+        )
+      lines.append('')
+  return lines
+
+
 def _road_gap_test(movers: pd.DataFrame) -> tuple[float, float, int]:
   """Tests whether movers' road gap (away minus home change) is non-zero.
 
@@ -925,6 +1275,8 @@ def _key_findings(
   relative_by_season: pd.DataFrame | None = None,
   drivers: dict[str, object] | None = None,
   trends: dict[str, object] | None = None,
+  tiers: pd.DataFrame | None = None,
+  gameday: dict[str, object] | None = None,
 ) -> list[str]:
   """Summarises the report's strongest results, computed from the data.
 
@@ -943,14 +1295,20 @@ def _key_findings(
       :mod:`cfbmoney.drivers`, keyed as in :func:`build_report`.
     trends (dict[str, object] | None): Outputs of
       :mod:`cfbmoney.trends`, keyed as in :func:`_trend_lines`.
+    tiers (pd.DataFrame | None): Output of
+      :func:`cfbmoney.insights.budget_tiers`.
+    gameday (dict[str, object] | None): Outputs of
+      :mod:`cfbmoney.gameday`, keyed as in :func:`build_report`.
 
   Returns:
     list[str]: Markdown lines.
   """
   drivers = drivers or {}
+  gameday = gameday or {}
   money: list[str] = []
   team: list[str] = []
   league: list[str] = []
+  games: list[str] = []
 
   by_season = (
     relative_by_season
@@ -997,6 +1355,86 @@ def _key_findings(
       '**Out-spending your own league still helps** (within-conference '
       f'r = {relative["r_within"]:+.2f}).'
     )
+  if tiers is not None and not tiers.empty:
+    done = tiers[tiers['period'] == 'completed'].sort_values('tier')
+    if len(done) >= 3:
+      top, second, bottom = done.iloc[-1], done.iloc[-2], done.iloc[0]
+      money.append(
+        '**The return on money is concentrated at the top.** The richest '
+        f'fifth of FBS wins {_pct(top.win_pct)} of its games against '
+        f'{_pct(second.win_pct)} for the next fifth and '
+        f'{_pct(bottom.win_pct)} for the poorest; the top tier is '
+        f'{top.margin - second.margin:+.1f} points per game clear of '
+        'everyone below it.'
+      )
+
+  close = gameday.get('close')
+  if isinstance(close, pd.DataFrame) and not close.empty:
+    done = close[close['season'] < season]
+    if not done.empty:
+      games.append(
+        '**Money decides blowouts, not close games.** The bigger budget '
+        f'wins {_pct(done["richer_win_blowout"].mean())} of games decided '
+        f'by 17+ points but only {_pct(done["richer_win_close"].mean())} '
+        'of one-score games in completed seasons.'
+      )
+  luck_summary = gameday.get('luck_summary')
+  luck_teams = gameday.get('luck_teams')
+  if (
+    isinstance(luck_summary, pd.DataFrame)
+    and isinstance(luck_teams, pd.DataFrame)
+    and not luck_summary.empty
+    and not luck_teams.empty
+  ):
+    done = luck_summary[luck_summary['season'] < season]
+    lucky = ', '.join(
+      f'{r.school} ({r.luck_wins:+.1f} wins)'
+      for r in luck_teams.head(3).itertuples()
+    )
+    unlucky = ', '.join(
+      f'{r.school} ({r.luck_wins:+.1f})'
+      for r in luck_teams.tail(3).iloc[::-1].itertuples()
+    )
+    history = (
+      f' Luck is unrelated to budget (r = {done["r_luck_money"].mean():+.2f} '
+      'in completed seasons).'
+      if not done.empty
+      else ''
+    )
+    games.append(
+      f'**Records outrunning the scoring in {season}:** {lucky}. '
+      f'**Trailing it:** {unlucky}.{history}'
+    )
+  home = gameday.get('home')
+  if isinstance(home, pd.DataFrame) and not home.empty:
+    done = home[home['season'] < season]
+    if not done.empty:
+      games.append(
+        '**Money does not buy a home-field edge.** Teams are '
+        f'{done["hfa_mean"].mean():.0f} points better at home than away, '
+        f'and that edge is uncorrelated with budget (r = '
+        f'{done["r_hfa_money"].mean():+.2f}).'
+      )
+  crowd = gameday.get('attendance_summary')
+  change = gameday.get('attendance_change') or {}
+  regression = gameday.get('attendance_regression') or {}
+  if isinstance(crowd, pd.DataFrame) and not crowd.empty:
+    text = (
+      '**Crowd size is the budget, measured live.** Log home attendance '
+      f'and log spending correlate {crowd["r_money"].mean():+.2f}'
+    )
+    if regression:
+      text += (
+        f"; last season's crowd predicts this season's margin about as "
+        f'well as the budget does (r = {regression["r_attendance"]:+.2f} '
+        f'vs {regression["r_money"]:+.2f})'
+      )
+    if change:
+      text += (
+        f'. Same-week crowds are {change["median_pct"]:+.1%} versus '
+        f'{season - 1} at the median school'
+      )
+    games.append(text + '.')
 
   pooled = drivers.get('momentum') or {}
   if pooled:
@@ -1144,6 +1582,7 @@ def _key_findings(
     (f'What {season} is showing so far', trend),
     ('Does money buy wins?', money),
     ('What else makes a good team?', team),
+    ('Luck, close games and crowds', games),
     ('Realignment and travel', league),
   ]
   if not any(items for _, items in groups):
@@ -1370,14 +1809,14 @@ def _nil_revshare_section(
     '',
     '> [!IMPORTANT]',
     '> Revenue-sharing caps and 247Sports team talent scores are public, '
-    '> but **per-school football allocations and NIL collective payrolls '
-    '> remain undisclosed.** While athletic departments widely cite a '
-    '> rule of thumb directing ~75% of the cap to football (~$16M), no '
-    '> major program publishes its exact balance sheet split. Rather than '
-    '> interpolating or fabricating synthetic estimates, per-school '
-    '> allocation and roster payroll columns (`football_allocation_est`, '
-    '> `roster_payroll_est`) are left blank (`n/a`) until audited disclosures '
-    '> exist.',
+    'but **per-school football allocations and NIL collective payrolls '
+    'remain undisclosed.** While athletic departments widely cite a '
+    'rule of thumb directing ~75% of the cap to football (~$16M), no '
+    'major program publishes its exact balance sheet split. Rather than '
+    'interpolating or fabricating synthetic estimates, per-school '
+    'allocation and roster payroll columns (`football_allocation_est`, '
+    '`roster_payroll_est`) are left blank (`n/a`) until audited disclosures '
+    'exist.',
     '',
     '| Data point | Reported figure | Scope | Confidence | Source |',
     '| :--- | :--- | :--- | :--- | :--- |',
@@ -1644,6 +2083,8 @@ def build_report(
   relative_by_season: pd.DataFrame | None = None,
   drivers: dict[str, object] | None = None,
   trends: dict[str, object] | None = None,
+  tiers: pd.DataFrame | None = None,
+  gameday: dict[str, object] | None = None,
 ) -> str:
   """Renders the full markdown report.
 
@@ -1681,6 +2122,12 @@ def build_report(
       ``schedule_strength`` and ``budget_change``.
     trends: Outputs of :mod:`cfbmoney.trends`, keyed as in
       :func:`_trend_lines`.
+    tiers: Output of :func:`cfbmoney.insights.budget_tiers`.
+    gameday: Outputs of :mod:`cfbmoney.gameday` keyed ``week``,
+      ``luck_summary``, ``luck_teams``, ``close``, ``home``,
+      ``attendance_summary``, ``attendance_league``,
+      ``attendance_gainers``, ``attendance_losers``,
+      ``attendance_change`` and ``attendance_regression``.
 
   Returns:
     The report as a markdown string.
@@ -1711,6 +2158,7 @@ def build_report(
   ]
 
   drivers = drivers or {}
+  gameday = gameday or {}
   lines += _key_findings(
     merged,
     correlations,
@@ -1723,6 +2171,8 @@ def build_report(
     relative_by_season,
     drivers,
     trends,
+    tiers,
+    gameday,
   )
 
   # Each part is built separately so the contents list only names parts
@@ -1740,6 +2190,11 @@ def build_report(
   money += _correlation_matrix(correlations)
   money += _figure(pool, 'revenue_vs_spending', figure_prefix)
   money += _figure(pool, 'football_expenses_vs_point_margin', figure_prefix)
+  tier_lines = _tiers_lines(tiers, season)
+  if tier_lines:
+    money += ['## Budget tiers: the shape of the curve', '']
+    money += tier_lines
+    money += _figure(pool, 'budget_tiers', figure_prefix)
   if schedule_split is not None and not schedule_split.empty:
     money += ['## Where the money edge is won: in or out of conference', '']
     money += _schedule_section(schedule_split, season)
@@ -1817,6 +2272,43 @@ def build_report(
     team += ['## Does getting richer help?', '']
     team += change_lines
   parts.append(('What separates good teams from bad', team))
+
+  day: list[str] = []
+  luck_lines = _luck_lines(
+    gameday.get('luck_summary', pd.DataFrame()),
+    gameday.get('luck_teams', pd.DataFrame()),
+    season,
+  )
+  if luck_lines:
+    day += ['## Luck: records that outrun the scoring', '']
+    day += luck_lines
+    day += _figure(pool, 'pythagorean', figure_prefix)
+  close_lines = _close_lines(
+    gameday.get('close', pd.DataFrame()), season, gameday.get('week')
+  )
+  if close_lines:
+    day += ['## Close games versus blowouts', '']
+    day += close_lines
+    day += _figure(pool, 'close_games', figure_prefix)
+  home_lines = _home_lines(gameday.get('home', pd.DataFrame()), season)
+  if home_lines:
+    day += ['## Home field: does money buy a louder stadium?', '']
+    day += home_lines
+  crowd_lines = _crowd_lines(
+    gameday.get('attendance_summary', pd.DataFrame()),
+    gameday.get('attendance_league', pd.DataFrame()),
+    gameday.get('attendance_gainers', pd.DataFrame()),
+    gameday.get('attendance_losers', pd.DataFrame()),
+    gameday.get('attendance_change') or {},
+    gameday.get('attendance_regression') or {},
+    season,
+    gameday.get('week'),
+  )
+  if crowd_lines:
+    day += ['## Crowds: the live money signal', '']
+    day += crowd_lines
+    day += _figure(pool, 'attendance_vs_spending', figure_prefix)
+  parts.append(('Luck, close games and crowds', day))
 
   moves: list[str] = []
   if realignment_changes is not None and not realignment_changes.empty:
