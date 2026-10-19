@@ -208,9 +208,9 @@ def _model_section(model: dict[str, object]) -> list[str]:
   ]
   dummies = int(coefficients['term'].str.startswith('conf[').sum())
   lines = [
-    f'Outcome **{model["outcome"]}**, n = {model["n"]}, '
-    f'R² = {model["r_squared"]:.3f} (adjusted '
-    f'{model["adj_r_squared"]:.3f}), with {dummies} conference dummies.',
+    f'OLS with {dummies} conference fixed effects (outcome '
+    f'**{model["outcome"]}**, n = {model["n"]}, '
+    f'R² = {model["r_squared"]:.3f}, adjusted {model["adj_r_squared"]:.3f}):',
     '',
     '| Term | Estimate | Std error | t | p |',
     '| --- | ---: | ---: | ---: | ---: |',
@@ -224,9 +224,9 @@ def _model_section(model: dict[str, object]) -> list[str]:
   estimate = money['estimate'].iloc[0] if not money.empty else None
   if estimate is not None and model['outcome'] == 'win_pct':
     lines += [
-      f'Read: doubling the football budget within the same conference is '
-      f'associated with **{estimate * 0.301 * 100:+.1f} points of win '
-      'percentage** (log10(2) = 0.301).',
+      f'Doubling the football budget within the same conference adds '
+      f'**{estimate * 0.301 * 100:+.1f} percentage points of win rate** '
+      '(log10(2) = 0.301).',
       '',
     ]
   return lines
@@ -246,10 +246,9 @@ def _schedule_section(split: pd.DataFrame, season: int) -> list[str]:
   if split.empty:
     return []
   lines = [
-    'The national correlation blends two different contests. '
-    '**Non-conference** games pit SEC budgets against MAC budgets; '
-    '**conference** games pit a school against peers with similar '
-    'media money. Splitting them shows where the money edge is won.',
+    'The national correlation blends two different contests: '
+    '**non-conference** games (often Power 4 vs Group of Five budgets) and '
+    '**conference** games (peers sharing media revenue).',
     '',
     '| Season | Non-conf FBS games | Richer team wins | Conf games | '
     'Richer team wins | Conf r, absolute $ | Conf r, $ vs league |',
@@ -270,7 +269,6 @@ def _schedule_section(split: pd.DataFrame, season: int) -> list[str]:
   lines.append('')
 
   complete = split[split['season'] < season]
-  current = split[split['season'] == season]
   if not complete.empty:
     nonconf = complete['nonconf_fbs_richer_win'].mean()
     conf = complete['conference_richer_win'].mean()
@@ -278,33 +276,17 @@ def _schedule_section(split: pd.DataFrame, season: int) -> list[str]:
     absolute = complete['conference_r_absolute'].mean()
     lines += [
       f'Across completed seasons the bigger budget wins **{_pct(nonconf)}** '
-      f'of non-conference games against FBS opponents but only '
-      f'**{_pct(conf)}** of conference games. Inside a conference, '
-      f'absolute dollars barely track results (r = {absolute:+.2f}); '
-      f'dollars *relative to the league median* do (r = {rel:+.2f}).',
+      f'of non-conference FBS games but only **{_pct(conf)}** of conference '
+      f'games. Inside a conference, raw dollars barely track margin '
+      f'(r = {absolute:+.2f}), whereas spending *relative to the league '
+      f'median* does (r = {rel:+.2f}).',
       '',
     ]
-    if not current.empty:
-      row = current.iloc[0]
-      share = row.conference_games / max(
-        row.conference_games + row.nonconf_fbs_games, 1
-      )
-      lines += [
-        '> [!IMPORTANT]',
-        f'> Only **{share:.0%}** of {season} FBS-vs-FBS games so far are '
-        'conference games, so the in-progress season is still dominated '
-        'by the mismatches where money matters most. Expect the '
-        f'{season} overall correlation to drift down toward the '
-        'completed-season range as conference play fills the schedule.',
-        '',
-      ]
   fcs = split.dropna(subset=['fcs_mean_margin'])
   if not fcs.empty:
     lines += [
-      f'Games against FCS opponents are excluded from both columns; '
-      f'FBS teams won those by an average of '
-      f'**{fcs["fcs_mean_margin"].mean():+.1f} points**, which is why '
-      'early-season margin tables look inflated.',
+      f'FCS games are excluded above; FBS teams won them by an average of '
+      f'**{fcs["fcs_mean_margin"].mean():+.1f} points**.',
       '',
     ]
   return lines
@@ -331,10 +313,9 @@ def _relative_section(
   if not summary:
     return []
   lines = [
-    'Spending is re-expressed as a multiple of the conference median, '
-    'and margin as points above the conference average. That removes '
-    'the SEC-versus-MAC gap and leaves the question a school can act '
-    'on: *does out-spending your own league pay?*',
+    'Re-expressing spending as a multiple of the conference median and '
+    'margin as points above the conference mean removes the SEC-vs-MAC '
+    'gap to test whether *out-spending your own league* pays:',
     '',
   ]
   if by_season is not None and not by_season.empty:
@@ -356,13 +337,10 @@ def _relative_section(
     lines.append('')
     if not complete.empty:
       lines += [
-        'Over a **full** season, out-spending your own conference predicts '
-        'margin about as well as raw dollars do nationally (within r '
+        'Over full seasons, out-spending your conference predicts margin '
+        f'as well as raw dollars do nationally (within r = '
         f'{complete["r_within"].mean():+.2f} vs national '
-        f'{complete["r_absolute"].mean():+.2f}, averaged over completed '
-        'seasons). The in-progress season looks different mainly because '
-        'September is packed with cross-league mismatches that inflate '
-        'the national number; see the schedule split above.',
+        f'{complete["r_absolute"].mean():+.2f}).',
         '',
       ]
   else:
@@ -424,10 +402,8 @@ def _decomposition_section(decomposition: pd.DataFrame) -> list[str]:
     }
   )
   lines = [
-    'Is it the coaches, the recruiting budget or game-day operations? '
-    'Each spending line is added to a model that already contains the '
-    'total football budget. A line that mattered on its own would keep '
-    'a significant coefficient (|t| > 2).',
+    'Each spending line is added to a regression that already controls '
+    'for total football budget (|t| > 2 indicates independent signal):',
     '',
     '| Spending line | n | Corr. with total budget | r with margin alone | '
     'Added coef (pts per SD) | t | R² gain |',
@@ -443,13 +419,12 @@ def _decomposition_section(decomposition: pd.DataFrame) -> list[str]:
   lines.append('')
   strongest = decomposition.loc[decomposition['added_t'].abs().idxmax()]
   lines += [
-    f'Every line correlates **{decomposition["corr_with_budget"].min():.2f} '
-    f'or higher** with the total budget, and none survives with the '
-    f'budget held fixed (largest |t| = {abs(strongest.added_t):.1f}, '
-    f'{labels.get(strongest.component, strongest.component)}). Schools '
-    'that spend big spend big on everything, so this data cannot say '
-    '*which* line buys wins - only that the overall scale of the '
-    'operation does.',
+    f'Every component correlates **{decomposition["corr_with_budget"].min():.2f} '
+    f'or higher** with total budget, and none is significant once total '
+    f'budget is held fixed (max |t| = {abs(strongest.added_t):.1f}, '
+    f'{labels.get(strongest.component, strongest.component)}). Rich '
+    'programs spend across the board, so overall scale—not a single line '
+    'item—drives the correlation.',
     '',
   ]
   return lines
@@ -487,8 +462,8 @@ def _momentum_lines(
   if table.empty:
     return []
   lines = [
-    'Before crediting the budget, compare it with the simplest forecast '
-    "there is: last season's point margin.",
+    'Before crediting the budget, compare it with the simplest baseline: '
+    "last season's point margin.",
     '',
     "| Season | n | r, last season's margin | r, football spending |",
     '| --- | ---: | ---: | ---: |',
@@ -506,26 +481,33 @@ def _momentum_lines(
   if pooled:
     lines += [
       f'Pooling {int(pooled["first_season"])}-{int(pooled["last_season"])}, '
-      f'last season alone explains **{pooled["r2_prior"]:.0%}** of the '
-      f'spread in point margin, spending alone **{pooled["r2_money"]:.0%}** '
-      f'and both together **{pooled["r2_both"]:.0%}**. Both stay '
-      f'significant in the joint model (t = {pooled["t_prior"]:.1f} for '
-      f'last season, {pooled["t_money"]:.1f} for spending): each point of '
-      f"last season's margin carries {pooled['coef_prior']:.2f} points "
-      'forward, and doubling the budget adds '
-      f'**{pooled["coef_money"] * 0.301:+.1f} points per game** on top. '
-      'Money is not just a proxy for being good last year.',
+      f'last season alone explains **{pooled["r2_prior"]:.0%}** of margin '
+      f'variance, spending alone **{pooled["r2_money"]:.0%}**, and both '
+      f'together **{pooled["r2_both"]:.0%}**. Both remain significant in a '
+      f'joint model (t = {pooled["t_prior"]:.1f} for prior margin, '
+      f'{pooled["t_money"]:.1f} for spending): each point of prior margin '
+      f'carries {pooled["coef_prior"]:.2f} points forward, and doubling '
+      f'the budget adds **{pooled["coef_money"] * 0.301:+.1f} points per '
+      'game** on top.',
       '',
     ]
   current = table[table['season'] == season]
-  if not current.empty and current.iloc[0].r_money > current.iloc[0].r_prior:
-    lines += [
-      f'In {season} so far spending out-predicts last season, the reverse '
-      'of every completed year. That is the September schedule again: '
-      'non-conference mismatches reward budget, and conference play has '
-      'barely started.',
-      '',
-    ]
+  if not current.empty:
+    gap = float(current.iloc[0].r_money - current.iloc[0].r_prior)
+    if gap >= 0.03:
+      lines += [
+        f'Early in {season}, spending out-predicts prior margin '
+        f'({current.iloc[0].r_money:+.2f} vs {current.iloc[0].r_prior:+.2f}) '
+        'because non-conference mismatches weight the opening weeks.',
+        '',
+      ]
+    elif abs(gap) < 0.03:
+      lines += [
+        f'In {season} to date, prior margin ({current.iloc[0].r_prior:+.2f}) '
+        f'and spending ({current.iloc[0].r_money:+.2f}) are dead even as '
+        'conference play replaces September mismatches.',
+        '',
+      ]
   return lines
 
 
@@ -549,9 +531,9 @@ def _persistence_lines(
   if lag.empty:
     return []
   lines = [
-    'Each team gets a residual: its point margin minus what a team with '
-    'its budget would be expected to post (a separate line each season). '
-    'If beating the budget were luck, the residual would not repeat.',
+    'Each team gets a seasonal residual: actual point margin minus the '
+    'margin expected for its budget. If beating the budget were pure luck, '
+    'residuals would not correlate year to year.',
     '',
     "| Season | n | r with previous season's residual |",
     '| --- | ---: | ---: |',
@@ -568,11 +550,9 @@ def _persistence_lines(
   if not complete.empty:
     lines += [
       f'Across completed seasons the residual repeats at r = '
-      f'**{complete["r"].mean():+.2f}**: a team that beat its budget by 10 '
-      f'points typically beats it by about {complete["r"].mean() * 10:.0f} '
-      'the next year. That persistent part is whatever the budget line '
-      'misses: coaching, scheme, player development, roster continuity, '
-      'and money the federal filings do not see, such as NIL collectives.',
+      f'**{complete["r"].mean():+.2f}** (~{complete["r"].mean() * 10:.0f} '
+      'points carried over per 10 points of prior over-performance), '
+      'capturing coaching, player development, scheme, and off-books NIL.',
       '',
     ]
   if over.empty or under.empty:
@@ -580,13 +560,18 @@ def _persistence_lines(
   years = sorted(
     int(c.split('_')[1]) for c in over.columns if c.startswith('residual_')
   )
+  has_current = (
+    'current_residual' in over.columns
+    and over['current_residual'].notna().any()
+  )
+  curr_header = f' | {season} to date |' if has_current else ' |'
   header = (
     '| Program | Conf | Football exp | '
     + ' | '.join(str(y) for y in years)
-    + ' | Average |'
+    + f' | Average{curr_header}'
   )
   divider = '| --- | --- | ---: | ' + ' | '.join('---:' for _ in years)
-  divider += ' | ---: |'
+  divider += ' | ---: |' + (' ---: |' if has_current else '')
   for title, frame in (
     ('Consistently beating their budget (points per game)', over),
     ('Consistently missing their budget (points per game)', under),
@@ -596,10 +581,16 @@ def _persistence_lines(
       values = ' | '.join(
         f'{getattr(row, f"residual_{y}"):+.1f}' for y in years
       )
+      curr_val = getattr(row, 'current_residual', float('nan'))
+      curr_cell = (
+        f' | {"-" if pd.isna(curr_val) else f"{curr_val:+.1f}"} |'
+        if has_current
+        else ' |'
+      )
       lines.append(
         f'| {row.school} | {row.conference} | '
         f'{_usd_millions(row.football_expenses)} | {values} | '
-        f'**{row.mean_residual:+.1f}** |'
+        f'**{row.mean_residual:+.1f}**{curr_cell}'
       )
     lines.append('')
   cheap = over.nsmallest(2, 'football_expenses')
@@ -608,10 +599,9 @@ def _persistence_lines(
   high = rich['football_expenses'].min()
   if low > 0 and high / low >= 3:
     lines += [
-      'The over-performers span budgets from '
+      'Over-performers span budgets from '
       f'{" and ".join(cheap["school"])} ({_usd_millions(low)} or less) to '
-      f'{" and ".join(rich["school"])} ({_usd_millions(high)} or more), so '
-      'this is not just rich teams outrunning a straight line.',
+      f'{" and ".join(rich["school"])} ({_usd_millions(high)} or more).',
       '',
     ]
   return lines
@@ -929,10 +919,18 @@ def _tiers_lines(tiers: pd.DataFrame | None, season: int) -> list[str]:
     f'Win% ({season}) | Margin/g ({season}) | Team-seasons |',
     '| --- | ---: | ---: | ---: | ---: | ---: | ---: |',
   ]
+  tier_names = {
+    1: 'poorest fifth',
+    2: 'second fifth',
+    3: 'middle fifth',
+    4: 'fourth fifth',
+    5: 'richest fifth',
+  }
   for row in done.itertuples():
     current = now.loc[row.tier] if row.tier in now.index else None
+    t_name = tier_names.get(int(row.tier), row.label.lower())
     lines.append(
-      f'| {row.tier} ({row.label.lower()}) | '
+      f'| {row.tier} ({t_name}) | '
       f'{_usd_millions(row.median_budget)} | {_pct(row.win_pct)} | '
       f'{row.margin:+.1f} | '
       f'{_pct(current.win_pct) if current is not None else "-"} | '
@@ -1024,7 +1022,7 @@ def _luck_lines(
     lines += [
       f'**Luckiest and unluckiest records so far in {season}**',
       '',
-      '| | Program | Conf | Football exp | Record | Expected win% | '
+      '| Group | Program | Conf | Football exp | Record | Expected win% | '
       'Actual | Wins above expectation |',
       '| --- | --- | --- | ---: | :---: | ---: | ---: | ---: |',
     ]
@@ -1113,10 +1111,9 @@ def _home_lines(home: pd.DataFrame, season: int) -> list[str]:
     return []
   done = home[home['season'] < season]
   lines = [
-    'Home advantage is measured within each team - its own home margin '
-    'minus its own away margin against FBS opponents, neutral sites '
-    "excluded - so a rich team's generally better results do not pass "
-    'for a louder stadium.',
+    'Home advantage is measured within each team (its home margin minus '
+    'its away margin against FBS opponents, neutral sites excluded) so a '
+    "rich team's stronger roster is not mistaken for a louder stadium.",
     '',
     '| Season | Home games | Home win rate | Home margin | Within-team '
     'home edge | r, home edge vs log budget | p |',
@@ -1140,12 +1137,10 @@ def _home_lines(home: pd.DataFrame, season: int) -> list[str]:
     )
     lines += [
       f'The home side wins about {_pct(done["home_win_rate"].mean())} of '
-      f'games and a team is typically {done["hfa_mean"].mean():.0f} points '
-      'better at home than on the road. That edge is unrelated to the '
-      f'budget (mean r = {mean_r:+.2f}, {stability}): a '
-      '100,000-seat stadium does not make the home edge bigger than a '
-      '25,000-seat one. Early-season home rates run high because '
-      'September is when rich teams buy home games.',
+      f'games and teams average {done["hfa_mean"].mean():.0f} points '
+      'better at home than away, but that edge is unrelated to budget '
+      f'(mean r = {mean_r:+.2f}, {stability}): a 100,000-seat stadium '
+      'does not widen the home-field margin over a 25,000-seat one.',
       '',
     ]
   return lines
@@ -1165,9 +1160,9 @@ def _crowd_lines(
   if summary is None or summary.empty:
     return []
   lines = [
-    'Attendance is the one money-adjacent number that arrives live, game '
-    'by game, instead of two years late in a federal filing. Average '
-    'home crowd per team, FBS opponents only, neutral sites excluded:',
+    'Attendance is the one scale metric that arrives live each week '
+    'instead of two years late in a federal filing. Average home crowd '
+    'per team (neutral sites excluded):',
     '',
     '| Season | Teams | Mean home crowd | Median | r, log crowd vs log '
     'budget | r, log crowd vs margin |',
@@ -1183,13 +1178,6 @@ def _crowd_lines(
       f'{row.r_margin:+.2f} |'
     )
   lines.append('')
-  lines += [
-    f'Crowd size and budget are nearly the same number (r = '
-    f'{summary["r_money"].mean():+.2f} in logs): the gate, the donors and '
-    'the media deal all scale with the size of the fan base, and so does '
-    'the budget they fund.',
-    '',
-  ]
   if regression:
     winner = (
       'the budget keeps the edge'
@@ -1197,15 +1185,22 @@ def _crowd_lines(
       else 'the crowd carries more of the signal'
     )
     lines += [
-      f"Does the crowd predict results on its own? Using *last* season's "
-      'crowd, which like the budget is known before kickoff, the two are '
-      f'almost interchangeable: r = {regression["r_attendance"]:+.2f} for '
-      f'the crowd against {regression["r_money"]:+.2f} for the budget over '
+      f'Log crowd size and log budget correlate at r = '
+      f"**{summary['r_money'].mean():+.2f}**. Using *last* season's "
+      'crowd (known before kickoff), crowd and budget predict margin '
+      f'almost equally over '
       f'{int(regression["first_season"])}-{int(regression["last_season"])} '
-      f'(n = {int(regression["n"])}). Put both in one model and '
-      f'{winner} (t = {regression["t_money"]:.1f} for the budget, '
-      f'{regression["t_attendance"]:.1f} for the crowd). They are two '
-      'readings of the same thing: the scale of the program.',
+      f'(r = {regression["r_attendance"]:+.2f} vs '
+      f'{regression["r_money"]:+.2f}, n = {int(regression["n"])}); in a '
+      f'joint model {winner} (t = {regression["t_money"]:.1f} for budget, '
+      f'{regression["t_attendance"]:.1f} for crowd).',
+      '',
+    ]
+  else:
+    lines += [
+      f'Log crowd size and log budget correlate at r = '
+      f'**{summary["r_money"].mean():+.2f}**: gate receipts, donor bases '
+      'and media value all scale with attendance.',
       '',
     ]
   if league is not None and not league.empty and change:
@@ -1665,16 +1660,16 @@ def _realignment_section(
     'Between 2023 and 2026 the sport redrew its map: '
     f'**{len(changes)} schools changed conference**. That is the closest '
     'thing this data has to a controlled experiment, because the money '
-    'moved for reasons that had nothing to do with how well any given '
-    'team was playing.',
+    'moved for reasons unrelated to recent on-field performance.',
     '',
     '> [!IMPORTANT]',
-    '> The federal finance filings lag the field by two years, so the '
-    'newest money year available is the 2024 season. Schools that moved '
-    'in 2024 therefore have exactly **one** post-move budget year on '
-    'record, and schools that moved in 2026 have **none**. Their money '
-    'columns are intentionally blank rather than filled with stale '
-    'pre-move values.',
+    '> Federal finance filings lag by two years, so 2024 is the newest '
+    'money year on record. Schools that moved in 2024 have **one** '
+    'post-move budget year (some, like Texas, show a 1-year dip off a '
+    'pre-move 2023 contribution spike); 2026 movers have **none** and '
+    'are left blank rather than filled with pre-move figures. On-field '
+    'margin changes compare seasons before versus from the move year '
+    'onward (including 2026 to date).',
     '',
   ]
 
@@ -1716,40 +1711,15 @@ def _realignment_section(
         f'Median revenue change for the schools that left: '
         f'**{left_median:+.1f}%**. For the two left behind: '
         f'**{stayed_median:+.1f}%**. Washington State and Oregon State '
-        'did nothing differently on the field; they simply lost their '
-        'conference, and roughly a third of their football revenue went '
-        'with it.',
-        '',
-        '> [!NOTE]',
-        '> The leavers gained less than the headline media deals imply '
-        'because several joined on **reduced shares**. Oregon and '
-        'Washington entered the Big Ten at a reported ~$30M annual '
-        'share against a full share of $65M+, escalating roughly $1M a '
-        'year until they phase in near the end of the decade. That is '
-        'why their measured revenue change here is single digit or even '
-        'negative while UCLA and California, which did not take the '
-        'same discount, moved much more.',
+        'lost roughly a third of their football revenue simply by losing '
+        'their conference.',
         '',
         '#### Realignment financial mechanics',
         '',
-        'The dissolution of the original Pac-12 resulted in massive '
-        'financial shifts, driven by media rights disparities and legal '
-        'settlements:',
-        '',
-        '- **WSU/OSU Settlement & Exit Fees**: The 10 departing members '
-        'forfeited **$65 million total** ($6.5M per school) to Washington '
-        'State and Oregon State, who retained conference assets and '
-        'liabilities.',
-        '- **Media-Rights Hierarchy**: Big Ten agreements pay ~$1.1B-$1.2B '
-        'annually (~$65M-$75M/school full share), compared to ~$380M for '
-        'the Big 12 (~$31M/school) and ~$240M-$400M for the ACC.',
-        '- **Tiered Big Ten Entry**: USC and UCLA entered at full shares '
-        '(~$65M+), while Oregon and Washington entered at a $30M partial '
-        'share increasing $1M/year until reaching parity in 2030.',
-        '- **Travel Cost Inflation**: In their official presentation to the '
-        'UC Board of Regents, UCLA Athletics projected an increase of '
-        '**$4.6 million to $5.8 million** in annual travel and logistics '
-        'costs due to cross-country Big Ten travel.',
+        'Several leavers show modest 2024 revenue gains because they '
+        'entered on reduced media shares (Oregon and Washington joined '
+        'the Big Ten at ~$30M/yr vs ~$65M+ full shares for USC and UCLA) '
+        'while absorbing exit settlements and cross-country travel costs:',
         '',
         '| Financial impact | Reported figure | Scope | Confidence | Source |',
         '| :--- | :--- | :--- | :--- | :--- |',
@@ -1802,21 +1772,17 @@ def _nil_revshare_section(
   lines = [
     '## Roster economics: NIL, revenue sharing and the House settlement',
     '',
-    'Following the landmark *House v. NCAA* settlement, college football '
-    'entered an era structured by an institutional revenue-sharing cap: '
-    '~$20.5M for the 2025-26 academic year, escalating ~4% to ~$21.32M '
-    'for 2026-27.',
+    'Under the *House v. NCAA* settlement, schools may share up to '
+    '~$20.5M in athletics revenue with athletes in 2025-26 (~$21.32M in '
+    '2026-27).',
     '',
     '> [!IMPORTANT]',
-    '> Revenue-sharing caps and 247Sports team talent scores are public, '
+    '> Revenue-sharing caps and 247Sports talent composites are public, '
     'but **per-school football allocations and NIL collective payrolls '
-    'remain undisclosed.** While athletic departments widely cite a '
-    'rule of thumb directing ~75% of the cap to football (~$16M), no '
-    'major program publishes its exact balance sheet split. Rather than '
-    'interpolating or fabricating synthetic estimates, per-school '
-    'allocation and roster payroll columns (`football_allocation_est`, '
-    '`roster_payroll_est`) are left blank (`n/a`) until audited disclosures '
-    'exist.',
+    'remain undisclosed.** Rather than fabricating synthetic estimates, '
+    'per-school allocation (`football_allocation_est`) and roster payroll '
+    '(`roster_payroll_est`) columns remain blank (`n/a`) until audited '
+    'disclosures exist.',
     '',
     '| Data point | Reported figure | Scope | Confidence | Source |',
     '| :--- | :--- | :--- | :--- | :--- |',
@@ -1829,14 +1795,11 @@ def _nil_revshare_section(
     '',
     '### Talent composite and the equal-cap paradox',
     '',
-    'Because the House settlement revenue-share cap is uniform across all '
-    'participating institutions, direct school-to-athlete distributions '
-    'provide virtually zero competitive variance among top programs: every '
-    'Power 4 powerhouse will max out the same cap. Consequently, competitive '
-    'talent differentiation shifts into two distinct arenas: third-party '
-    'booster collective fundraising ($15M-$20M+ at perennial blue-bloods) '
-    'and discretionary athletic department spending on coaching, analysts, '
-    'and support infrastructure.',
+    'Because the House revenue-share cap is uniform across institutions, '
+    'nearly every Power 4 program will max out the same ~$16M football '
+    'share. Competitive differentiation therefore shifts to third-party '
+    'NIL collectives ($15M-$20M+ at top programs) and uncapped coaching, '
+    'recruiting, and support budgets.',
     '',
   ]
   if 'talent_composite' in merged.columns:
@@ -1937,7 +1900,7 @@ def _coach_pay_section(
       f'| {coach} | {row.school} | '
       f'{_usd_millions(row.head_coach_pay)} | '
       f'{_usd_millions(buyout)} | '
-      f'{row.win_pct:.3f} | {row.point_margin_per_game:+.1f} |'
+      f'{_pct(row.win_pct)} | {row.point_margin_per_game:+.1f} |'
     )
   lines.append('')
   return lines
@@ -2219,14 +2182,12 @@ def build_report(
   if relative_lines:
     money += ['## Within the league: out-spending your peers', '']
     money += relative_lines
+    if model:
+      money += _model_section(model)
     money += _figure(pool, 'relative_spend', figure_prefix)
-  if model:
+  elif model:
     money += [
       '## Holding the conference fixed',
-      '',
-      'Conference dummies absorb the media-rights advantage, so the '
-      'money coefficient answers a narrower question: *within the '
-      'same league, does the bigger budget win more?*',
       '',
     ]
     money += _model_section(model)
@@ -2338,12 +2299,15 @@ def build_report(
   reference += _leaderboard_section(merged)
   if not conference.empty:
     reference += ['## Conference summary', '']
-    header = '| Conference | Teams | Median football rev | '
-    header += 'Median dept rev | Mean win% | Mean margin |'
-    reference += [header, '| --- | ---: | ---: | ---: | ---: | ---: |']
+    header = (
+      '| Conference | Teams | Median football exp | Median football rev | '
+      'Median dept rev | Mean win% | Mean margin |'
+    )
+    reference += [header, '| --- | ---: | ---: | ---: | ---: | ---: | ---: |']
     for row in conference.itertuples():
       reference.append(
         f'| {row.conference} | {getattr(row, "teams", "-")} | '
+        f'{_usd_millions(getattr(row, "football_expenses", None))} | '
         f'{_usd_millions(getattr(row, "football_revenue", None))} | '
         f'{_usd_millions(getattr(row, "dept_total_revenue", None))} | '
         f'{_pct(getattr(row, "win_pct", None))} | '
@@ -2402,20 +2366,16 @@ def build_report(
   lines += [
     '## Caveats worth repeating',
     '',
-    '- EADA revenue is self-reported and, at many private schools, '
-    'revenue is booked to exactly equal expenses. Comparisons across '
-    'the public/private line are shakier than they look.',
-    '- Football revenue is partly a *consequence* of winning '
-    '(ticket sales, donations, playoff payouts), so correlation here '
-    'is bidirectional, not clean causation.',
-    '- Revenue-share and NIL money, which is where the 2026 arms race '
-    'actually happens, is largely private. The cap is public; the '
-    'allocation is not.',
-    "- Conference realignment means a team's conference label "
-    'changed recently for several programs; fixed effects use the '
-    f'{season} alignment.',
-    "- Conference games are identified from both teams' conference "
-    "that season; ESPN's schedule feed does not flag them.",
+    '- **Public vs. private accounting**: EADA filings are self-reported, '
+    'and many private schools book revenue to exactly equal expenses.',
+    '- **Reverse causation**: Football revenue partly reflects winning '
+    '(tickets, donations, playoff payouts), so correlations are '
+    'bidirectional.',
+    '- **Unrecorded NIL & revenue-share splits**: The House cap is '
+    'public, but per-school football allocations and third-party NIL '
+    'collectives are private.',
+    f"- **Realignment labels**: Fixed effects use each school's {season} "
+    'conference; conference games are matched from same-season membership.',
     '',
   ]
   return '\n'.join(lines)
