@@ -192,6 +192,86 @@ def _trend_with_projection(
   return correlation
 
 
+def _norm_coord(
+  value: float, limits: tuple[float, float], is_log: bool
+) -> float:
+  """Maps a data coordinate into normalized [0, 1] axis space."""
+  low, high = limits
+  if is_log and value > 0 and low > 0 and high > 0:
+    span = max(float(np.log10(high) - np.log10(low)), 1e-6)
+    return float((np.log10(value) - np.log10(low)) / span)
+  span = max(float(high - low), 1e-6)
+  return float((value - low) / span)
+
+
+def _label_box(
+  nx: float,
+  ny: float,
+  ha: str,
+  dx: int,
+  dy: int,
+  text_w: float,
+  text_h: float,
+  axes_w_pt: float,
+  axes_h_pt: float,
+) -> tuple[float, float, float, float]:
+  """Computes normalized [0, 1] bounding box for an offset label."""
+  ax_x = nx + dx / axes_w_pt
+  ax_y = ny + dy / axes_h_pt
+  x0 = ax_x - text_w if ha == 'right' else ax_x
+  x1 = ax_x if ha == 'right' else ax_x + text_w
+  return (x0, ax_y - 0.15 * text_h, x1, ax_y + 0.85 * text_h)
+
+
+def _pick_label_offset(
+  nx: float,
+  ny: float,
+  school: str,
+  fontsize: int,
+  axes_w_pt: float,
+  axes_h_pt: float,
+  placed_boxes: list[tuple[float, float, float, float]],
+  all_points: list[tuple[float, float]],
+) -> tuple[str, int, int, tuple[float, float, float, float]]:
+  """Selects a label offset minimizing collisions with boxes and dots."""
+  text_w = (len(school) * 0.56 * fontsize + 4.0) / axes_w_pt
+  text_h = (1.35 * fontsize) / axes_h_pt
+  dot_rx = 5.0 / axes_w_pt
+  dot_ry = 5.0 / axes_h_pt
+  sides = ('right', 'left') if nx > 0.78 else ('left', 'right')
+  best_score = float('inf')
+  best_choice: tuple[str, int, int, tuple[float, float, float, float]] = (
+    sides[0],
+    -6 if sides[0] == 'right' else 6,
+    4,
+    (nx, ny, nx + text_w, ny + text_h),
+  )
+  for dy in (4, -9, 12, -16, 20, -24, 28, -32, 36, -40, 44, -48):
+    for side in sides:
+      dx = -6 if side == 'right' else 6
+      box = _label_box(
+        nx, ny, side, dx, dy, text_w, text_h, axes_w_pt, axes_h_pt
+      )
+      x0, y0, x1, y1 = box
+      score = abs(dy) * 0.08 + (0.6 if side != sides[0] else 0.0)
+      if (ny > 0.90 and dy > 0) or (ny < 0.08 and dy < 0):
+        score += 5.0
+      if x0 < 0.01 or x1 > 0.99 or y0 < 0.02 or y1 > 0.97:
+        score += 250.0
+      for px0, py0, px1, py1 in placed_boxes:
+        if x0 < px1 and x1 > px0 and y0 < py1 and y1 > py0:
+          score += 500.0
+      for pnx, pny in all_points:
+        if abs(pnx - nx) < 1e-5 and abs(pny - ny) < 1e-5:
+          continue
+        if x0 - dot_rx < pnx < x1 + dot_rx and y0 - dot_ry < pny < y1 + dot_ry:
+          score += 25.0
+      if score < best_score:
+        best_score = score
+        best_choice = (side, dx, dy, box)
+  return best_choice
+
+
 def _annotate_points(
   axes: plt.Axes,
   data: pd.DataFrame,
@@ -251,13 +331,60 @@ def _annotate_points(
 
   wanted = wanted[:max_labels]
   labelled = usable[usable['school'].isin(wanted)]
-  for row in labelled.itertuples():
+  x_lim = axes.get_xlim()
+  y_lim = axes.get_ylim()
+  log_x = axes.get_xscale() == 'log'
+  log_y = axes.get_yscale() == 'log'
+  bbox = axes.get_position()
+  fig_w, fig_h = axes.figure.get_size_inches()
+  axes_w_pt = max(float(fig_w * bbox.width * 72.0), 150.0)
+  axes_h_pt = max(float(fig_h * bbox.height * 72.0), 120.0)
+  all_points = [
+    (
+      _norm_coord(float(getattr(r, x_column)) / scale_x, x_lim, log_x),
+      _norm_coord(float(getattr(r, y_column)), y_lim, log_y),
+    )
+    for r in usable.itertuples()
+  ]
+  placed_boxes: list[tuple[float, float, float, float]] = []
+
+  for row in labelled.sort_values(
+    [x_column, y_column], ascending=[False, False]
+  ).itertuples():
+    x_val = float(getattr(row, x_column)) / scale_x
+    y_val = float(getattr(row, y_column))
+    nx = _norm_coord(x_val, x_lim, log_x)
+    ny = _norm_coord(y_val, y_lim, log_y)
+    ha, dx, dy, box = _pick_label_offset(
+      nx,
+      ny,
+      row.school,
+      fontsize,
+      axes_w_pt,
+      axes_h_pt,
+      placed_boxes,
+      all_points,
+    )
+    placed_boxes.append(box)
+    arrow = (
+      {
+        'arrowstyle': '-',
+        'color': '#888888',
+        'lw': 0.6,
+        'shrinkA': 0,
+        'shrinkB': 3,
+      }
+      if abs(dy) >= 12
+      else None
+    )
     axes.annotate(
       row.school,
-      (getattr(row, x_column) / scale_x, getattr(row, y_column)),
+      (x_val, y_val),
       textcoords='offset points',
-      xytext=(6, 5),
+      xytext=(dx, dy),
+      ha=ha,
       fontsize=fontsize,
+      arrowprops=arrow,
       zorder=4,
     )
   return labelled['school'].tolist()
@@ -381,6 +508,7 @@ def revenue_vs_spending_panel(
     return None
 
   figure, axes_list = plt.subplots(1, 2, figsize=(15.0, 6.8), sharey=True)
+  drawn: list[tuple[plt.Axes, pd.DataFrame, str]] = []
   for axes, (column, title) in zip(axes_list, available, strict=False):
     data = frame[['school', 'conference', column, performance_column]].dropna()
     data = data[data[column] > 0]
@@ -401,10 +529,18 @@ def revenue_vs_spending_panel(
     correlation = _trend_with_projection(
       axes, log_x, data[performance_column].to_numpy(dtype=float), False
     )
+    axes.set_title(f'{title}   (r = {correlation:.2f})')
+    axes.set_xlabel('$ millions, log scale')
+    axes.grid(alpha=0.2, which='both')
+    drawn.append((axes, data, column))
+
+  # Shade and annotate in a second pass so shared y-limits encompass
+  # every subplot before _shade_quadrants freezes autoscaling.
+  for axes, data, column in drawn:
     y_divider = (
       0.0
       if performance_column == 'point_margin_per_game'
-      else (float(data[performance_column].median()))
+      else float(data[performance_column].median())
     )
     _shade_quadrants(
       axes,
@@ -422,9 +558,6 @@ def revenue_vs_spending_panel(
       max_labels=10,
       fontsize=7,
     )
-    axes.set_title(f'{title}   (r = {correlation:.2f})')
-    axes.set_xlabel('$ millions, log scale')
-    axes.grid(alpha=0.2, which='both')
   axes_list[0].set_ylabel(_label(performance_column))
   figure.suptitle(
     f'Does taking money in look different from paying money out? - {season}',
@@ -476,6 +609,7 @@ def multi_season_scatter(
   if len(seasons) == 1:
     axes_list = [axes_list]
 
+  drawn: list[tuple[plt.Axes, pd.DataFrame]] = []
   for axes, season in zip(axes_list, seasons, strict=True):
     group = usable[usable['season'] == season]
     axes.scatter(
@@ -493,10 +627,22 @@ def multi_season_scatter(
     correlation = _trend_with_projection(
       axes, log_x, group[performance_column].to_numpy(dtype=float), False
     )
+    partial = season == max(seasons)
+    axes.set_title(
+      f'{season}{" (in progress)" if partial else ""}\n'
+      f'r = {correlation:.2f}, n = {len(group)}'
+    )
+    axes.set_xlabel(f'{_label(money_column)} ($M, log)')
+    axes.grid(alpha=0.2, which='both')
+    drawn.append((axes, group))
+
+  # Shade quadrants and place labels after all panels have populated the
+  # shared x/y limits so later seasons are never clipped.
+  for axes, group in drawn:
     y_divider = (
       0.0
       if performance_column == 'point_margin_per_game'
-      else (float(group[performance_column].median()))
+      else float(group[performance_column].median())
     )
     _shade_quadrants(
       axes,
@@ -514,14 +660,6 @@ def multi_season_scatter(
       scale_x=1e6,
       fontsize=7,
     )
-    partial = season == max(seasons)
-    axes.set_title(
-      f'{season}{" (in progress)" if partial else ""}\n'
-      f'r = {correlation:.2f}, n = {len(group)}'
-    )
-    axes.set_xlabel(f'{_label(money_column)} ($M, log)')
-    axes.grid(alpha=0.2, which='both')
-    axes.get_legend_handles_labels()
   axes_list[0].set_ylabel(_label(performance_column))
   figure.suptitle(
     f'{_label(money_column)} vs '
@@ -545,7 +683,7 @@ def conference_money_box(
   season: int = config.DEFAULT_SEASON,
   filename: str | None = None,
 ) -> str | None:
-  """Draws a box plot of money by conference.
+  """Draws a box plot of money by conference with individual team points.
 
   Args:
     frame: Merged analysis table.
@@ -568,12 +706,31 @@ def conference_money_box(
   samples = [
     data.loc[data['conference'] == c, money_column] / 1e6 for c in order
   ]
+  tick_labels = [
+    f'{c} (n={len(s)})' for c, s in zip(order, samples, strict=True)
+  ]
 
-  figure, axes = plt.subplots(figsize=(10.0, 6.0))
-  boxes = axes.boxplot(samples, tick_labels=order, patch_artist=True)
-  for patch, conference in zip(boxes['boxes'], order, strict=True):
-    patch.set_facecolor(CONFERENCE_COLORS.get(conference, '#888888'))
-    patch.set_alpha(0.7)
+  figure, axes = plt.subplots(figsize=(10.5, 6.2))
+  boxes = axes.boxplot(
+    samples, tick_labels=tick_labels, patch_artist=True, showfliers=False
+  )
+  for index, (patch, conference, sample) in enumerate(
+    zip(boxes['boxes'], order, samples, strict=True), start=1
+  ):
+    color = CONFERENCE_COLORS.get(conference, '#888888')
+    patch.set_facecolor(color)
+    patch.set_alpha(0.65)
+    jitter = np.linspace(-0.14, 0.14, len(sample)) if len(sample) > 1 else [0.0]
+    axes.scatter(
+      np.full(len(sample), index, dtype=float) + jitter,
+      sample.sort_values(),
+      s=26,
+      color=color,
+      edgecolors='white',
+      linewidths=0.6,
+      alpha=0.9,
+      zorder=3,
+    )
   axes.set_ylabel(f'{_label(money_column)} ($ millions)')
   axes.set_title(f'{_label(money_column)} by conference - {season}')
   axes.grid(axis='y', alpha=0.25)
@@ -828,15 +985,6 @@ def realignment_scatter(
     linewidths=0.8,
     zorder=3,
   )
-  for row in data.itertuples():
-    axes.annotate(
-      row.school,
-      (row.football_revenue_pct_change, row.point_margin_per_game_change),
-      textcoords='offset points',
-      xytext=(6, 5),
-      fontsize=8,
-      zorder=4,
-    )
 
   x_values = data['football_revenue_pct_change'].to_numpy(dtype=float)
   y_values = data['point_margin_per_game_change'].to_numpy(dtype=float)
@@ -852,6 +1000,15 @@ def realignment_scatter(
     linewidth=1.8,
     label=f'fit (r = {correlation:.2f})',
     zorder=3,
+  )
+  _annotate_points(
+    axes,
+    data,
+    'football_revenue_pct_change',
+    'point_margin_per_game_change',
+    annotate=data['school'].tolist(),
+    max_labels=len(data),
+    fontsize=8,
   )
 
   axes.set_xlabel('Change in football revenue after the move (%)')
@@ -918,6 +1075,18 @@ def travel_penalty_chart(
       fontsize=8,
     )
   axes.axhline(0, color='black', linewidth=1)
+  same_zone = data.loc[data['shift'] == 0, 'mean_margin']
+  if not same_zone.empty:
+    baseline = float(same_zone.iloc[0])
+    axes.axhline(
+      baseline,
+      color='#37474f',
+      linestyle='--',
+      linewidth=1.1,
+      label=f'Same-zone road baseline ({baseline:+.1f} pts)',
+      zorder=1,
+    )
+    axes.legend(fontsize=9, loc='lower left')
   # Leave room for the value labels above and below the bars.
   low = float(min(data['mean_margin'].min(), 0.0))
   high = float(max(data['mean_margin'].max(), 0.0))
@@ -976,23 +1145,36 @@ def schedule_split_chart(
   latest = max(seasons)
   labels = [f'{s}*' if s == latest else str(s) for s in seasons]
 
-  left.bar(
+  nonconf_bars = left.bar(
     x - width / 2,
     split['nonconf_fbs_richer_win'] * 100,
     width,
     color='#0033a0',
     label='Non-conference vs FBS',
   )
-  left.bar(
+  conf_bars = left.bar(
     x + width / 2,
     split['conference_richer_win'] * 100,
     width,
     color='#c8102e',
     label='Conference games',
   )
+  for bars in (nonconf_bars, conf_bars):
+    for bar in bars:
+      height = bar.get_height()
+      if pd.notna(height):
+        left.annotate(
+          f'{height:.0f}%',
+          (bar.get_x() + bar.get_width() / 2, height),
+          textcoords='offset points',
+          xytext=(0, 3),
+          ha='center',
+          fontsize=8,
+        )
   left.axhline(50, color='black', linewidth=0.8, linestyle='--')
   left.set_xticks(x, labels)
-  left.set_ylim(40, 90)
+  left.set_ylim(40, 92)
+  left.set_xlabel('Season (* = in progress)')
   left.set_ylabel('Higher-spending team win rate (%)')
   left.set_title('How often does the bigger budget win?')
   left.legend(fontsize=9, loc='upper left')
@@ -1015,12 +1197,12 @@ def schedule_split_chart(
     )
   right.axhline(0, color='black', linewidth=0.8)
   right.set_xticks(x, labels)
-  right.set_ylim(-0.2, 1)
+  right.set_ylim(-0.08, 0.85)
+  right.set_xlabel('Season (* = in progress)')
   right.set_ylabel('Correlation with team point margin')
   right.set_title('Absolute vs league-relative spending')
-  right.legend(fontsize=9)
+  right.legend(fontsize=9, loc='upper right')
   right.grid(alpha=0.2)
-  figure.suptitle('* = season in progress', fontsize=9, y=0.02)
   figure.tight_layout()
 
   path = config.FIGURES_DIR / filename
@@ -1071,6 +1253,7 @@ def relative_spend_by_season(
     sharex=True,
   )
   ticks = [0.5, 0.67, 1.0, 1.5, 2.0]
+  drawn: list[tuple[plt.Axes, pd.DataFrame]] = []
   for axes, season in zip(axes_list, seasons, strict=True):
     group = data[data['season'] == season]
     axes.scatter(
@@ -1094,6 +1277,16 @@ def relative_spend_by_season(
     axes.minorticks_off()
     axes.axvline(1, color='grey', linewidth=0.8, linestyle='--')
     axes.axhline(0, color='grey', linewidth=0.8, linestyle='--')
+    partial = season == max(seasons)
+    axes.set_title(
+      f'{season}{" (in progress)" if partial else ""}\n'
+      f'r = {r:+.2f}, n = {len(group)}'
+    )
+    axes.set_xlabel('Spending vs conference median (log)')
+    axes.grid(alpha=0.2)
+    drawn.append((axes, group))
+
+  for axes, group in drawn:
     _annotate_points(
       axes,
       group,
@@ -1103,13 +1296,6 @@ def relative_spend_by_season(
       scale_x=1.0,
       fontsize=7,
     )
-    partial = season == max(seasons)
-    axes.set_title(
-      f'{season}{" (in progress)" if partial else ""}\n'
-      f'r = {r:+.2f}, n = {len(group)}'
-    )
-    axes.set_xlabel('Spending vs conference median (log)')
-    axes.grid(alpha=0.2)
   axes_list[0].set_ylabel('Point margin per game vs conference average')
   figure.suptitle(
     'Within-league: out-spending your own conference, season by season',
@@ -1142,24 +1328,38 @@ def box_score_markers_chart(
   data = markers.iloc[::-1]
   positions = np.arange(len(data))
   height = 0.38
-  figure, axes = plt.subplots(figsize=(10.0, 0.55 * len(data) + 1.8))
-  axes.barh(
+  figure, axes = plt.subplots(figsize=(10.5, 0.58 * len(data) + 1.8))
+  bars_margin = axes.barh(
     positions + height / 2,
     data['r_margin'],
     height,
     color='#1565c0',
     label='r with point margin (what winners do)',
   )
-  axes.barh(
+  bars_money = axes.barh(
     positions - height / 2,
     data['r_money'],
     height,
     color='#9e9e9e',
     label='r with football spending (what money buys)',
   )
+  for bars in (bars_margin, bars_money):
+    for bar in bars:
+      val = bar.get_width()
+      if pd.notna(val):
+        dx = 4 if val >= 0 else -4
+        axes.annotate(
+          f'{val:+.2f}',
+          (val, bar.get_y() + bar.get_height() / 2),
+          textcoords='offset points',
+          xytext=(dx, 0),
+          va='center',
+          ha='left' if val >= 0 else 'right',
+          fontsize=7.5,
+        )
   axes.set_yticks(positions, data['label'])
   axes.axvline(0, color='black', linewidth=0.8)
-  axes.set_xlim(-1, 1)
+  axes.set_xlim(-1.05, 1.05)
   axes.set_xlabel('Pearson r, completed seasons pooled')
   axes.set_title(
     'Box-score markers of a good team, and how much money explains'
@@ -1191,14 +1391,45 @@ def season_trajectory_chart(
   if weekly is None or weekly.empty:
     return None
   figure, (left, right) = plt.subplots(1, 2, figsize=(13.0, 5.2))
-  palette = ['#90a4ae', '#78909c', '#546e7a', '#37474f']
+  past_styles = [
+    ('#78909c', '--'),
+    ('#455a64', '-.'),
+    ('#1565c0', '-'),
+    ('#2e7d32', ':'),
+  ]
   seasons = sorted(weekly['season'].unique())
+  completed = weekly[weekly['season'] != season]
+  if not completed.empty:
+    band = completed.groupby('week')['r_margin'].agg(['min', 'max'])
+    left.fill_between(
+      band.index,
+      band['min'],
+      band['max'],
+      color='#90a4ae',
+      alpha=0.15,
+      zorder=1,
+    )
+    conf_completed = completed[completed['conf_games'] >= 20]
+    if not conf_completed.empty:
+      cband = conf_completed.groupby('week')['richer_win_conf'].agg(
+        ['min', 'max']
+      )
+      right.fill_between(
+        cband.index,
+        cband['min'],
+        cband['max'],
+        color='#90a4ae',
+        alpha=0.15,
+        zorder=1,
+      )
   for index, year in enumerate(seasons):
     group = weekly[weekly['season'] == year]
     current = year == season
+    pcolor, pstyle = past_styles[index % len(past_styles)]
     style = {
-      'color': '#c62828' if current else palette[index % len(palette)],
-      'linewidth': 3.0 if current else 1.5,
+      'color': '#c62828' if current else pcolor,
+      'linestyle': '-' if current else pstyle,
+      'linewidth': 3.0 if current else 1.7,
       'marker': 'o' if current else None,
       'label': f'{year}{" (in progress)" if current else ""}',
       'zorder': 3 if current else 2,
@@ -1259,7 +1490,7 @@ def budget_tiers_chart(
   periods = [p for p in ('completed', str(season)) if p in set(tiers['period'])]
   if not periods:
     return None
-  figure, (left, right) = plt.subplots(1, 2, figsize=(13.0, 5.2))
+  figure, (left, right) = plt.subplots(1, 2, figsize=(13.0, 5.4))
   width = 0.8 / len(periods)
   colors = {'completed': '#546e7a', str(season): '#c62828'}
   for offset, period in enumerate(periods):
@@ -1270,12 +1501,33 @@ def budget_tiers_chart(
       if period == 'completed'
       else f'{season} (in progress)'
     )
-    left.bar(
+    win_bars = left.bar(
       positions, group['win_pct'], width, color=colors[period], label=label
     )
-    right.bar(
+    margin_bars = right.bar(
       positions, group['margin'], width, color=colors[period], label=label
     )
+    for bar, val in zip(win_bars, group['win_pct'], strict=True):
+      if pd.notna(val):
+        left.annotate(
+          f'{val:.0%}',
+          (bar.get_x() + bar.get_width() / 2, val),
+          textcoords='offset points',
+          xytext=(0, 3),
+          ha='center',
+          fontsize=7.5,
+        )
+    for bar, val in zip(margin_bars, group['margin'], strict=True):
+      if pd.notna(val):
+        dy = 3 if val >= 0 else -10
+        right.annotate(
+          f'{val:+.1f}',
+          (bar.get_x() + bar.get_width() / 2, val),
+          textcoords='offset points',
+          xytext=(0, dy),
+          ha='center',
+          fontsize=7.5,
+        )
   reference = tiers[tiers['period'] == periods[0]].sort_values('tier')
   ticks = [
     f'{int(t)}\n${b / 1e6:.0f}M'
@@ -1286,12 +1538,16 @@ def budget_tiers_chart(
     axes.set_xlabel('Budget tier (1 = poorest fifth) and median budget')
     axes.grid(axis='y', alpha=0.2)
     axes.legend(fontsize=8)
+  left.set_ylim(0, 0.90)
   left.set_ylabel('Mean win percentage')
   left.yaxis.set_major_formatter(
     matplotlib.ticker.PercentFormatter(xmax=1.0, decimals=0)
   )
   left.axhline(0.5, color='grey', linewidth=0.8, linestyle='--')
   left.set_title('Win percentage by budget tier')
+  low_m = float(tiers['margin'].min())
+  high_m = float(tiers['margin'].max())
+  right.set_ylim(low_m - 3.5, high_m + 3.5)
   right.set_ylabel('Mean point margin per game')
   right.axhline(0, color='black', linewidth=0.8)
   right.set_title('Point margin by budget tier')
@@ -1422,30 +1678,20 @@ def pythagorean_chart(
     ha='right',
     transform=axes.transAxes,
   )
-  # Label the extremes; teams sitting on the same point get stacked
-  # labels instead of one unreadable smear.
+  axes.set_xlim(0, 1)
+  axes.set_ylim(0, 1)
   extremes = pd.concat(
     [data.nlargest(5, 'luck_wins'), data.nsmallest(5, 'luck_wins')]
   ).drop_duplicates('school')
-  placed: list[tuple[float, float]] = []
-  for row in extremes.sort_values(['pythagorean_pct', 'win_pct']).itertuples():
-    point = (row.pythagorean_pct, row.win_pct)
-    stacked = sum(
-      1
-      for x, y in placed
-      if abs(x - point[0]) < 0.09 and abs(y - point[1]) < 0.03
-    )
-    placed.append(point)
-    axes.annotate(
-      row.school,
-      point,
-      textcoords='offset points',
-      xytext=(6, 5 - 11 * stacked),
-      fontsize=8,
-      zorder=4,
-    )
-  axes.set_xlim(0, 1)
-  axes.set_ylim(0, 1)
+  _annotate_points(
+    axes,
+    data,
+    'pythagorean_pct',
+    'win_pct',
+    annotate=extremes['school'].tolist(),
+    max_labels=len(extremes),
+    fontsize=8,
+  )
   formatter = matplotlib.ticker.PercentFormatter(xmax=1.0, decimals=0)
   axes.xaxis.set_major_formatter(formatter)
   axes.yaxis.set_major_formatter(formatter)
