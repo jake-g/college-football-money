@@ -149,9 +149,9 @@ reports/
   academic year 2024-25 — money spent *before* the 2026 season.
 - **Private schools report differently.** Several book revenue exactly
   equal to expenses, which flattens their apparent margin.
-- **Early-season noise.** Through week 4 a team has played two to four
-  games. That is why the report also runs the same analysis on 2023,
-  2024 and 2025.
+- **In-season noise.** Half a season of games is still noisy, which is
+  why the report also runs the same analysis on completed seasons (2023,
+  2024 and 2025) and replays each season at the same week.
 
 ## Development
 
@@ -165,6 +165,14 @@ make check    # both
 Style follows the Google Python Style Guide: two-space indents, 80
 character lines, Google docstrings. `ruff` enforces it and pre-commit
 runs it on every commit.
+
+### Versioning
+
+Releases use `X.Y.Z` tags where `X = 0` for the 2026–27 season, `Y`
+increments for notable methodology or code improvements, and `Z` is used
+for small fixes (`0` otherwise). Weekly dataset and report refreshes are
+folded into the next release that ships code. See
+[CHANGELOG.md](CHANGELOG.md) for the release history.
 
 ### Data policy in git
 
@@ -237,26 +245,26 @@ src/cfbmoney/
 
 ### What has been explored
 
-Numbers below are from the current report (2026 through week 6; completed
+Numbers below are from the current report (2026 through week 7; completed
 seasons 2023-2025). They move week to week; the report is the source of truth.
 
 | Question | Result |
 | --- | --- |
-| Does football spending correlate with winning? | Yes. `r = +0.52` with point margin through week 6 of 2026; `+0.40` to `+0.46` over completed seasons |
+| Does football spending correlate with winning? | Yes. `r = +0.52` with point margin through week 7 of 2026; `+0.40` to `+0.46` over completed seasons |
 | Does revenue tell a different story? | No. `log(revenue)` and `log(spending)` correlate `r = +0.96`, so every money metric says the same thing |
 | What does the relationship look like? | Convex. The poorest fifth wins 44%, the middle three tiers 48-57%, the richest fifth 67%; the top tier is 7 points per game clear of the next |
 | Where is the money edge won? | Across leagues. The bigger budget wins ~75% of non-conference FBS games but ~61% of conference games |
 | Does money still matter *within* a conference? | Yes, spend relative to the league median tracks margin about as well as absolute dollars (`r = +0.41` vs `+0.43`) |
-| Does money win close games? | No. The bigger budget wins 84% of blowouts but 57% of one-score games (50% in 2025) |
+| Does money win close games? | No. The bigger budget wins 81% of blowouts but 58% of one-score games (50% in 2026 to date) |
 | Is beating the budget luck? | Partly not: the budget residual repeats year to year at `r = +0.43`. Pythagorean luck itself is unrelated to budget (`r = -0.14`) |
-| Does money buy a home-field edge? | No. Teams are ~11 points better at home; the edge is uncorrelated with budget |
+| Does money buy a home-field edge? | No. Teams are ~10 points better at home; the edge is uncorrelated with budget (`r = -0.07`) |
 | Is attendance just the budget? | Nearly: log crowd vs log spending `r = +0.88`. Last season's crowd predicts margin as well as the budget (`+0.44` vs `+0.45`); jointly the budget keeps the edge |
-| Are crowds growing? | Slightly shrinking: mean same-week FBS crowd 41.3k (2023) to 40.0k (2026); median school `-0.7%` vs 2025 |
-| Does head coach pay drive results by itself? | Much less than program scale (`r = +0.20`, n = 52 verified contracts); nothing once the budget is held fixed |
+| Are crowds growing? | Slightly shrinking: mean same-week FBS crowd 41.2k (2023) to 39.9k (2026); median school `-0.2%` vs 2025 |
+| Does head coach pay drive results by itself? | Much less than program scale (`r = +0.15`, n = 52 verified contracts); nothing once the budget is held fixed |
 | Which spending line matters? | None individually. Coaching, recruiting and operations all correlate `>= 0.77` with the total and none adds signal on top |
 | Does getting richer help quickly? | Not yet visible: 2023-25 budget changes are unrelated to margin changes (`r = -0.05`) |
 | Who gained from the Pac-12 breakup? | Leavers `+8.3%` median football revenue; Oregon State and Washington State `-31.6%` |
-| Does eastward travel hurt? | Suggestively. Long-haul movers' road gap worsened by ~6 points (9 of 13 negative, p = 0.09) |
+| Does eastward travel hurt? | Suggestively. Long-haul movers' road gap worsened by ~6.8 points (9 of 13 negative, p = 0.07) |
 
 ### Considerations and known limitations
 
