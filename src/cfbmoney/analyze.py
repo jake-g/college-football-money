@@ -427,6 +427,7 @@ def conference_summary(frame: pd.DataFrame) -> pd.DataFrame:
     One row per conference with median money and mean performance.
   """
   columns = {
+    'football_expenses': 'median',
     'football_revenue': 'median',
     'dept_total_revenue': 'median',
     'win_pct': 'mean',

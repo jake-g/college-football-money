@@ -241,6 +241,8 @@ def residual_persistence(
   )
   for year in complete:
     ranking[f'residual_{year}'] = block[year].to_numpy()
+  if season in wide.columns:
+    ranking['current_residual'] = wide[season].reindex(block.index).to_numpy()
   over = ranking.nlargest(top_n, 'mean_residual').reset_index(drop=True)
   under = ranking.nsmallest(top_n, 'mean_residual').reset_index(drop=True)
   return pd.DataFrame(lag_rows), over, under
