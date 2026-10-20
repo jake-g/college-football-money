@@ -5,4 +5,4 @@ ESPN's public API with public athletics-finance data so that the
 relationship between spending and winning can be measured.
 """
 
-__version__ = '0.4.0'
+__version__ = '0.7.0'

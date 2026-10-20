@@ -168,10 +168,9 @@ runs it on every commit.
 
 ### Versioning
 
-Releases use `X.Y.Z` tags where `X = 0` for the 2026–27 season, `Y`
-increments for notable methodology or code improvements, and `Z` is used
-for small fixes (`0` otherwise). Weekly dataset and report refreshes are
-folded into the next release that ships code. See
+Releases use `X.Y.Z` tags where `X = 0` for the 2026–27 season, `Y` is
+the official season week (`0` for preseason, `2`–`7` for Weeks 2–7), and
+`Z` is used for small fixes (`0` otherwise). See
 [CHANGELOG.md](CHANGELOG.md) for the release history.
 
 ### Data policy in git
