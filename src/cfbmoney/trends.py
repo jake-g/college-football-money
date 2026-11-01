@@ -13,6 +13,9 @@ by replaying completed seasons week by week:
 * **Expectation vs reality** - a forecast from last season's margin and
   this season's budget, fitted on completed seasons *at the same week*,
   applied to 2026.
+* **Contenders** - the teams with at most one loss at the same week of
+  each season, how many come from the richest fifth of budgets, and how
+  many of them went on to finish with two losses or fewer.
 """
 
 from __future__ import annotations
@@ -378,3 +381,100 @@ def expectation_vs_reality(
   better = out.nlargest(top_n, 'surprise').reset_index(drop=True)
   worse = out.nsmallest(top_n, 'surprise').reset_index(drop=True)
   return better, worse, fit
+
+
+REGULAR_SEASON_WEEKS = 14
+
+
+def _records(played: pd.DataFrame) -> pd.DataFrame:
+  """Returns wins, losses and games per school from team-game rows."""
+  won = played['margin'] > 0
+  lost = played['margin'] < 0
+  return pd.DataFrame(
+    {
+      'wins': won.groupby(played['school']).sum(),
+      'losses': lost.groupby(played['school']).sum(),
+      'games': played.groupby('school').size(),
+    }
+  )
+
+
+def contenders(
+  panel: pd.DataFrame,
+  games_by_season: Mapping[int, pd.DataFrame],
+  season: int,
+  week: int,
+  max_losses: int = 1,
+  min_games: int = 4,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+  """Finds the teams still in the playoff picture at the same week.
+
+  A contender has at most ``max_losses`` losses through ``week``.  For
+  each season the table reports how many contenders there are, how
+  many come from the richest fifth of FBS budgets, the median budget of
+  contenders against everyone else and, for completed seasons, how many
+  of the same-week contenders finished the regular season (through week
+  :data:`REGULAR_SEASON_WEEKS`) with at most ``max_losses + 1`` losses.
+
+  Args:
+    panel (pd.DataFrame): Multi-season frame with spending per season.
+    games_by_season (Mapping[int, pd.DataFrame]): Long team-game frames.
+    season (int): The in-progress season.
+    week (int): Last week counted, so seasons line up.
+    max_losses (int): Most losses a contender may have at ``week``.
+    min_games (int): Minimum games played to be counted.
+
+  Returns:
+    tuple[pd.DataFrame, pd.DataFrame]: A per-season summary and the
+    in-progress season's contenders with budget, budget rank, record
+    and margin per game.
+  """
+  summary_rows = []
+  details = pd.DataFrame()
+  for year, games in sorted(games_by_season.items()):
+    spend = season_money(panel, year)
+    if spend.empty or games.empty:
+      continue
+    played = played_games(games)
+    to_date = played[played['week'] <= week]
+    records = _records(to_date)
+    records = records[records['games'] >= min_games]
+    records = records.join(spend.rename('spend'), how='inner')
+    if records.empty:
+      continue
+    records['rank'] = records['spend'].rank(ascending=False, method='min')
+    records['top_fifth'] = records['spend'] >= spend.quantile(0.8)
+    alive = records[records['losses'] <= max_losses]
+    others = records[records['losses'] > max_losses]
+    row = {
+      'season': int(year),
+      'teams': int(len(records)),
+      'contenders': int(len(alive)),
+      'from_top_fifth': int(alive['top_fifth'].sum()),
+      'median_budget_contenders': float(alive['spend'].median()),
+      'median_budget_others': float(others['spend'].median()),
+      'poorest_contender': alive['spend'].idxmin() if len(alive) else None,
+      'poorest_budget': float(alive['spend'].min()) if len(alive) else np.nan,
+      'survived': np.nan,
+    }
+    if year != season:
+      final = _records(played[played['week'] <= REGULAR_SEASON_WEEKS])
+      final = final.reindex(alive.index)
+      row['survived'] = int((final['losses'] <= max_losses + 1).sum())
+    summary_rows.append(row)
+    if year == season and not alive.empty:
+      per_game = to_date.groupby('school')['margin'].mean()
+      conf = to_date.groupby('school')['conference'].first()
+      details = pd.DataFrame(
+        {
+          'school': alive.index,
+          'conference': conf.reindex(alive.index).to_numpy(),
+          MONEY: alive['spend'].to_numpy(),
+          'budget_rank': alive['rank'].astype(int).to_numpy(),
+          'wins': alive['wins'].astype(int).to_numpy(),
+          'losses': alive['losses'].astype(int).to_numpy(),
+          MARGIN: per_game.reindex(alive.index).to_numpy(),
+        }
+      ).sort_values(['losses', MARGIN], ascending=[True, False])
+      details = details.reset_index(drop=True)
+  return pd.DataFrame(summary_rows), details

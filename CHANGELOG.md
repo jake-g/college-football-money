@@ -2,8 +2,39 @@
 
 All notable changes to this project are documented here. Versions use
 `X.Y.Z` where `X = 0` for the 2026–27 season, `Y` is the official CFB
-season week (`0` for preseason, `2`–`7` for Weeks 2–7), and `Z` is used
-for small point fixes (`0` otherwise).
+season week (`0` for preseason, `2`–`9` for Weeks 2–9), and `Z` is used
+for small point fixes (`0` otherwise). Weeks with no release are skipped.
+
+## [0.9.0] - 2026-11-01
+
+### Added
+- `trends.contenders`: a same-week playoff-contender view. For each season
+  it counts teams with at most one loss, how many come from the richest
+  fifth of FBS budgets, the median contender budget against everyone
+  else, the cheapest contender, and how many past contenders finished the
+  regular season with two losses or fewer. Rendered as "Who is still in
+  the playoff picture" in part 1, with a summary bullet and
+  `data/processed/contenders.csv`.
+- Exact binomial test (`report._conf_rate_test`) of the richer team's
+  in-conference win rate against the pooled same-week rate of 2023–25,
+  replacing the fixed "a gap under ten points is noise" sentence. When
+  significant it is folded into the upsets summary bullet ("Mismatches
+  hold, peers are coin flips").
+- `config.POPULAR_PROGRAMS`: a second tier of widely followed schools
+  (Clemson, Florida, Oklahoma, Tennessee, BYU, Boise State, ...) that
+  scatter plots label in a smaller grey font, but only where the label
+  fits without touching another label or a neighbouring dot.
+
+### Changed
+- Road-tax verdict in the travel section and summary now follows the
+  one-sample t-test instead of a hardcoded "suggestive" label.
+- Header sample-size caution scales with the week instead of promising
+  November.
+- `report._momentum_lines` gains the late-season branch where last
+  season's margin out-predicts the budget; the sentence had silently
+  vanished once that happened.
+- Season trajectory chart is embedded directly under the same-week table.
+- Week 9 datasets, figures, report, and README regenerated.
 
 ## [0.7.0] - 2026-10-19
 
@@ -124,6 +155,7 @@ Initial release (Week 2 of the 2026 season).
 - CLI, automated figure pruning and markdown report generator.
 - README, metric glossary and research notes.
 
+[0.9.0]: https://github.com/jake-g/college-football-money/compare/v0.7.0...v0.9.0
 [0.7.0]: https://github.com/jake-g/college-football-money/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/jake-g/college-football-money/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/jake-g/college-football-money/compare/v0.4.0...v0.5.0

@@ -289,6 +289,10 @@ def _trend_inputs(
   better, worse, forecast_fit = trends_module.expectation_vs_reality(
     panel, games_by_season, season, latest
   )
+  contender_summary, contender_details = trends_module.contenders(
+    panel, games_by_season, season, latest
+  )
+  contender_details.to_csv(config.PROCESSED_DIR / 'contenders.csv', index=False)
   out['trends'] = {
     'week': latest,
     'comparison': trends_module.same_week_comparison(weekly, season, latest),
@@ -298,6 +302,8 @@ def _trend_inputs(
     'better': better,
     'worse': worse,
     'forecast_fit': forecast_fit,
+    'contender_summary': contender_summary,
+    'contenders': contender_details,
   }
   trajectory = plots.season_trajectory_chart(weekly, season)
   if trajectory:

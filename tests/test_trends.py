@@ -135,3 +135,34 @@ def test_upset_rate_test_flags_large_drops():
   assert result['rate'] == pytest.approx(0.02)
   assert result['past_rate'] == pytest.approx(0.15)
   assert result['p'] < 0.01
+
+
+def test_contenders_filters_by_losses_and_tracks_survival():
+  """Contenders have at most one loss; past contenders are followed up."""
+  games = {2025: _games(2025, upset=False), 2026: _games(2026, upset=True)}
+  # 2025: Rich A 2-0, Rich B 2-0, Poor A 0-2, Poor B 0-2.
+  # 2026: Rich A 2-0, Rich B 1-1, Poor A 1-1, Poor B 0-2.
+  summary, details = trends.contenders(
+    _panel(), games, season=2026, week=2, min_games=2
+  )
+  by_season = summary.set_index('season')
+  assert by_season.loc[2025, 'contenders'] == 2
+  assert by_season.loc[2025, 'survived'] == 2
+  assert by_season.loc[2025, 'poorest_contender'] == 'Rich B'
+  assert by_season.loc[2026, 'contenders'] == 3
+  assert pd.isna(by_season.loc[2026, 'survived'])
+  # Only Rich A ($80M) sits in the richest fifth of four budgets.
+  assert by_season.loc[2026, 'from_top_fifth'] == 1
+  assert list(details['school']) == ['Rich A', 'Rich B', 'Poor A']
+  assert details.iloc[0]['budget_rank'] == 1
+  assert details.iloc[0]['losses'] == 0
+
+
+def test_contenders_respect_min_games():
+  """Teams that have not played enough are left out entirely."""
+  games = {2026: _games(2026, upset=False)}
+  summary, details = trends.contenders(
+    _panel(), games, season=2026, week=1, min_games=2
+  )
+  assert summary.empty
+  assert details.empty

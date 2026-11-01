@@ -281,3 +281,134 @@ def test_slug_matches_github_anchors():
     report._slug('4. Roster economics: NIL and revenue sharing')
     == '4-roster-economics-nil-and-revenue-sharing'
   )
+
+
+def test_conf_rate_test_needs_enough_games():
+  """Few games return nan; a big gap on many games is significant."""
+  gap, p = report._conf_rate_test(0.5, 10, 0.62)
+  assert np.isnan(gap) and np.isnan(p)
+  gap, p = report._conf_rate_test(0.529, 326, 0.624)
+  assert gap == pytest.approx(-9.5, abs=0.1)
+  assert p < 0.01
+  _, p = report._conf_rate_test(0.60, 60, 0.62)
+  assert p > 0.05
+
+
+def _contender_summary() -> pd.DataFrame:
+  """Two completed seasons and one in progress."""
+  return pd.DataFrame(
+    {
+      'season': [2024, 2025, 2026],
+      'teams': [130, 130, 130],
+      'contenders': [20, 20, 10],
+      'from_top_fifth': [10, 10, 2],
+      'median_budget_contenders': [5e7, 5e7, 4e7],
+      'median_budget_others': [2e7, 2e7, 2e7],
+      'poorest_contender': ['Toledo', 'Ohio', 'New Mexico'],
+      'poorest_budget': [1.2e7, 1.1e7, 1.5e7],
+      'survived': [15, 17, np.nan],
+    }
+  )
+
+
+def test_contender_section_quotes_the_data():
+  """The table, verdict and the 2026 list all come from the inputs."""
+  details = pd.DataFrame(
+    {
+      'school': ['Miami', 'New Mexico'],
+      'conference': ['ACC', 'Mountain West'],
+      'football_expenses': [8.8e7, 1.5e7],
+      'budget_rank': [3, 96],
+      'wins': [8, 7],
+      'losses': [0, 1],
+      'point_margin_per_game': [29.9, 23.1],
+    }
+  )
+  text = '\n'.join(
+    report._contender_lines(_contender_summary(), details, 2026, 9)
+  )
+  assert '## Who is still in the playoff picture' in text
+  assert (
+    '| 2025 | 20 | 10 | $50.0M | $20.0M | Ohio ($11.0M) | 17 of 20 |' in text
+  )
+  assert 'field is **cheaper than usual**' in text
+  assert '2 of 10 contenders (20.0%)' in text
+  assert 'against 50.0%' in text
+  assert '80.0% of same-week contenders' in text
+  assert '| New Mexico | Mountain West | $15.0M | 96 | 7-1 | +23.1 |' in text
+
+
+def test_contender_section_absent_without_data():
+  """No summary means no section rather than an empty table."""
+  assert report._contender_lines(None, None, 2026, 9) == []
+  assert report._contender_lines(pd.DataFrame(), None, 2026, 9) == []
+
+
+def test_key_findings_include_contender_bullet():
+  """The summary carries a contender verdict computed from the table."""
+  lines = report._key_findings(
+    pd.DataFrame(),
+    pd.DataFrame(),
+    None,
+    None,
+    None,
+    None,
+    None,
+    2026,
+    trends={'contender_summary': _contender_summary()},
+  )
+  text = '\n'.join(lines)
+  assert '**The playoff field is cheaper than usual.**' in text
+  assert '2 of 10 teams' in text
+  assert 'New Mexico ($15.0M) is the cheapest.' in text
+
+
+def _movers(gaps: list[float]) -> pd.DataFrame:
+  """Realignment travel rows with a chosen road-gap profile."""
+  n = len(gaps)
+  return pd.DataFrame(
+    {
+      'school': [f'S{i}' for i in range(n)],
+      'move': ['Pac-12 to Big Ten'] * n,
+      'tz_shift_change': [1.5] * n,
+      'mean_tz_shift_before': [0.3] * n,
+      'mean_tz_shift_after': [1.8] * n,
+      'away_margin_change': [g - 1.0 for g in gaps],
+      'home_margin_change': [-1.0] * n,
+      'travel_gap_change': gaps,
+    }
+  )
+
+
+def test_travel_verdict_follows_the_p_value():
+  """A tight, consistent road gap is stated; a noisy one stays hedged."""
+  by_shift = pd.DataFrame(
+    {
+      'label': ['same zone'],
+      'shift': [0],
+      'games': [100],
+      'mean_margin': [-2.0],
+      'win_rate': [0.45],
+    }
+  )
+  strong = '\n'.join(
+    report._travel_section(by_shift, None, _movers([-7.0] * 6 + [-6.0] * 6))
+  )
+  weak = '\n'.join(
+    report._travel_section(by_shift, None, _movers([-20.0, 5.0, 8.0, -9.0]))
+  )
+  assert 'hard to dismiss' in strong
+  assert 'suggestive, not conclusive' in weak
+
+
+def test_header_caution_adapts_past_the_midpoint(merged):
+  """Late in the season the warning stops promising November."""
+  early = report.build_report(
+    merged, pd.DataFrame(), None, pd.DataFrame(), 2026, 3
+  )
+  late = report.build_report(
+    merged, pd.DataFrame(), None, pd.DataFrame(), 2026, 9
+  )
+  assert 'until November' in early
+  assert 'until November' not in late
+  assert 'firming up' in late

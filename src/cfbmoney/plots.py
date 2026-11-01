@@ -232,8 +232,14 @@ def _pick_label_offset(
   axes_h_pt: float,
   placed_boxes: list[tuple[float, float, float, float]],
   all_points: list[tuple[float, float]],
-) -> tuple[str, int, int, tuple[float, float, float, float]]:
-  """Selects a label offset minimizing collisions with boxes and dots."""
+) -> tuple[str, int, int, tuple[float, float, float, float], float]:
+  """Selects a label offset minimizing collisions with boxes and dots.
+
+  Returns:
+    tuple: Horizontal alignment, x offset, y offset, the normalized
+    bounding box and the collision score of the chosen placement
+    (0 means nothing nearby; 25+ means it touches a dot or label).
+  """
   text_w = (len(school) * 0.56 * fontsize + 4.0) / axes_w_pt
   text_h = (1.35 * fontsize) / axes_h_pt
   dot_rx = 5.0 / axes_w_pt
@@ -269,7 +275,7 @@ def _pick_label_offset(
       if score < best_score:
         best_score = score
         best_choice = (side, dx, dy, box)
-  return best_choice
+  return (*best_choice, best_score)
 
 
 def _annotate_points(
@@ -281,12 +287,17 @@ def _annotate_points(
   scale_x: float = 1.0,
   max_labels: int = 18,
   fontsize: int = 8,
+  max_optional: int = 8,
 ) -> list[str]:
   """Labels reference schools and notable outliers on a scatter plot.
 
   Every scatter in the report keeps the same set of familiar reference
   programs visible so charts can be compared against each other, then
   adds whichever schools are extreme on this particular pair of axes.
+  Once those are placed, widely followed programs from
+  :data:`cfbmoney.config.POPULAR_PROGRAMS` are added in a smaller grey
+  font, but only where a label fits without touching another label or
+  a neighbouring dot, so they never crowd the chart.
 
   Args:
     axes (plt.Axes): Axes to draw on.
@@ -297,8 +308,11 @@ def _annotate_points(
       ``None`` a default set is chosen automatically.
     scale_x (float): Divisor applied to x values, matching the plotted
       units (money charts plot millions).
-    max_labels (int): Upper bound on labels so panels stay readable.
+    max_labels (int): Upper bound on required labels so panels stay
+      readable.
     fontsize (int): Label font size.
+    max_optional (int): Upper bound on opportunistic second-tier labels;
+      ``0`` disables them (used on dense small multiples).
 
   Returns:
     list[str]: Schools that were actually labelled.
@@ -330,6 +344,15 @@ def _annotate_points(
     wanted = list(dict.fromkeys(annotate))
 
   wanted = wanted[:max_labels]
+  optional = (
+    [
+      school
+      for school in config.POPULAR_PROGRAMS
+      if school in set(usable['school']) and school not in wanted
+    ][: max(max_optional, 0)]
+    if annotate is None
+    else []
+  )
   labelled = usable[usable['school'].isin(wanted)]
   x_lim = axes.get_xlim()
   y_lim = axes.get_ylim()
@@ -347,24 +370,21 @@ def _annotate_points(
     for r in usable.itertuples()
   ]
   placed_boxes: list[tuple[float, float, float, float]] = []
+  placed: list[str] = []
 
-  for row in labelled.sort_values(
-    [x_column, y_column], ascending=[False, False]
-  ).itertuples():
+  def _place(row, size: int, color: str, required: bool) -> bool:
     x_val = float(getattr(row, x_column)) / scale_x
     y_val = float(getattr(row, y_column))
     nx = _norm_coord(x_val, x_lim, log_x)
     ny = _norm_coord(y_val, y_lim, log_y)
-    ha, dx, dy, box = _pick_label_offset(
-      nx,
-      ny,
-      row.school,
-      fontsize,
-      axes_w_pt,
-      axes_h_pt,
-      placed_boxes,
-      all_points,
+    ha, dx, dy, box, score = _pick_label_offset(
+      nx, ny, row.school, size, axes_w_pt, axes_h_pt, placed_boxes, all_points
     )
+    # Optional labels must sit snug against the dot, with nothing in
+    # the way; otherwise they are dropped rather than drawn with a
+    # leader line into a crowd.
+    if not required and (score >= 20.0 or abs(dy) >= 12):
+      return False
     placed_boxes.append(box)
     arrow = (
       {
@@ -383,11 +403,24 @@ def _annotate_points(
       textcoords='offset points',
       xytext=(dx, dy),
       ha=ha,
-      fontsize=fontsize,
+      fontsize=size,
+      color=color,
       arrowprops=arrow,
       zorder=4,
     )
-  return labelled['school'].tolist()
+    placed.append(row.school)
+    return True
+
+  ordered = labelled.sort_values([x_column, y_column], ascending=[False, False])
+  for row in ordered.itertuples():
+    _place(row, fontsize, 'black', required=True)
+  if optional:
+    second = usable[usable['school'].isin(optional)].sort_values(
+      [x_column, y_column], ascending=[False, False]
+    )
+    for row in second.itertuples():
+      _place(row, max(fontsize - 1, 6), '#555555', required=False)
+  return placed
 
 
 def scatter_money_vs_performance(
@@ -557,6 +590,7 @@ def revenue_vs_spending_panel(
       scale_x=1e6,
       max_labels=10,
       fontsize=7,
+      max_optional=5,
     )
   axes_list[0].set_ylabel(_label(performance_column))
   figure.suptitle(

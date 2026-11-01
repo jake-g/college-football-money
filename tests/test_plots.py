@@ -101,6 +101,71 @@ def test_annotation_survives_missing_values(frame):
   assert frame.loc[0, 'school'] not in labelled
 
 
+def _with_popular(frame: pd.DataFrame, crowded: bool) -> pd.DataFrame:
+  """Adds one popular program, alone or buried in a cluster.
+
+  The anchor sits in the upper-middle of the frame so the added school
+  is never one of the automatic extremes; it must earn its label as a
+  second-tier program.
+  """
+  anchor = frame.iloc[len(frame) * 3 // 4]
+  rows = [
+    {
+      **anchor.to_dict(),
+      'school': 'Clemson',
+      'football_expenses': anchor['football_expenses'] * 1.02,
+    }
+  ]
+  if crowded:
+    for i in range(12):
+      rows.append(
+        {
+          **anchor.to_dict(),
+          'school': f'Neighbour {i}',
+          'football_expenses': anchor['football_expenses']
+          * (1.02 + 0.004 * (i - 6)),
+          'point_margin_per_game': anchor['point_margin_per_game']
+          + 0.15 * (i - 6),
+        }
+      )
+  return pd.concat([frame, pd.DataFrame(rows)], ignore_index=True)
+
+
+def _annotate_on_scatter(data: pd.DataFrame, size: tuple) -> list[str]:
+  """Draws the points, then labels them, as the real charts do."""
+  figure, axes = plt.subplots(figsize=size)
+  axes.scatter(data['football_expenses'] / 1e6, data['point_margin_per_game'])
+  axes.set_xscale('log')
+  labelled = plots._annotate_points(
+    axes, data, 'football_expenses', 'point_margin_per_game', scale_x=1e6
+  )
+  plt.close(figure)
+  return labelled
+
+
+def test_popular_programs_labelled_only_when_there_is_room(frame):
+  """A second-tier school is labelled in open space but not in a crowd."""
+  roomy = _annotate_on_scatter(_with_popular(frame, crowded=False), (10, 7))
+  assert 'Clemson' in roomy
+  crowded = _annotate_on_scatter(_with_popular(frame, crowded=True), (4, 3))
+  assert 'Clemson' not in crowded
+
+
+def test_popular_programs_skipped_with_explicit_list(frame):
+  """Charts with a hand-picked label list do not pick up extras."""
+  figure, axes = plt.subplots()
+  labelled = plots._annotate_points(
+    axes,
+    _with_popular(frame, crowded=False),
+    'football_expenses',
+    'point_margin_per_game',
+    annotate=['Tiny State'],
+    scale_x=1e6,
+  )
+  plt.close(figure)
+  assert labelled == ['Tiny State']
+
+
 def test_trend_helper_expects_log_inputs():
   """Guards the bug where raw percentages blew the axis up to 1e41.
 

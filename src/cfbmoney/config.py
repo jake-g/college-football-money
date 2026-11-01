@@ -99,6 +99,28 @@ REFERENCE_PROGRAMS: list[str] = [
   'Michigan',
 ]
 
+# Second tier: widely followed programs labelled only when the label
+# fits without touching another label or a neighbouring dot.  Drawn
+# smaller and greyer than the headline set so they add orientation
+# without competing with it.
+POPULAR_PROGRAMS: list[str] = [
+  'Auburn',
+  'Boise State',
+  'BYU',
+  'Clemson',
+  'Florida',
+  'Florida State',
+  'Indiana',
+  'Iowa',
+  'Nebraska',
+  'Oklahoma',
+  'Tennessee',
+  'Texas A&M',
+  'UCLA',
+  'Utah',
+  'Wisconsin',
+]
+
 # --- HTTP --------------------------------------------------------------
 
 # ESPN's edge returns HTTP 403 for unrecognised User-Agent strings and
