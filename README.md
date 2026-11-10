@@ -116,6 +116,7 @@ data/processed/
   close_games.csv             richer-team win rate by game margin
   attendance.csv              average home crowd per team-season
   contenders.csv              teams with at most one loss, with budget rank
+  late_season_edge.csv        richer-team conference win rate by stage of season
   panel.csv                   all seasons stacked
 reports/
   money_vs_wins_2026.md       the written report
@@ -170,7 +171,7 @@ runs it on every commit.
 ### Versioning
 
 Releases use `X.Y.Z` tags where `X = 0` for the 2026–27 season, `Y` is
-the official season week (`0` for preseason, `2`–`9` for Weeks 2–9), and
+the official season week (`0` for preseason, `2`–`10` for Weeks 2–10), and
 `Z` is used for small fixes (`0` otherwise). See
 [CHANGELOG.md](CHANGELOG.md) for the release history.
 
@@ -194,7 +195,7 @@ src/cfbmoney/
   analyze.py      correlations, OLS, residuals, multi-season panel
   insights.py     conference vs non-conference split, within-league spend
   drivers.py      momentum, repeat over-performance, box-score markers
-  trends.py       same-week season comparison, upsets, forecast, contenders
+  trends.py       same-week replays: trajectory, upsets, forecast, contenders, stages
   gameday.py      Pythagorean luck, close games, home field, attendance
   realignment.py  conference moves, before/after, Pac-12 breakup
   travel.py       time-zone shifts, within-team travel penalty
@@ -245,28 +246,30 @@ src/cfbmoney/
 
 ### What has been explored
 
-Numbers below are from the current report (2026 through week 9; completed
+Numbers below are from the current report (2026 through week 10; completed
 seasons 2023-2025). They move week to week; the report is the source of truth.
 
 | Question | Result |
 | --- | --- |
-| Does football spending correlate with winning? | Yes. `r = +0.48` with point margin through week 9 of 2026, in line with 2023-25 at the same week; `+0.40` to `+0.46` over completed seasons |
+| Does football spending correlate with winning? | Yes. `r = +0.45` with point margin through week 10 of 2026, in line with 2023-25 at the same week; `+0.40` to `+0.46` over completed seasons. The fade forecast has projected a final `r` near `+0.41` every week since week 5 |
 | Does revenue tell a different story? | No. `log(revenue)` and `log(spending)` correlate `r = +0.96`, so every money metric says the same thing |
 | What does the relationship look like? | Convex. The poorest fifth wins 44%, the middle three tiers 48-57%, the richest fifth 67%; the top tier is 7 points per game clear of the next |
+| Does money buy bowl eligibility? | Mostly at the top: 19% of the poorest fifth have six wins by week 10 against 61% of the richest. In 2026 the fourth and richest fifths are tied at 56% |
 | Where is the money edge won? | Across leagues. The bigger budget wins ~75% of non-conference FBS games but ~61% of conference games |
-| Is 2026 different inside leagues? | Yes. The richer side has won only 53% of 310 conference games against 62% at the same week of 2023-25 (binomial p < 0.01), while upsets in 2x-budget mismatches are rarer than usual (7.7% vs 15.4%) |
-| Is the playoff field bought? | Less than usual. 4 of 14 teams with at most one loss through week 9 come from the richest fifth of FBS (29% vs 46% in 2023-25); New Mexico ($14.7M) is the cheapest contender |
+| Does the budget edge grow in November? | No. The richer side's conference win rate is flat across the season (within 2 points early vs late); the "depth wins the back half" story is not in the data |
+| Is 2026 different inside leagues? | Yes. The richer side has won 54% of 368 conference games against 61% at the same week of 2023-25 (binomial p = 0.01), while upsets in 2x-budget mismatches are about half as common as usual (8% vs 15%) |
+| Is the playoff field bought? | Less than usual. 4 of 11 teams with at most one loss through week 10 come from the richest fifth of FBS (36% vs 50% in 2023-25); New Mexico ($14.7M) is the cheapest contender. BYU, Kentucky and UTSA, the thinnest margins on the week-9 list, dropped out |
 | Does money still matter *within* a conference? | Yes, spend relative to the league median tracks margin about as well as absolute dollars (`r = +0.41` vs `+0.43`) |
-| Does money win close games? | No. The bigger budget wins 78% of blowouts but 57% of one-score games (49% in 2026 to date) |
+| Does money win close games? | No. The bigger budget wins 78% of blowouts but 55% of one-score games (51% in 2026 to date) |
 | Is beating the budget luck? | Partly not: the budget residual repeats year to year at `r = +0.43`. Pythagorean luck itself is unrelated to budget (`r = -0.14`) |
-| Does money buy a home-field edge? | No. Teams are ~10 points better at home; the edge is uncorrelated with budget (`r = -0.07`) |
+| Does money buy a home-field edge? | No. Teams are ~10 points better at home; the edge is uncorrelated with budget (`r = -0.08`) |
 | Is attendance just the budget? | Nearly: log crowd vs log spending `r = +0.88`. Last season's crowd predicts margin as well as the budget (`+0.44` vs `+0.45`); jointly the budget keeps the edge |
-| Are crowds growing? | Slightly shrinking: mean same-week FBS crowd 41.2k (2023) to 39.5k (2026); median school `-0.6%` vs 2025 |
-| Does head coach pay drive results by itself? | Much less than program scale (`r = +0.18`, n = 52 verified contracts); nothing once the budget is held fixed |
+| Are crowds growing? | Slightly shrinking: mean same-week FBS crowd 41.1k (2023) to 39.5k (2026); median school `-0.9%` vs 2025 |
+| Does head coach pay drive results by itself? | Much less than program scale (`r = +0.19`, n = 52 verified contracts); nothing once the budget is held fixed |
 | Which spending line matters? | None individually. Coaching, recruiting and operations all correlate `>= 0.77` with the total and none adds signal on top |
 | Does getting richer help quickly? | Not yet visible: 2023-25 budget changes are unrelated to margin changes (`r = -0.05`) |
 | Who gained from the Pac-12 breakup? | Leavers `+8.3%` median football revenue; Oregon State and Washington State `-31.6%` |
-| Does eastward travel hurt? | Modestly, yes. Long-haul movers' road gap worsened by ~6.9 points (9 of 13 negative, p = 0.04) |
+| Does eastward travel hurt? | Suggestively. Long-haul movers' road gap worsened by ~6.3 points (9 of 13 negative, p = 0.06); it crossed p = 0.05 in week 9 and back out in week 10 |
 
 ### Considerations and known limitations
 

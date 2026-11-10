@@ -2,8 +2,36 @@
 
 All notable changes to this project are documented here. Versions use
 `X.Y.Z` where `X = 0` for the 2026–27 season, `Y` is the official CFB
-season week (`0` for preseason, `2`–`9` for Weeks 2–9), and `Z` is used
+season week (`0` for preseason, `2`–`10` for Weeks 2–10), and `Z` is used
 for small point fixes (`0` otherwise). Weeks with no release are skipped.
+
+## [0.10.0] - 2026-11-09
+
+### Added
+- `AGENTS.md`: owner preferences for the report (tables and charts over
+  prose, bullets over paragraphs, computed verdicts, same-week comparisons)
+  and the step-by-step weekly update procedure.
+- `trends.late_season_edge` and `plots.late_season_edge_chart`: the richer
+  team's conference win rate by stage of season (weeks 1-4, 5-8, 9-12, 13+),
+  testing the "depth wins November" claim. Verdict: no late-season surge.
+- `trends.projection_track`: what the fade forecast projected at each week,
+  rendered as a one-row table under the same-week comparison.
+- `trends.contender_dropouts`: who fell out of the one-loss group since
+  last week, with their record and prior margin.
+- `trends.tier_eligibility`: bowl eligibility (6+ wins) by budget fifth at
+  the same week, appended to the budget-tiers section.
+- A computed "Since week N-1" group at the top of the summary.
+- Second-tier plot labels now also apply to hand-picked charts (Pythagorean,
+  by-season panels), so `HEADLINE_PROGRAMS` such as Colorado appear wherever
+  they fit; headline extras may use a short leader line, popular extras must
+  sit snug. `POPULAR_PROGRAMS` gains James Madison, Kansas State,
+  Louisville, Missouri, Ole Miss, SMU, Texas Tech and Vanderbilt.
+
+### Changed
+- Same-week comparison, budget tiers and contender takeaways rewritten as
+  short bullets; the untested "budget pays for depth that wins the back
+  half" sentence is gone, replaced by the stage-of-season test.
+- Week 10 datasets, figures, report and README regenerated.
 
 ## [0.9.0] - 2026-11-01
 
@@ -155,6 +183,7 @@ Initial release (Week 2 of the 2026 season).
 - CLI, automated figure pruning and markdown report generator.
 - README, metric glossary and research notes.
 
+[0.10.0]: https://github.com/jake-g/college-football-money/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/jake-g/college-football-money/compare/v0.7.0...v0.9.0
 [0.7.0]: https://github.com/jake-g/college-football-money/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/jake-g/college-football-money/compare/v0.5.0...v0.6.0

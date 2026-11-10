@@ -478,3 +478,193 @@ def contenders(
       ).sort_values(['losses', MARGIN], ascending=[True, False])
       details = details.reset_index(drop=True)
   return pd.DataFrame(summary_rows), details
+
+
+def contender_dropouts(
+  panel: pd.DataFrame,
+  games_by_season: Mapping[int, pd.DataFrame],
+  season: int,
+  week: int,
+  min_games: int = 4,
+) -> pd.DataFrame:
+  """Lists teams that were contenders a week ago and are not now.
+
+  Args:
+    panel (pd.DataFrame): Multi-season frame with spending per season.
+    games_by_season (Mapping[int, pd.DataFrame]): Long team-game frames.
+    season (int): The in-progress season.
+    week (int): Latest completed week.
+    min_games (int): Passed to :func:`contenders`.
+
+  Returns:
+    pd.DataFrame: ``school``, ``conference``, ``football_expenses``,
+    ``margin_last_week`` (per game, through ``week - 1``) and ``record``
+    now; empty when nobody dropped.
+  """
+  if week < 2:
+    return pd.DataFrame()
+  _, before = contenders(
+    panel, games_by_season, season, week - 1, min_games=min_games
+  )
+  _, after = contenders(
+    panel, games_by_season, season, week, min_games=min_games
+  )
+  if before.empty:
+    return pd.DataFrame()
+  gone = before[~before['school'].isin(after.get('school', []))]
+  if gone.empty:
+    return pd.DataFrame()
+  played = played_games(games_by_season[season])
+  now = _records(played[played['week'] <= week]).reindex(gone['school'])
+  return pd.DataFrame(
+    {
+      'school': gone['school'].to_numpy(),
+      'conference': gone['conference'].to_numpy(),
+      MONEY: gone[MONEY].to_numpy(),
+      'margin_last_week': gone[MARGIN].to_numpy(),
+      'record': [
+        f'{int(w)}-{int(lo)}'
+        for w, lo in zip(now['wins'], now['losses'], strict=True)
+      ],
+    }
+  )
+
+
+def projection_track(
+  weekly: pd.DataFrame, season: int, first_week: int = 4
+) -> pd.DataFrame:
+  """Replays the fade forecast: what it projected at each past week.
+
+  At week ``w`` the projection is the in-progress ``r`` times the mean
+  ratio of final to week-``w`` ``r`` across completed seasons, exactly as
+  the report computes it for the current week.
+
+  Args:
+    weekly (pd.DataFrame): Output of :func:`week_by_week`.
+    season (int): The in-progress season.
+    first_week (int): First week to show; earlier weeks are too noisy.
+
+  Returns:
+    pd.DataFrame: ``week``, ``r_at_week`` and ``projected_final``.
+  """
+  if weekly.empty:
+    return pd.DataFrame()
+  done = weekly[weekly['season'] < season]
+  current = weekly[weekly['season'] == season].set_index('week')['r_margin']
+  if done.empty or current.empty:
+    return pd.DataFrame()
+  finals = done.groupby('season')['r_margin'].last()
+  rows = []
+  for week, r_now in current.items():
+    if week < first_week:
+      continue
+    at_week = done[done['week'] == week].set_index('season')['r_margin']
+    ratio = (finals / at_week).dropna()
+    if ratio.empty:
+      continue
+    rows.append(
+      {
+        'week': int(week),
+        'r_at_week': float(r_now),
+        'projected_final': float(r_now * ratio.mean()),
+      }
+    )
+  return pd.DataFrame(rows)
+
+
+SEASON_STAGES = (
+  ('Weeks 1-4', 1, 4),
+  ('Weeks 5-8', 5, 8),
+  ('Weeks 9-12', 9, 12),
+  ('Weeks 13+', 13, 99),
+)
+
+
+def late_season_edge(
+  panel: pd.DataFrame, games_by_season: Mapping[int, pd.DataFrame]
+) -> pd.DataFrame:
+  """Richer team's win rate in conference games by stage of the season.
+
+  Tests the "depth wins November" idea: if a bigger budget buys depth,
+  the richer side should win more often late in the year than in
+  September and October.  Conference games only, so the matchups are
+  comparable across stages.  Stages are not cumulative.
+
+  Args:
+    panel (pd.DataFrame): Multi-season frame with spending per season.
+    games_by_season (Mapping[int, pd.DataFrame]): Long team-game frames.
+
+  Returns:
+    pd.DataFrame: ``season``, ``stage``, ``richer_win`` and ``games``.
+  """
+  rows = []
+  for season, games in sorted(games_by_season.items()):
+    spend = season_money(panel, season)
+    if spend.empty or games.empty:
+      continue
+    played = played_games(games)
+    conf = played[played['game_type'] == 'conference']
+    for label, lo, hi in SEASON_STAGES:
+      stage = conf[(conf['week'] >= lo) & (conf['week'] <= hi)]
+      rate, n = _richer_win(stage, spend)
+      if n:
+        rows.append(
+          {
+            'season': int(season),
+            'stage': label,
+            'richer_win': rate,
+            'games': n,
+          }
+        )
+  return pd.DataFrame(rows)
+
+
+def tier_eligibility(
+  panel: pd.DataFrame,
+  games_by_season: Mapping[int, pd.DataFrame],
+  season: int,
+  week: int,
+  wins: int = 6,
+) -> pd.DataFrame:
+  """Share of each budget fifth with ``wins`` wins by the same week.
+
+  Six wins is bowl eligibility, the mid-table prize that a mid-sized
+  budget is supposed to buy.
+
+  Args:
+    panel (pd.DataFrame): Multi-season frame with spending per season.
+    games_by_season (Mapping[int, pd.DataFrame]): Long team-game frames.
+    season (int): The in-progress season.
+    week (int): Last week counted in every season.
+    wins (int): Win threshold.
+
+  Returns:
+    pd.DataFrame: ``tier`` (1 = poorest fifth), ``completed`` (pooled
+    share over completed seasons), ``current`` (in-progress share) and
+    ``teams`` (team-seasons pooled over completed seasons).
+  """
+  frames = []
+  for year, games in sorted(games_by_season.items()):
+    spend = season_money(panel, year)
+    if spend.empty or games.empty:
+      continue
+    played = played_games(games)
+    records = _records(played[played['week'] <= week])
+    records = records.join(spend.rename('spend'), how='inner')
+    if records.empty:
+      continue
+    pct = records['spend'].rank(pct=True, method='first')
+    records['tier'] = np.minimum(np.ceil(pct * 5), 5).astype(int)
+    records['eligible'] = records['wins'] >= wins
+    records['season'] = int(year)
+    frames.append(records[['season', 'tier', 'eligible']])
+  if not frames:
+    return pd.DataFrame()
+  data = pd.concat(frames)
+  done = data[data['season'] < season]
+  now = data[data['season'] == season]
+  out = pd.DataFrame({'tier': [1, 2, 3, 4, 5]}).set_index('tier')
+  out['completed'] = done.groupby('tier')['eligible'].mean()
+  out['current'] = now.groupby('tier')['eligible'].mean()
+  out['teams'] = done.groupby('tier').size()
+  return out.reset_index()

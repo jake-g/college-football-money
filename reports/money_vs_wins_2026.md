@@ -1,22 +1,28 @@
 # Money vs winning: the 2026 college football season
 
-_Generated 2026-11-01 12:14. Season 2026, through week 9; teams have played 8-9 games._
+_Generated 2026-11-09 18:13. Season 2026, through week 10; teams have played 9-10 games._
 
 > [!WARNING]
-> Sample-size warning: this is an in-progress season. Teams have played 8-9 games, which is not enough to fully separate skill from luck. Past the midpoint the 2026 numbers are firming up; completed seasons (2023-25) still carry the weight.
+> Sample-size warning: this is an in-progress season. Teams have played 9-10 games, which is not enough to fully separate skill from luck. Most of the regular season is in, so the 2026 numbers are settling, but completed seasons (2023-25) still carry the weight.
 
 ## Summary
 
+**Since week 9**
+
+- **The fade forecast held.** Week 9 projected a final r of +0.42; the live r is now +0.45 and the projection +0.41.
+- **3 contenders dropped out:** BYU, Kentucky, UTSA. All were among the thinnest margins on last week's list.
+- **New test: no November surge.** The richer side wins conference games at the same rate late in the season as early; the "depth wins the back half" story is not in the data.
+
 **What 2026 is showing so far**
 
-- **2026 is a normal season so far, not an unusually rich one.** Through week 9 the money correlation is +0.48, against +0.48 to +0.53 for 2023-25 at the same week. Past seasons faded by 12% as conference play took over; 2026 projects to about +0.42.
-- **Biggest surprises against a same-week forecast:** Liberty (+25), UCLA (+23), New Mexico (+20). **Biggest disappointments:** UTEP (-22), Vanderbilt (-21), Stanford (-19) (points per game).
-- **Mismatches hold, peers are coin flips.** Teams with half the opponent's budget have won 7.7% of such games (8 of 104), against 15.4% at the same point of 2023-25, p = 0.05. Inside leagues the budget edge is thinner than usual: the richer side has won 52.9% of 310 conference games, against 61.6% at the same week of 2023-25 (binomial p < 0.01).
-- **The playoff field is cheaper than usual.** 4 of 14 teams with at most one loss come from the richest fifth of FBS (28.6%), against 45.9% at the same week of 2023-25. New Mexico ($14.7M) is the cheapest.
+- **2026 is a normal season so far, not an unusually rich one.** Through week 10 the money correlation is +0.45, against +0.46 to +0.52 for 2023-25 at the same week. Past seasons faded by 9% as conference play took over; 2026 projects to about +0.41.
+- **Biggest surprises against a same-week forecast:** Liberty (+24), UCLA (+23), New Mexico (+21). **Biggest disappointments:** UTEP (-19), Stanford (-19), Vanderbilt (-19) (points per game).
+- **Mismatches hold, peers are coin flips.** Teams with half the opponent's budget have won 8.4% of such games (9 of 107), against 15.5% at the same point of 2023-25, p = 0.08. Inside leagues the budget edge is thinner than usual: the richer side has won 54.3% of 368 conference games, against 60.7% at the same week of 2023-25 (binomial p = 0.01).
+- **The playoff field is cheaper than usual.** 4 of 11 teams with at most one loss come from the richest fifth of FBS (36.4%), against 50.0% at the same week of 2023-25. New Mexico ($14.7M) is the cheapest.
 
 **Does money buy wins?**
 
-- **Yes, money tracks results.** Log football spending correlates r = +0.48 with point margin across 135 FBS teams so far in 2026 (r = +0.40 to +0.46 in completed seasons).
+- **Yes, money tracks results.** Log football spending correlates r = +0.45 with point margin across 135 FBS teams so far in 2026 (r = +0.40 to +0.46 in completed seasons).
 - **The edge is biggest across leagues.** The bigger budget wins 74.7% of non-conference FBS games but only 61.1% of conference games.
 - **Out-spending your own conference pays as much as raw dollars.** Spend relative to the conference median tracks margin at r = +0.41 over completed seasons, against +0.43 for absolute spend.
 - **The return on money is concentrated at the top.** The richest fifth of FBS wins 66.7% of its games against 56.5% for the next fifth and 43.9% for the poorest; the top tier is +7.0 points per game clear of everyone below it.
@@ -31,15 +37,15 @@ _Generated 2026-11-01 12:14. Season 2026, through week 9; teams have played 8-9 
 
 **Luck, close games and crowds**
 
-- **Money decides blowouts, not close games.** The bigger budget wins 78.5% of games decided by 17+ points but only 56.5% of one-score games in completed seasons.
-- **Records outrunning the scoring in 2026:** Stanford (+2.3 wins), Marshall (+2.1 wins), UTSA (+1.8 wins). **Trailing it:** TCU (-2.1), Kansas (-1.9), Penn State (-1.9). Luck is unrelated to budget (r = -0.14 in completed seasons).
-- **Money does not buy a home-field edge.** Teams are 10 points better at home than away, and that edge is uncorrelated with budget (r = -0.07).
-- **Crowd size is the budget, measured live.** Log home attendance and log spending correlate +0.88; last season's crowd predicts this season's margin about as well as the budget does (r = +0.44 vs +0.45). Same-week crowds are -0.6% versus 2025 at the median school.
+- **Money decides blowouts, not close games.** The bigger budget wins 77.7% of games decided by 17+ points but only 54.9% of one-score games in completed seasons.
+- **Records outrunning the scoring in 2026:** Marshall (+2.3 wins), Stanford (+2.3 wins), UTSA (+2.0 wins). **Trailing it:** TCU (-2.5), Kansas (-2.4), Nebraska (-2.3). Luck is unrelated to budget (r = -0.14 in completed seasons).
+- **Money does not buy a home-field edge.** Teams are 10 points better at home than away, and that edge is uncorrelated with budget (r = -0.08).
+- **Crowd size is the budget, measured live.** Log home attendance and log spending correlate +0.88; last season's crowd predicts this season's margin about as well as the budget does (r = +0.44 vs +0.45). Same-week crowds are -0.9% versus 2025 at the median school.
 
 **Realignment and travel**
 
 - **Realignment moved money without anyone playing a down.** Pac-12 leavers: +8.3% median football revenue; Oregon State and Washington State: -31.6%.
-- **Long-haul movers are paying a road tax.** Across the 13 schools whose travel grew most, away margin changed -4.8 and home margin +2.2 points per game (road gap -6.9, 9 of 13 negative, p = 0.04).
+- **Long-haul movers may be paying a road tax (suggestive).** Across the 13 schools whose travel grew most, away margin changed -4.6 and home margin +1.7 points per game (road gap -6.3, 9 of 13 negative, p = 0.06).
 
 ## Contents
 
@@ -57,63 +63,72 @@ _Generated 2026-11-01 12:14. Season 2026, through week 9; teams have played 8-9 
 
 ### Is 2026 more money-driven than usual?
 
-Every early-season number looks money-heavy because September is full of mismatches. The fair comparison is the same week of past seasons: here each season is replayed through week 9, next to where it finished.
+Every early-season number looks money-heavy because September is full of mismatches. The fair comparison is the same week of past seasons: here each season is replayed through week 10, next to where it finished.
 
-| Season | r through week 9 | Final r | Conference share of FBS games | Richer team wins, conf games (to date) | Final |
+| Season | r through week 10 | Final r | Conference share of FBS games | Richer team wins, conf games (to date) | Final |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| 2023 | +0.48 | +0.42 | 62.9% | 67.2% (290 games) | 63.9% |
-| 2024 | +0.53 | +0.48 | 59.3% | 59.5% (264 games) | 60.6% |
-| 2025 | +0.51 | +0.43 | 60.2% | 58.0% (269 games) | 58.8% |
-| 2026 (in progress) | +0.48 | - | 64.6% | 52.9% (310 games) | - |
+| 2023 | +0.46 | +0.42 | 66.5% | 65.5% (346 games) | 63.9% |
+| 2024 | +0.52 | +0.48 | 62.7% | 58.1% (308 games) | 60.6% |
+| 2025 | +0.49 | +0.43 | 63.8% | 58.4% (317 games) | 58.8% |
+| 2026 (in progress) | +0.45 | - | 68.1% | 54.3% (368 games) | - |
 
-At week 9, 2026 sits at r = **+0.48**, right in line with 2023-25 at the same point (+0.48 to +0.53). Every past season peaked around weeks 3-4 and then faded as conference play took over. Applying their average fade projects 2026 to finish near **r = +0.42**, not the headline number at the top of this report.
+- **r = +0.45** at week 10, in line with 2023-25 at the same point (+0.46 to +0.52).
+- **Projected final r = +0.41.** Every past season peaked around weeks 3-4 and faded as conference play took over; the projection applies their average fade from this week.
+- **Conference games: the richer side has won 54.3%** of 368, against 60.7% for 2023-25 at the same week. Unlikely to be noise (binomial p = 0.01).
 
-Inside conference play, the bigger budget has won **52.9%** of 310 games so far, against 61.6% for 2023-25 at the same week. A 9-point gap on this many games is unlikely to be noise (binomial p < 0.01): the budget edge inside leagues is unusually thin this year.
+**What the forecast said each week** (projected final r for 2026)
+
+| Week | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| r to date | +0.60 | +0.54 | +0.52 | +0.52 | +0.49 | +0.48 | +0.45 |
+| Projected final | +0.43 | +0.40 | +0.40 | +0.41 | +0.42 | +0.42 | +0.41 |
+
+- **The projection has held.** It has stayed within 0.03 since week 4 while the live r drifted down toward it (+0.45 now).
 
 ![season trajectory](figures/season_trajectory.png)
 
 ### Surprises against a preseason forecast
 
-A forecast built only from last season's margin and this season's budget. It is fitted on 2024-2025 margins *through week 9* against FBS opponents only, so early-season schedule quirks are part of the expectation and FCS blowouts do not count. It already tracks reality well (r = +0.60 across 133 teams), so the teams far off it are the real stories of the season.
+A forecast built only from last season's margin and this season's budget. It is fitted on 2024-2025 margins *through week 10* against FBS opponents only, so early-season schedule quirks are part of the expectation and FCS blowouts do not count. It already tracks reality well (r = +0.58 across 133 teams), so the teams far off it are the real stories of the season.
 
 **Ahead of forecast**
 
 | Program | Conf | Football exp | Last season | FBS games | Forecast | Actual | Gap |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Liberty | Conference USA | $23.0M | -0.9 | 7 | -2.3 | +23.0 | **+25.3** |
-| UCLA | Big Ten | $55.2M | -15.2 | 8 | -3.3 | +20.1 | **+23.4** |
-| New Mexico | Mountain West | $14.7M | +5.4 | 7 | -2.3 | +17.4 | **+19.7** |
-| Oregon State | Pac-12 | $23.8M | -11.2 | 7 | -6.5 | +12.3 | **+18.8** |
-| Wake Forest | ACC | $39.4M | +5.3 | 8 | +3.5 | +21.2 | **+17.7** |
-| LSU | SEC | $50.7M | +3.5 | 7 | +4.2 | +20.6 | **+16.4** |
-| Massachusetts | MAC | $13.4M | -27.5 | 6 | -16.8 | -1.0 | **+15.8** |
-| Oklahoma State | Big 12 | $32.8M | -19.2 | 7 | -8.0 | +7.6 | **+15.6** |
+| Liberty | Conference USA | $23.0M | -0.9 | 8 | -2.2 | +22.1 | **+24.3** |
+| UCLA | Big Ten | $55.2M | -15.2 | 9 | -3.6 | +19.4 | **+23.0** |
+| New Mexico | Mountain West | $14.7M | +5.4 | 8 | -1.9 | +18.8 | **+20.7** |
+| Oklahoma State | Big 12 | $32.8M | -19.2 | 8 | -8.0 | +11.4 | **+19.3** |
+| Wake Forest | ACC | $39.4M | +5.3 | 8 | +3.3 | +21.2 | **+18.0** |
+| Georgia State | Sun Belt | $12.3M | -18.1 | 8 | -12.8 | +3.1 | **+15.9** |
+| Massachusetts | MAC | $13.4M | -27.5 | 7 | -16.2 | -0.7 | **+15.5** |
+| Oregon State | Pac-12 | $23.8M | -11.2 | 8 | -6.4 | +8.1 | **+14.5** |
 
 **Behind forecast**
 
 | Program | Conf | Football exp | Last season | FBS games | Forecast | Actual | Gap |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| UTEP | Mountain West | $11.1M | -7.1 | 7 | -9.3 | -31.4 | **-22.2** |
-| Vanderbilt | SEC | $44.1M | +17.5 | 7 | +9.3 | -11.3 | **-20.6** |
-| Stanford | ACC | $36.0M | -10.3 | 8 | -3.7 | -22.5 | **-18.8** |
-| California | ACC | $46.7M | -1.7 | 8 | +1.5 | -16.1 | **-17.7** |
-| Georgia Tech | ACC | $42.7M | +8.1 | 7 | +5.1 | -11.6 | **-16.7** |
-| Old Dominion | Sun Belt | $14.8M | +13.4 | 8 | +1.2 | -15.5 | **-16.7** |
-| Rutgers | Big Ten | $75.9M | -3.2 | 7 | +3.7 | -12.9 | **-16.6** |
-| San Diego State | Pac-12 | $22.3M | +12.1 | 8 | +3.0 | -13.0 | **-16.0** |
+| UTEP | Mountain West | $11.1M | -7.1 | 8 | -8.7 | -27.9 | **-19.2** |
+| Stanford | ACC | $36.0M | -10.3 | 8 | -3.8 | -22.5 | **-18.7** |
+| Vanderbilt | SEC | $44.1M | +17.5 | 8 | +9.0 | -9.6 | **-18.6** |
+| Georgia Tech | ACC | $42.7M | +8.1 | 8 | +4.9 | -13.5 | **-18.4** |
+| California | ACC | $46.7M | -1.7 | 8 | +1.3 | -16.1 | **-17.4** |
+| Rutgers | Big Ten | $75.9M | -3.2 | 8 | +3.2 | -13.9 | **-17.1** |
+| San Diego State | Pac-12 | $22.3M | +12.1 | 8 | +3.1 | -13.0 | **-16.1** |
+| Northern Illinois | Mountain West | $13.2M | -7.2 | 8 | -7.8 | -22.2 | **-14.4** |
 
 ### Upsets: when the smaller budget wins
 
-A money mismatch is a game against an FBS opponent with at least twice the football budget. Through week 9 of each season:
+A money mismatch is a game against an FBS opponent with at least twice the football budget. Through week 10 of each season:
 
 | Season | Mismatch games | Upsets | Upset rate |
 | --- | ---: | ---: | ---: |
-| 2023 | 122 | 18 | 14.8% |
-| 2024 | 105 | 13 | 12.4% |
-| 2025 | 105 | 20 | 19.0% |
-| 2026 (in progress) | 104 | 8 | 7.7% |
+| 2023 | 128 | 19 | 14.8% |
+| 2024 | 107 | 14 | 13.1% |
+| 2025 | 108 | 20 | 18.5% |
+| 2026 (in progress) | 107 | 9 | 8.4% |
 
-2026 has produced **fewer upsets** than usual: 7.7% of mismatches against 15.4% for 2023-25 pooled (Fisher exact p = 0.05). Favourites in lopsided games are holding serve.
+2026 has produced **fewer upsets** than usual: 8.4% of mismatches against 15.5% for 2023-25 pooled (Fisher exact p = 0.08). The difference is within normal noise.
 
 **Biggest 2026 upsets by budget gap**
 
@@ -126,39 +141,38 @@ A money mismatch is a game against an FBS opponent with at least twice the footb
 | 7 | BYU | $44.6M | Notre Dame | $93.3M | 2.1x | 28-24 |
 | 3 | Toledo | $12.6M | Temple | $26.3M | 2.1x | 49-48 |
 | 5 | Northwestern | $37.9M | Penn State | $77.4M | 2.0x | 34-13 |
-| 8 | Northwestern | $37.9M | Rutgers | $75.9M | 2.0x | 42-14 |
+| 10 | East Carolina | $16.5M | South Florida | $33.4M | 2.0x | 20-17 |
 
 ### Who is still in the playoff picture
 
-Teams with at most one loss through week 9, in each season. A playoff field is built from this group, so its budget profile is the simplest test of whether the top of the sport is bought: how many contenders come from the richest fifth of FBS, and how cheap the cheapest one is.
+Teams with at most one loss through week 10, in each season. A playoff field is built from this group, so its budget profile is the simplest test of whether the top of the sport is bought: how many contenders come from the richest fifth of FBS, and how cheap the cheapest one is.
 
 | Season | Contenders | From richest fifth | Median budget | Median budget, others | Cheapest contender | Finished <= 2 losses |
 | --- | ---: | ---: | ---: | ---: | --- | ---: |
-| 2023 | 18 | 11 | $59.1M | $24.7M | Toledo ($12.0M) | 16 of 18 |
-| 2024 | 21 | 10 | $50.2M | $23.0M | Louisiana ($14.8M) | 15 of 21 |
-| 2025 | 22 | 7 | $41.2M | $23.8M | North Texas ($15.4M) | 16 of 22 |
-| 2026 (in progress) | 14 | 4 | $42.3M | $23.3M | New Mexico ($14.7M) | - |
+| 2023 | 16 | 10 | $59.1M | $25.9M | Toledo ($12.0M) | 14 of 16 |
+| 2024 | 16 | 8 | $55.5M | $23.3M | Louisiana ($14.8M) | 14 of 16 |
+| 2025 | 16 | 6 | $43.6M | $23.8M | North Texas ($15.4M) | 12 of 16 |
+| 2026 (in progress) | 11 | 4 | $41.4M | $23.6M | New Mexico ($14.7M) | - |
 
-The 2026 field is **cheaper than usual**: 4 of 14 contenders (28.6%) come from the richest fifth, against 45.9% at the same week of 2023-25. The median contender still spends 1.8x the median non-contender. In past seasons 77.0% of same-week contenders finished the regular season with two losses or fewer, so most of this list will still be standing in December.
+- **The 2026 field is cheaper than usual:** 4 of 11 contenders (36.4%) come from the richest fifth, against 50.0% at the same week of 2023-25.
+- **Most of this list survives.** 83.3% of same-week contenders in past seasons finished the regular season with two losses or fewer.
+- **Dropped out since week 9:** BYU (7-2, was +13.6/g), Kentucky (7-2, was +8.1/g), UTSA (7-2, was +7.5/g).
 
-**2026 contenders through week 9**
+**2026 contenders through week 10**
 
 | Program | Conf | Football exp | Budget rank | Record | Margin/g |
 | --- | --- | ---: | ---: | :---: | ---: |
-| Miami | ACC | $88.1M | 3 | 8-0 | +29.9 |
-| Utah | Big 12 | $41.4M | 45 | 8-0 | +23.0 |
-| UCLA | Big Ten | $55.2M | 24 | 8-0 | +20.1 |
-| Notre Dame | FBS Independents | $93.3M | 1 | 7-1 | +27.0 |
-| Georgia | SEC | $71.1M | 11 | 7-1 | +26.1 |
-| New Mexico | Mountain West | $14.7M | 96 | 7-1 | +23.1 |
-| Wake Forest | ACC | $39.4M | 51 | 7-1 | +21.2 |
-| Liberty | Conference USA | $23.0M | 73 | 7-1 | +20.2 |
+| Utah | Big 12 | $41.4M | 45 | 9-0 | +21.3 |
+| UCLA | Big Ten | $55.2M | 24 | 9-0 | +19.4 |
+| Wake Forest | ACC | $39.4M | 51 | 8-1 | +27.4 |
+| Georgia | SEC | $71.1M | 11 | 8-1 | +27.1 |
+| Miami | ACC | $88.1M | 3 | 8-1 | +25.8 |
+| Notre Dame | FBS Independents | $93.3M | 1 | 8-1 | +24.8 |
+| New Mexico | Mountain West | $14.7M | 96 | 8-1 | +23.7 |
 | Indiana | Big Ten | $50.2M | 29 | 8-1 | +20.0 |
-| Texas Tech | Big 12 | $39.7M | 50 | 7-1 | +14.5 |
-| BYU | Big 12 | $44.6M | 39 | 7-1 | +13.6 |
-| Boise State | Pac-12 | $25.8M | 70 | 7-1 | +12.2 |
-| Kentucky | SEC | $43.3M | 41 | 7-1 | +8.1 |
-| UTSA | American | $17.9M | 85 | 7-1 | +7.5 |
+| Liberty | Conference USA | $23.0M | 73 | 8-1 | +19.8 |
+| Boise State | Pac-12 | $25.8M | 70 | 8-1 | +13.8 |
+| Texas Tech | Big 12 | $39.7M | 50 | 8-1 | +13.4 |
 
 ## 2. Does money buy wins?
 
@@ -170,17 +184,17 @@ In practice they are nearly the same variable: log revenue and log spending corr
 
 | Money metric | n | Margin/g | Win% | Pts/g | Allowed/g |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| 247 team talent composite | 19 | +0.57* | +0.54* | +0.46* | -0.44 |
-| Football non-operating spend | 135 | +0.48*** | +0.39*** | +0.41*** | -0.38*** |
-| Athletics dept revenue | 135 | +0.48*** | +0.38*** | +0.40*** | -0.38*** |
-| Men's coaching payroll | 135 | +0.48*** | +0.39*** | +0.40*** | -0.38*** |
-| Men's recruiting spend | 135 | +0.48*** | +0.42*** | +0.41*** | -0.37*** |
-| Football expenses | 135 | +0.48*** | +0.38*** | +0.41*** | -0.36*** |
-| Football revenue | 135 | +0.48*** | +0.38*** | +0.38*** | -0.39*** |
-| Athletics dept expenses | 135 | +0.47*** | +0.38*** | +0.40*** | -0.37*** |
-| Football spend per player | 135 | +0.46*** | +0.37*** | +0.40*** | -0.35*** |
-| Avg men's head coach salary | 135 | +0.46*** | +0.36*** | +0.39*** | -0.35*** |
-| Head coach total pay | 52 | +0.18 | +0.08 | -0.14 | -0.41** |
+| 247 team talent composite | 19 | +0.60** | +0.56* | +0.48* | -0.42 |
+| Football non-operating spend | 135 | +0.46*** | +0.37*** | +0.36*** | -0.37*** |
+| Athletics dept revenue | 135 | +0.45*** | +0.36*** | +0.35*** | -0.37*** |
+| Football expenses | 135 | +0.45*** | +0.36*** | +0.36*** | -0.35*** |
+| Football revenue | 135 | +0.45*** | +0.35*** | +0.34*** | -0.38*** |
+| Men's coaching payroll | 135 | +0.45*** | +0.37*** | +0.35*** | -0.36*** |
+| Athletics dept expenses | 135 | +0.44*** | +0.35*** | +0.35*** | -0.36*** |
+| Men's recruiting spend | 135 | +0.44*** | +0.39*** | +0.35*** | -0.35*** |
+| Football spend per player | 135 | +0.43*** | +0.35*** | +0.35*** | -0.34*** |
+| Avg men's head coach salary | 135 | +0.42*** | +0.35*** | +0.35*** | -0.33*** |
+| Head coach total pay | 52 | +0.19 | +0.10 | -0.19 | -0.47*** |
 
 Money columns are log-scaled except the talent composite. `*` p<0.05, `**` p<0.01, `***` p<0.001.
 
@@ -194,13 +208,26 @@ A correlation says the relationship exists; the tiers show its shape. Teams are 
 
 | Tier | Median budget | Win% (completed) | Margin/g (completed) | Win% (2026) | Margin/g (2026) | Team-seasons |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1 (poorest fifth) | $11.0M | 43.9% | -3.7 | 42.5% | -3.2 | 80 |
-| 2 (second fifth) | $15.2M | 48.4% | -0.5 | 50.5% | +0.6 | 78 |
-| 3 (middle fifth) | $30.4M | 49.6% | +0.7 | 54.1% | +4.4 | 79 |
-| 4 (fourth fifth) | $43.3M | 56.5% | +3.8 | 62.6% | +7.2 | 78 |
-| 5 (richest fifth) | $62.0M | 66.7% | +10.8 | 65.4% | +11.4 | 79 |
+| 1 (poorest fifth) | $11.0M | 43.9% | -3.7 | 42.3% | -3.0 | 80 |
+| 2 (second fifth) | $15.2M | 48.4% | -0.5 | 51.4% | +0.6 | 78 |
+| 3 (middle fifth) | $30.4M | 49.6% | +0.7 | 52.7% | +3.9 | 79 |
+| 4 (fourth fifth) | $43.3M | 56.5% | +3.8 | 61.7% | +6.6 | 78 |
+| 5 (richest fifth) | $62.0M | 66.7% | +10.8 | 64.2% | +10.3 | 79 |
 
-Over completed seasons the poorest fifth (median $11.0M) wins 43.9% of its games and the richest fifth ($62.0M) wins 66.7%: a 15-point swing in margin per game. The curve is convex: the middle three tiers sit within 4.3 points of each other, then the richest fifth jumps +7.0 points clear of the next tier. Money buys most at the very top, where the budget pays for the depth that wins the back half of a schedule.
+- **Poorest fifth ($11.0M) wins 43.9%, richest fifth ($62.0M) wins 66.7%:** a 15-point swing in margin per game.
+- **Convex.** The middle three tiers sit within 4.3 points of each other; the richest fifth is +7.0 points clear of the next. Money buys most at the very top.
+
+**Bowl eligibility (6+ wins) by budget fifth, through week 10**
+
+| Tier | 2023-25 | 2026 | Team-seasons |
+| --- | ---: | ---: | ---: |
+| 1 (poorest) | 19.2% | 18.5% | 78 |
+| 2 (second) | 24.1% | 33.3% | 79 |
+| 3 (middle) | 34.6% | 29.6% | 78 |
+| 4 (fourth) | 44.3% | 55.6% | 79 |
+| 5 (richest) | 61.3% | 55.6% | 80 |
+
+- **Six wins by week 10:** 19.2% of the poorest fifth get there against 61.3% of the richest. In 2026, the richest fifth is **not** pulling clear of the fourth.
 
 ![budget tiers](figures/budget_tiers.png)
 
@@ -213,13 +240,28 @@ The national correlation blends two different contests: **non-conference** games
 | 2023 | 202 | 71.8% | 541 | 63.9% | +0.15 | +0.35 |
 | 2024 | 212 | 78.2% | 540 | 60.6% | +0.16 | +0.41 |
 | 2025 | 203 | 74.2% | 559 | 58.8% | +0.12 | +0.34 |
-| 2026 (in progress) | 174 | 77.6% | 326 | 52.9% | +0.09 | +0.29 |
+| 2026 (in progress) | 177 | 77.9% | 385 | 54.3% | +0.09 | +0.27 |
 
 Across completed seasons the bigger budget wins **74.7%** of non-conference FBS games but only **61.1%** of conference games. Inside a conference, raw dollars barely track margin (r = +0.14), whereas spending *relative to the league median* does (r = +0.36).
 
-FCS games are excluded above; FBS teams won them by an average of **+32.0 points**.
+FCS games are excluded above; FBS teams won them by an average of **+32.1 points**.
 
 ![schedule split](figures/schedule_split.png)
+
+### Does the budget edge grow in November?
+
+If a bigger budget buys depth, the richer side should win more conference games in November than in September. Each cell is the bigger budget's win rate in conference games played in that stage (not cumulative; games in brackets).
+
+| Season | Weeks 1-4 | Weeks 5-8 | Weeks 9-12 | Weeks 13+ |
+| --- | ---: | ---: | ---: | ---: |
+| 2023 | 60.8% (51) | 68.9% (189) | 59.8% (219) | 65.9% (66) |
+| 2024 | 56.4% (39) | 57.8% (173) | 65.9% (185) | 57.6% (118) |
+| 2025 | 51.4% (37) | 61.5% (182) | 57.7% (196) | 58.8% (119) |
+| 2026 (in progress) | 58.8% (51) | 51.7% (207) | 57.3% (110) | - |
+
+- **No November surge.** Over completed seasons the late-season rate is within 2 points of the early-season rate: whatever money buys, it is already visible in September.
+
+![late season edge](figures/late_season_edge.png)
 
 ### Within the league: out-spending your peers
 
@@ -230,7 +272,7 @@ Re-expressing spending as a multiple of the conference median and margin as poin
 | 2023 | 127 | +0.40 | +0.42 | 7e-07 |
 | 2024 | 128 | +0.46 | +0.45 | 8e-08 |
 | 2025 | 131 | +0.42 | +0.36 | 3e-05 |
-| 2026 (in progress) | 133 | +0.46 | +0.30 | 0.0005 |
+| 2026 (in progress) | 133 | +0.43 | +0.28 | 0.001 |
 
 Over full seasons, out-spending your conference predicts margin as well as raw dollars do nationally (within r = +0.41 vs national +0.43).
 
@@ -238,31 +280,31 @@ Over full seasons, out-spending your conference predicts margin as well as raw d
 
 | Program | Conf | Football exp | x league median | Record | Margin/g |
 | --- | --- | ---: | ---: | :---: | ---: |
-| Miami | ACC | $88.1M | 2.06x | 8-0 | +29.9 |
-| Florida State | ACC | $83.3M | 1.95x | 3-5 | +1.8 |
-| Clemson | ACC | $81.1M | 1.90x | 5-3 | +1.6 |
-| Ohio State | Big Ten | $92.4M | 1.74x | 6-2 | +21.1 |
-| TCU | Big 12 | $59.6M | 1.56x | 4-4 | +9.1 |
-| Penn State | Big Ten | $77.4M | 1.46x | 4-4 | +10.4 |
+| Miami | ACC | $88.1M | 2.06x | 8-1 | +25.8 |
+| Florida State | ACC | $83.3M | 1.95x | 4-5 | +2.3 |
+| Clemson | ACC | $81.1M | 1.90x | 6-3 | +2.0 |
+| Ohio State | Big Ten | $92.4M | 1.74x | 6-3 | +17.3 |
+| TCU | Big 12 | $59.6M | 1.56x | 4-5 | +8.0 |
+| Penn State | Big Ten | $77.4M | 1.46x | 5-4 | +9.6 |
 
 **Smallest spenders relative to their Power 4 league**
 
 | Program | Conf | Football exp | x league median | Record | Margin/g |
 | --- | --- | ---: | ---: | :---: | ---: |
-| Houston | Big 12 | $23.3M | 0.61x | 6-2 | +15.0 |
-| Mississippi State | SEC | $37.6M | 0.65x | 4-4 | -1.5 |
-| Maryland | Big Ten | $35.5M | 0.67x | 2-6 | -4.8 |
-| Purdue | Big Ten | $37.2M | 0.70x | 3-5 | -2.6 |
-| Kansas State | Big 12 | $27.1M | 0.71x | 4-4 | +9.9 |
-| Northwestern | Big Ten | $37.9M | 0.71x | 6-2 | +14.9 |
+| Houston | Big 12 | $23.3M | 0.61x | 7-2 | +14.1 |
+| Mississippi State | SEC | $37.6M | 0.65x | 4-5 | -1.6 |
+| Maryland | Big Ten | $35.5M | 0.67x | 3-6 | -3.7 |
+| Purdue | Big Ten | $37.2M | 0.70x | 3-6 | -2.9 |
+| Kansas State | Big 12 | $27.1M | 0.71x | 4-5 | +4.6 |
+| Northwestern | Big Ten | $37.9M | 0.71x | 6-3 | +11.7 |
 
-OLS with 10 conference fixed effects (outcome **win_pct**, n = 135, R² = 0.174, adjusted 0.101):
+OLS with 10 conference fixed effects (outcome **win_pct**, n = 135, R² = 0.161, adjusted 0.086):
 
 | Term | Estimate | Std error | t | p |
 | --- | ---: | ---: | ---: | ---: |
-| log10(football_expenses) | +0.4948 | 0.1597 | +3.10 | 0.0024** |
+| log10(football_expenses) | +0.5044 | 0.1589 | +3.17 | 0.0019** |
 
-Doubling the football budget within the same conference adds **+14.9 percentage points of win rate** (log10(2) = 0.301).
+Doubling the football budget within the same conference adds **+15.2 percentage points of win rate** (log10(2) = 0.301).
 
 ![relative spend by season](figures/relative_spend_by_season.png)
 
@@ -276,11 +318,11 @@ Before crediting the budget, compare it with the simplest baseline: last season'
 | --- | ---: | ---: | ---: |
 | 2024 | 130 | +0.53 | +0.47 |
 | 2025 | 131 | +0.56 | +0.43 |
-| 2026 (in progress) | 133 | +0.52 | +0.49 |
+| 2026 (in progress) | 133 | +0.51 | +0.46 |
 
 Pooling 2024-2025, last season alone explains **30%** of margin variance, spending alone **20%**, and both together **35%**. Both remain significant in a joint model (t = 7.6 for prior margin, 4.5 for spending): each point of prior margin carries 0.44 points forward, and doubling the budget adds **+2.8 points per game** on top.
 
-In 2026 to date, prior margin (+0.52) now out-predicts spending (+0.49): the usual late-season pattern once conference play has replaced September mismatches.
+In 2026 to date, prior margin (+0.51) now out-predicts spending (+0.46): the usual late-season pattern once conference play has replaced September mismatches.
 
 ### Who beats their budget year after year
 
@@ -298,27 +340,27 @@ Across completed seasons the residual repeats at r = **+0.43** (~4 points carrie
 
 | Program | Conf | Football exp | 2023 | 2024 | 2025 | Average | 2026 to date |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| James Madison | Sun Belt | $16.9M | +17.7 | +14.6 | +22.2 | **+18.2** | +19.5 |
-| Toledo | MAC | $12.6M | +15.8 | +9.1 | +22.2 | **+15.7** | +13.4 |
-| Oregon | Big Ten | $60.8M | +20.1 | +10.0 | +15.2 | **+15.1** | +1.7 |
-| Notre Dame | FBS Independents | $93.3M | +14.2 | +14.9 | +13.3 | **+14.1** | +13.6 |
-| Ohio State | Big Ten | $92.4M | +12.7 | +13.3 | +15.7 | **+13.9** | +7.8 |
-| SMU | ACC | $45.3M | +19.8 | +11.8 | +6.1 | **+12.6** | +5.0 |
-| Ohio | MAC | $10.8M | +10.7 | +16.7 | +9.6 | **+12.3** | +10.3 |
-| Memphis | American | $22.0M | +9.6 | +12.0 | +11.0 | **+10.9** | +11.3 |
+| James Madison | Sun Belt | $16.9M | +17.7 | +14.6 | +22.2 | **+18.2** | +20.7 |
+| Toledo | MAC | $12.6M | +15.8 | +9.1 | +22.2 | **+15.7** | +12.3 |
+| Oregon | Big Ten | $60.8M | +20.1 | +10.0 | +15.2 | **+15.1** | +2.7 |
+| Notre Dame | FBS Independents | $93.3M | +14.2 | +14.9 | +13.3 | **+14.1** | +12.6 |
+| Ohio State | Big Ten | $92.4M | +12.7 | +13.3 | +15.7 | **+13.9** | +5.2 |
+| SMU | ACC | $45.3M | +19.8 | +11.8 | +6.1 | **+12.6** | +6.8 |
+| Ohio | MAC | $10.8M | +10.7 | +16.7 | +9.6 | **+12.3** | +10.1 |
+| Memphis | American | $22.0M | +9.6 | +12.0 | +11.0 | **+10.9** | +11.5 |
 
 **Consistently missing their budget (points per game)**
 
 | Program | Conf | Football exp | 2023 | 2024 | 2025 | Average | 2026 to date |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Purdue | Big Ten | $37.2M | -9.8 | -28.6 | -17.8 | **-18.7** | -9.2 |
-| Stanford | ACC | $36.0M | -20.8 | -15.0 | -14.8 | **-16.9** | -23.3 |
-| Kent State | MAC | $10.4M | -15.8 | -25.0 | -8.2 | **-16.3** | -13.4 |
-| Massachusetts | MAC | $13.4M | -11.6 | -9.7 | -25.1 | **-15.5** | +6.3 |
-| Michigan State | Big Ten | $48.2M | -19.5 | -13.1 | -11.9 | **-14.8** | -14.4 |
-| Charlotte | American | $15.6M | -9.4 | -9.3 | -20.7 | **-13.1** | -19.8 |
-| Temple | American | $26.3M | -16.7 | -17.6 | -4.2 | **-12.8** | -7.0 |
-| Oklahoma State | Big 12 | $32.8M | -3.3 | -11.9 | -23.0 | **-12.8** | +8.3 |
+| Purdue | Big Ten | $37.2M | -9.8 | -28.6 | -17.8 | **-18.7** | -8.9 |
+| Stanford | ACC | $36.0M | -20.8 | -15.0 | -14.8 | **-16.9** | -22.8 |
+| Kent State | MAC | $10.4M | -15.8 | -25.0 | -8.2 | **-16.3** | -13.6 |
+| Massachusetts | MAC | $13.4M | -11.6 | -9.7 | -25.1 | **-15.5** | +5.8 |
+| Michigan State | Big Ten | $48.2M | -19.5 | -13.1 | -11.9 | **-14.8** | -12.0 |
+| Charlotte | American | $15.6M | -9.4 | -9.3 | -20.7 | **-13.1** | -18.8 |
+| Temple | American | $26.3M | -16.7 | -17.6 | -4.2 | **-12.8** | -7.1 |
+| Oklahoma State | Big 12 | $32.8M | -3.3 | -11.9 | -23.0 | **-12.8** | +11.5 |
 
 Over-performers span budgets from Ohio and Toledo ($12.6M or less) to Notre Dame and Ohio State ($92.4M or more).
 
@@ -354,33 +396,33 @@ Each spending line is added to a regression that already controls for total foot
 
 | Spending line | n | Corr. with total budget | r with margin alone | Added coef (pts per SD) | t | R² gain |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Men's coaching payroll | 135 | 0.94 | +0.48 | +3.1 | +1.3 | +0.010 |
-| Avg men's head coach salary | 135 | 0.84 | +0.46 | +2.1 | +1.3 | +0.010 |
-| Avg men's assistant coach salary | 135 | 0.90 | +0.47 | +2.3 | +1.2 | +0.008 |
-| Men's recruiting spend | 135 | 0.92 | +0.48 | +2.9 | +1.4 | +0.012 |
-| Football game-day operations | 135 | 0.84 | +0.37 | -1.3 | -0.9 | +0.004 |
-| Head coach total pay | 52 | 0.77 | +0.18 | +1.4 | +0.8 | +0.012 |
+| Men's coaching payroll | 135 | 0.94 | +0.45 | +2.3 | +1.0 | +0.006 |
+| Avg men's head coach salary | 135 | 0.84 | +0.42 | +1.7 | +1.1 | +0.008 |
+| Avg men's assistant coach salary | 135 | 0.90 | +0.43 | +1.4 | +0.8 | +0.003 |
+| Men's recruiting spend | 135 | 0.92 | +0.44 | +2.0 | +1.0 | +0.006 |
+| Football game-day operations | 135 | 0.84 | +0.33 | -1.8 | -1.2 | +0.008 |
+| Head coach total pay | 52 | 0.77 | +0.19 | +1.4 | +0.8 | +0.012 |
 
-Every component correlates **0.77 or higher** with total budget, and none is significant once total budget is held fixed (max |t| = 1.4, Men's recruiting spend). Rich programs spend across the board, so overall scale—not a single line item—drives the correlation.
+Every component correlates **0.77 or higher** with total budget, and none is significant once total budget is held fixed (max |t| = 1.2, Football game-day operations). Rich programs spend across the board, so overall scale—not a single line item—drives the correlation.
 
 #### What the head coach is paid
 
 Verified total pay is on file for **52 of 138 teams**. Public universities subject to open-records laws provide high-confidence, cited figures. Private institutions (e.g., USC, Notre Dame, Stanford, Miami, TCU, Baylor, SMU, Vanderbilt) are exempt from FOIA disclosure and remain marked as unverified with blank salaries rather than synthetic estimates.
 
-Across those 52 teams, head coach pay correlates **r = +0.18** with point margin per game (p = 0.197), weaker than total spending. Part of that is the sample: 92% of the verified rows are Power 4 schools, which squeezes the spread in both pay and results. With the total budget in the model, coach pay adds nothing (see the spending-line table above).
+Across those 52 teams, head coach pay correlates **r = +0.19** with point margin per game (p = 0.173), weaker than total spending. Part of that is the sample: 92% of the verified rows are Power 4 schools, which squeezes the spread in both pay and results. With the total budget in the model, coach pay adds nothing (see the spending-line table above).
 
 | Coach | School | Total pay | Buyout | Win% | Point margin |
 | --- | --- | ---: | ---: | ---: | ---: |
-| Kirby Smart | Georgia | $13.3M | $105.1M | 87.5% | +26.1 |
-| Ryan Day | Ohio State | $12.6M | $70.9M | 75.0% | +21.1 |
-| Dabo Swinney | Clemson | $11.4M | $60.0M | 62.5% | +1.6 |
-| Steve Sarkisian | Texas | $10.8M | $60.3M | 75.0% | +13.6 |
-| Dan Lanning | Oregon | $10.4M | $56.7M | 62.5% | +11.9 |
-| Kalen DeBoer | Alabama | $10.2M | $60.8M | 75.0% | +17.0 |
-| Brian Kelly | LSU | $10.2M | $53.3M | 75.0% | +24.1 |
-| Bill Belichick | North Carolina | $10.1M | $20.8M | 50.0% | +2.8 |
-| Mark Stoops | Kentucky | $9.0M | $37.7M | 87.5% | +8.1 |
-| Josh Heupel | Tennessee | $9.0M | $37.5M | 75.0% | +16.0 |
+| Kirby Smart | Georgia | $13.3M | $105.1M | 88.9% | +27.1 |
+| Ryan Day | Ohio State | $12.6M | $70.9M | 66.7% | +17.3 |
+| Dabo Swinney | Clemson | $11.4M | $60.0M | 66.7% | +2.0 |
+| Steve Sarkisian | Texas | $10.8M | $60.3M | 77.8% | +13.7 |
+| Dan Lanning | Oregon | $10.4M | $56.7M | 66.7% | +12.0 |
+| Kalen DeBoer | Alabama | $10.2M | $60.8M | 77.8% | +17.1 |
+| Brian Kelly | LSU | $10.2M | $53.3M | 66.7% | +19.4 |
+| Bill Belichick | North Carolina | $10.1M | $20.8M | 55.6% | +4.3 |
+| Josh Heupel | Tennessee | $9.0M | $37.5M | 77.8% | +17.3 |
+| Mark Stoops | Kentucky | $9.0M | $37.7M | 77.8% | +4.1 |
 
 ### Does getting richer help?
 
@@ -399,7 +441,7 @@ A team's record should follow its scoring. The Pythagorean expectation turns poi
 | 2023 | 130 | +0.92 | -0.04 | 0.63 |
 | 2024 | 131 | +0.90 | -0.13 | 0.15 |
 | 2025 | 133 | +0.91 | -0.25 | <0.01 |
-| 2026 (in progress) | 135 | +0.87 | -0.17 | 0.05 |
+| 2026 (in progress) | 135 | +0.88 | -0.17 | 0.05 |
 
 Scoring explains the record well (r = +0.91 in completed seasons), so the residual is small but real. Luck does not follow the budget: luck correlates -0.14 with log spending across completed seasons, significant in 1 of 3. Whatever money buys, it is not the bounce of the ball.
 
@@ -407,35 +449,35 @@ Scoring explains the record well (r = +0.91 in completed seasons), so the residu
 
 | Group | Program | Conf | Football exp | Record | Expected win% | Actual | Wins above expectation |
 | --- | --- | --- | ---: | :---: | ---: | ---: | ---: |
+| Lucky | Marshall | Sun Belt | $13.6M | 5-4 | 30.1% | 55.6% | **+2.3** |
 | Lucky | Stanford | ACC | $36.0M | 4-5 | 19.2% | 44.4% | **+2.3** |
-| Lucky | Marshall | Sun Belt | $13.6M | 5-3 | 36.4% | 62.5% | **+2.1** |
-| Lucky | UTSA | American | $17.9M | 7-1 | 64.6% | 87.5% | **+1.8** |
-| Lucky | Kent State | MAC | $10.4M | 3-6 | 14.3% | 33.3% | **+1.7** |
-| Lucky | Kentucky | SEC | $43.3M | 7-1 | 66.2% | 87.5% | **+1.7** |
-| Unlucky | TCU | Big 12 | $59.6M | 4-4 | 76.5% | 50.0% | **-2.1** |
-| Unlucky | Kansas | Big 12 | $34.5M | 3-5 | 61.9% | 37.5% | **-1.9** |
-| Unlucky | Penn State | Big Ten | $77.4M | 4-4 | 74.1% | 50.0% | **-1.9** |
-| Unlucky | Nebraska | Big Ten | $70.6M | 5-3 | 84.9% | 62.5% | **-1.8** |
-| Unlucky | Texas A&M | SEC | $60.2M | 4-4 | 72.2% | 50.0% | **-1.8** |
+| Lucky | UTSA | American | $17.9M | 7-2 | 56.1% | 77.8% | **+2.0** |
+| Lucky | Buffalo | MAC | $14.1M | 6-3 | 45.0% | 66.7% | **+2.0** |
+| Lucky | Kentucky | SEC | $43.3M | 7-2 | 58.7% | 77.8% | **+1.7** |
+| Unlucky | TCU | Big 12 | $59.6M | 4-5 | 72.6% | 44.4% | **-2.5** |
+| Unlucky | Kansas | Big 12 | $34.5M | 3-6 | 60.1% | 33.3% | **-2.4** |
+| Unlucky | Nebraska | Big Ten | $70.6M | 5-4 | 80.6% | 55.6% | **-2.3** |
+| Unlucky | Texas A&M | SEC | $60.2M | 4-5 | 68.9% | 44.4% | **-2.2** |
+| Unlucky | Temple | American | $26.3M | 2-7 | 42.4% | 22.2% | **-1.8** |
 
-Stanford is 4-5 while scoring like a team that wins 19.2% of its games; TCU is 4-4 while scoring like one that wins 76.5%. Records like these tend to regress toward the scoring over the rest of the season.
+Marshall is 5-4 while scoring like a team that wins 30.1% of its games; TCU is 4-5 while scoring like one that wins 72.6%. Records like these tend to regress toward the scoring over the rest of the season.
 
 ![pythagorean 2026](figures/pythagorean_2026.png)
 
 ### Close games versus blowouts
 
-Does the bigger budget win the tight games, or only the lopsided ones? Every FBS-vs-FBS game is split by its final margin: one-score (8 points or fewer) against blowouts (17 or more). Each season is counted through week 9.
+Does the bigger budget win the tight games, or only the lopsided ones? Every FBS-vs-FBS game is split by its final margin: one-score (8 points or fewer) against blowouts (17 or more). Each season is counted through week 10.
 
 | Season | FBS games | Richer team wins | One-score games | Richer wins (one-score) | Blowouts | Richer wins (blowouts) |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 2023 | 461 | 68.5% | 167 (36.3%) | 63.0% | 201 | 79.1% |
-| 2024 | 445 | 67.4% | 173 (38.9%) | 56.6% | 192 | 78.6% |
-| 2025 | 447 | 64.7% | 164 (36.7%) | 50.0% | 202 | 77.7% |
-| 2026 (in progress) | 480 | 61.7% | 186 (38.8%) | 48.9% | 204 | 72.1% |
+| 2023 | 521 | 67.2% | 197 (37.9%) | 60.0% | 221 | 78.6% |
+| 2024 | 491 | 66.0% | 193 (39.3%) | 54.9% | 211 | 77.7% |
+| 2025 | 497 | 64.4% | 181 (36.4%) | 49.7% | 225 | 76.9% |
+| 2026 (in progress) | 540 | 61.9% | 211 (39.1%) | 50.7% | 224 | 71.9% |
 
-Across completed seasons the bigger budget wins **78.5%** of blowouts but only **56.5%** of one-score games. Money shows up as depth and talent that turn a close game into a comfortable one; once a game is actually close, the budget is nearly irrelevant to who wins it.
+Across completed seasons the bigger budget wins **77.7%** of blowouts but only **54.9%** of one-score games. Money shows up as depth and talent that turn a close game into a comfortable one; once a game is actually close, the budget is nearly irrelevant to who wins it.
 
-So far in 2026, 38.8% of FBS games have been one-score games against 37.3% at the same point of past seasons, and the richer side has won 48.9% of them (n = 186).
+So far in 2026, 39.1% of FBS games have been one-score games against 37.9% at the same point of past seasons, and the richer side has won 50.7% of them (n = 211).
 
 ![close games](figures/close_games.png)
 
@@ -445,12 +487,12 @@ Home advantage is measured within each team (its home margin minus its away marg
 
 | Season | Home games | Home win rate | Home margin | Within-team home edge | r, home edge vs log budget | p |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 2023 | 452 | 59.3% | +4.4 | +7.7 | +0.21 | 0.02 |
-| 2024 | 436 | 60.6% | +5.8 | +9.6 | -0.24 | <0.01 |
-| 2025 | 441 | 62.6% | +6.8 | +12.0 | -0.18 | 0.04 |
-| 2026 (in progress) | 472 | 63.1% | +6.9 | +12.4 | -0.01 | 0.91 |
+| 2023 | 511 | 59.1% | +4.3 | +8.0 | +0.21 | 0.02 |
+| 2024 | 481 | 59.5% | +5.4 | +9.5 | -0.28 | <0.01 |
+| 2025 | 490 | 61.2% | +6.1 | +11.3 | -0.17 | 0.04 |
+| 2026 (in progress) | 531 | 61.0% | +5.8 | +10.6 | -0.06 | 0.52 |
 
-The home side wins about 60.8% of games and teams average 10 points better at home than away, but that edge is unrelated to budget (mean r = -0.07, sign flipping year to year): a 100,000-seat stadium does not widen the home-field margin over a 25,000-seat one.
+The home side wins about 59.9% of games and teams average 10 points better at home than away, but that edge is unrelated to budget (mean r = -0.08, sign flipping year to year): a 100,000-seat stadium does not widen the home-field margin over a 25,000-seat one.
 
 ### Crowds: the live money signal
 
@@ -461,22 +503,22 @@ Attendance is the one scale metric that arrives live each week instead of two ye
 | 2023 | 130 | 40,959 | 35,961 | +0.89 | +0.49 |
 | 2024 | 131 | 40,657 | 34,623 | +0.89 | +0.51 |
 | 2025 | 133 | 40,593 | 32,215 | +0.88 | +0.48 |
-| 2026 (in progress) | 135 | 39,785 | 32,922 | +0.88 | +0.51 |
+| 2026 (in progress) | 135 | 39,710 | 32,951 | +0.88 | +0.48 |
 
 Log crowd size and log budget correlate at r = **+0.88**. Using *last* season's crowd (known before kickoff), crowd and budget predict margin almost equally over 2024-2025 (r = +0.44 vs +0.45, n = 261); in a joint model the budget keeps the edge (t = 2.5 for budget, 1.4 for crowd).
 
-**Are crowds growing?** Same-week comparison (through week 9), mean home crowd across FBS: 2023: 41,161 > 2024: 40,923 > 2025: 40,825 > 2026: 39,539. School by school, the median change from 2025 is **-0.6%** (down, n = 136).
+**Are crowds growing?** Same-week comparison (through week 10), mean home crowd across FBS: 2023: 41,053 > 2024: 40,846 > 2025: 40,691 > 2026: 39,474. School by school, the median change from 2025 is **-0.9%** (down, n = 136).
 
 **Biggest crowd gains versus 2025**
 
 | Program | Home games | 2025 crowd | 2026 crowd | Change |
 | --- | ---: | ---: | ---: | ---: |
-| Northwestern | 5 | 11,548 | 21,876 | **+89%** |
+| Northwestern | 6 | 11,548 | 23,422 | **+103%** |
 | Sam Houston | 3 | 5,304 | 9,350 | **+76%** |
-| Massachusetts | 4 | 10,133 | 14,534 | **+43%** |
-| New Mexico State | 3 | 9,544 | 13,242 | **+39%** |
-| Miami (OH) | 4 | 11,996 | 15,074 | **+26%** |
-| Temple | 5 | 19,716 | 24,270 | **+23%** |
+| Massachusetts | 5 | 10,133 | 13,403 | **+32%** |
+| Temple | 5 | 18,406 | 24,270 | **+32%** |
+| UConn | 5 | 28,275 | 34,243 | **+21%** |
+| Oregon State | 5 | 29,898 | 35,580 | **+19%** |
 
 **Biggest crowd losses versus 2025**
 
@@ -484,10 +526,10 @@ Log crowd size and log budget correlate at r = **+0.88**. Using *last* season's 
 | --- | ---: | ---: | ---: | ---: |
 | Eastern Michigan | 4 | 16,336 | 7,882 | **-52%** |
 | Buffalo | 5 | 14,063 | 7,703 | **-45%** |
-| Rice | 4 | 24,124 | 15,187 | **-37%** |
-| South Alabama | 4 | 16,893 | 11,169 | **-34%** |
-| Louisiana Tech | 4 | 25,284 | 17,978 | **-29%** |
+| South Alabama | 4 | 17,207 | 11,169 | **-35%** |
+| Rice | 4 | 23,339 | 15,187 | **-35%** |
 | Washington State | 4 | 28,293 | 20,348 | **-28%** |
+| Louisiana Tech | 4 | 23,796 | 17,978 | **-24%** |
 
 ![attendance vs spending 2026](figures/attendance_vs_spending_2026.png)
 
@@ -506,24 +548,24 @@ Ten of the twelve 2023 Pac-12 members left. Two did not, and the gap between tho
 
 | School | Role | Football revenue before | After | Change | Point margin change |
 | --- | --- | ---: | ---: | ---: | ---: |
-| Arizona | left | $37.1M | $37.8M | +1.8% | -6.9 |
-| Arizona State | left | $40.2M | $50.4M | +25.4% | +18.6 |
+| Arizona | left | $37.1M | $37.8M | +1.8% | -7.5 |
+| Arizona State | left | $40.2M | $50.4M | +25.4% | +18.9 |
 | California | left | $45.1M | $64.0M | +41.9% | -1.4 |
 | Colorado | left | $64.7M | $69.3M | +7.2% | +4.8 |
-| Oregon | left | $109.2M | $119.6M | +9.5% | -9.1 |
+| Oregon | left | $109.2M | $119.6M | +9.5% | -9.0 |
 | Stanford | left | $33.7M | $36.0M | +6.7% | +4.4 |
-| UCLA | left | $45.8M | $55.2M | +20.6% | -8.3 |
+| UCLA | left | $45.8M | $55.2M | +20.6% | -8.5 |
 | USC | left | $74.9M | $74.0M | -1.1% | +2.6 |
-| Utah | left | $72.8M | $95.9M | +31.8% | +11.4 |
-| Washington | left | $127.8M | $121.0M | -5.3% | -7.6 |
-| Oregon State | stayed behind | $47.4M | $32.6M | -31.2% | -12.9 |
+| Utah | left | $72.8M | $95.9M | +31.8% | +10.8 |
+| Washington | left | $127.8M | $121.0M | -5.3% | -7.9 |
+| Oregon State | stayed behind | $47.4M | $32.6M | -31.2% | -14.3 |
 | Washington State | stayed behind | $57.0M | $38.8M | -31.9% | -3.0 |
-| Boise State | joined new Pac-12 | $41.1M | - | n/a | +1.0 |
-| Colorado State | joined new Pac-12 | $19.6M | - | n/a | -1.8 |
-| Fresno State | joined new Pac-12 | $18.3M | - | n/a | +3.3 |
+| Boise State | joined new Pac-12 | $41.1M | - | n/a | +2.6 |
+| Colorado State | joined new Pac-12 | $19.6M | - | n/a | -3.9 |
+| Fresno State | joined new Pac-12 | $18.3M | - | n/a | +1.7 |
 | San Diego State | joined new Pac-12 | $27.5M | - | n/a | -7.1 |
-| Texas State | joined new Pac-12 | $18.0M | - | n/a | -0.7 |
-| Utah State | joined new Pac-12 | $17.4M | - | n/a | -4.3 |
+| Texas State | joined new Pac-12 | $18.0M | - | n/a | +0.9 |
+| Utah State | joined new Pac-12 | $17.4M | - | n/a | -3.0 |
 
 Median revenue change for the schools that left: **+8.3%**. For the two left behind: **-31.6%**. Washington State and Oregon State lost roughly a third of their football revenue simply by losing their conference.
 
@@ -544,14 +586,14 @@ Several leavers show modest 2024 revenue gains because they entered on reduced m
 
 | School | Move | Effective | Revenue change | Point margin change |
 | --- | --- | ---: | ---: | ---: |
-| Army | FBS Independents to American | 2024 | not yet filed | +8.5 |
-| Oklahoma | Big 12 to SEC | 2024 | +1.1% | -15.4 |
-| SMU | American to ACC | 2024 | +41.8% | -8.9 |
+| Army | FBS Independents to American | 2024 | not yet filed | +8.0 |
+| Oklahoma | Big 12 to SEC | 2024 | +1.1% | -14.9 |
+| SMU | American to ACC | 2024 | +41.8% | -8.5 |
 | Texas | Big 12 to SEC | 2024 | -14.4% | -3.7 |
-| Massachusetts | FBS Independents to MAC | 2025 | not yet filed | +2.8 |
-| Louisiana Tech | Conference USA to Sun Belt | 2026 | not yet filed | +11.6 |
-| Northern Illinois | MAC to Mountain West | 2026 | not yet filed | -22.3 |
-| UTEP | Conference USA to Mountain West | 2026 | not yet filed | -12.9 |
+| Massachusetts | FBS Independents to MAC | 2025 | not yet filed | +2.5 |
+| Louisiana Tech | Conference USA to Sun Belt | 2026 | not yet filed | +12.9 |
+| Northern Illinois | MAC to Mountain West | 2026 | not yet filed | -21.1 |
+| UTEP | Conference USA to Mountain West | 2026 | not yet filed | -10.7 |
 
 ![pac12 diaspora](figures/pac12_diaspora.png)
 
@@ -563,16 +605,16 @@ Realignment moved miles as well as money. A team flying east loses hours: a noon
 
 | Travel | Games | Mean margin | Win rate |
 | --- | ---: | ---: | ---: |
-| 3 zones west | 65 | -1.6 | 42% |
-| 2 zones west | 84 | -6.2 | 40% |
-| 1 zone west | 459 | -5.6 | 37% |
-| same zone | 1480 | -5.2 | 41% |
-| 1 zone east | 445 | -3.7 | 42% |
-| 2 zones east | 91 | -8.1 | 36% |
-| 3 zones east | 67 | -8.5 | 36% |
+| 3 zones west | 67 | -1.4 | 43% |
+| 2 zones west | 87 | -5.7 | 41% |
+| 1 zone west | 470 | -5.4 | 37% |
+| same zone | 1516 | -5.0 | 42% |
+| 1 zone east | 450 | -3.8 | 41% |
+| 2 zones east | 93 | -7.8 | 38% |
+| 3 zones east | 69 | -8.0 | 38% |
 
 > [!IMPORTANT]
-> The raw split above is confounded. The teams that fly two or more zones east are disproportionately Group of Five programs taking a paycheque game at a blue blood, so they would have lost anyway. Comparing each team against **itself** - its own margin on long eastward trips versus its own margin on every other away game - the penalty is **-0.9 points** across 75 team-seasons (-4.7 on long eastward trips versus -3.9 on other away games).
+> The raw split above is confounded. The teams that fly two or more zones east are disproportionately Group of Five programs taking a paycheque game at a blue blood, so they would have lost anyway. Comparing each team against **itself** - its own margin on long eastward trips versus its own margin on every other away game - the penalty is **-1.1 points** across 76 team-seasons (-4.8 on long eastward trips versus -3.7 on other away games).
 
 #### Who now travels further
 
@@ -583,18 +625,18 @@ Average time zones crossed per away game, before and after the move. The old Pac
 | Stanford | Pac-12 to ACC | -0.20 | +2.12 | -9.5 | +17.6 | -27.1 |
 | Arizona State | Pac-12 to Big 12 | -0.75 | +0.79 | +12.7 | +24.2 | -11.5 |
 | California | Pac-12 to ACC | +0.50 | +2.00 | -5.6 | +3.1 | -8.7 |
-| Colorado | Pac-12 to Big 12 | -0.33 | +1.00 | +7.3 | +3.3 | +4.0 |
-| UCLA | Pac-12 to Big Ten | +0.33 | +1.47 | -10.3 | -11.5 | +1.2 |
-| Colorado State | Mountain West to Pac-12 | -0.44 | +0.67 | -12.6 | +3.5 | -16.1 |
-| Utah | Pac-12 to Big 12 | -0.40 | +0.67 | +18.2 | +5.7 | +12.5 |
-| Arizona | Pac-12 to Big 12 | -0.33 | +0.71 | -15.6 | -2.8 | -12.8 |
-| Washington | Pac-12 to Big Ten | +0.80 | +1.85 | -14.7 | -2.4 | -12.3 |
+| Colorado | Pac-12 to Big 12 | -0.33 | +0.94 | +7.1 | +3.3 | +3.9 |
+| UCLA | Pac-12 to Big Ten | +0.33 | +1.50 | -9.2 | -11.5 | +2.3 |
+| Colorado State | Mountain West to Pac-12 | -0.44 | +0.67 | -12.6 | -1.3 | -11.2 |
+| Utah | Pac-12 to Big 12 | -0.40 | +0.67 | +18.2 | +5.1 | +13.1 |
+| Arizona | Pac-12 to Big 12 | -0.33 | +0.71 | -15.6 | -3.4 | -12.2 |
+| Washington | Pac-12 to Big Ten | +0.80 | +1.85 | -14.7 | -3.2 | -11.5 |
 | USC | Pac-12 to Big Ten | +1.00 | +2.00 | +1.5 | +3.4 | -1.8 |
-| Oregon | Pac-12 to Big Ten | +0.80 | +1.69 | -6.1 | -14.4 | +8.3 |
-| Texas | Big 12 to SEC | +0.00 | +0.60 | -10.9 | -0.6 | -10.3 |
+| Oregon | Pac-12 to Big Ten | +0.80 | +1.79 | -6.3 | -14.4 | +8.1 |
 | San Diego State | Mountain West to Pac-12 | +0.41 | +1.00 | -16.3 | -0.5 | -15.7 |
+| Texas | Big 12 to SEC | +0.00 | +0.55 | -9.8 | -0.6 | -9.1 |
 
-Pooled over these 13 schools, away margin moved **-4.8** and home margin **+2.2** points per game. The road gap averaged -6.9 with 9 of 13 schools negative, and a one-sample t-test gives p = 0.04. Few games per school and different opponents each year keep the estimate rough, but the sign is now hard to dismiss.
+Pooled over these 13 schools, away margin moved **-4.6** and home margin **+1.7** points per game. The road gap averaged -6.3 with 9 of 13 schools negative, but a one-sample t-test gives p = 0.06: few games per school and different opponents each year make this suggestive, not conclusive.
 
 ![travel timezone penalty](figures/travel_timezone_penalty.png)
 
@@ -618,7 +660,7 @@ Under the *House v. NCAA* settlement, schools may share up to ~$20.5M in athleti
 
 Because the House revenue-share cap is uniform across institutions, nearly every Power 4 program will max out the same ~$16M football share. Competitive differentiation therefore shifts to third-party NIL collectives ($15M-$20M+ at top programs) and uncapped coaching, recruiting, and support budgets.
 
-247Sports Team Talent Composite ratings are on file for **19 elite programs** only. Among them, talent tracks scoring (r = +0.461 with points per game, p = 0.047). With so few schools, all from the top of the sport, treat this as a hint rather than a result.
+247Sports Team Talent Composite ratings are on file for **19 elite programs** only. Among them, talent tracks scoring (r = +0.484 with points per game, p = 0.036). With so few schools, all from the top of the sport, treat this as a hint rather than a result.
 
 ## 7. Reference tables
 
@@ -626,42 +668,42 @@ Because the House revenue-share cap is uniform across institutions, nearly every
 
 | # | Program | Conf | Football rev | Football exp | Dept rev | Record | Win% | Margin/g |
 | ---: | --- | --- | ---: | ---: | ---: | :---: | ---: | ---: |
-| 1 | Notre Dame | FBS Independents | $195.7M | $93.3M | $289.6M | 7-1 | 87.5% | +27.0 |
-| 2 | Michigan | Big Ten | $175.3M | $61.7M | $236.4M | 5-3 | 62.5% | +4.9 |
-| 3 | Texas | SEC | $171.9M | $70.4M | $343.1M | 6-2 | 75.0% | +13.6 |
-| 4 | Tennessee | SEC | $162.5M | $61.2M | $285.4M | 6-2 | 75.0% | +16.0 |
-| 5 | Ohio State | Big Ten | $160.5M | $92.4M | $295.3M | 6-2 | 75.0% | +21.1 |
-| 6 | Penn State | Big Ten | $150.3M | $77.4M | $254.4M | 4-4 | 50.0% | +10.4 |
-| 7 | Georgia | SEC | $149.3M | $71.1M | $233.5M | 7-1 | 87.5% | +26.1 |
-| 8 | Alabama | SEC | $146.3M | $81.5M | $244.6M | 6-2 | 75.0% | +17.0 |
-| 9 | Oklahoma | SEC | $126.2M | $71.2M | $234.4M | 4-4 | 50.0% | +1.2 |
-| 10 | Nebraska | Big Ten | $122.3M | $70.6M | $205.8M | 5-3 | 62.5% | +16.8 |
-| 11 | Auburn | SEC | $121.4M | $58.7M | $205.3M | 4-4 | 50.0% | -2.6 |
-| 12 | Washington | Big Ten | $121.0M | $68.9M | $178.4M | 5-3 | 62.5% | +5.4 |
-| 13 | Oregon | Big Ten | $119.6M | $60.8M | $167.1M | 5-3 | 62.5% | +11.9 |
-| 14 | LSU | SEC | $117.6M | $50.7M | $223.5M | 6-2 | 75.0% | +24.1 |
-| 15 | Florida | SEC | $113.4M | $51.8M | $199.2M | 5-3 | 62.5% | +7.5 |
-| 16 | Wisconsin | Big Ten | $112.3M | $40.9M | $190.5M | 5-3 | 62.5% | +6.5 |
-| 17 | Texas A&M | SEC | $108.5M | $60.2M | $235.5M | 4-4 | 50.0% | +9.4 |
-| 18 | Iowa | Big Ten | $105.2M | $50.9M | $180.0M | 6-2 | 75.0% | +15.8 |
-| 19 | Minnesota | Big Ten | $101.7M | $45.5M | $156.8M | 5-3 | 62.5% | +4.8 |
-| 20 | Miami | ACC | $99.9M | $88.1M | $230.5M | 8-0 | 100.0% | +29.9 |
+| 1 | Notre Dame | FBS Independents | $195.7M | $93.3M | $289.6M | 8-1 | 88.9% | +24.8 |
+| 2 | Michigan | Big Ten | $175.3M | $61.7M | $236.4M | 5-4 | 55.6% | +3.3 |
+| 3 | Texas | SEC | $171.9M | $70.4M | $343.1M | 7-2 | 77.8% | +13.7 |
+| 4 | Tennessee | SEC | $162.5M | $61.2M | $285.4M | 7-2 | 77.8% | +17.3 |
+| 5 | Ohio State | Big Ten | $160.5M | $92.4M | $295.3M | 6-3 | 66.7% | +17.3 |
+| 6 | Penn State | Big Ten | $150.3M | $77.4M | $254.4M | 5-4 | 55.6% | +9.6 |
+| 7 | Georgia | SEC | $149.3M | $71.1M | $233.5M | 8-1 | 88.9% | +27.1 |
+| 8 | Alabama | SEC | $146.3M | $81.5M | $244.6M | 7-2 | 77.8% | +17.1 |
+| 9 | Oklahoma | SEC | $126.2M | $71.2M | $234.4M | 5-4 | 55.6% | +2.9 |
+| 10 | Nebraska | Big Ten | $122.3M | $70.6M | $205.8M | 5-4 | 55.6% | +13.7 |
+| 11 | Auburn | SEC | $121.4M | $58.7M | $205.3M | 5-4 | 55.6% | -2.0 |
+| 12 | Washington | Big Ten | $121.0M | $68.9M | $178.4M | 5-4 | 55.6% | +4.4 |
+| 13 | Oregon | Big Ten | $119.6M | $60.8M | $167.1M | 6-3 | 66.7% | +12.0 |
+| 14 | LSU | SEC | $117.6M | $50.7M | $223.5M | 6-3 | 66.7% | +19.4 |
+| 15 | Florida | SEC | $113.4M | $51.8M | $199.2M | 5-4 | 55.6% | +4.9 |
+| 16 | Wisconsin | Big Ten | $112.3M | $40.9M | $190.5M | 6-3 | 66.7% | +8.1 |
+| 17 | Texas A&M | SEC | $108.5M | $60.2M | $235.5M | 4-5 | 44.4% | +7.4 |
+| 18 | Iowa | Big Ten | $105.2M | $50.9M | $180.0M | 7-2 | 77.8% | +15.6 |
+| 19 | Minnesota | Big Ten | $101.7M | $45.5M | $156.8M | 5-4 | 55.6% | +2.7 |
+| 20 | Miami | ACC | $99.9M | $88.1M | $230.5M | 8-1 | 88.9% | +25.8 |
 
 ### Conference summary
 
 | Conference | Teams | Median football exp | Median football rev | Median dept rev | Mean win% | Mean margin |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| SEC | 16 | $58.0M | $110.9M | $204.9M | 64.1% | +8.8 |
-| FBS Independents | 2 | $56.9M | $108.1M | $193.3M | 68.8% | +18.1 |
-| Big Ten | 18 | $53.0M | $94.8M | $176.5M | 60.6% | +8.2 |
-| ACC | 17 | $42.7M | $64.0M | $151.6M | 58.2% | +6.1 |
-| Big 12 | 16 | $38.2M | $49.0M | $130.7M | 62.5% | +8.9 |
-| Pac-12 | 8 | $21.9M | $23.1M | $72.8M | 49.1% | +1.6 |
-| American | 14 | $19.5M | $19.5M | $62.8M | 51.1% | +1.4 |
-| Mountain West | 10 | $13.1M | $13.2M | $50.4M | 48.5% | -0.2 |
-| Sun Belt | 14 | $12.8M | $12.9M | $39.9M | 50.0% | +1.4 |
-| Conference USA | 10 | $11.6M | $11.6M | $38.5M | 45.0% | -0.8 |
-| MAC | 13 | $11.0M | $11.0M | $38.9M | 46.3% | -3.8 |
+| SEC | 16 | $58.0M | $110.9M | $204.9M | 62.5% | +7.9 |
+| FBS Independents | 2 | $56.9M | $108.1M | $193.3M | 66.7% | +15.5 |
+| Big Ten | 18 | $53.0M | $94.8M | $176.5M | 59.9% | +7.4 |
+| ACC | 17 | $42.7M | $64.0M | $151.6M | 57.5% | +6.0 |
+| Big 12 | 16 | $38.2M | $49.0M | $130.7M | 61.1% | +7.9 |
+| Pac-12 | 8 | $21.9M | $23.1M | $72.8M | 48.6% | +1.2 |
+| American | 14 | $19.5M | $19.5M | $62.8M | 50.8% | +1.3 |
+| Mountain West | 10 | $13.1M | $13.2M | $50.4M | 49.4% | +0.0 |
+| Sun Belt | 14 | $12.8M | $12.9M | $39.9M | 49.9% | +1.2 |
+| Conference USA | 10 | $11.6M | $11.6M | $38.5M | 45.6% | -0.7 |
+| MAC | 13 | $11.0M | $11.0M | $38.9M | 46.5% | -3.5 |
 
 ![football expenses by conference 2026](figures/football_expenses_by_conference_2026.png)
 

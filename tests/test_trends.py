@@ -166,3 +166,63 @@ def test_contenders_respect_min_games():
   )
   assert summary.empty
   assert details.empty
+
+
+def test_projection_track_replays_each_week():
+  """Each week's projection uses that week's past fade ratio."""
+  weekly = pd.DataFrame(
+    {
+      'season': [2025, 2025, 2025, 2026, 2026, 2026],
+      'week': [1, 2, 3, 1, 2, 3],
+      'r_margin': [0.4, 0.6, 0.45, 0.5, 0.55, 0.5],
+    }
+  )
+  track = trends.projection_track(weekly, 2026, first_week=2)
+  assert list(track['week']) == [2, 3]
+  # Week 2: final/at-week ratio = 0.45/0.6 = 0.75; 0.55 * 0.75.
+  assert track.iloc[0]['projected_final'] == pytest.approx(0.4125)
+  # Week 3: ratio = 1.0.
+  assert track.iloc[1]['projected_final'] == pytest.approx(0.5)
+
+
+def test_late_season_edge_buckets_conference_games_by_stage():
+  """Only conference games count and stages are not cumulative."""
+  games = {2025: _games(2025, upset=False)}
+  edge = trends.late_season_edge(_panel(), games)
+  # Week 2 holds the two conference games (both won by the richer side).
+  assert list(edge['stage']) == ['Weeks 1-4']
+  assert edge.iloc[0]['games'] == 2
+  assert edge.iloc[0]['richer_win'] == pytest.approx(1.0)
+
+
+def test_contender_dropouts_lists_teams_that_lost_contender_status():
+  """A team that falls past one loss between weeks is reported."""
+  games = {2026: _games(2026, upset=True)}
+  # Week 1: Rich B lost to Poor A (1 loss); week 2: Rich B beat Poor B, so
+  # nobody drops.  Add a week-3 loss for Rich A to force a dropout.
+  extra = pd.DataFrame(_game(2026, 3, 'Rich A', 'Poor B', 10, 20, CONF))
+  games[2026] = pd.concat([games[2026], extra], ignore_index=True)
+  # Rich A is 2-1 at week 3 (still a contender); give it a second loss.
+  extra2 = pd.DataFrame(_game(2026, 3, 'Rich A', 'Poor A', 7, 21, CONF))
+  games[2026] = pd.concat([games[2026], extra2], ignore_index=True)
+  dropped = trends.contender_dropouts(
+    _panel(), games, 2026, week=3, min_games=2
+  )
+  assert list(dropped['school']) == ['Rich A']
+  assert dropped.iloc[0]['record'] == '2-2'
+
+
+def test_tier_eligibility_uses_same_week_records():
+  """Shares are computed per budget fifth with the week cut-off applied."""
+  games = {
+    2025: _games(2025, upset=False),
+    2026: _games(2026, upset=False),
+  }
+  table = trends.tier_eligibility(_panel(), games, 2026, week=2, wins=2)
+  by_tier = table.set_index('tier')
+  # Four teams rank into fifths 2-5; only the two rich teams (tiers 4
+  # and 5) reach two wins.
+  assert by_tier.loc[2, 'completed'] == pytest.approx(0.0)
+  assert by_tier.loc[5, 'completed'] == pytest.approx(1.0)
+  assert by_tier.loc[5, 'current'] == pytest.approx(1.0)
+  assert pd.isna(by_tier.loc[1, 'completed'])

@@ -293,9 +293,16 @@ def _trend_inputs(
     panel, games_by_season, season, latest
   )
   contender_details.to_csv(config.PROCESSED_DIR / 'contenders.csv', index=False)
+  edge = trends_module.late_season_edge(panel, games_by_season)
+  if not edge.empty:
+    edge.to_csv(config.PROCESSED_DIR / 'late_season_edge.csv', index=False)
+    edge_chart = plots.late_season_edge_chart(edge, season)
+    if edge_chart:
+      figures.append(edge_chart)
   out['trends'] = {
     'week': latest,
     'comparison': trends_module.same_week_comparison(weekly, season, latest),
+    'projection_track': trends_module.projection_track(weekly, season),
     'upset_summary': upset_summary,
     'upset_test': trends_module.upset_rate_test(upset_summary, season),
     'upsets': upset_details,
@@ -304,6 +311,13 @@ def _trend_inputs(
     'forecast_fit': forecast_fit,
     'contender_summary': contender_summary,
     'contenders': contender_details,
+    'dropouts': trends_module.contender_dropouts(
+      panel, games_by_season, season, latest
+    ),
+    'late_edge': edge,
+    'eligibility': trends_module.tier_eligibility(
+      panel, games_by_season, season, latest
+    ),
   }
   trajectory = plots.season_trajectory_chart(weekly, season)
   if trajectory:

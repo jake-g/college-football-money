@@ -287,7 +287,7 @@ def _annotate_points(
   scale_x: float = 1.0,
   max_labels: int = 18,
   fontsize: int = 8,
-  max_optional: int = 8,
+  max_optional: int = 10,
 ) -> list[str]:
   """Labels reference schools and notable outliers on a scatter plot.
 
@@ -344,15 +344,20 @@ def _annotate_points(
     wanted = list(dict.fromkeys(annotate))
 
   wanted = wanted[:max_labels]
-  optional = (
-    [
-      school
-      for school in config.POPULAR_PROGRAMS
-      if school in set(usable['school']) and school not in wanted
-    ][: max(max_optional, 0)]
+  # Auto-labelled charts already carry the headline set, so only popular
+  # programs are optional there.  Charts with a hand-picked list get both
+  # tiers as optional, fit-only labels.
+  tiers = (
+    config.POPULAR_PROGRAMS
     if annotate is None
-    else []
+    else [*config.HEADLINE_PROGRAMS, *config.POPULAR_PROGRAMS]
   )
+  present = set(usable['school'])
+  optional = [
+    school
+    for school in dict.fromkeys(tiers)
+    if school in present and school not in wanted
+  ][: max(max_optional, 0)]
   labelled = usable[usable['school'].isin(wanted)]
   x_lim = axes.get_xlim()
   y_lim = axes.get_ylim()
@@ -372,7 +377,9 @@ def _annotate_points(
   placed_boxes: list[tuple[float, float, float, float]] = []
   placed: list[str] = []
 
-  def _place(row, size: int, color: str, required: bool) -> bool:
+  def _place(
+    row, size: int, color: str, required: bool, leader: bool = True
+  ) -> bool:
     x_val = float(getattr(row, x_column)) / scale_x
     y_val = float(getattr(row, y_column))
     nx = _norm_coord(x_val, x_lim, log_x)
@@ -380,10 +387,10 @@ def _annotate_points(
     ha, dx, dy, box, score = _pick_label_offset(
       nx, ny, row.school, size, axes_w_pt, axes_h_pt, placed_boxes, all_points
     )
-    # Optional labels must sit snug against the dot, with nothing in
-    # the way; otherwise they are dropped rather than drawn with a
-    # leader line into a crowd.
-    if not required and (score >= 20.0 or abs(dy) >= 12):
+    # Optional labels must touch nothing.  Popular-tier labels must also
+    # sit snug against the dot; headline-tier extras may use a short
+    # leader line so a familiar school is not silently dropped.
+    if not required and (score >= 20.0 or (not leader and abs(dy) >= 12)):
       return False
     placed_boxes.append(box)
     arrow = (
@@ -418,8 +425,15 @@ def _annotate_points(
     second = usable[usable['school'].isin(optional)].sort_values(
       [x_column, y_column], ascending=[False, False]
     )
+    headline = set(config.HEADLINE_PROGRAMS)
     for row in second.itertuples():
-      _place(row, max(fontsize - 1, 6), '#555555', required=False)
+      _place(
+        row,
+        max(fontsize - 1, 6),
+        '#555555',
+        required=False,
+        leader=row.school in headline,
+      )
   return placed
 
 
@@ -693,6 +707,7 @@ def multi_season_scatter(
       annotate=config.REFERENCE_PROGRAMS,
       scale_x=1e6,
       fontsize=7,
+      max_optional=3,
     )
   axes_list[0].set_ylabel(_label(performance_column))
   figure.suptitle(
@@ -1329,6 +1344,7 @@ def relative_spend_by_season(
       annotate=config.REFERENCE_PROGRAMS,
       scale_x=1.0,
       fontsize=7,
+      max_optional=3,
     )
   axes_list[0].set_ylabel('Point margin per game vs conference average')
   figure.suptitle(
@@ -1653,6 +1669,88 @@ def close_games_chart(
   axes.legend(fontsize=8, loc='upper right')
   figure.tight_layout()
   return _save(figure, filename or 'close_games.png')
+
+
+def late_season_edge_chart(
+  edge: pd.DataFrame, season: int, filename: str | None = None
+) -> str | None:
+  """Richer team's conference win rate by stage of season, per season.
+
+  Args:
+    edge (pd.DataFrame): Output of :func:`cfbmoney.trends.late_season_edge`.
+    season (int): The in-progress season, highlighted.
+    filename (str | None): Output filename override.
+
+  Returns:
+    str | None: The path written, or ``None`` with no data.
+  """
+  if edge is None or edge.empty:
+    return None
+  stages = [s for s, _, _ in _stage_order() if s in set(edge['stage'])]
+  seasons = sorted(edge['season'].unique())
+  if not stages or not seasons:
+    return None
+  positions = np.arange(len(stages))
+  width = 0.8 / len(seasons)
+  greys = ['#90a4ae', '#607d8b', '#37474f']
+  figure, axes = plt.subplots(figsize=(10.0, 5.2))
+  for offset, year in enumerate(seasons):
+    group = edge[edge['season'] == year].set_index('stage')
+    values = [group['richer_win'].get(s, np.nan) for s in stages]
+    counts = [group['games'].get(s, 0) for s in stages]
+    current = int(year) == season
+    color = '#c62828' if current else greys[offset % len(greys)]
+    bars = axes.bar(
+      positions + (offset - (len(seasons) - 1) / 2) * width,
+      values,
+      width,
+      color=color,
+      label=f'{int(year)}{" (in progress)" if current else ""}',
+    )
+    for bar, value, n in zip(bars, values, counts, strict=True):
+      if pd.notna(value) and n:
+        axes.annotate(
+          f'{value:.0%}',
+          (bar.get_x() + bar.get_width() / 2, value),
+          textcoords='offset points',
+          xytext=(0, 3),
+          ha='center',
+          fontsize=7.5,
+        )
+  axes.set_xticks(positions, stages)
+  axes.axhline(0.5, color='grey', linewidth=0.8, linestyle='--')
+  axes.set_ylim(0.3, 0.85)
+  axes.yaxis.set_major_formatter(
+    matplotlib.ticker.PercentFormatter(xmax=1.0, decimals=0)
+  )
+  axes.set_ylabel('Conference games won by the bigger budget')
+  axes.set_title(_late_edge_title(edge, season))
+  axes.grid(axis='y', alpha=0.2)
+  axes.legend(fontsize=8, loc='upper left', ncol=len(seasons))
+  figure.tight_layout()
+  return _save(figure, filename or 'late_season_edge.png')
+
+
+def _stage_order() -> tuple:
+  """Season stages in display order (imported lazily to avoid a cycle)."""
+  from . import trends  # noqa: PLC0415
+
+  return trends.SEASON_STAGES
+
+
+def _late_edge_title(edge: pd.DataFrame, season: int) -> str:
+  """Picks a title from whether completed seasons show a November rise."""
+  done = edge[edge['season'] < season]
+  early = done[done['stage'].isin(['Weeks 1-4', 'Weeks 5-8'])]
+  late = done[done['stage'].isin(['Weeks 9-12', 'Weeks 13+'])]
+  if early.empty or late.empty:
+    return 'Does the budget edge grow as the season goes on?'
+  gap = late['richer_win'].mean() - early['richer_win'].mean()
+  if gap > 0.03:
+    return 'The budget edge grows late in the season'
+  if gap < -0.03:
+    return 'The budget edge shrinks late in the season'
+  return 'No November surge: the budget edge is flat across the season'
 
 
 def pythagorean_chart(

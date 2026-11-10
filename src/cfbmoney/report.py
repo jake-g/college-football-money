@@ -811,19 +811,10 @@ def _trend_lines(
       projected = _projected_final_r(comparison, season)
       low, high = done['r_at_week'].min(), done['r_at_week'].max()
       verdict = (
-        'right in line with'
+        'in line with'
         if low - 0.05 <= now.r_at_week <= high + 0.05
         else ('above' if now.r_at_week > high else 'below')
       )
-      lines += [
-        f'At week {week}, 2026 sits at r = **{now.r_at_week:+.2f}**, '
-        f'{verdict} 2023-25 at the same point ({low:+.2f} to '
-        f'{high:+.2f}). Every past season peaked around weeks 3-4 and then '
-        'faded as conference play took over. Applying their average fade '
-        f'projects 2026 to finish near **r = {projected:+.2f}**, not the '
-        'headline number at the top of this report.',
-        '',
-      ]
       past_conf = done['richer_win_conf_at_week'].mean()
       gap_pts, p_conf = _conf_rate_test(
         now.richer_win_conf_at_week, int(now.conf_games_at_week), past_conf
@@ -831,23 +822,22 @@ def _trend_lines(
       if pd.isna(p_conf):
         noise = ''
       elif p_conf < 0.05:
-        noise = (
-          f' A {abs(gap_pts):.0f}-point gap on this many games is unlikely '
-          f'to be noise (binomial {_p_text(p_conf)}): the budget edge '
-          'inside leagues is unusually thin this year.'
-        )
+        noise = f' Unlikely to be noise (binomial {_p_text(p_conf)}).'
       else:
-        noise = (
-          f' On this many games a {abs(gap_pts):.0f}-point gap is within '
-          f'noise (binomial {_p_text(p_conf)}).'
-        )
+        noise = f' Within noise (binomial {_p_text(p_conf)}).'
       lines += [
-        f'Inside conference play, the bigger budget has won '
-        f'**{_pct(now.richer_win_conf_at_week)}** of '
-        f'{int(now.conf_games_at_week)} games so far, against '
-        f'{_pct(past_conf)} for 2023-25 at the same week.{noise}',
+        f'- **r = {now.r_at_week:+.2f}** at week {week}, {verdict} 2023-25 '
+        f'at the same point ({low:+.2f} to {high:+.2f}).',
+        f'- **Projected final r = {projected:+.2f}.** Every past season '
+        'peaked around weeks 3-4 and faded as conference play took over; '
+        'the projection applies their average fade from this week.',
+        f'- **Conference games: the richer side has won '
+        f'{_pct(now.richer_win_conf_at_week)}** of '
+        f'{int(now.conf_games_at_week)}, against {_pct(past_conf)} for '
+        f'2023-25 at the same week.{noise}',
         '',
       ]
+    lines += _projection_track_lines(trends.get('projection_track'), season)
     lines += trajectory or []
     trajectory = None
   better = trends.get('better')
@@ -951,10 +941,136 @@ def _trend_lines(
           )
         lines.append('')
   lines += _contender_lines(
-    trends.get('contender_summary'), trends.get('contenders'), season, week
+    trends.get('contender_summary'),
+    trends.get('contenders'),
+    season,
+    week,
+    trends.get('dropouts'),
   )
   lines += trajectory or []
   return lines
+
+
+def _projection_track_lines(
+  track: pd.DataFrame | None, season: int
+) -> list[str]:
+  """Renders what the fade forecast projected at each week so far.
+
+  Args:
+    track (pd.DataFrame | None): Output of
+      :func:`cfbmoney.trends.projection_track`.
+    season (int): The in-progress season.
+
+  Returns:
+    list[str]: Markdown lines, empty without at least three weeks.
+  """
+  if not isinstance(track, pd.DataFrame) or len(track) < 3:
+    return []
+  lines = [
+    f'**What the forecast said each week** (projected final r for {season})',
+    '',
+    '| Week | ' + ' | '.join(str(int(w)) for w in track['week']) + ' |',
+    '| --- |' + ' ---: |' * len(track),
+    '| r to date | '
+    + ' | '.join(f'{v:+.2f}' for v in track['r_at_week'])
+    + ' |',
+    '| Projected final | '
+    + ' | '.join(f'{v:+.2f}' for v in track['projected_final'])
+    + ' |',
+    '',
+  ]
+  spread = track['projected_final'].max() - track['projected_final'].min()
+  latest = track.iloc[-1]
+  if spread <= 0.05:
+    verdict = (
+      f'- **The projection has held.** It has stayed within {spread:.2f} '
+      f'since week {int(track["week"].iloc[0])} while the live r drifted '
+      f'down toward it ({latest.r_at_week:+.2f} now).'
+    )
+  else:
+    verdict = (
+      f'- **The projection has moved** by {spread:.2f} across the season, '
+      'so treat it as a range rather than a point.'
+    )
+  lines += [verdict, '']
+  return lines
+
+
+def _late_edge_lines(edge: pd.DataFrame | None, season: int) -> list[str]:
+  """Renders the richer team's conference win rate by stage of season.
+
+  Args:
+    edge (pd.DataFrame | None): Output of
+      :func:`cfbmoney.trends.late_season_edge`.
+    season (int): The in-progress season.
+
+  Returns:
+    list[str]: Markdown lines, empty without data.
+  """
+  if not isinstance(edge, pd.DataFrame) or edge.empty:
+    return []
+  stages = list(dict.fromkeys(edge['stage']))
+  seasons = sorted(edge['season'].unique())
+  lines = [
+    'If a bigger budget buys depth, the richer side should win more '
+    'conference games in November than in September. Each cell is the '
+    "bigger budget's win rate in conference games played in that stage "
+    '(not cumulative; games in brackets).',
+    '',
+    '| Season | ' + ' | '.join(stages) + ' |',
+    '| --- |' + ' ---: |' * len(stages),
+  ]
+  for year in seasons:
+    group = edge[edge['season'] == year].set_index('stage')
+    label = f'{year} (in progress)' if year == season else str(year)
+    cells = []
+    for stage in stages:
+      if stage in group.index:
+        row = group.loc[stage]
+        cells.append(f'{_pct(row.richer_win)} ({int(row.games)})')
+      else:
+        cells.append('-')
+    lines.append(f'| {label} | ' + ' | '.join(cells) + ' |')
+  lines.append('')
+  done = edge[edge['season'] < season]
+  early = done[done['stage'].isin(['Weeks 1-4', 'Weeks 5-8'])]
+  late = done[done['stage'].isin(['Weeks 9-12', 'Weeks 13+'])]
+  if not early.empty and not late.empty:
+    gap = late['richer_win'].mean() - early['richer_win'].mean()
+    if gap > 0.03:
+      verdict = (
+        f'**Yes, modestly.** The richer side wins {gap * 100:+.0f} points '
+        'more often from week 9 on than before it, over completed seasons.'
+      )
+    elif gap < -0.03:
+      verdict = (
+        f'**No, the reverse.** The richer side wins {abs(gap) * 100:.0f} '
+        'points *less* often from week 9 on, over completed seasons.'
+      )
+    else:
+      verdict = (
+        '**No November surge.** Over completed seasons the late-season '
+        f'rate is within {abs(gap) * 100:.0f} points of the early-season '
+        'rate: whatever money buys, it is already visible in September.'
+      )
+    lines += [f'- {verdict}', '']
+  return lines
+
+
+def _dropout_lines(
+  dropouts: pd.DataFrame | None, week: int | None
+) -> list[str]:
+  """Renders contenders who fell out of the one-loss group this week."""
+  if not isinstance(dropouts, pd.DataFrame) or dropouts.empty or not week:
+    return []
+  names = ', '.join(
+    f'{r.school} ({r.record}, was {r.margin_last_week:+.1f}/g)'
+    for r in dropouts.itertuples()
+  )
+  return [
+    f'- **Dropped out since week {week - 1}:** {names}.',
+    '',
+  ]
 
 
 def _contender_lines(
@@ -962,6 +1078,7 @@ def _contender_lines(
   details: pd.DataFrame | None,
   season: int,
   week: int | None,
+  dropouts: pd.DataFrame | None = None,
 ) -> list[str]:
   """Renders the same-week playoff-contender comparison.
 
@@ -971,6 +1088,8 @@ def _contender_lines(
     details (pd.DataFrame | None): The in-progress season's contenders.
     season (int): The in-progress season.
     week (int | None): The in-progress season's latest completed week.
+    dropouts (pd.DataFrame | None): Output of
+      :func:`cfbmoney.trends.contender_dropouts`.
 
   Returns:
     list[str]: Markdown lines.
@@ -1017,7 +1136,6 @@ def _contender_lines(
     current = now.iloc[0]
     share_now = current.from_top_fifth / current.contenders
     share_past = done['from_top_fifth'].sum() / done['contenders'].sum()
-    ratio = current.median_budget_contenders / current.median_budget_others
     survival = done['survived'].sum() / done['contenders'].sum()
     verdict = (
       'cheaper than usual'
@@ -1029,16 +1147,15 @@ def _contender_lines(
       )
     )
     lines += [
-      f'The {season} field is **{verdict}**: {int(current.from_top_fifth)} '
+      f'- **The {season} field is {verdict}:** {int(current.from_top_fifth)} '
       f'of {int(current.contenders)} contenders ({_pct(share_now)}) come '
       f'from the richest fifth, against {_pct(share_past)} at the same '
-      f'week of 2023-25. The median contender still spends '
-      f'{ratio:.1f}x the median non-contender. In past seasons '
-      f'{_pct(survival)} of same-week contenders finished the regular '
-      'season with two losses or fewer, so most of this list will still '
-      'be standing in December.',
-      '',
+      'week of 2023-25.',
+      f'- **Most of this list survives.** {_pct(survival)} of same-week '
+      'contenders in past seasons finished the regular season with two '
+      'losses or fewer.',
     ]
+    lines += _dropout_lines(dropouts, week) or ['']
   if isinstance(details, pd.DataFrame) and not details.empty:
     lines += [
       f'**{season} contenders through week {week}**',
@@ -1056,13 +1173,21 @@ def _contender_lines(
   return lines
 
 
-def _tiers_lines(tiers: pd.DataFrame | None, season: int) -> list[str]:
+def _tiers_lines(
+  tiers: pd.DataFrame | None,
+  season: int,
+  eligibility: pd.DataFrame | None = None,
+  week: int | None = None,
+) -> list[str]:
   """Renders the budget-tier dose-response table.
 
   Args:
     tiers (pd.DataFrame | None): Output of
       :func:`cfbmoney.insights.budget_tiers`.
     season (int): The in-progress season.
+    eligibility (pd.DataFrame | None): Output of
+      :func:`cfbmoney.trends.tier_eligibility`, appended as a table.
+    week (int | None): Latest completed week, for the eligibility caption.
 
   Returns:
     list[str]: Markdown lines, empty without data.
@@ -1109,25 +1234,73 @@ def _tiers_lines(tiers: pd.DataFrame | None, season: int) -> list[str]:
   spread_middle = middle['margin'].max() - middle['margin'].min()
   if spread_top > spread_middle:
     shape = (
-      f'The curve is convex: the middle three tiers sit within '
-      f'{spread_middle:.1f} points of each other, then the richest fifth '
-      f'jumps {spread_top:+.1f} points clear of the next tier. Money buys '
-      'most at the very top, where the budget pays for the depth that '
-      'wins the back half of a schedule.'
+      f'**Convex.** The middle three tiers sit within {spread_middle:.1f} '
+      f'points of each other; the richest fifth is {spread_top:+.1f} points '
+      'clear of the next. Money buys most at the very top.'
     )
   else:
     shape = (
-      'The gain is spread fairly evenly across the tiers: each step up '
-      'the budget ladder buys roughly the same improvement.'
+      '**Roughly linear.** Each step up the budget ladder buys about the '
+      'same improvement.'
     )
   lines += [
-    f'Over completed seasons the poorest fifth (median '
-    f'{_usd_millions(bottom.median_budget)}) wins {_pct(bottom.win_pct)} '
-    f'of its games and the richest fifth ({_usd_millions(top.median_budget)}) '
-    f'wins {_pct(top.win_pct)}: a {top.margin - bottom.margin:.0f}-point '
-    f'swing in margin per game. {shape}',
+    f'- **Poorest fifth ({_usd_millions(bottom.median_budget)}) wins '
+    f'{_pct(bottom.win_pct)}, richest fifth '
+    f'({_usd_millions(top.median_budget)}) wins {_pct(top.win_pct)}:** a '
+    f'{top.margin - bottom.margin:.0f}-point swing in margin per game.',
+    f'- {shape}',
     '',
   ]
+  lines += _eligibility_lines(eligibility, season, week)
+  return lines
+
+
+def _eligibility_lines(
+  eligibility: pd.DataFrame | None, season: int, week: int | None
+) -> list[str]:
+  """Renders bowl eligibility by budget fifth at the same week.
+
+  Args:
+    eligibility (pd.DataFrame | None): Output of
+      :func:`cfbmoney.trends.tier_eligibility`.
+    season (int): The in-progress season.
+    week (int | None): Latest completed week.
+
+  Returns:
+    list[str]: Markdown lines, empty without data.
+  """
+  if not isinstance(eligibility, pd.DataFrame) or eligibility.empty or not week:
+    return []
+  names = {1: 'poorest', 2: 'second', 3: 'middle', 4: 'fourth', 5: 'richest'}
+  lines = [
+    f'**Bowl eligibility (6+ wins) by budget fifth, through week {week}**',
+    '',
+    f'| Tier | 2023-25 | {season} | Team-seasons |',
+    '| --- | ---: | ---: | ---: |',
+  ]
+  for row in eligibility.itertuples():
+    lines.append(
+      f'| {int(row.tier)} ({names[int(row.tier)]}) | {_pct(row.completed)} | '
+      f'{_pct(row.current)} | {int(row.teams) if pd.notna(row.teams) else 0} |'
+    )
+  lines.append('')
+  top = eligibility[eligibility['tier'] == 5].iloc[0]
+  fourth = eligibility[eligibility['tier'] == 4].iloc[0]
+  bottom = eligibility[eligibility['tier'] == 1].iloc[0]
+  if pd.notna(top.current) and pd.notna(fourth.current):
+    gap_now = top.current - fourth.current
+    gap_past = top.completed - fourth.completed
+    verdict = (
+      'the richest fifth is **not** pulling clear of the fourth'
+      if gap_now < gap_past - 0.05
+      else 'the richest fifth leads the fourth as usual'
+    )
+    lines += [
+      f'- **Six wins by week {week}:** {_pct(bottom.completed)} of the '
+      f'poorest fifth get there against {_pct(top.completed)} of the '
+      f'richest. In {season}, {verdict}.',
+      '',
+    ]
   return lines
 
 
@@ -1794,7 +1967,52 @@ def _key_findings(
         f'week of 2023-25.{cheapest}'
       )
 
+  since: list[str] = []
+  track = (trends or {}).get('projection_track')
+  if isinstance(track, pd.DataFrame) and len(track) >= 2:
+    prev, last = track.iloc[-2], track.iloc[-1]
+    moved = abs(last.projected_final - prev.projected_final)
+    head = (
+      '**The fade forecast held.**'
+      if moved <= 0.03
+      else f'**The fade forecast moved {moved:.2f}.**'
+    )
+    since.append(
+      f'{head} Week {int(prev.week)} projected a final r of '
+      f'{prev.projected_final:+.2f}; the live r is now '
+      f'{last.r_at_week:+.2f} and the projection {last.projected_final:+.2f}.'
+    )
+  dropouts = (trends or {}).get('dropouts')
+  if isinstance(dropouts, pd.DataFrame) and not dropouts.empty and week:
+    names = ', '.join(dropouts['school'])
+    since.append(
+      f'**{len(dropouts)} contender{"s" if len(dropouts) != 1 else ""} '
+      f'dropped out:** {names}. All were among the thinnest margins on '
+      f"last week's list."
+      if (dropouts['margin_last_week'] < 15).all()
+      else f'**Contenders dropped out:** {names}.'
+    )
+  edge = (trends or {}).get('late_edge')
+  if isinstance(edge, pd.DataFrame) and not edge.empty:
+    done = edge[edge['season'] < season]
+    early = done[done['stage'].isin(['Weeks 1-4', 'Weeks 5-8'])]
+    late = done[done['stage'].isin(['Weeks 9-12', 'Weeks 13+'])]
+    if not early.empty and not late.empty:
+      gap = late['richer_win'].mean() - early['richer_win'].mean()
+      if abs(gap) <= 0.03:
+        since.append(
+          '**New test: no November surge.** The richer side wins conference '
+          'games at the same rate late in the season as early; the "depth '
+          'wins the back half" story is not in the data.'
+        )
+      else:
+        since.append(
+          f'**New test: the budget edge {"grows" if gap > 0 else "shrinks"} '
+          f'late in the season** by about {abs(gap) * 100:.0f} points.'
+        )
+
   groups = [
+    (f'Since week {week - 1}' if week else 'Since last week', since),
     (f'What {season} is showing so far', trend),
     ('Does money buy wins?', money),
     ('What else makes a good team?', team),
@@ -2400,7 +2618,10 @@ def build_report(
   money += _correlation_matrix(correlations)
   money += _figure(pool, 'revenue_vs_spending', figure_prefix)
   money += _figure(pool, 'football_expenses_vs_point_margin', figure_prefix)
-  tier_lines = _tiers_lines(tiers, season)
+  trend_data = trends or {}
+  tier_lines = _tiers_lines(
+    tiers, season, trend_data.get('eligibility'), trend_data.get('week')
+  )
   if tier_lines:
     money += ['## Budget tiers: the shape of the curve', '']
     money += tier_lines
@@ -2423,6 +2644,11 @@ def build_report(
         f'{row.pearson_r:+.3f} | {row.r_squared:.3f} |'
       )
     money.append('')
+  edge_lines = _late_edge_lines(trend_data.get('late_edge'), season)
+  if edge_lines:
+    money += ['## Does the budget edge grow in November?', '']
+    money += edge_lines
+    money += _figure(pool, 'late_season_edge', figure_prefix)
   relative_lines = _relative_section(
     relative_summary, relative_extremes, relative_by_season
   )

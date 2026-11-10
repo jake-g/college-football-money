@@ -151,8 +151,8 @@ def test_popular_programs_labelled_only_when_there_is_room(frame):
   assert 'Clemson' not in crowded
 
 
-def test_popular_programs_skipped_with_explicit_list(frame):
-  """Charts with a hand-picked label list do not pick up extras."""
+def test_popular_programs_skipped_when_max_optional_is_zero(frame):
+  """Dense small multiples can switch extras off entirely."""
   figure, axes = plt.subplots()
   labelled = plots._annotate_points(
     axes,
@@ -161,9 +161,29 @@ def test_popular_programs_skipped_with_explicit_list(frame):
     'point_margin_per_game',
     annotate=['Tiny State'],
     scale_x=1e6,
+    max_optional=0,
   )
   plt.close(figure)
   assert labelled == ['Tiny State']
+
+
+def test_explicit_list_still_adds_headline_programs_when_room(frame):
+  """Hand-picked charts pick up headline schools as fit-only extras."""
+  data = _with_popular(frame, crowded=False)
+  figure, axes = plt.subplots(figsize=(10, 7))
+  axes.scatter(data['football_expenses'] / 1e6, data['point_margin_per_game'])
+  axes.set_xscale('log')
+  labelled = plots._annotate_points(
+    axes,
+    data,
+    'football_expenses',
+    'point_margin_per_game',
+    annotate=['Tiny State'],
+    scale_x=1e6,
+  )
+  plt.close(figure)
+  assert labelled[0] == 'Tiny State'
+  assert any(s in labelled for s in config.REFERENCE_PROGRAMS)
 
 
 def test_trend_helper_expects_log_inputs():

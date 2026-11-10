@@ -294,6 +294,87 @@ def test_conf_rate_test_needs_enough_games():
   assert p > 0.05
 
 
+def test_projection_track_lines_report_stability():
+  """A tight track says it held; a loose one says it moved."""
+  steady = pd.DataFrame(
+    {
+      'week': [4, 5, 6],
+      'r_at_week': [0.6, 0.55, 0.5],
+      'projected_final': [0.42, 0.40, 0.41],
+    }
+  )
+  text = '\n'.join(report._projection_track_lines(steady, 2026))
+  assert '| Week | 4 | 5 | 6 |' in text
+  assert '**The projection has held.**' in text
+  loose = steady.assign(projected_final=[0.50, 0.40, 0.30])
+  assert 'has moved' in '\n'.join(report._projection_track_lines(loose, 2026))
+  assert report._projection_track_lines(steady.head(2), 2026) == []
+
+
+def _edge(late_rate: float) -> pd.DataFrame:
+  rows = []
+  for season in (2024, 2025):
+    for stage, rate in (
+      ('Weeks 1-4', 0.60),
+      ('Weeks 5-8', 0.60),
+      ('Weeks 9-12', late_rate),
+      ('Weeks 13+', late_rate),
+    ):
+      rows.append(
+        {'season': season, 'stage': stage, 'richer_win': rate, 'games': 50}
+      )
+  rows.append(
+    {'season': 2026, 'stage': 'Weeks 1-4', 'richer_win': 0.55, 'games': 40}
+  )
+  return pd.DataFrame(rows)
+
+
+def test_late_edge_lines_verdict_follows_the_gap():
+  """Flat, rising and falling late-season rates get different verdicts."""
+  flat = '\n'.join(report._late_edge_lines(_edge(0.61), 2026))
+  assert '| 2026 (in progress) | 55.0% (40) | - | - | - |' in flat
+  assert '**No November surge.**' in flat
+  assert '**Yes, modestly.**' in '\n'.join(
+    report._late_edge_lines(_edge(0.70), 2026)
+  )
+  assert '**No, the reverse.**' in '\n'.join(
+    report._late_edge_lines(_edge(0.50), 2026)
+  )
+
+
+def test_eligibility_lines_quote_the_table():
+  """The eligibility table and its verdict come from the inputs."""
+  table = pd.DataFrame(
+    {
+      'tier': [1, 2, 3, 4, 5],
+      'completed': [0.2, 0.3, 0.35, 0.45, 0.6],
+      'current': [0.2, 0.3, 0.3, 0.55, 0.55],
+      'teams': [80, 78, 79, 78, 79],
+    }
+  )
+  text = '\n'.join(report._eligibility_lines(table, 2026, 10))
+  assert '| 5 (richest) | 60.0% | 55.0% | 79 |' in text
+  assert '**not** pulling clear of the fourth' in text
+  assert report._eligibility_lines(None, 2026, 10) == []
+
+
+def test_dropout_lines_list_each_team():
+  """Dropouts are named with their new record and old margin."""
+  dropouts = pd.DataFrame(
+    {
+      'school': ['Kentucky', 'UTSA'],
+      'conference': ['SEC', 'American'],
+      'football_expenses': [4.3e7, 1.8e7],
+      'margin_last_week': [8.1, 7.5],
+      'record': ['7-2', '7-2'],
+    }
+  )
+  text = '\n'.join(report._dropout_lines(dropouts, 10))
+  assert '**Dropped out since week 9:**' in text
+  assert 'Kentucky (7-2, was +8.1/g)' in text
+  assert report._dropout_lines(pd.DataFrame(), 10) == []
+
+
 def _contender_summary() -> pd.DataFrame:
   """Two completed seasons and one in progress."""
   return pd.DataFrame(
@@ -331,7 +412,7 @@ def test_contender_section_quotes_the_data():
   assert (
     '| 2025 | 20 | 10 | $50.0M | $20.0M | Ohio ($11.0M) | 17 of 20 |' in text
   )
-  assert 'field is **cheaper than usual**' in text
+  assert '**The 2026 field is cheaper than usual:**' in text
   assert '2 of 10 contenders (20.0%)' in text
   assert 'against 50.0%' in text
   assert '80.0% of same-week contenders' in text

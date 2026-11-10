@@ -11,6 +11,7 @@ season,week,winner,winner_conf,loser,winner_spend,loser_spend,ratio,score,game_t
 2023,5,West Virginia,Big 12,TCU,23220348.0,54129228.0,2.331111833466062,24-21,conference
 2023,3,UNLV,Mountain West,Vanderbilt,19389498.0,43613902.0,2.2493569457032874,40-37,nonconf_fbs
 2023,1,Wyoming,Mountain West,Texas Tech,15712482.0,34401458.0,2.18943499823898,35-33,nonconf_fbs
+2023,10,NC State,ACC,Miami,36498949.0,78100431.0,2.139799450115673,20-6,conference
 2023,3,Fresno State,Mountain West,Arizona State,18792911.0,40162578.0,2.1371131912453585,29-0,nonconf_fbs
 2023,9,Kansas,Big 12,Oklahoma,31326379.0,65814050.0,2.1009146955669533,38-33,conference
 2023,6,UAB,American,South Florida,14865442.0,31067491.0,2.089913707241265,56-35,conference
@@ -24,6 +25,7 @@ season,week,winner,winner_conf,loser,winner_spend,loser_spend,ratio,score,game_t
 2024,3,Toledo,MAC,Mississippi State,12624282.0,37575575.0,2.9764524429983426,41-17,nonconf_fbs
 2024,4,James Madison,Sun Belt,North Carolina,16863958.0,49145749.0,2.914247592409801,70-50,nonconf_fbs
 2024,5,Louisiana,Sun Belt,Wake Forest,14846554.0,39399925.0,2.653809429447399,41-38,nonconf_fbs
+2024,10,Louisville,ACC,Clemson,30745125.0,81136726.0,2.6390110952549386,33-21,conference
 2024,6,Houston,Big 12,TCU,23271364.0,59568339.0,2.559727010415032,30-19,conference
 2024,5,Sam Houston,Conference USA,Texas State,9740021.0,21622408.0,2.2199549672428835,40-39,nonconf_fbs
 2024,6,UL Monroe,Sun Belt,James Madison,7772886.0,16863958.0,2.169587718126832,21-19,conference
@@ -57,4 +59,5 @@ season,week,winner,winner_conf,loser,winner_spend,loser_spend,ratio,score,game_t
 2026,7,BYU,Big 12,Notre Dame,44561032.0,93255797.0,2.092765647797385,28-24,nonconf_fbs
 2026,3,Toledo,MAC,Temple,12624282.0,26295531.0,2.0829327957027575,49-48,nonconf_fbs
 2026,5,Northwestern,Big Ten,Penn State,37901761.0,77386097.0,2.0417546562018583,34-13,conference
+2026,10,East Carolina,American,South Florida,16473046.0,33352743.0,2.0246858413434894,20-17,conference
 2026,8,Northwestern,Big Ten,Rutgers,37901761.0,75922954.0,2.0031510936919266,42-14,conference
